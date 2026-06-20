@@ -5,4 +5,4 @@
 :HL["/demo/plugins/custom-currency-icon/cover.png","image"]
 :HL["/demo/plugins/geidea-payment-gateway/cover.png","image"]
 :HL["/demo/plugins/access-trail/cover.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"ar","param":null,"prefetchHints":16,"slots":{"children":{"name":"lab","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"TcPgNUj48KusEzcGYZ1Cc"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"ar","param":null,"prefetchHints":16,"slots":{"children":{"name":"lab","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"ZqAUOwTsJLME1f0Nfcgb6"}
