@@ -1,0 +1,10 @@
+:HL["/_next/static/chunks/1k4l8ezp-d4nz.css","style"]
+:HL["/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/9ff27b8a0a8f3dc0-s.p.40_3w74kn95bo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demo/logos/logo-desktop-ar.png","image"]
+:HL["/demo/plugins/custom-currency-icon/cover.png","image"]
+:HL["/demo/plugins/custom-currency-icon/1.png","image"]
+:HL["/demo/plugins/custom-currency-icon/2.png","image"]
+:HL["/demo/plugins/custom-currency-icon/3.png","image"]
+:HL["/demo/plugins/custom-currency-icon/4.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"lang","param":{"type":"d","key":"ar","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"lab","param":null,"prefetchHints":0,"slots":{"children":{"name":"plugins","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"custom-currency-icon","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"N7MPDv-2EqNNyFfSBJBNI"}
