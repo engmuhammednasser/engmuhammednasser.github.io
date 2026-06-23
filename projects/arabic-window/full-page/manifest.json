@@ -1,0 +1,117 @@
+{
+  "capturedAt": "2026-06-23T13:29:24.466Z",
+  "viewportWidth": 1440,
+  "scope": "Only the public pages linked in the main navigation, plus a populated checkout page. Individual posts and other site pages are excluded.",
+  "pages": [
+    {
+      "order": 1,
+      "name": "01-home",
+      "file": "01-home.jpg",
+      "requestedUrl": "https://arabicwindow.com/",
+      "finalUrl": "https://arabicwindow.com/",
+      "title": "Home | Arabic Window",
+      "width": 1440,
+      "height": 9082,
+      "bytes": 946504
+    },
+    {
+      "order": 2,
+      "name": "02-courses",
+      "file": "02-courses.jpg",
+      "requestedUrl": "https://arabicwindow.com/courses/",
+      "finalUrl": "https://arabicwindow.com/courses/",
+      "title": "Courses | Arabic Window",
+      "width": 1440,
+      "height": 1442,
+      "bytes": 178133
+    },
+    {
+      "order": 3,
+      "name": "03-books",
+      "file": "03-books.jpg",
+      "requestedUrl": "https://arabicwindow.com/islamic-books/",
+      "finalUrl": "https://arabicwindow.com/islamic-books/",
+      "title": "Islamic Books | Arabic Window",
+      "width": 1440,
+      "height": 13881,
+      "bytes": 1497737
+    },
+    {
+      "order": 4,
+      "name": "04-blog",
+      "file": "04-blog.jpg",
+      "requestedUrl": "https://arabicwindow.com/blog/",
+      "finalUrl": "https://arabicwindow.com/blog/",
+      "title": "Blog | Arabic Window",
+      "width": 1440,
+      "height": 11822,
+      "bytes": 1980296
+    },
+    {
+      "order": 5,
+      "name": "05-about-us",
+      "file": "05-about-us.jpg",
+      "requestedUrl": "https://arabicwindow.com/about-us/",
+      "finalUrl": "https://arabicwindow.com/about-us/",
+      "title": "About us | Arabic Window",
+      "width": 1440,
+      "height": 3149,
+      "bytes": 471462
+    },
+    {
+      "order": 6,
+      "name": "06-why-us",
+      "file": "06-why-us.jpg",
+      "requestedUrl": "https://arabicwindow.com/why-us/",
+      "finalUrl": "https://arabicwindow.com/why-us/",
+      "title": "Why us? | Arabic Window",
+      "width": 1440,
+      "height": 1477,
+      "bytes": 171776
+    },
+    {
+      "order": 7,
+      "name": "07-pricing",
+      "file": "07-pricing.jpg",
+      "requestedUrl": "https://arabicwindow.com/pricing/",
+      "finalUrl": "https://arabicwindow.com/pricing/",
+      "title": "Pricing | Arabic Window",
+      "width": 1440,
+      "height": 1650,
+      "bytes": 163978
+    },
+    {
+      "order": 8,
+      "name": "08-contact-us",
+      "file": "08-contact-us.jpg",
+      "requestedUrl": "https://arabicwindow.com/contact-us/",
+      "finalUrl": "https://arabicwindow.com/contact-us/",
+      "title": "Contact us | Arabic Window",
+      "width": 1440,
+      "height": 1609,
+      "bytes": 170000
+    },
+    {
+      "order": 9,
+      "name": "09-register",
+      "file": "09-register.jpg",
+      "requestedUrl": "https://arabicwindow.com/register/",
+      "finalUrl": "https://arabicwindow.com/register/",
+      "title": "Register | Arabic Window",
+      "width": 1440,
+      "height": 1563,
+      "bytes": 161359
+    },
+    {
+      "order": 10,
+      "name": "10-checkout",
+      "file": "10-checkout.jpg",
+      "requestedUrl": "https://arabicwindow.com/checkout/",
+      "finalUrl": "https://arabicwindow.com/checkout/",
+      "title": "Checkout | Arabic Window",
+      "width": 1440,
+      "height": 1744,
+      "bytes": 146354
+    }
+  ]
+}
