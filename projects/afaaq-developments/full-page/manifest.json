@@ -1,0 +1,85 @@
+{
+  "capturedAt": "2026-06-24T08:14:09.881Z",
+  "browserPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "viewportWidth": 1440,
+  "scope": "Seven primary English pages from Afaaq Developments main navigation.",
+  "pages": [
+    {
+      "order": 1,
+      "name": "01-home",
+      "file": "01-home.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/",
+      "finalUrl": "https://afaaqdevelopments.com/",
+      "title": "Home - Afaaq Developments",
+      "width": 1440,
+      "height": 4725,
+      "bytes": 856143
+    },
+    {
+      "order": 2,
+      "name": "02-about-us",
+      "file": "02-about-us.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/about-us-2/",
+      "finalUrl": "https://afaaqdevelopments.com/about-us-2/",
+      "title": "About Us - Afaaq Developments",
+      "width": 1440,
+      "height": 5737,
+      "bytes": 756480
+    },
+    {
+      "order": 3,
+      "name": "03-amorada-park-view",
+      "file": "03-amorada-park-view.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/amorada-park-view-2/",
+      "finalUrl": "https://afaaqdevelopments.com/amorada-park-view-2/",
+      "title": "Amorada Park View - Afaaq Developments",
+      "width": 1440,
+      "height": 7124,
+      "bytes": 1185166
+    },
+    {
+      "order": 4,
+      "name": "04-amorada-new-cairo",
+      "file": "04-amorada-new-cairo.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/amorada-new-cairo/",
+      "finalUrl": "https://afaaqdevelopments.com/amorada-new-cairo/",
+      "title": "Amorada New Cairo - Afaaq Developments",
+      "width": 1440,
+      "height": 6066,
+      "bytes": 898933
+    },
+    {
+      "order": 5,
+      "name": "05-amorada-hub",
+      "file": "05-amorada-hub.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/amorada-hub/",
+      "finalUrl": "https://afaaqdevelopments.com/amorada-hub/",
+      "title": "Amorada Hub - Afaaq Developments",
+      "width": 1440,
+      "height": 5408,
+      "bytes": 743635
+    },
+    {
+      "order": 6,
+      "name": "06-press-media",
+      "file": "06-press-media.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/press-media/",
+      "finalUrl": "https://afaaqdevelopments.com/press-media/",
+      "title": "Press & Media - Afaaq Developments",
+      "width": 1440,
+      "height": 2313,
+      "bytes": 439944
+    },
+    {
+      "order": 7,
+      "name": "07-contact-us",
+      "file": "07-contact-us.jpg",
+      "requestedUrl": "https://afaaqdevelopments.com/contact-us/",
+      "finalUrl": "https://afaaqdevelopments.com/contact-us/",
+      "title": "Contact Us - Afaaq Developments",
+      "width": 1440,
+      "height": 2227,
+      "bytes": 316161
+    }
+  ]
+}

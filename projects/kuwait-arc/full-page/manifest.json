@@ -1,0 +1,161 @@
+{
+  "capturedAt": "2026-06-24T07:34:47.862Z",
+  "viewportWidth": 1440,
+  "scope": "Six English main-menu pages, six Arabic main-menu pages, plus one product page in each language.",
+  "pages": [
+    {
+      "order": 1,
+      "name": "en-01-about",
+      "file": "en-01-about.jpg",
+      "requestedUrl": "https://kuwaitarc.com/about/",
+      "finalUrl": "https://kuwaitarc.com/about/",
+      "title": "About - Kuwait Arc",
+      "width": 1440,
+      "height": 3429,
+      "bytes": 348955
+    },
+    {
+      "order": 2,
+      "name": "en-02-factory",
+      "file": "en-02-factory.jpg",
+      "requestedUrl": "https://kuwaitarc.com/the-factory/",
+      "finalUrl": "https://kuwaitarc.com/the-factory/",
+      "title": "The Factory - Kuwait Arc",
+      "width": 1440,
+      "height": 3587,
+      "bytes": 343767
+    },
+    {
+      "order": 3,
+      "name": "en-03-clients",
+      "file": "en-03-clients.jpg",
+      "requestedUrl": "https://kuwaitarc.com/our-clients/",
+      "finalUrl": "https://kuwaitarc.com/our-clients/",
+      "title": "Our clients - Kuwait Arc",
+      "width": 1440,
+      "height": 2598,
+      "bytes": 245301
+    },
+    {
+      "order": 4,
+      "name": "en-04-products",
+      "file": "en-04-products.jpg",
+      "requestedUrl": "https://kuwaitarc.com/our-products/",
+      "finalUrl": "https://kuwaitarc.com/our-products/",
+      "title": "Our Products - Kuwait Arc",
+      "width": 1440,
+      "height": 3747,
+      "bytes": 529691
+    },
+    {
+      "order": 5,
+      "name": "en-05-services",
+      "file": "en-05-services.jpg",
+      "requestedUrl": "https://kuwaitarc.com/services/",
+      "finalUrl": "https://kuwaitarc.com/services/",
+      "title": "Services - Kuwait Arc",
+      "width": 1440,
+      "height": 4000,
+      "bytes": 336966
+    },
+    {
+      "order": 6,
+      "name": "en-06-contact",
+      "file": "en-06-contact.jpg",
+      "requestedUrl": "https://kuwaitarc.com/contact-us/",
+      "finalUrl": "https://kuwaitarc.com/contact-us/",
+      "title": "Contact Us - Kuwait Arc",
+      "width": 1440,
+      "height": 3280,
+      "bytes": 291203
+    },
+    {
+      "order": 7,
+      "name": "en-07-product",
+      "file": "en-07-product.jpg",
+      "requestedUrl": "https://kuwaitarc.com/stainless-steel-kitchens/",
+      "finalUrl": "https://kuwaitarc.com/stainless-steel-kitchens/",
+      "title": "Stainless Steel Kitchens - Kuwait Arc",
+      "width": 1440,
+      "height": 2642,
+      "bytes": 264635
+    },
+    {
+      "order": 8,
+      "name": "ar-01-about",
+      "file": "ar-01-about.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/معلومات-عنا/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%B9%D9%86%D8%A7/",
+      "title": "معلومات عنا - كويت ارك",
+      "width": 1440,
+      "height": 3233,
+      "bytes": 294333
+    },
+    {
+      "order": 9,
+      "name": "ar-02-factory",
+      "file": "ar-02-factory.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/المصنع/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D8%A7%D9%84%D9%85%D8%B5%D9%86%D8%B9/",
+      "title": "المصنع - كويت ارك",
+      "width": 1440,
+      "height": 3406,
+      "bytes": 259943
+    },
+    {
+      "order": 10,
+      "name": "ar-03-clients",
+      "file": "ar-03-clients.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/عملائنا/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D8%B9%D9%85%D9%84%D8%A7%D8%A6%D9%86%D8%A7/",
+      "title": "عملائنا - كويت ارك",
+      "width": 1440,
+      "height": 2425,
+      "bytes": 193138
+    },
+    {
+      "order": 11,
+      "name": "ar-04-products",
+      "file": "ar-04-products.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/منتجاتنا/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%86%D8%A7/",
+      "title": "منتجاتنا - كويت ارك",
+      "width": 1440,
+      "height": 3656,
+      "bytes": 515194
+    },
+    {
+      "order": 12,
+      "name": "ar-05-services",
+      "file": "ar-05-services.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/خدمات/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/",
+      "title": "خدمات - كويت ارك",
+      "width": 1440,
+      "height": 3029,
+      "bytes": 221581
+    },
+    {
+      "order": 13,
+      "name": "ar-06-contact",
+      "file": "ar-06-contact.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/اتصل-بنا-2/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7-2/",
+      "title": "اتصل بنا - كويت ارك",
+      "width": 1440,
+      "height": 3198,
+      "bytes": 268620
+    },
+    {
+      "order": 14,
+      "name": "ar-07-product",
+      "file": "ar-07-product.jpg",
+      "requestedUrl": "https://kuwaitarc.com/ar/مطابخ-ستانلس-ستيل/",
+      "finalUrl": "https://kuwaitarc.com/ar/%D9%85%D8%B7%D8%A7%D8%A8%D8%AE-%D8%B3%D8%AA%D8%A7%D9%86%D9%84%D8%B3-%D8%B3%D8%AA%D9%8A%D9%84/",
+      "title": "مطابخ ستانلس ستيل  - كويت ارك",
+      "width": 1440,
+      "height": 2551,
+      "bytes": 216955
+    }
+  ]
+}

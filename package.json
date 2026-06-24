@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "capture:arabic-window": "node scripts/capture-arabic-window-pages.mjs",
+    "capture:kuwait-arc": "node scripts/capture-kuwait-arc-pages.mjs",
     "effects:portfolio": "node scripts/add-portfolio-effects.mjs",
     "fix:paths": "node scripts/fix-export-paths.mjs",
     "filter:work": "node scripts/add-work-filters.mjs",

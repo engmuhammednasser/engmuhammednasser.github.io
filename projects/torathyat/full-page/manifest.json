@@ -1,0 +1,85 @@
+{
+  "capturedAt": "2026-06-24T08:55:05.867Z",
+  "browserPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "viewportWidth": 1440,
+  "scope": "Arabic storefront, about page, shop pages, category pages, and product pages from Torathyat.",
+  "pages": [
+    {
+      "order": 1,
+      "name": "01-home",
+      "file": "01-home.jpg",
+      "requestedUrl": "https://torathyat.com/",
+      "finalUrl": "https://torathyat.com/#",
+      "title": "الرئيسية - تراثيات",
+      "width": 1440,
+      "height": 5036,
+      "bytes": 318133
+    },
+    {
+      "order": 2,
+      "name": "02-about-us",
+      "file": "02-about-us.jpg",
+      "requestedUrl": "https://torathyat.com/about-us/",
+      "finalUrl": "https://torathyat.com/about-us/",
+      "title": "معلومات عنا - تراثيات",
+      "width": 1440,
+      "height": 1679,
+      "bytes": 230198
+    },
+    {
+      "order": 3,
+      "name": "03-shop",
+      "file": "03-shop.jpg",
+      "requestedUrl": "https://torathyat.com/shop/",
+      "finalUrl": "https://torathyat.com/shop/",
+      "title": "المتجر - تراثيات",
+      "width": 1440,
+      "height": 3191,
+      "bytes": 208495
+    },
+    {
+      "order": 4,
+      "name": "04-category-guns",
+      "file": "04-category-guns.jpg",
+      "requestedUrl": "https://torathyat.com/product-category/guns/",
+      "finalUrl": "https://torathyat.com/product-category/guns/",
+      "title": "بنادق Archives - تراثيات",
+      "width": 1440,
+      "height": 3191,
+      "bytes": 273906
+    },
+    {
+      "order": 5,
+      "name": "05-category-ateef",
+      "file": "05-category-ateef.jpg",
+      "requestedUrl": "https://torathyat.com/product-category/%d8%b9%d8%b7%d9%8a%d9%81/",
+      "finalUrl": "https://torathyat.com/product-category/%d8%b9%d8%b7%d9%8a%d9%81/",
+      "title": "عطيف Archives - تراثيات",
+      "width": 1440,
+      "height": 1753,
+      "bytes": 172610
+    },
+    {
+      "order": 6,
+      "name": "06-product-rifle",
+      "file": "06-product-rifle.jpg",
+      "requestedUrl": "https://torathyat.com/product/%d8%a8%d9%86%d8%af%d9%82%d9%8a%d9%87-%d9%85%d9%82%d9%85%d8%b9-%d8%b2%d9%8a%d9%86%d9%87/",
+      "finalUrl": "https://torathyat.com/product/%d8%a8%d9%86%d8%af%d9%82%d9%8a%d9%87-%d9%85%d9%82%d9%85%d8%b9-%d8%b2%d9%8a%d9%86%d9%87/",
+      "title": "بندقيه مقمع زينه - تراثيات",
+      "width": 1440,
+      "height": 2407,
+      "bytes": 144125
+    },
+    {
+      "order": 7,
+      "name": "07-product-plate-set",
+      "file": "07-product-plate-set.jpg",
+      "requestedUrl": "https://torathyat.com/product/%d8%b7%d9%82%d9%85-%d8%b5%d8%ad%d9%88%d9%86-%d9%88%d8%b9%d8%b7%d9%8a%d9%81/",
+      "finalUrl": "https://torathyat.com/product/%d8%b7%d9%82%d9%85-%d8%b5%d8%ad%d9%88%d9%86-%d9%88%d8%b9%d8%b7%d9%8a%d9%81/",
+      "title": "طقم صحون وعطيف - تراثيات",
+      "width": 1440,
+      "height": 2387,
+      "bytes": 231464
+    }
+  ]
+}

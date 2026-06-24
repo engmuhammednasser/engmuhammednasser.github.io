@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-06-24T14:52:01",
+  "scope": "Homepage, partners section, and contact page from Armadillo Studio.",
+  "pages": [
+    {
+      "order": 1,
+      "name": "01-home",
+      "file": "01-home.png",
+      "requestedSource": "S:\\workspace\\ارمديلو\\الرئيسية.png",
+      "title": "Home Page"
+    },
+    {
+      "order": 2,
+      "name": "02-partners",
+      "file": "02-partners.png",
+      "requestedSource": "S:\\workspace\\ارمديلو\\partnar.png",
+      "title": "Partners Section"
+    },
+    {
+      "order": 3,
+      "name": "03-contact",
+      "file": "03-contact.png",
+      "requestedSource": "S:\\workspace\\ارمديلو\\CONTACT US.png",
+      "title": "Contact Page"
+    }
+  ]
+}
