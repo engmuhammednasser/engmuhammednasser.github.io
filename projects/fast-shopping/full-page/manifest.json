@@ -1,0 +1,49 @@
+{
+  "importedAt": "2026-06-25T14:31:13.566Z",
+  "source": "S:\\workspace\\فاست شوبيج",
+  "live": "https://fastshopping24.com/",
+  "screenshots": [
+    {
+      "file": "01-كوفر.webp",
+      "original": "كوفر.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-الري-يسيه.webp",
+      "original": "الرئيسيه.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "03-اتصل-بنا.png",
+      "original": "اتصل بنا.png",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-المنتج.webp",
+      "original": "المنتج.webp",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    },
+    {
+      "file": "05-تيشك-اوت.webp",
+      "original": "تيشك اوت.webp",
+      "titleEn": "Checkout Page",
+      "titleAr": "إتمام الطلب"
+    },
+    {
+      "file": "06-متجر.png",
+      "original": "متجر.png",
+      "titleEn": "Shop Page",
+      "titleAr": "صفحة المتجر"
+    },
+    {
+      "file": "07-معلومات.png",
+      "original": "معلومات.png",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

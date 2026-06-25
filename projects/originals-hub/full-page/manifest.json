@@ -1,0 +1,37 @@
+{
+  "importedAt": "2026-06-25T14:31:13.433Z",
+  "source": "S:\\workspace\\orginal hub",
+  "live": "https://originalhub.net/",
+  "screenshots": [
+    {
+      "file": "01-cover.webp",
+      "original": "cover.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "03-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-sho.webp",
+      "original": "sho.webp",
+      "titleEn": "sho",
+      "titleAr": "sho"
+    },
+    {
+      "file": "05-well.webp",
+      "original": "well.webp",
+      "titleEn": "well",
+      "titleAr": "well"
+    }
+  ]
+}

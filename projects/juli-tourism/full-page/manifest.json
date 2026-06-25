@@ -1,0 +1,55 @@
+{
+  "importedAt": "2026-06-25T14:31:13.526Z",
+  "source": "S:\\workspace\\جوليا",
+  "live": "https://julitourism.com/",
+  "screenshots": [
+    {
+      "file": "01-الري-يسيه.webp",
+      "original": "الرئيسيه.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-ترفال.webp",
+      "original": "ترفال.webp",
+      "titleEn": "ترفال",
+      "titleAr": "ترفال"
+    },
+    {
+      "file": "03-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "04-blog.webp",
+      "original": "blog.webp",
+      "titleEn": "Blog Page",
+      "titleAr": "المدونة"
+    },
+    {
+      "file": "05-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "06-packge.webp",
+      "original": "packge.webp",
+      "titleEn": "packge",
+      "titleAr": "packge"
+    },
+    {
+      "file": "07-servcies.webp",
+      "original": "servcies.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "08-travel-badget.webp",
+      "original": "travel badget.webp",
+      "titleEn": "travel badget",
+      "titleAr": "travel badget"
+    }
+  ]
+}

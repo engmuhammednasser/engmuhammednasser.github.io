@@ -1,0 +1,37 @@
+{
+  "importedAt": "2026-06-25T14:31:13.632Z",
+  "source": "S:\\workspace\\الرواد",
+  "live": "https://alrowadpacks.com/",
+  "screenshots": [
+    {
+      "file": "01-الري-يسية.png",
+      "original": "الرئيسية.png",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-الاقسام.png",
+      "original": "الاقسام.png",
+      "titleEn": "الاقسام",
+      "titleAr": "الاقسام"
+    },
+    {
+      "file": "03-تواصل-معنا.png",
+      "original": "تواصل معنا.png",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "04-ماكينة.png",
+      "original": "ماكينة.png",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    },
+    {
+      "file": "05-معلومات-عنا.png",
+      "original": "معلومات عنا.png",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "importedAt": "2026-06-25T14:31:13.544Z",
+  "source": "S:\\workspace\\lec",
+  "live": "http://lec-eg.com/",
+  "screenshots": [
+    {
+      "file": "01-home.png",
+      "original": "home.png",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about-company.webp",
+      "original": "about company.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "03-contact-us.png",
+      "original": "contact us.png",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-porfiloi.webp",
+      "original": "porfiloi.webp",
+      "titleEn": "Portfolio Page",
+      "titleAr": "معرض الأعمال"
+    },
+    {
+      "file": "05-sevcies.webp",
+      "original": "sevcies.webp",
+      "titleEn": "sevcies",
+      "titleAr": "sevcies"
+    }
+  ]
+}

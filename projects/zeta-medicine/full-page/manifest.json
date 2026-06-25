@@ -1,0 +1,55 @@
+{
+  "importedAt": "2026-06-25T14:31:13.618Z",
+  "source": "S:\\workspace\\zeta",
+  "live": "https://zetamedicine.com/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "03-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-fqa.webp",
+      "original": "fqa.webp",
+      "titleEn": "fqa",
+      "titleAr": "fqa"
+    },
+    {
+      "file": "05-pp.webp",
+      "original": "pp.webp",
+      "titleEn": "pp",
+      "titleAr": "pp"
+    },
+    {
+      "file": "06-prodcut.webp",
+      "original": "prodcut.webp",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    },
+    {
+      "file": "07-shop.webp",
+      "original": "shop.webp",
+      "titleEn": "Shop Page",
+      "titleAr": "صفحة المتجر"
+    },
+    {
+      "file": "08-store-affilate.webp",
+      "original": "store affilate.webp",
+      "titleEn": "store affilate",
+      "titleAr": "store affilate"
+    }
+  ]
+}

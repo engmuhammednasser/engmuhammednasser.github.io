@@ -1,0 +1,67 @@
+{
+  "importedAt": "2026-06-25T14:31:13.499Z",
+  "source": "S:\\workspace\\نور الاسلام",
+  "live": "https://lightislam.com/",
+  "screenshots": [
+    {
+      "file": "01-cover.webp",
+      "original": "cover.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-الري-يسيه.webp",
+      "original": "الرئيسيه.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "03-اتصل-بنا.png",
+      "original": "اتصل بنا.png",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-بوب-اب.png",
+      "original": "بوب اب.png",
+      "titleEn": "بوب اب",
+      "titleAr": "بوب اب"
+    },
+    {
+      "file": "05-خدماتنا.webp",
+      "original": "خدماتنا.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "06-ديكور.webp",
+      "original": "ديكور.webp",
+      "titleEn": "ديكور",
+      "titleAr": "ديكور"
+    },
+    {
+      "file": "07-صيانة-عامة.webp",
+      "original": "صيانة عامة.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "08-مدونة.webp",
+      "original": "مدونة.webp",
+      "titleEn": "Blog Page",
+      "titleAr": "المدونة"
+    },
+    {
+      "file": "09-معرض-الاعمال.webp",
+      "original": "معرض الاعمال.webp",
+      "titleEn": "معرض الاعمال",
+      "titleAr": "معرض الاعمال"
+    },
+    {
+      "file": "10-معلومات-عنا.webp",
+      "original": "معلومات عنا.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

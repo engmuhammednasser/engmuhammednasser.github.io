@@ -1,0 +1,49 @@
+{
+  "importedAt": "2026-06-25T14:31:13.467Z",
+  "source": "S:\\workspace\\mahmoud gomaa",
+  "live": "https://mahmoud-gomaa.com/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "03-blog.webp",
+      "original": "blog.webp",
+      "titleEn": "Blog Page",
+      "titleAr": "المدونة"
+    },
+    {
+      "file": "04-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "05-more-projects.webp",
+      "original": "more projects.webp",
+      "titleEn": "more projects",
+      "titleAr": "more projects"
+    },
+    {
+      "file": "06-project.webp",
+      "original": "project.webp",
+      "titleEn": "project",
+      "titleAr": "project"
+    },
+    {
+      "file": "07-single-prodcut.webp",
+      "original": "single prodcut.webp",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    }
+  ]
+}

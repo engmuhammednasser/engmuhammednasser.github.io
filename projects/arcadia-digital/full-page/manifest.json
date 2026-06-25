@@ -1,0 +1,43 @@
+{
+  "importedAt": "2026-06-25T14:31:13.447Z",
+  "source": "S:\\workspace\\arcdia",
+  "live": "https://arcadiadigital.co/",
+  "screenshots": [
+    {
+      "file": "01-cover.webp",
+      "original": "cover.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "03-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "04-blog.webp",
+      "original": "blog.webp",
+      "titleEn": "Blog Page",
+      "titleAr": "المدونة"
+    },
+    {
+      "file": "05-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "06-servcies.webp",
+      "original": "servcies.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    }
+  ]
+}

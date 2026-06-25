@@ -1,0 +1,19 @@
+{
+  "importedAt": "2026-06-25T14:31:13.607Z",
+  "source": "S:\\workspace\\asia",
+  "live": "https://asia-eg.com/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "importedAt": "2026-06-25T14:31:13.456Z",
+  "source": "S:\\workspace\\ديوانية",
+  "live": "http://diwaniyah.org/",
+  "screenshots": [
+    {
+      "file": "01-cover.webp",
+      "original": "cover.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-المعرض.webp",
+      "original": "المعرض.webp",
+      "titleEn": "Portfolio Page",
+      "titleAr": "معرض الأعمال"
+    },
+    {
+      "file": "03-تسيجل-في-الديوانية.webp",
+      "original": "تسيجل في الديوانية.webp",
+      "titleEn": "تسيجل في الديوانية",
+      "titleAr": "تسيجل في الديوانية"
+    },
+    {
+      "file": "04-screen.webp",
+      "original": "screen.webp",
+      "titleEn": "screen",
+      "titleAr": "screen"
+    }
+  ]
+}

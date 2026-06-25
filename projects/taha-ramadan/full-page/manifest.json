@@ -1,0 +1,61 @@
+{
+  "importedAt": "2026-06-25T14:31:13.601Z",
+  "source": "S:\\workspace\\taha",
+  "live": "https://drtaharamadan.com/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-اتصل-بنا.png",
+      "original": "اتصل بنا.png",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "03-تابعنا.png",
+      "original": "تابعنا.png",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "04-تحاليل.webp",
+      "original": "تحاليل.webp",
+      "titleEn": "تحاليل",
+      "titleAr": "تحاليل"
+    },
+    {
+      "file": "05-فرص.png",
+      "original": "فرص.png",
+      "titleEn": "فرص",
+      "titleAr": "فرص"
+    },
+    {
+      "file": "06-نظرة.png",
+      "original": "نظرة.png",
+      "titleEn": "نظرة",
+      "titleAr": "نظرة"
+    },
+    {
+      "file": "07-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "08-hgo-lhj.png",
+      "original": "hgo]lhj.png",
+      "titleEn": "hgo]lhj",
+      "titleAr": "hgo]lhj"
+    },
+    {
+      "file": "09-o-lhj.webp",
+      "original": "o]lhj.webp",
+      "titleEn": "o]lhj",
+      "titleAr": "o]lhj"
+    }
+  ]
+}

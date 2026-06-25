@@ -1,0 +1,31 @@
+{
+  "importedAt": "2026-06-25T14:31:13.534Z",
+  "source": "S:\\workspace\\بسالم",
+  "live": "https://basalimauto.com/",
+  "screenshots": [
+    {
+      "file": "01-الري-يسيه.webp",
+      "original": "الرئيسيه.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-الصيانة.webp",
+      "original": "الصيانة.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "03-صفحة-العربية.webp",
+      "original": "صفحة العربية.webp",
+      "titleEn": "صفحة العربية",
+      "titleAr": "صفحة العربية"
+    },
+    {
+      "file": "04-عن.webp",
+      "original": "عن.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

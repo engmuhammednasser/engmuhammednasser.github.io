@@ -1,0 +1,55 @@
+{
+  "importedAt": "2026-06-25T14:31:13.512Z",
+  "source": "S:\\workspace\\مشاري",
+  "live": "https://meemsa.net/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "03-cart.png",
+      "original": "cart.png",
+      "titleEn": "Cart Page",
+      "titleAr": "سلة التسوق"
+    },
+    {
+      "file": "04-checkout.png",
+      "original": "checkout.png",
+      "titleEn": "Checkout Page",
+      "titleAr": "إتمام الطلب"
+    },
+    {
+      "file": "05-contact-us.png",
+      "original": "contact us.png",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "06-shop.png",
+      "original": "shop.png",
+      "titleEn": "Shop Page",
+      "titleAr": "صفحة المتجر"
+    },
+    {
+      "file": "07-side-cart.png",
+      "original": "side cart.png",
+      "titleEn": "Cart Page",
+      "titleAr": "سلة التسوق"
+    },
+    {
+      "file": "08-single-prodcut.png",
+      "original": "single prodcut.png",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    }
+  ]
+}

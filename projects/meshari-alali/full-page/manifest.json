@@ -1,0 +1,37 @@
+{
+  "importedAt": "2026-06-25T14:31:13.484Z",
+  "source": "S:\\workspace\\مشاري العلي",
+  "live": "https://mesharialali.com/",
+  "screenshots": [
+    {
+      "file": "01-cover.webp",
+      "original": "cover.webp",
+      "titleEn": "Cover",
+      "titleAr": "صورة الكوفر"
+    },
+    {
+      "file": "02-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "03-المدونة.webp",
+      "original": "المدونة.webp",
+      "titleEn": "Blog Page",
+      "titleAr": "المدونة"
+    },
+    {
+      "file": "04-صورة-المشروع.jpg",
+      "original": "صورة المشروع.jpg",
+      "titleEn": "صورة المشروع",
+      "titleAr": "صورة المشروع"
+    },
+    {
+      "file": "05-من-نحن.webp",
+      "original": "من-نحن.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}

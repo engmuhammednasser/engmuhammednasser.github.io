@@ -1,0 +1,43 @@
+{
+  "importedAt": "2026-06-25T14:31:13.553Z",
+  "source": "S:\\workspace\\top pack",
+  "live": "https://toppack-sys.com/",
+  "screenshots": [
+    {
+      "file": "01-home.webp",
+      "original": "home.webp",
+      "titleEn": "Home Page",
+      "titleAr": "الصفحة الرئيسية"
+    },
+    {
+      "file": "02-about.webp",
+      "original": "about.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    },
+    {
+      "file": "03-contact-us.webp",
+      "original": "contact us.webp",
+      "titleEn": "Contact Page",
+      "titleAr": "صفحة التواصل"
+    },
+    {
+      "file": "04-prodcut.webp",
+      "original": "prodcut.webp",
+      "titleEn": "Product Page",
+      "titleAr": "صفحة المنتج"
+    },
+    {
+      "file": "05-servies.webp",
+      "original": "servies.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "06-viedos.webp",
+      "original": "viedos.webp",
+      "titleEn": "viedos",
+      "titleAr": "viedos"
+    }
+  ]
+}

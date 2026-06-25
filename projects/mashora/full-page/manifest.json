@@ -1,0 +1,25 @@
+{
+  "importedAt": "2026-06-25T14:31:13.475Z",
+  "source": "S:\\workspace\\مشورة",
+  "live": "http://mashourah-lawyer.com/",
+  "screenshots": [
+    {
+      "file": "01-مشورة.webp",
+      "original": "مشورة.webp",
+      "titleEn": "مشورة",
+      "titleAr": "مشورة"
+    },
+    {
+      "file": "02-خدماتنا.webp",
+      "original": "خدماتنا.webp",
+      "titleEn": "Services Page",
+      "titleAr": "الخدمات"
+    },
+    {
+      "file": "03-من-نحن.webp",
+      "original": "من نحن.webp",
+      "titleEn": "About Page",
+      "titleAr": "من نحن"
+    }
+  ]
+}
