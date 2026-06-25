@@ -3,13 +3,14 @@
   background-color: #05070d !important;
 }
 
-.portfolio-polished > header,
 .portfolio-polished > main,
 .portfolio-polished > footer {
   position: relative;
 }
 
 .portfolio-polished > header {
+  position: sticky;
+  top: 0;
   z-index: 50;
   background: rgba(7, 13, 26, 0.76) !important;
   border-color: rgba(148, 163, 184, 0.1) !important;
