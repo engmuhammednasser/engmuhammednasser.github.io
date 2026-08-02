@@ -36,6 +36,7 @@ run("render-work-archive.mjs");
 run("apply-seo-accessibility.mjs");
 run("inventory-seo-accessibility.mjs");
 run("generate-seo-assets.mjs");
+run("apply-mobile-navigation.mjs");
 const after = snapshot();
 const changed = [];
 const allFiles = new Set([...before.keys(), ...after.keys()]);

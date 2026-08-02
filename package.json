@@ -15,6 +15,8 @@
     "seo:apply": "node scripts/apply-seo-accessibility.mjs && node scripts/inventory-seo-accessibility.mjs && node scripts/generate-seo-assets.mjs",
     "seo:assets": "node scripts/generate-seo-assets.mjs",
     "test:seo:browser": "node scripts/test-seo-browser.mjs",
+    "test:mobile:navigation": "node scripts/test-mobile-navigation.mjs",
+    "mobile:apply": "node scripts/apply-mobile-navigation.mjs",
     "test:browser": "node scripts/test-seo-browser.mjs",
     "test:idempotency": "node scripts/check-idempotency.mjs",
     "check:security": "node scripts/check-security-hygiene.mjs",
@@ -25,7 +27,7 @@
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs",
+    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs",
     "verify": "npm run check && npm run test:idempotency && git diff --check"
   },
   "engines": {

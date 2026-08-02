@@ -10,6 +10,7 @@ const productionRuntimeAssets = [
   "scripts/armadillo-studio-screenshots.js",
   "scripts/case-study-screenshots.js",
   "scripts/kuwait-arc-screenshots.js",
+  "scripts/mobile-navigation.js",
   "scripts/portfolio-effects.css",
   "scripts/portfolio-effects.js",
   "scripts/torathyat-screenshots.js",
