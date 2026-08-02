@@ -8,14 +8,16 @@
     "capture:kuwait-arc": "node scripts/capture-kuwait-arc-pages.mjs",
     "effects:portfolio": "node scripts/add-portfolio-effects.mjs",
     "fix:paths": "node scripts/fix-export-paths.mjs",
-    "filter:work": "node scripts/add-work-filters.mjs",
+    "filter:work": "node scripts/render-work-archive.mjs",
+    "work:data": "node scripts/validate-project-data.mjs",
+    "test:work": "node scripts/test-work-archive.mjs",
     "upgrade:arabic-window": "node scripts/upgrade-arabic-window-case-study.mjs",
     "images:normalize": "node scripts/normalize-image-delivery.mjs",
     "images:thumbnails": "node scripts/generate-project-thumbnails.mjs",
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs"
+    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs"
   },
   "engines": {
     "node": ">=20"
