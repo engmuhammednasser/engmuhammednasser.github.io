@@ -4,7 +4,7 @@
 **Repository:** `engmuhammednasser/engmuhammednasser.github.io`  
 **Live Site:** `https://engmuhammednasser.github.io/`  
 **Purpose:** Single source of truth for the portfolio refactor, performance, architecture, SEO, accessibility, QA, and delivery work.  
-**Status:** High-level audit completed. Implementation has not started yet.  
+**Status:** Sprint 0 and Sprint 1 completed; Sprint 2 is TODO.
 **Last Updated:** 2026-08-02
 
 ---
@@ -859,7 +859,7 @@ ASSET-102 Safely reduce repository media weight
 ### Status
 
 ```text
-TODO
+DONE — see docs/audit/sprint-1-report.md
 ```
 
 ---
@@ -1220,8 +1220,8 @@ The following remains pending:
 - confirmed source-of-truth architecture
 - Lighthouse/PageSpeed baseline
 - real code refactor
-- optimized thumbnail generation
-- asset cleanup
+- full-archive thumbnail rollout
+- asset cleanup or deletion
 - project data centralization
 - Load More/pagination implementation
 - WebGL/effects refactor
@@ -1230,60 +1230,25 @@ The following remains pending:
 - sitemap/robots implementation
 - accessibility remediation
 - CI/CD hardening
-- before/after metrics
+- browser before/after metrics
 - Pull Request
 - production merge
 
-The list above records the state when this handoff was authored. As of 2026-08-02, the detailed local/source audit and static baseline are complete and documented; implementation, cleanup, before/after browser metrics, PR, and production merge remain pending.
+The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Browser CWV metrics remain unavailable and no production merge has occurred.
 
 ---
 
 # 23. Exact Immediate Next Action
 
-The next coding agent should start with Sprint 0 only.
+Do not begin Sprint 2 yet. Review `docs/audit/sprint-1-report.md`, verify the five-project pilot, and widen thumbnail migration only through the existing pipeline after acceptance.
 
-First:
-
-```bash
-git clone https://github.com/engmuhammednasser/engmuhammednasser.github.io.git
-cd engmuhammednasser.github.io
-git checkout -b refactor/performance-clean-architecture
-```
-
-Then inspect:
-
-```text
-repository tree
-.gitignore
-package.json
-GitHub Actions / deployment workflow
-scripts/
-source directories
-generated directories
-public/project assets
-largest files
-project routes
-current validation scripts
-```
-
-Run existing checks where applicable:
+The current working branch is already the safe refactor branch:
 
 ```bash
-npm run check
+git checkout refactor/performance-clean-architecture
 ```
 
-Then create:
-
-```text
-docs/audit/baseline.md
-docs/audit/asset-inventory.md
-docs/architecture/current-state.md
-docs/architecture/target-state.md
-```
-
-Do not begin destructive cleanup until asset references are mapped.
-
-Do not begin broad architecture changes until the actual source-of-truth is confirmed.
+Run `npm run check` and `npm run audit:assets` before any wider pilot rollout. Do not begin destructive cleanup until the reference map and case-study regression checks are reviewed.
 
 ---
 
@@ -1329,7 +1294,7 @@ When handing this project to a coding agent, use:
 | Sprint | Status | Notes |
 |---|---|---|
 | Sprint 0 — Audit & Baseline | `COMPLETE` | Local source/output audit, static baseline, asset inventory, architecture documents, and existing-check result recorded in `docs/audit/` and `docs/architecture/`. `npm run check` still reports four stale Afaaq preload references; no implementation fix was made in Sprint 0. |
-| Sprint 1 — Images & Assets | `TODO` | No implementation yet |
+| Sprint 1 — Images & Assets | `COMPLETE` | Root-cause Afaaq preload fix, image loading/preload normalization, reference audit, deterministic AVIF/WebP pipeline, five-project EN/AR pilot, image validation, route checks, and report completed in `docs/audit/sprint-1-report.md`. |
 | Sprint 2 — Runtime Performance | `TODO` | No implementation yet |
 | Sprint 3 — Work Architecture | `TODO` | No implementation yet |
 | Sprint 4 — SEO & Accessibility | `TODO` | No implementation yet |
@@ -1337,7 +1302,9 @@ When handing this project to a coding agent, use:
 
 Update this table when a Sprint is completed.
 
-Sprint 0 completion record (2026-08-02): the safe branch `refactor/performance-clean-architecture` was created from `main`. The checkout was confirmed to be a committed Next.js static export with no recoverable application source/build configuration, 43 Work cards, 187 HTML pages, 640,384 KiB reported repository storage, and 723,567,760 bytes of expanded files. Browser-based CWV metrics were unavailable because no supported browser or performance harness was installed; static route/resource proxies are documented without fabricated LCP, CLS, INP, FCP, or TBT values. Sprint 1 remains intentionally unstarted.
+Sprint 0 completion record (2026-08-02): the safe branch `refactor/performance-clean-architecture` was created from `main`. The checkout was confirmed to be a committed Next.js static export with no recoverable application source/build configuration, 43 Work cards, 187 HTML pages, 640,384 KiB reported repository storage, and 723,567,760 bytes of expanded files. Browser-based CWV metrics were unavailable because no supported browser or performance harness was installed; static route/resource proxies are documented without fabricated LCP, CLS, INP, FCP, or TBT values.
+
+Sprint 1 completion record (2026-08-02): `npm run check` passes. The four Afaaq preload references were corrected in `scripts/create-afaaq-case-study.mjs` and regenerated in both locale pages. Profile and noncritical gallery preloads were removed through `scripts/normalize-image-delivery.mjs`; 86 Work-card images and 1,526 below-fold project/backend image declarations were standardized for lazy/async delivery. A reusable project reference audit, AVIF/WebP thumbnail pipeline, image validator, and five-project responsive pilot were added. Originals and public URLs remain intact; Sprint 2 is deferred pending review.
 
 ---
 
