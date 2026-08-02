@@ -4,7 +4,7 @@
 **Repository:** `engmuhammednasser/engmuhammednasser.github.io`  
 **Live Site:** `https://engmuhammednasser.github.io/`  
 **Purpose:** Single source of truth for the portfolio refactor, performance, architecture, SEO, accessibility, QA, and delivery work.  
-**Status:** Sprint 0 and Sprint 1 completed; Sprint 2 is TODO.
+**Status:** Sprint 0, Sprint 1, and Sprint 2 completed; Sprint 3 is TODO.
 **Last Updated:** 2026-08-02
 
 ---
@@ -385,6 +385,8 @@ Filtering can remain as UX, but should not require rendering the entire archive 
 
 ## 6.5 Heavy Runtime Visual Effects
 
+The following was the pre-Sprint 2 state and risk inventory.
+
 The portfolio-effects runtime includes expensive behavior such as:
 
 - WebGL
@@ -447,6 +449,10 @@ requestIdleCallback()
 
 with a safe fallback.
 
+### Sprint 2 Outcome
+
+Completed in `docs/audit/sprint-2-report.md`: WebGL is now optional and gated by a centralized desktop/fine-pointer/hover/motion/visibility/WebGL policy; mobile and reduced-motion paths use static fallback styling; noncritical initialization is idle-deferred; hidden/offscreen animation scheduling is cancelled; the splash cursor and document-wide observer were removed; broad runtime role scans were replaced by narrow selectors and deterministic CSS mapping; and permanent `will-change` declarations were removed.
+
 ---
 
 ## 6.6 Splash Cursor Runtime Cost
@@ -465,11 +471,13 @@ If retained:
 - disabled for reduced motion
 - stop when hidden/offscreen
 
+Sprint 2 applied the preferred outcome and removed the splash cursor from the runtime and stylesheet.
+
 ---
 
 ## 6.7 Runtime DOM Scanning
 
-The effects layer uses patterns similar to:
+Before Sprint 2, the effects layer used patterns similar to:
 
 ```js
 main.querySelectorAll("[class]")
@@ -506,7 +514,7 @@ component render
 
 ## 6.8 Broad MutationObserver
 
-The runtime includes broad subtree observation similar to:
+Before Sprint 2, the runtime included broad subtree observation similar to:
 
 ```js
 observer.observe(document.documentElement, {
@@ -892,7 +900,7 @@ PERF-209 Audit unnecessary hydration
 ### Status
 
 ```text
-TODO
+DONE — see docs/audit/sprint-2-report.md
 ```
 
 ---
@@ -1214,18 +1222,13 @@ The following has already been completed at analysis level:
 
 The following remains pending:
 
-- successful local clone in the working environment
-- implementation branch creation
-- detailed source/file-by-file audit
+- recover or re-establish the original source/build boundary
 - confirmed source-of-truth architecture
 - Lighthouse/PageSpeed baseline
-- real code refactor
 - full-archive thumbnail rollout
 - asset cleanup or deletion
 - project data centralization
 - Load More/pagination implementation
-- WebGL/effects refactor
-- DOM observer cleanup
 - SEO implementation
 - sitemap/robots implementation
 - accessibility remediation
@@ -1234,13 +1237,13 @@ The following remains pending:
 - Pull Request
 - production merge
 
-The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Browser CWV metrics remain unavailable and no production merge has occurred.
+The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Sprint 2 delivered the runtime inventory, centralized effect policy, optional desktop WebGL, static mobile/reduced-motion fallback, idle initialization, lifecycle-safe loops, splash removal, DOM observer cleanup, CSS compositing reductions, and runtime invariants. Browser CWV metrics remain unavailable and no production merge has occurred.
 
 ---
 
 # 23. Exact Immediate Next Action
 
-Do not begin Sprint 2 yet. Review `docs/audit/sprint-1-report.md`, verify the five-project pilot, and widen thumbnail migration only through the existing pipeline after acceptance.
+Do not begin Sprint 3 yet. Review `docs/audit/sprint-2-report.md`, recover or document the source/export boundary, and add a browser-capable regression harness before changing Work architecture. Keep Sprint 3 focused on project-data ownership, initial rendering scope, filtering, and pagination.
 
 The current working branch is already the safe refactor branch:
 
@@ -1260,7 +1263,7 @@ When handing this project to a coding agent, use:
 >
 > Treat it as the current source of truth for this engineering refactor.
 >
-> Start with Sprint 0 only.
+> Start with the current incomplete Sprint in the status board; do not repeat completed Sprint 0, Sprint 1, or Sprint 2 work.
 >
 > Do not modify `main`.
 >
@@ -1272,7 +1275,7 @@ When handing this project to a coding agent, use:
 >
 > Preserve all existing public case-study URLs unless a change is explicitly justified.
 >
-> Your first deliverable is an audit, not a broad rewrite.
+> Your first deliverable for a new Sprint is an evidence-backed audit, not a broad rewrite.
 >
 > After Sprint 0, report:
 >
@@ -1285,7 +1288,7 @@ When handing this project to a coding agent, use:
 > - exact Sprint 1 files/tasks
 > - any blockers
 >
-> Do not start Sprint 1 until Sprint 0 findings have been documented.
+> Do not start the next Sprint until the current Sprint report and regression checks have been documented.
 
 ---
 
@@ -1295,7 +1298,7 @@ When handing this project to a coding agent, use:
 |---|---|---|
 | Sprint 0 — Audit & Baseline | `COMPLETE` | Local source/output audit, static baseline, asset inventory, architecture documents, and existing-check result recorded in `docs/audit/` and `docs/architecture/`. `npm run check` still reports four stale Afaaq preload references; no implementation fix was made in Sprint 0. |
 | Sprint 1 — Images & Assets | `COMPLETE` | Root-cause Afaaq preload fix, image loading/preload normalization, reference audit, deterministic AVIF/WebP pipeline, five-project EN/AR pilot, image validation, route checks, and report completed in `docs/audit/sprint-1-report.md`. |
-| Sprint 2 — Runtime Performance | `TODO` | No implementation yet |
+| Sprint 2 — Runtime Performance | `COMPLETE` | Runtime inventory, centralized capability policy, optional desktop WebGL, lifecycle-safe animation, splash removal, DOM/observer cleanup, CSS compositing reductions, runtime invariants, route checks, and report completed in `docs/audit/sprint-2-report.md`. |
 | Sprint 3 — Work Architecture | `TODO` | No implementation yet |
 | Sprint 4 — SEO & Accessibility | `TODO` | No implementation yet |
 | Sprint 5 — Architecture / CI / QA | `TODO` | No implementation yet |
@@ -1304,7 +1307,9 @@ Update this table when a Sprint is completed.
 
 Sprint 0 completion record (2026-08-02): the safe branch `refactor/performance-clean-architecture` was created from `main`. The checkout was confirmed to be a committed Next.js static export with no recoverable application source/build configuration, 43 Work cards, 187 HTML pages, 640,384 KiB reported repository storage, and 723,567,760 bytes of expanded files. Browser-based CWV metrics were unavailable because no supported browser or performance harness was installed; static route/resource proxies are documented without fabricated LCP, CLS, INP, FCP, or TBT values.
 
-Sprint 1 completion record (2026-08-02): `npm run check` passes. The four Afaaq preload references were corrected in `scripts/create-afaaq-case-study.mjs` and regenerated in both locale pages. Profile and noncritical gallery preloads were removed through `scripts/normalize-image-delivery.mjs`; 86 Work-card images and 1,526 below-fold project/backend image declarations were standardized for lazy/async delivery. A reusable project reference audit, AVIF/WebP thumbnail pipeline, image validator, and five-project responsive pilot were added. Originals and public URLs remain intact; Sprint 2 is deferred pending review.
+Sprint 1 completion record (2026-08-02): `npm run check` passes. The four Afaaq preload references were corrected in `scripts/create-afaaq-case-study.mjs` and regenerated in both locale pages. Profile and noncritical gallery preloads were removed through `scripts/normalize-image-delivery.mjs`; 86 Work-card images and 1,526 below-fold project/backend image declarations were standardized for lazy/async delivery. A reusable project reference audit, AVIF/WebP thumbnail pipeline, image validator, and five-project responsive pilot were added. Originals and public URLs remain intact; Sprint 2 was then reviewed and completed separately.
+
+Sprint 2 completion record (2026-08-02): the pre-change runtime inventory is recorded in `docs/audit/runtime-inventory.md`. `scripts/portfolio-effects.js` now centralizes capability policy, defers decoration to idle time, gates WebGL to desktop/fine-pointer/hover/motion-enabled/visible paths, uses a static fallback for mobile/tablet/reduced-motion/unsupported paths, pauses and cancels hidden/offscreen loops, and cleans up scoped observers/listeners. The splash cursor and document-wide `MutationObserver` were removed; broad DOM scans and permanent `will-change` were removed; `scripts/check-runtime-invariants.mjs` is part of `npm run check`; required static route checks passed; and no browser CWV metrics or production merge were claimed.
 
 ---
 
