@@ -80,6 +80,8 @@ The table describes engineering controls added in this branch; it does not claim
 
 The ignore rules cover local caches, builds, coverage, logs, browser profiles, traces, HAR files, and test results. Committed static HTML, route/project data, sitemap, robots, optimized manifests, and historical screenshots remain release inputs. No tracked local OS paths or credential-shaped secrets were found in production text output; loopback references are limited to development browser/server tooling, and framework vendor output is excluded from the targeted production hygiene gate.
 
+The exact `main...refactor/performance-clean-architecture` comparison, including added/modified/deleted paths and expected binary additions, is recorded in [branch-diff.md](branch-diff.md).
+
 ## Known risks and deferred work
 
 - Large historical media remains in the export; no destructive deletion was performed.
