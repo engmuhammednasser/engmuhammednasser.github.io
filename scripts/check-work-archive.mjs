@@ -9,6 +9,50 @@ function fail(message) {
   failures.push(message);
 }
 
+function findImage(value) {
+  if (Array.isArray(value)) {
+    for (const child of value) {
+      const image = findImage(child);
+      if (image) return image;
+    }
+  } else if (value && typeof value === "object") {
+    if (typeof value.src === "string" && value.src.startsWith("/projects/")) return value;
+    for (const child of Object.values(value)) {
+      const image = findImage(child);
+      if (image) return image;
+    }
+  }
+  return null;
+}
+
+function checkImagePolicy(content, relativePath, expectedSlugs) {
+  const cards = [...content.matchAll(/<article\b[^>]*data-project-id="([^"]+)"[^>]*>([\s\S]*?)<\/article>/gi)];
+  const images = cards.map(([, slug, body]) => ({ slug, tag: body.match(/<img\b[^>]*>/i)?.[0] ?? "" }));
+  const primary = images[0];
+  if (!primary || primary.slug !== expectedSlugs[0]) {
+    fail(`${relativePath}: primary Work card does not match the canonical first project`);
+    return;
+  }
+  if (!/\bloading="eager"/.test(primary.tag) || !/\bfetchpriority="high"/.test(primary.tag)) {
+    fail(`${relativePath}: primary Work image must be eager with fetchpriority=high`);
+  }
+  if (!primary.tag.includes(`/projects/${expectedSlugs[0]}/optimized/`)) {
+    fail(`${relativePath}: primary Work image must use an optimized source`);
+  }
+  images.slice(1).forEach(({ slug, tag }) => {
+    if (!/\bloading="lazy"/.test(tag) || /\bfetchpriority="high"/.test(tag)) {
+      fail(`${relativePath}: non-primary Work image ${slug} must remain lazy without high priority`);
+    }
+  });
+  images.forEach(({ slug, tag }) => {
+    const project = document.projects.find((entry) => entry.slug === slug);
+    const hasOptimizedVariants = Boolean(project?.thumbnail?.avif480 || project?.thumbnail?.avif800 || project?.thumbnail?.webp480 || project?.thumbnail?.webp800);
+    if (hasOptimizedVariants && !tag.includes(`/projects/${slug}/optimized/`)) {
+      fail(`${relativePath}: Work image ${slug} has optimized variants but uses the original card source`);
+    }
+  });
+}
+
 function checkPayload(file, locale, expectedSlugs) {
   const content = readFileSync(resolve(root, file), "utf8");
   const line = content.split(/\r?\n/).find((entry) => entry.startsWith("5:"));
@@ -37,6 +81,18 @@ function checkPayload(file, locale, expectedSlugs) {
   if (slugs.length !== expectedSlugs.length || slugs.some((slug, index) => slug !== expectedSlugs[index])) {
     fail(`${file}: payload grid does not match the ${expectedSlugs.length}-card canonical initial slice`);
   }
+  const images = grid?.[3]?.children?.map((card) => findImage(card)).filter(Boolean) ?? [];
+  if (images.length !== expectedSlugs.length) {
+    fail(`${file}: payload grid does not contain one image per active card`);
+  } else {
+    const primary = images[0];
+    if (primary.loading !== "eager" || primary.fetchPriority !== "high" || !primary.src.includes(`/projects/${expectedSlugs[0]}/optimized/`)) {
+      fail(`${file}: payload primary Work image has an invalid priority/source policy`);
+    }
+    images.slice(1).forEach((image, index) => {
+      if (image.loading !== "lazy" || image.fetchPriority) fail(`${file}: payload non-primary Work image ${index + 2} is not lazy without priority`);
+    });
+  }
   if (locale === "ar" && !content.includes("data-work-locale")) fail(`${file}: Arabic payload is missing locale metadata`);
 }
 
@@ -57,8 +113,8 @@ for (const [file, locale] of [["work/index.html", "en"], ["ar/work/index.html", 
   if ((html.match(/data-work-load-more/g) ?? []).length !== 2) fail(`${file}: Load More control is missing or duplicated`);
   if (!html.includes('aria-controls="work-project-grid"')) fail(`${file}: Load More control is missing aria-controls`);
   if ((html.match(/<script[^>]+data-work-archive/g) ?? []).length !== 1) fail(`${file}: Work controller script is missing or duplicated`);
-  if ((html.match(/loading="lazy"/g) ?? []).length !== 12) fail(`${file}: active card images are not all lazy-loaded`);
   if ((html.match(/decoding="async"/g) ?? []).length !== 12) fail(`${file}: active card images are not all async-decoded`);
+  checkImagePolicy(html, file, expectedSlugs);
   checkPayload(file.replace("index.html", "index.txt"), locale, expectedSlugs);
 }
 

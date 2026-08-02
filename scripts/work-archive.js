@@ -51,7 +51,7 @@
     }
   }
 
-  function renderImage(project) {
+  function renderImage(project, isPrimaryLcp) {
     var thumbnail = project.thumbnail;
     var sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
     var sources = [];
@@ -73,12 +73,14 @@
       thumbnail.webp480 && thumbnail.webp480 + " 480w",
       thumbnail.webp800 && thumbnail.webp800 + " 800w"
     ].filter(Boolean).join(", ");
-    var image = "<img src=\"" + escapeHtml(fallback) + "\"" + (webpSrcset ? " srcset=\"" + escapeHtml(webpSrcset) + "\"" : "") + " sizes=\"" + sizes + "\" width=\"" + thumbnail.width + "\" height=\"" + thumbnail.height + "\" alt=\"" + escapeHtml(project.title[locale]) + "\" loading=\"lazy\" decoding=\"async\" class=\"h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100\">";
+    var loading = isPrimaryLcp ? "eager" : "lazy";
+    var priority = isPrimaryLcp ? " fetchpriority=\"high\"" : "";
+    var image = "<img src=\"" + escapeHtml(fallback) + "\"" + (webpSrcset ? " srcset=\"" + escapeHtml(webpSrcset) + "\"" : "") + " sizes=\"" + sizes + "\" width=\"" + thumbnail.width + "\" height=\"" + thumbnail.height + "\" alt=\"" + escapeHtml(project.title[locale]) + "\" loading=\"" + loading + "\" decoding=\"async\"" + priority + " class=\"h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100\">";
     var media = hasVariants ? "<picture data-pilot-thumbnail=\"" + escapeHtml(project.slug) + "\">" + sources.join("") + image + "</picture>" : image;
     return "<div class=\"relative aspect-[4/3] w-full overflow-hidden bg-[#0B1020]\" data-thumbnail-aspect=\"" + escapeHtml(thumbnail.aspectRatio) + "\">" + media + "<div class=\"absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent opacity-80\"></div></div>";
   }
 
-  function renderCard(project) {
+  function renderCard(project, isPrimaryLcp) {
     var caseStudy = safeInternalUrl(project.caseStudy[locale]);
     var liveUrl = safeExternalUrl(project.liveUrl);
     var technologies = project.technologies.map(function (technology) {
@@ -87,7 +89,7 @@
     var liveLink = liveUrl
       ? "<a href=\"" + escapeHtml(liveUrl) + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg border border-[#22C55E]/20 bg-[#22C55E]/10 text-[#22C55E] transition-all hover:border-[#22C55E]/40 hover:bg-[#22C55E]/20\"><span class=\"h-1.5 w-1.5 rounded-full bg-[#22C55E]\" aria-hidden=\"true\"></span>" + copy.live + "</a>"
       : "";
-    return "<article class=\"group flex flex-col bg-[#111827] rounded-2xl overflow-hidden border border-white/5 hover:border-[#38BDF8]/30 transition-all hover:shadow-[0_10px_30px_rgba(56,189,248,0.05)] hover:-translate-y-1\" data-work-card data-project-id=\"" + escapeHtml(project.id) + "\" data-work-category=\"" + escapeHtml(project.category) + "\" data-availability=\"" + escapeHtml(project.availability) + "\"><a class=\"block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#38BDF8]\" href=\"" + escapeHtml(caseStudy) + "\">" + renderImage(project) + "<div class=\"flex flex-1 flex-col p-8\"><div class=\"mb-3 text-xs font-bold uppercase tracking-widest text-[#38BDF8]\">" + escapeHtml(project.eyebrow[locale]) + "</div><h3 class=\"mb-3 text-2xl font-bold leading-snug transition-colors group-hover:text-[#38BDF8]\">" + escapeHtml(project.title[locale]) + "</h3><p class=\"line-clamp-2 text-sm leading-relaxed text-[#94A3B8]\">" + escapeHtml(project.description[locale]) + "</p></div></a><div class=\"px-8 pb-8\"><div class=\"flex flex-wrap gap-3\">" + liveLink + "<a href=\"" + escapeHtml(caseStudy) + "\" class=\"inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg border border-[#38BDF8]/20 bg-[#38BDF8]/10 text-[#38BDF8] transition-all hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/20\">" + copy.caseStudy + "</a></div><ul aria-label=\"" + copy.technologies + "\" class=\"mt-6 flex flex-wrap gap-2\">" + technologies + "</ul></div></article>";
+    return "<article class=\"group flex flex-col bg-[#111827] rounded-2xl overflow-hidden border border-white/5 hover:border-[#38BDF8]/30 transition-all hover:shadow-[0_10px_30px_rgba(56,189,248,0.05)] hover:-translate-y-1\" data-work-card data-project-id=\"" + escapeHtml(project.id) + "\" data-work-category=\"" + escapeHtml(project.category) + "\" data-availability=\"" + escapeHtml(project.availability) + "\"><a class=\"block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#38BDF8]\" href=\"" + escapeHtml(caseStudy) + "\">" + renderImage(project, isPrimaryLcp) + "<div class=\"flex flex-1 flex-col p-8\"><div class=\"mb-3 text-xs font-bold uppercase tracking-widest text-[#38BDF8]\">" + escapeHtml(project.eyebrow[locale]) + "</div><h3 class=\"mb-3 text-2xl font-bold leading-snug transition-colors group-hover:text-[#38BDF8]\">" + escapeHtml(project.title[locale]) + "</h3><p class=\"line-clamp-2 text-sm leading-relaxed text-[#94A3B8]\">" + escapeHtml(project.description[locale]) + "</p></div></a><div class=\"px-8 pb-8\"><div class=\"flex flex-wrap gap-3\">" + liveLink + "<a href=\"" + escapeHtml(caseStudy) + "\" class=\"inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg border border-[#38BDF8]/20 bg-[#38BDF8]/10 text-[#38BDF8] transition-all hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/20\">" + copy.caseStudy + "</a></div><ul aria-label=\"" + copy.technologies + "\" class=\"mt-6 flex flex-wrap gap-2\">" + technologies + "</ul></div></article>";
   }
 
   function setControlsEnabled(enabled) {
@@ -98,10 +100,10 @@
     }
   }
 
-  function update(projects, category, visibleCount) {
+  function update(projects, category, visibleCount, prioritizeFirst) {
     var matching = category === "all" ? projects : projects.filter(function (project) { return project.category === category; });
     var visible = matching.slice(0, visibleCount);
-    grid.innerHTML = visible.map(renderCard).join("");
+    grid.innerHTML = visible.map(function (project, index) { return renderCard(project, prioritizeFirst && index === 0); }).join("");
     if (status) status.textContent = copy.showing(visible.length, matching.length);
     if (empty) {
       empty.textContent = copy.empty;
@@ -130,16 +132,16 @@
           controller.querySelectorAll("[data-work-filter]").forEach(function (item) {
             item.setAttribute("aria-pressed", item === button ? "true" : "false");
           });
-          update(projects, category, visibleCount);
+          update(projects, category, visibleCount, false);
         });
       });
       if (loadMore) {
         loadMore.addEventListener("click", function () {
           visibleCount += initialBatch;
-          update(projects, category, visibleCount);
+          update(projects, category, visibleCount, false);
         });
       }
-      update(projects, category, visibleCount);
+      update(projects, category, visibleCount, true);
     })
     .catch(function (error) {
       setControlsEnabled(false);
