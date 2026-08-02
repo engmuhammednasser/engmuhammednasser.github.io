@@ -4,7 +4,7 @@
 **Repository:** `engmuhammednasser/engmuhammednasser.github.io`  
 **Live Site:** `https://engmuhammednasser.github.io/`  
 **Purpose:** Single source of truth for the portfolio refactor, performance, architecture, SEO, accessibility, QA, and delivery work.  
-**Status:** Sprint 0, Sprint 1, and Sprint 2 completed; Sprint 3 is TODO.
+**Status:** Sprint 0, Sprint 1, Sprint 2, and Sprint 3 completed; Sprint 4 and Sprint 5 are TODO.
 **Last Updated:** 2026-08-02
 
 ---
@@ -933,7 +933,7 @@ WORK-309 Validate project metadata
 ### Status
 
 ```text
-TODO
+DONE — see docs/audit/sprint-3-report.md and docs/architecture/project-data-model.md
 ```
 
 ---
@@ -1227,23 +1227,21 @@ The following remains pending:
 - Lighthouse/PageSpeed baseline
 - full-archive thumbnail rollout
 - asset cleanup or deletion
-- project data centralization
-- Load More/pagination implementation
 - SEO implementation
 - sitemap/robots implementation
 - accessibility remediation
 - CI/CD hardening
-- browser before/after metrics
+- browser CWV before/after metrics
 - Pull Request
 - production merge
 
-The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Sprint 2 delivered the runtime inventory, centralized effect policy, optional desktop WebGL, static mobile/reduced-motion fallback, idle initialization, lifecycle-safe loops, splash removal, DOM observer cleanup, CSS compositing reductions, and runtime invariants. Browser CWV metrics remain unavailable and no production merge has occurred.
+The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Sprint 2 delivered the runtime inventory, centralized effect policy, optional desktop WebGL, static mobile/reduced-motion fallback, idle initialization, lifecycle-safe loops, splash removal, DOM observer cleanup, CSS compositing reductions, and runtime invariants. Sprint 3 delivered canonical EN/AR Work data, deterministic cards, 12-card progressive rendering, accessible filters, no-JS route discovery, Work payload normalization, structural metrics, and interaction checks. Browser CWV metrics remain unavailable and no production merge has occurred.
 
 ---
 
 # 23. Exact Immediate Next Action
 
-Do not begin Sprint 3 yet. Review `docs/audit/sprint-2-report.md`, recover or document the source/export boundary, and add a browser-capable regression harness before changing Work architecture. Keep Sprint 3 focused on project-data ownership, initial rendering scope, filtering, and pagination.
+Do not begin Sprint 4 yet. Review `docs/audit/sprint-3-report.md` and `docs/architecture/project-data-model.md`, run the complete checks, and keep the branch separate from `main`. Sprint 3 is complete; category routes, broader SEO/accessibility remediation, and remaining architecture work belong to later Sprints.
 
 The current working branch is already the safe refactor branch:
 
@@ -1299,7 +1297,7 @@ When handing this project to a coding agent, use:
 | Sprint 0 — Audit & Baseline | `COMPLETE` | Local source/output audit, static baseline, asset inventory, architecture documents, and existing-check result recorded in `docs/audit/` and `docs/architecture/`. `npm run check` still reports four stale Afaaq preload references; no implementation fix was made in Sprint 0. |
 | Sprint 1 — Images & Assets | `COMPLETE` | Root-cause Afaaq preload fix, image loading/preload normalization, reference audit, deterministic AVIF/WebP pipeline, five-project EN/AR pilot, image validation, route checks, and report completed in `docs/audit/sprint-1-report.md`. |
 | Sprint 2 — Runtime Performance | `COMPLETE` | Runtime inventory, centralized capability policy, optional desktop WebGL, lifecycle-safe animation, splash removal, DOM/observer cleanup, CSS compositing reductions, runtime invariants, route checks, and report completed in `docs/audit/sprint-2-report.md`. |
-| Sprint 3 — Work Architecture | `TODO` | No implementation yet |
+| Sprint 3 — Work Architecture | `COMPLETE` | Canonical EN/AR project data, deterministic card renderer, 12-card progressive archive, accessible filters, no-JS links, payload normalization, validation, and report completed in `docs/audit/sprint-3-report.md`. |
 | Sprint 4 — SEO & Accessibility | `TODO` | No implementation yet |
 | Sprint 5 — Architecture / CI / QA | `TODO` | No implementation yet |
 
@@ -1310,6 +1308,8 @@ Sprint 0 completion record (2026-08-02): the safe branch `refactor/performance-c
 Sprint 1 completion record (2026-08-02): `npm run check` passes. The four Afaaq preload references were corrected in `scripts/create-afaaq-case-study.mjs` and regenerated in both locale pages. Profile and noncritical gallery preloads were removed through `scripts/normalize-image-delivery.mjs`; 86 Work-card images and 1,526 below-fold project/backend image declarations were standardized for lazy/async delivery. A reusable project reference audit, AVIF/WebP thumbnail pipeline, image validator, and five-project responsive pilot were added. Originals and public URLs remain intact; Sprint 2 was then reviewed and completed separately.
 
 Sprint 2 completion record (2026-08-02): the pre-change runtime inventory is recorded in `docs/audit/runtime-inventory.md`. `scripts/portfolio-effects.js` now centralizes capability policy, defers decoration to idle time, gates WebGL to desktop/fine-pointer/hover/motion-enabled/visible paths, uses a static fallback for mobile/tablet/reduced-motion/unsupported paths, pauses and cancels hidden/offscreen loops, and cleans up scoped observers/listeners. The splash cursor and document-wide `MutationObserver` were removed; broad DOM scans and permanent `will-change` were removed; `scripts/check-runtime-invariants.mjs` is part of `npm run check`; required static route checks passed; and no browser CWV metrics or production merge were claimed.
+
+Sprint 3 completion record (2026-08-02): `data/projects.json` now contains the 43-project canonical Work archive with shared EN/AR copy, structured categories, thumbnail metadata, case-study routes, live URLs, availability classification, featured flags, and status. Work HTML was reduced from 43 to 12 initial cards per locale, with 12-card progressive Load More, accessible native filters, localized empty/status messaging, and 43 no-JS case-study links per locale. Work Flight payload roots were normalized to the same initial slice. `npm run check`, the framework-free interaction harness, Chrome headless static execution, and `git diff --check` passed. Sprint 4 and Sprint 5 remain TODO; no production merge was made.
 
 ---
 
