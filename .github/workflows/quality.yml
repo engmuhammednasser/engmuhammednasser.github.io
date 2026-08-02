@@ -1,0 +1,41 @@
+name: Portfolio quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - refactor/performance-clean-architecture
+      - refactor/development
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install locked package manifest
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Ensure Chromium is available
+        shell: bash
+        run: |
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$browser" ]; then
+            sudo apt-get update
+            sudo apt-get install -y chromium
+            browser="$(command -v chromium)"
+          fi
+          echo "CHROME_PATH=$browser" >> "$GITHUB_ENV"
+
+      - name: Run supported verification pipeline
+        run: npm run verify

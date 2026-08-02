@@ -7,6 +7,7 @@ const port = Number.parseInt(process.env.PORT ?? "3000", 10);
 const host = process.env.HOST ?? "127.0.0.1";
 
 const mimeTypes = {
+  ".avif": "image/avif",
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
   ".ico": "image/x-icon",

@@ -1,2 +1,21 @@
 node_modules/
 *.log
+
+# Local build, test, and capture output. The committed repository root is the
+# production static export and must remain tracked.
+.cache/
+coverage/
+dist/
+build/
+out/
+*.tmp
+*.bak
+
+# Local browser/test artifacts. Production HTML, data, sitemap, robots, and
+# project media remain tracked and are generated/reviewed as release inputs.
+.playwright/
+.chrome-profile/
+.test-results/
+test-results/
+*.trace
+*.har

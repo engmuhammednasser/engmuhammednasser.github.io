@@ -4,15 +4,192 @@
   if (window.__portfolioInteractiveBackgroundLoaded) return;
   window.__portfolioInteractiveBackgroundLoaded = true;
 
-  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var desktopPointer = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
+  function createMediaQuery(query) {
+    if (typeof window.matchMedia === "function") return window.matchMedia(query);
+    return {
+      matches: false,
+      addEventListener: function () {},
+      removeEventListener: function () {},
+      addListener: function () {},
+      removeListener: function () {}
+    };
+  }
+
+  function listenToMediaQuery(query, listener) {
+    if (typeof query.addEventListener === "function") {
+      query.addEventListener("change", listener);
+      return function () {
+        query.removeEventListener("change", listener);
+      };
+    }
+    if (typeof query.addListener === "function") {
+      query.addListener(listener);
+      return function () {
+        query.removeListener(listener);
+      };
+    }
+    return function () {};
+  }
+
+  function createRuntimePolicy() {
+    var reducedMotionQuery = createMediaQuery("(prefers-reduced-motion: reduce)");
+    var desktopQuery = createMediaQuery("(min-width: 1024px)");
+    var finePointerQuery = createMediaQuery("(pointer: fine)");
+    var hoverQuery = createMediaQuery("(hover: hover)");
+    var mediaQueries = [reducedMotionQuery, desktopQuery, finePointerQuery, hoverQuery];
+
+    function hasWebGLApi() {
+      return Boolean(window.WebGLRenderingContext || window.WebGL2RenderingContext);
+    }
+
+    function read() {
+      var viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+      var isDesktop = desktopQuery.matches && viewportWidth >= 1024;
+      var hasFinePointer = finePointerQuery.matches;
+      var hasHover = hoverQuery.matches;
+      var motionAllowed = !reducedMotionQuery.matches;
+      var pageVisible = document.visibilityState !== "hidden";
+
+      return {
+        reducedMotion: !motionAllowed,
+        motionAllowed: motionAllowed,
+        desktop: isDesktop,
+        finePointer: hasFinePointer,
+        hover: hasHover,
+        pageVisible: pageVisible,
+        viewportWidth: viewportWidth,
+        webglAvailable: hasWebGLApi(),
+        pointerEffectsAllowed: isDesktop && hasFinePointer && hasHover && motionAllowed,
+        heroWebGLAllowed:
+          isDesktop && hasFinePointer && hasHover && motionAllowed && pageVisible && hasWebGLApi()
+      };
+    }
+
+    function subscribe(listener) {
+      var previous = read();
+      var cleanups = mediaQueries.map(function (query) {
+        return listenToMediaQuery(query, notify);
+      });
+
+      function notify() {
+        var next = read();
+        listener(next, previous);
+        previous = next;
+      }
+
+      document.addEventListener("visibilitychange", notify);
+      cleanups.push(function () {
+        document.removeEventListener("visibilitychange", notify);
+      });
+
+      return function () {
+        cleanups.forEach(function (cleanup) {
+          cleanup();
+        });
+      };
+    }
+
+    return {
+      read: read,
+      subscribe: subscribe,
+      canUsePointerEffects: function () {
+        return read().pointerEffectsAllowed;
+      },
+      canUseHeroWebGL: function () {
+        return read().heroWebGLAllowed;
+      },
+      canUseHeroPointer: function () {
+        var state = read();
+        return state.pointerEffectsAllowed && state.pageVisible;
+      }
+    };
+  }
+
+  function createAnimationLoop(policy, callback) {
+    var frame = 0;
+    var running = false;
+    var localVisible = true;
+    var disposed = false;
+    var unsubscribe = policy.subscribe(function (state) {
+      if (!state.pageVisible || !localVisible) {
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        return;
+      }
+      schedule();
+    });
+
+    function schedule() {
+      if (
+        frame ||
+        !running ||
+        disposed ||
+        !localVisible ||
+        !policy.read().pageVisible ||
+        typeof window.requestAnimationFrame !== "function"
+      ) {
+        return;
+      }
+      frame = window.requestAnimationFrame(tick);
+    }
+
+    function tick(now) {
+      frame = 0;
+      if (!running || disposed || !localVisible || !policy.read().pageVisible) return;
+      try {
+        callback(now);
+      } catch (error) {
+        console.warn("Portfolio decorative animation stopped:", error);
+        destroy();
+        return;
+      }
+      schedule();
+    }
+
+    function start() {
+      running = true;
+      schedule();
+    }
+
+    function setVisible(nextVisible) {
+      localVisible = nextVisible;
+      if (!localVisible && frame) {
+        window.cancelAnimationFrame(frame);
+        frame = 0;
+      }
+      if (localVisible) schedule();
+    }
+
+    function stop() {
+      running = false;
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+    }
+
+    function destroy() {
+      if (disposed) return;
+      disposed = true;
+      stop();
+      unsubscribe();
+    }
+
+    return {
+      start: start,
+      stop: stop,
+      setVisible: setVisible,
+      destroy: destroy
+    };
+  }
+
+  var policy = createRuntimePolicy();
   var activeCleanup = null;
   var activeHero = null;
   var globalMoodCleanup = null;
   var globalMoodElement = null;
-  var polishedMain = null;
-  var polishedPath = "";
+  var globalMoodPointerEnabled = false;
   var scheduled = false;
+  var idleHandle = 0;
+  var policyCleanup = null;
 
   function isHomePage() {
     return /^\/(?:ar\/?)?$/.test(window.location.pathname);
@@ -40,7 +217,10 @@
   }
 
   function mountGlobalMood() {
-    if (globalMoodElement && globalMoodElement.isConnected) return;
+    var pointerEnabled = policy.canUsePointerEffects();
+    if (globalMoodElement && globalMoodElement.isConnected && globalMoodPointerEnabled === pointerEnabled) {
+      return;
+    }
     if (globalMoodCleanup) globalMoodCleanup();
 
     document.body.classList.add("portfolio-polished");
@@ -54,39 +234,43 @@
       '<span class="portfolio-pointer-glow"></span>';
     document.body.insertBefore(ambient, document.body.firstChild);
     globalMoodElement = ambient;
+    globalMoodPointerEnabled = pointerEnabled;
 
-    var pointerGlow = ambient.querySelector(".portfolio-pointer-glow");
-    var target = { x: window.innerWidth * 0.5, y: window.innerHeight * 0.34 };
-    var current = { x: target.x, y: target.y };
-    var frame = 0;
+    var pointerLoop = null;
+    var onPointerMove = null;
+    if (pointerEnabled) {
+      var pointerGlow = ambient.querySelector(".portfolio-pointer-glow");
+      var target = { x: window.innerWidth * 0.5, y: window.innerHeight * 0.34 };
+      var current = { x: target.x, y: target.y };
 
-    function onPointerMove(event) {
-      if (!desktopPointer.matches || reducedMotion.matches) return;
-      target.x = event.clientX;
-      target.y = event.clientY;
-      ambient.classList.add("portfolio-ambient-pointer-active");
-      if (!frame) frame = requestAnimationFrame(animatePointer);
+      pointerLoop = createAnimationLoop(policy, function () {
+        current.x += (target.x - current.x) * 0.075;
+        current.y += (target.y - current.y) * 0.075;
+        pointerGlow.style.transform =
+          "translate3d(" + (current.x - 190) + "px," + (current.y - 190) + "px,0)";
+        if (Math.abs(target.x - current.x) < 0.1 && Math.abs(target.y - current.y) < 0.1) {
+          pointerLoop.stop();
+        }
+      });
+
+      onPointerMove = function (event) {
+        if (!policy.canUseHeroPointer()) return;
+        target.x = event.clientX;
+        target.y = event.clientY;
+        ambient.classList.add("portfolio-ambient-pointer-active");
+        pointerLoop.start();
+      };
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
     }
-
-    function animatePointer() {
-      frame = 0;
-      if (!desktopPointer.matches || reducedMotion.matches) return;
-      current.x += (target.x - current.x) * 0.075;
-      current.y += (target.y - current.y) * 0.075;
-      pointerGlow.style.transform =
-        "translate3d(" + (current.x - 190) + "px," + (current.y - 190) + "px,0)";
-      if (Math.abs(target.x - current.x) >= 0.1 || Math.abs(target.y - current.y) >= 0.1) {
-        frame = requestAnimationFrame(animatePointer);
-      }
-    }
-
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
 
     globalMoodCleanup = function () {
-      if (frame) cancelAnimationFrame(frame);
-      window.removeEventListener("pointermove", onPointerMove);
+      if (pointerLoop) pointerLoop.destroy();
+      if (onPointerMove) window.removeEventListener("pointermove", onPointerMove);
       ambient.remove();
+      document.body.classList.remove("portfolio-polished");
+      document.body.classList.remove("portfolio-page-hidden");
       globalMoodElement = null;
+      globalMoodPointerEnabled = false;
       globalMoodCleanup = null;
     };
   }
@@ -94,72 +278,70 @@
   function polishPage() {
     document.body.classList.add("portfolio-polished");
     var main = document.querySelector("main");
-    if (!main || (main === polishedMain && window.location.pathname === polishedPath)) return;
-    polishedMain = main;
-    polishedPath = window.location.pathname;
+    if (!main || isHomePage()) return;
 
-    if (!isHomePage()) {
-      var title = main.querySelector("h1");
-      if (title) {
-        title.classList.add("portfolio-page-title");
-        var intro = title.closest("header, section");
-        if (intro) intro.classList.add("portfolio-page-intro");
-      }
-    }
+    var title = main.querySelector("h1");
+    if (!title) return;
+    title.classList.add("portfolio-page-title");
+    var intro = title.closest("header, section");
+    if (intro) intro.classList.add("portfolio-page-intro");
+  }
 
-    main.querySelectorAll("[class]").forEach(function (element) {
-      var className = element.getAttribute("class") || "";
-      var isRounded = /\brounded-(?:xl|2xl|3xl)\b/.test(className);
-      var isBordered = /\bborder\b/.test(className);
-      var isSurface =
-        className.indexOf("bg-[#111827]") !== -1 ||
-        className.indexOf("bg-[#0B1020]") !== -1 ||
-        className.indexOf("bg-[#0D1526]") !== -1;
-      if (isRounded && isBordered && isSurface) element.classList.add("portfolio-surface");
+  function markLegacyGlow(hero) {
+    var legacyGlow = Array.prototype.find.call(hero.children, function (child) {
+      return child.classList && child.classList.contains("absolute") && child.className.indexOf("blur-") !== -1;
     });
-
-    main.querySelectorAll("a[class], button[class]").forEach(function (element) {
-      var className = element.getAttribute("class") || "";
-      if (
-        className.indexOf("bg-[#38BDF8]") !== -1 ||
-        className.indexOf("bg-[#22C55E]") !== -1 ||
-        (className.indexOf("rounded-xl") !== -1 && className.indexOf("font-bold") !== -1)
-      ) {
-        element.classList.add("portfolio-action");
-      }
-    });
+    if (legacyGlow) legacyGlow.setAttribute("data-portfolio-legacy-glow", "");
+    return legacyGlow;
   }
 
   function mountGrainient(hero) {
+    var legacyGlow = markLegacyGlow(hero);
+
+    function activateFallback(canvas) {
+      if (canvas) canvas.remove();
+      hero.classList.add("portfolio-grainient-fallback");
+    }
+
+    function cleanupFallback() {
+      hero.classList.remove("portfolio-grainient-fallback");
+      if (legacyGlow) legacyGlow.removeAttribute("data-portfolio-legacy-glow");
+    }
+
+    if (!policy.canUseHeroWebGL()) {
+      activateFallback();
+      return cleanupFallback;
+    }
+
     var canvas = document.createElement("canvas");
     canvas.className = "portfolio-grainient";
     canvas.setAttribute("aria-hidden", "true");
     hero.insertBefore(canvas, hero.firstChild);
 
-    var legacyGlow = Array.prototype.find.call(hero.children, function (child) {
-      return child !== canvas && child.classList.contains("absolute") && child.className.indexOf("blur-") !== -1;
-    });
-    if (legacyGlow) legacyGlow.setAttribute("data-portfolio-legacy-glow", "");
-
-    var gl =
-      canvas.getContext("webgl", {
-        alpha: true,
-        antialias: false,
-        depth: false,
-        powerPreference: "low-power"
-      }) ||
-      canvas.getContext("experimental-webgl", {
-        alpha: true,
-        antialias: false,
-        depth: false,
-        powerPreference: "low-power"
-      });
+    var gl = null;
+    try {
+      gl =
+        canvas.getContext("webgl", {
+          alpha: true,
+          antialias: false,
+          depth: false,
+          powerPreference: "low-power",
+          preserveDrawingBuffer: false
+        }) ||
+        canvas.getContext("experimental-webgl", {
+          alpha: true,
+          antialias: false,
+          depth: false,
+          powerPreference: "low-power",
+          preserveDrawingBuffer: false
+        });
+    } catch (error) {
+      console.warn("Interactive hero WebGL unavailable:", error);
+    }
 
     if (!gl) {
-      canvas.classList.add("portfolio-grainient-fallback");
-      return function () {
-        canvas.remove();
-      };
+      activateFallback(canvas);
+      return cleanupFallback;
     }
 
     var vertex = [
@@ -234,16 +416,13 @@
       program = createProgram(gl, vertex, fragment);
     } catch (error) {
       console.warn("Interactive hero shader unavailable:", error);
-      canvas.classList.add("portfolio-grainient-fallback");
-      return function () {
-        canvas.remove();
-      };
+      activateFallback(canvas);
+      return cleanupFallback;
     }
 
     var buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-
     gl.useProgram(program);
     var position = gl.getAttribLocation(program, "aPosition");
     gl.enableVertexAttribArray(position);
@@ -253,18 +432,18 @@
     var pointerLocation = gl.getUniformLocation(program, "uPointer");
     var timeLocation = gl.getUniformLocation(program, "uTime");
     var motionLocation = gl.getUniformLocation(program, "uMotion");
-
     var pointer = { x: 0.5, y: 0.46 };
     var pointerTarget = { x: 0.5, y: 0.46 };
+    var heroRect = { left: 0, top: 0, width: 1, height: 1 };
     var visible = true;
-    var frame = 0;
     var lastFrame = 0;
     var start = performance.now();
-    var mobile = !desktopPointer.matches;
+    var loop = null;
 
     function resize() {
       var rect = hero.getBoundingClientRect();
-      var dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1 : 1.25);
+      heroRect = rect;
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.25);
       var width = Math.max(1, Math.round(rect.width * dpr));
       var height = Math.max(1, Math.round(rect.height * dpr));
       if (canvas.width !== width || canvas.height !== height) {
@@ -275,17 +454,13 @@
     }
 
     function onPointerMove(event) {
-      if (mobile) return;
-      var rect = hero.getBoundingClientRect();
-      pointerTarget.x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-      pointerTarget.y = Math.max(0, Math.min(1, 1 - (event.clientY - rect.top) / rect.height));
+      if (!policy.canUseHeroPointer() || !heroRect.width || !heroRect.height) return;
+      pointerTarget.x = Math.max(0, Math.min(1, (event.clientX - heroRect.left) / heroRect.width));
+      pointerTarget.y = Math.max(0, Math.min(1, 1 - (event.clientY - heroRect.top) / heroRect.height));
     }
 
     function render(now) {
-      frame = requestAnimationFrame(render);
-      if (!visible || document.hidden) return;
-      var interval = mobile ? 50 : 33;
-      if (now - lastFrame < interval) return;
+      if (now - lastFrame < 33) return;
       lastFrame = now;
       resize();
       pointer.x += (pointerTarget.x - pointer.x) * 0.045;
@@ -294,149 +469,72 @@
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
       gl.uniform2f(pointerLocation, pointer.x, pointer.y);
       gl.uniform1f(timeLocation, (now - start) / 1000);
-      gl.uniform1f(motionLocation, reducedMotion.matches ? 0 : 1);
+      gl.uniform1f(motionLocation, 1);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
 
-    var resizeObserver = new ResizeObserver(resize);
-    resizeObserver.observe(hero);
-    var intersectionObserver = new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting;
-    });
-    intersectionObserver.observe(hero);
+    function onContextLost(event) {
+      event.preventDefault();
+      console.warn("Interactive hero WebGL context lost; using static fallback.");
+      if (loop) loop.stop();
+      activateFallback(canvas);
+    }
+
+    var resizeObserver = null;
+    if (typeof window.ResizeObserver === "function") {
+      resizeObserver = new window.ResizeObserver(resize);
+      resizeObserver.observe(hero);
+    }
+    var intersectionObserver = null;
+    if (typeof window.IntersectionObserver === "function") {
+      intersectionObserver = new window.IntersectionObserver(function (entries) {
+        visible = Boolean(entries[0] && entries[0].isIntersecting);
+        if (loop) loop.setVisible(visible);
+      });
+      intersectionObserver.observe(hero);
+    }
+
+    canvas.addEventListener("webglcontextlost", onContextLost, { passive: false });
     hero.addEventListener("pointermove", onPointerMove, { passive: true });
     resize();
-    frame = requestAnimationFrame(render);
+    loop = createAnimationLoop(policy, render);
+    loop.start();
 
     return function () {
-      cancelAnimationFrame(frame);
-      resizeObserver.disconnect();
-      intersectionObserver.disconnect();
+      if (loop) loop.destroy();
+      if (resizeObserver) resizeObserver.disconnect();
+      if (intersectionObserver) intersectionObserver.disconnect();
+      canvas.removeEventListener("webglcontextlost", onContextLost);
       hero.removeEventListener("pointermove", onPointerMove);
-      gl.deleteBuffer(buffer);
-      gl.deleteProgram(program);
+      if (buffer) gl.deleteBuffer(buffer);
+      if (program) gl.deleteProgram(program);
       canvas.remove();
+      cleanupFallback();
     };
   }
 
-  function mountSplashCursor() {
-    if (!desktopPointer.matches || reducedMotion.matches) return function () {};
-
-    var canvas = document.createElement("canvas");
-    canvas.className = "portfolio-splash-cursor";
-    canvas.setAttribute("aria-hidden", "true");
-    document.body.appendChild(canvas);
-    var context = canvas.getContext("2d", { alpha: true });
-    var particles = [];
-    var frame = 0;
-    var previous = null;
-    var lastMove = 0;
-
-    function resize() {
-      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      canvas.width = Math.round(window.innerWidth * dpr);
-      canvas.height = Math.round(window.innerHeight * dpr);
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      context.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    function spawn(event) {
-      var now = performance.now();
-      if (now - lastMove < 12) return;
-      lastMove = now;
-      var dx = previous ? event.clientX - previous.x : 0;
-      var dy = previous ? event.clientY - previous.y : 0;
-      previous = { x: event.clientX, y: event.clientY };
-      var speed = Math.min(28, Math.hypot(dx, dy));
-      for (var index = 0; index < 3; index += 1) {
-        var angle = Math.random() * Math.PI * 2;
-        var spread = 3 + Math.random() * 10;
-        particles.push({
-          x: event.clientX + Math.cos(angle) * spread,
-          y: event.clientY + Math.sin(angle) * spread,
-          vx: dx * (0.025 + Math.random() * 0.02) + Math.cos(angle) * 0.22,
-          vy: dy * (0.025 + Math.random() * 0.02) + Math.sin(angle) * 0.22,
-          life: 1,
-          decay: 0.018 + Math.random() * 0.015,
-          radius: 9 + speed * 0.4 + Math.random() * 13,
-          hue: Math.random() > 0.78 ? 145 : 195 + Math.random() * 12
-        });
-      }
-      if (particles.length > 150) particles.splice(0, particles.length - 150);
-    }
-
-    function draw() {
-      frame = requestAnimationFrame(draw);
-      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      if (!particles.length || document.hidden) return;
-      context.globalCompositeOperation = "lighter";
-      for (var index = particles.length - 1; index >= 0; index -= 1) {
-        var particle = particles[index];
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.vx *= 0.985;
-        particle.vy *= 0.985;
-        particle.life -= particle.decay;
-        particle.radius *= 0.994;
-        if (particle.life <= 0.02) {
-          particles.splice(index, 1);
-          continue;
-        }
-        var gradient = context.createRadialGradient(
-          particle.x,
-          particle.y,
-          0,
-          particle.x,
-          particle.y,
-          particle.radius
-        );
-        gradient.addColorStop(0, "hsla(" + particle.hue + ", 92%, 64%, " + particle.life * 0.2 + ")");
-        gradient.addColorStop(0.35, "hsla(" + particle.hue + ", 90%, 56%, " + particle.life * 0.11 + ")");
-        gradient.addColorStop(1, "hsla(" + particle.hue + ", 90%, 46%, 0)");
-        context.fillStyle = gradient;
-        context.beginPath();
-        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        context.fill();
-      }
-      context.globalCompositeOperation = "source-over";
-    }
-
-    resize();
-    window.addEventListener("resize", resize, { passive: true });
-    window.addEventListener("pointermove", spawn, { passive: true });
-    frame = requestAnimationFrame(draw);
-
-    return function () {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("pointermove", spawn);
-      canvas.remove();
-    };
+  function teardownActive() {
+    if (activeCleanup) activeCleanup();
+    activeCleanup = null;
+    activeHero = null;
   }
 
   function mount() {
+    if (!document.body) return;
+    document.body.classList.toggle("portfolio-page-hidden", !policy.read().pageVisible);
     mountGlobalMood();
     polishPage();
 
     var hero = isHomePage() ? document.querySelector("main > div > section:first-child") : null;
     if (activeCleanup && activeHero === hero && hero && hero.isConnected) return;
-
-    if (activeCleanup) {
-      activeCleanup();
-      activeCleanup = null;
-      activeHero = null;
-    }
+    teardownActive();
     if (!hero || !hero.querySelector("h1")) return;
 
     activeHero = hero;
     hero.classList.add("portfolio-hero-effect");
     var cleanupGrainient = mountGrainient(hero);
-    var cleanupSplash = mountSplashCursor();
-
     activeCleanup = function () {
       cleanupGrainient();
-      cleanupSplash();
       hero.classList.remove("portfolio-hero-effect");
       var legacyGlow = hero.querySelector("[data-portfolio-legacy-glow]");
       if (legacyGlow) legacyGlow.removeAttribute("data-portfolio-legacy-glow");
@@ -444,34 +542,67 @@
     };
   }
 
+  function cancelScheduledMount() {
+    if (!scheduled) return;
+    if (typeof window.cancelIdleCallback === "function" && idleHandle) {
+      window.cancelIdleCallback(idleHandle);
+    } else if (idleHandle) {
+      window.clearTimeout(idleHandle);
+    }
+    scheduled = false;
+    idleHandle = 0;
+  }
+
   function scheduleMount() {
     if (scheduled) return;
     scheduled = true;
-    requestAnimationFrame(function () {
+    var run = function () {
       scheduled = false;
+      idleHandle = 0;
       mount();
-    });
+    };
+    if (typeof window.requestIdleCallback === "function") {
+      idleHandle = window.requestIdleCallback(run, { timeout: 1200 });
+    } else {
+      idleHandle = window.setTimeout(run, 0);
+    }
   }
 
-  var observer = new MutationObserver(scheduleMount);
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-  window.addEventListener("popstate", scheduleMount);
-  desktopPointer.addEventListener("change", function () {
-    if (activeCleanup) activeCleanup();
-    activeCleanup = null;
-    activeHero = null;
+  function onPolicyChange(next, previous) {
+    if (document.body) document.body.classList.toggle("portfolio-page-hidden", !next.pageVisible);
+    var capabilityChanged =
+      !previous ||
+      next.reducedMotion !== previous.reducedMotion ||
+      next.desktop !== previous.desktop ||
+      next.finePointer !== previous.finePointer ||
+      next.hover !== previous.hover ||
+      next.webglAvailable !== previous.webglAvailable;
+    if (capabilityChanged) teardownActive();
     scheduleMount();
-  });
-  reducedMotion.addEventListener("change", function () {
-    if (activeCleanup) activeCleanup();
-    activeCleanup = null;
-    activeHero = null;
+  }
+
+  function teardownRuntime() {
+    cancelScheduledMount();
+    teardownActive();
+    if (globalMoodCleanup) globalMoodCleanup();
+  }
+
+  function restoreRuntime() {
+    if (!policyCleanup) policyCleanup = policy.subscribe(onPolicyChange);
     scheduleMount();
-  });
+  }
+
+  function initialize() {
+    if (policyCleanup) return;
+    policyCleanup = policy.subscribe(onPolicyChange);
+    window.addEventListener("pagehide", teardownRuntime, { passive: true });
+    window.addEventListener("pageshow", restoreRuntime, { passive: true });
+    scheduleMount();
+  }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", scheduleMount, { once: true });
+    document.addEventListener("DOMContentLoaded", initialize, { once: true });
   } else {
-    scheduleMount();
+    initialize();
   }
 })();

@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 3,
+  "source": "projects/oryxbag/home-en.jpg",
+  "sourceBytes": 1379060,
+  "sourceWidth": 1440,
+  "sourceHeight": 8547,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 2849,
+      "bytes": 91648,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 2849,
+      "bytes": 113452,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 4748,
+      "bytes": 143671,
+      "quality": 45
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 4748,
+      "bytes": 147770,
+      "quality": 30
+    }
+  }
+}

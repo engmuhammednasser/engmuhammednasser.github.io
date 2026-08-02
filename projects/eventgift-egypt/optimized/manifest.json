@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 3,
+  "source": "projects/eventgift-egypt/homepage-full.webp",
+  "sourceBytes": 626704,
+  "sourceWidth": 1349,
+  "sourceHeight": 9291,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 3306,
+      "bytes": 84889,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 3306,
+      "bytes": 101992,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 5510,
+      "bytes": 138286,
+      "quality": 45
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 5510,
+      "bytes": 146012,
+      "quality": 30
+    }
+  }
+}

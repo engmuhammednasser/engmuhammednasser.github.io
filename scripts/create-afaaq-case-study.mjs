@@ -170,7 +170,7 @@ function buildPreloads() {
 
 function buildPage(locale) {
   let html = read(locale.template);
-  html = html.replace(locale.langSwitchFrom, locale.langSwitchTo).replaceAll("kuwait-arc", "afaaq-developments");
+  html = html.replace(locale.langSwitchFrom, locale.langSwitchTo);
   html = html.replace(/<title>.*?<\/title>/, `<title>${locale.title}</title>`);
   html = html.replace(
     /<meta name="description" content=".*?"\/>/,
@@ -180,6 +180,10 @@ function buildPage(locale) {
     /<link rel="preload" as="image" href="\/projects\/kuwait-arc\/cover\.png"\/>(?:<link rel="preload" as="image" href="\/projects\/kuwait-arc\/full-page\/[^"]+"\/>)+/,
     buildPreloads()
   );
+  html = html
+    .replaceAll("/work/kuwait-arc/", "/work/afaaq-developments/")
+    .replaceAll("/ar/work/kuwait-arc/", "/ar/work/afaaq-developments/")
+    .replaceAll("/projects/kuwait-arc/", "/projects/afaaq-developments/");
   html = html.replace(/<main class="flex-1">[\s\S]*?<\/main>/, buildMain(locale));
   return html;
 }
