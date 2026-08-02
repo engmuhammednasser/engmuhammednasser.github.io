@@ -10,3 +10,12 @@ build/
 out/
 *.tmp
 *.bak
+
+# Local browser/test artifacts. Production HTML, data, sitemap, robots, and
+# project media remain tracked and are generated/reviewed as release inputs.
+.playwright/
+.chrome-profile/
+.test-results/
+test-results/
+*.trace
+*.har

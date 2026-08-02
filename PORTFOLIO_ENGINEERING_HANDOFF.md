@@ -4,7 +4,7 @@
 **Repository:** `engmuhammednasser/engmuhammednasser.github.io`  
 **Live Site:** `https://engmuhammednasser.github.io/`  
 **Purpose:** Single source of truth for the portfolio refactor, performance, architecture, SEO, accessibility, QA, and delivery work.  
-**Status:** Sprint 0, Sprint 1, Sprint 2, Sprint 3, and Sprint 4 completed; Sprint 5 is TODO.
+**Status:** Sprint 0, Sprint 1, Sprint 2, Sprint 3, Sprint 4, and Sprint 5 completed; **READY FOR PR REVIEW**. The branch remains separate from `main` and has not been merged.
 **Last Updated:** 2026-08-02
 
 ---
@@ -1021,7 +1021,7 @@ Source
 ### Status
 
 ```text
-TODO
+DONE — final architecture inventory, complete script ownership audit, supported `npm run verify` pipeline, security/hygiene and practical budget gates, generator idempotency checks, Chrome/EN/AR browser validation, GitHub Actions quality workflow, generated-asset policy, release/rollback/PR documentation, and final report are complete. See `docs/audit/final-architecture-inventory.md`, `docs/audit/script-inventory.md`, `docs/audit/final-report.md`, `docs/architecture/engineering-workflow.md`, and `docs/operations/`.
 ```
 
 ---
@@ -1223,22 +1223,21 @@ The following has already been completed at analysis level:
 The following remains pending:
 
 - recover or re-establish the original source/build boundary
-- confirmed source-of-truth architecture
+- recovery of the original source/build boundary (the committed static export remains the supported delivery boundary)
 - Lighthouse/PageSpeed baseline
 - full-archive thumbnail rollout
 - asset cleanup or deletion
-- CI/CD hardening
 - browser CWV before/after metrics
 - Pull Request
 - production merge
 
-The remaining list is intentionally scoped to later Sprints. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Sprint 2 delivered the runtime inventory, centralized effect policy, optional desktop WebGL, static mobile/reduced-motion fallback, idle initialization, lifecycle-safe loops, splash removal, DOM observer cleanup, CSS compositing reductions, and runtime invariants. Sprint 3 delivered canonical EN/AR Work data, deterministic cards, 12-card progressive rendering, accessible filters, no-JS route discovery, Work payload normalization, structural metrics, and interaction checks. Sprint 4 delivered route-specific metadata, canonical URLs, reciprocal EN/AR hreflang, robots/sitemap, structured data, skip navigation, semantic/focus improvements, accessibility validation, and browser checks. Browser CWV metrics remain unavailable and no production merge has occurred.
+The remaining list is intentionally scoped to post-review work. Sprint 1 delivered the reference audit, deterministic AVIF/WebP thumbnail pipeline, five-project pilot, preload/loading normalization, generated-asset validation, static route checks, and before/after static byte metrics. Sprint 2 delivered the runtime inventory, centralized effect policy, optional desktop WebGL, static mobile/reduced-motion fallback, idle initialization, lifecycle-safe loops, splash removal, DOM observer cleanup, CSS compositing reductions, and runtime invariants. Sprint 3 delivered canonical EN/AR Work data, deterministic cards, 12-card progressive rendering, accessible filters, no-JS route discovery, Work payload normalization, structural metrics, and interaction checks. Sprint 4 delivered route-specific metadata, canonical URLs, reciprocal EN/AR hreflang, robots/sitemap, structured data, skip navigation, semantic/focus improvements, accessibility validation, and browser checks. Sprint 5 delivered architecture ownership, a single verification pipeline, CI, idempotency/security/budget gates, and release operations documentation. Browser CWV metrics remain unavailable; no production merge has occurred.
 
 ---
 
 # 23. Exact Immediate Next Action
 
-Do not begin Sprint 5 yet. Review `docs/audit/sprint-4-report.md` and `docs/architecture/seo-accessibility-strategy.md`, run the complete checks, and keep the branch separate from `main`. Sprint 4 is complete; architecture hardening, CI/CD, quality gates, and final release readiness belong to Sprint 5.
+Sprint 5 is complete. Review `docs/audit/final-report.md`, run `npm run verify`, complete `docs/operations/release-checklist.md`, and open the PR using `docs/operations/pr-draft.md`. Keep the branch separate from `main` until review and protected-branch approval.
 
 The current working branch is already the safe refactor branch:
 
@@ -1296,7 +1295,7 @@ When handing this project to a coding agent, use:
 | Sprint 2 — Runtime Performance | `COMPLETE` | Runtime inventory, centralized capability policy, optional desktop WebGL, lifecycle-safe animation, splash removal, DOM/observer cleanup, CSS compositing reductions, runtime invariants, route checks, and report completed in `docs/audit/sprint-2-report.md`. |
 | Sprint 3 — Work Architecture | `COMPLETE` | Canonical EN/AR project data, deterministic card renderer, 12-card progressive archive, accessible filters, no-JS links, payload normalization, validation, and report completed in `docs/audit/sprint-3-report.md`. |
 | Sprint 4 — SEO & Accessibility | `COMPLETE` | Route inventory, unique metadata, canonical URLs, EN/AR hreflang, robots/sitemap, structured data, skip navigation, semantics, focus treatment, validation, browser checks, and report completed in `docs/audit/sprint-4-report.md`. |
-| Sprint 5 — Architecture / CI / QA | `TODO` | No implementation yet |
+| Sprint 5 — Architecture / CI / QA | `COMPLETE` | Final architecture and script inventories, supported `npm run verify` pipeline, security/hygiene and budget gates, generator idempotency, cross-platform browser checks, GitHub Actions workflow, generated-asset policy, final report, workflow, rollback, release checklist, and PR draft completed. Release recommendation: `READY FOR PR REVIEW`; no PR was created and `main` was not merged. |
 
 Update this table when a Sprint is completed.
 
@@ -1308,7 +1307,9 @@ Sprint 2 completion record (2026-08-02): the pre-change runtime inventory is rec
 
 Sprint 3 completion record (2026-08-02): `data/projects.json` now contains the 43-project canonical Work archive with shared EN/AR copy, structured categories, thumbnail metadata, case-study routes, live URLs, availability classification, featured flags, and status. Work HTML was reduced from 43 to 12 initial cards per locale, with 12-card progressive Load More, accessible native filters, localized empty/status messaging, and 43 no-JS case-study links per locale. Work Flight payload roots were normalized to the same initial slice. `npm run check`, the framework-free interaction harness, Chrome headless static execution, and `git diff --check` passed. Sprint 4 and Sprint 5 were TODO at that completion point; no production merge was made.
 
-Sprint 4 completion record (2026-08-02): the before-state is recorded in `docs/audit/seo-accessibility-before.md`, with current route inventory in `data/routes.json`. All 184 indexable routes now have route-specific metadata, canonical URLs, reciprocal EN/AR hreflang with x-default, safe JSON-LD, and localized language semantics. `robots.txt` and a deterministic 184-URL `sitemap.xml` were generated. Native skip navigation, labelled navigation/menu relationships, shared focus-visible treatment, and Lab/Backend heading fixes were applied without reintroducing runtime cost. `npm run check`, `git diff --check`, route metadata validation, and Chrome headless EN/AR regression checks passed. Sprint 5 remains TODO; no production merge was made.
+Sprint 4 completion record (2026-08-02): the before-state is recorded in `docs/audit/seo-accessibility-before.md`, with current route inventory in `data/routes.json`. All 184 indexable routes now have route-specific metadata, canonical URLs, reciprocal EN/AR hreflang with x-default, safe JSON-LD, and localized language semantics. `robots.txt` and a deterministic 184-URL `sitemap.xml` were generated. Native skip navigation, labelled navigation/menu relationships, shared focus-visible treatment, and Lab/Backend heading fixes were applied without reintroducing runtime cost. `npm run check`, `git diff --check`, route metadata validation, and Chrome headless EN/AR regression checks passed. Sprint 5 then finalized the architecture, quality gates, CI, and release documentation; no production merge was made.
+
+Sprint 5 completion record (2026-08-02): the final architecture and complete 47-file script inventory are recorded in `docs/audit/final-architecture-inventory.md` and `docs/audit/script-inventory.md`. `npm run verify` passed after a locked `npm ci`, including project/data validation, 187 HTML and 1,474 payload checks, 184 indexable SEO/accessibility routes, Work interaction tests, security/hygiene checks, practical artifact budgets, 12 Chrome EN/AR smoke routes, supported-generator idempotency, and `git diff --check`. `.github/workflows/quality.yml` runs the same pipeline with Node 20, Chromium fallback, and `contents: read`. Rollback, release, workflow, PR, and final report documents are complete. Overall status: **READY FOR PR REVIEW**; `main` was not modified or merged.
 
 ---
 
