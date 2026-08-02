@@ -1,0 +1,1762 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "all",
+      "label": {
+        "en": "All",
+        "ar": "الكل"
+      }
+    },
+    {
+      "id": "ecommerce",
+      "label": {
+        "en": "E-Commerce",
+        "ar": "متاجر إلكترونية"
+      }
+    },
+    {
+      "id": "corporate",
+      "label": {
+        "en": "Corporate Sites",
+        "ar": "مواقع شركات"
+      }
+    },
+    {
+      "id": "services",
+      "label": {
+        "en": "Services & Booking",
+        "ar": "خدمات وحجوزات"
+      }
+    },
+    {
+      "id": "platforms",
+      "label": {
+        "en": "Platforms",
+        "ar": "المنصات"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "eventgift-egypt",
+      "slug": "eventgift-egypt",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "EventGift Egypt - Storefront Case Study",
+        "ar": "ايفنت جيفت مصر - واجهة المتجر"
+      },
+      "description": {
+        "en": "The specialized Egyptian storefront for EventGift, featuring distinct categories, robust B2B portal options, and a complete localized checkout flow.",
+        "ar": "الواجهة المخصصة لسوق مصر لمنصة ايفنت جيفت، مع تصنيفات فريدة وخيارات قوية لبوابة الشركات وتجربة دفع وإتمام طلب محلية بالكامل."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / وردبريس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/eventgift-egypt/homepage-full.webp",
+        "avif480": "/projects/eventgift-egypt/optimized/thumb-480.avif",
+        "avif800": "/projects/eventgift-egypt/optimized/thumb-800.avif",
+        "webp480": "/projects/eventgift-egypt/optimized/thumb-480.webp",
+        "webp800": "/projects/eventgift-egypt/optimized/thumb-800.webp",
+        "width": 1349,
+        "height": 9291,
+        "aspectRatio": 0.14519427402862986
+      },
+      "caseStudy": {
+        "en": "/work/eventgift-egypt/",
+        "ar": "/ar/work/eventgift-egypt/"
+      },
+      "liveUrl": "https://eg.eventgift.net",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "eventgift-uae",
+      "slug": "eventgift-uae",
+      "category": "ecommerce",
+      "featured": true,
+      "title": {
+        "en": "EventGift UAE — Storefront Case Study",
+        "ar": "ايفنت جيفت الإمارات — واجهة المتجر"
+      },
+      "description": {
+        "en": "The dedicated UAE storefront for the EventGift platform, featuring localized product discovery, specific category structures, and B2B catalog request features.",
+        "ar": "الواجهة المخصصة لسوق الإمارات لمنصة ايفنت جيفت، مع ميزات تصفح منتجات محلية وهيكلة تصنيفات مخصصة وطلب كتالوج لعملاء الشركات."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / وردبريس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/eventgift-uae/home.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1911,
+        "height": 14401,
+        "aspectRatio": 0.13269911811679744
+      },
+      "caseStudy": {
+        "en": "/work/eventgift-uae/",
+        "ar": "/ar/work/eventgift-uae/"
+      },
+      "liveUrl": "https://eventgift.net",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "eventgift-saudi",
+      "slug": "eventgift-saudi",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "EventGift Saudi Arabia — Storefront Case Study",
+        "ar": "ايفنت جيفت السعودية — واجهة المتجر"
+      },
+      "description": {
+        "en": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
+        "ar": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / وردبريس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/eventgift-saudi/homepage-full.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 8067,
+        "aspectRatio": 0.238006693938267
+      },
+      "caseStudy": {
+        "en": "/work/eventgift-saudi/",
+        "ar": "/ar/work/eventgift-saudi/"
+      },
+      "liveUrl": "https://sa.eventgift.net",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "botella",
+      "slug": "botella",
+      "category": "ecommerce",
+      "featured": true,
+      "title": {
+        "en": "Botella Water Bottles Store",
+        "ar": "متجر زجاجات المياه بوتيلا Botella"
+      },
+      "description": {
+        "en": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
+        "ar": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / وردبريس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/botella/02-home-page-en.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 10700,
+        "aspectRatio": 0.17943925233644858
+      },
+      "caseStudy": {
+        "en": "/work/botella/",
+        "ar": "/ar/work/botella/"
+      },
+      "liveUrl": "https://gobotella.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "techmart",
+      "slug": "techmart",
+      "category": "ecommerce",
+      "featured": true,
+      "title": {
+        "en": "Techmart Apple Retail eCommerce Experience",
+        "ar": "متجر تيك مارت لمنتجات آبل Techmart"
+      },
+      "description": {
+        "en": "An Apple-focused retail storefront designed around structured product discovery, offer-led merchandising, and smoother purchase journeys.",
+        "ar": "تجربة تسوق إلكترونية متطورة مخصصة لبيع منتجات آبل بالتجزئة، تعتمد على التصفح السلس والحلول التمويلية المبتكرة."
+      },
+      "eyebrow": {
+        "en": "WordPress / WooCommerce",
+        "ar": "ووردبريس / وكومرس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/techmart/cover.png",
+        "avif480": "/projects/techmart/optimized/thumb-480.avif",
+        "avif800": "/projects/techmart/optimized/thumb-800.avif",
+        "webp480": "/projects/techmart/optimized/thumb-480.webp",
+        "webp800": "/projects/techmart/optimized/thumb-800.webp",
+        "width": 1925,
+        "height": 985,
+        "aspectRatio": 1.9543147208121827
+      },
+      "caseStudy": {
+        "en": "/work/techmart/",
+        "ar": "/ar/work/techmart/"
+      },
+      "liveUrl": "https://techmartme.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "ashhalan",
+      "slug": "ashhalan",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Ashhalan Group Corporate Brand Platform",
+        "ar": "مجموعة أشهلان القابضة Ashhalan"
+      },
+      "description": {
+        "en": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
+        "ar": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "Next.js",
+        "HTML",
+        "CSS"
+      ],
+      "thumbnail": {
+        "original": "/projects/ashhalan/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/ashhalan/",
+        "ar": "/ar/work/ashhalan/"
+      },
+      "liveUrl": "https://ashhalan.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "afaaq-developments",
+      "slug": "afaaq-developments",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Afaaq Developments Real Estate Platform",
+        "ar": "منصة Afaaq Developments للتطوير العقاري"
+      },
+      "description": {
+        "en": "A premium real estate website for Afaaq Developments, showcasing the developer brand, flagship compounds, media coverage, and sales contact experience.",
+        "ar": "موقع عقاري فاخر لشركة Afaaq Developments يعرض هوية المطور ومشروعاته الرئيسية والتغطيات الإعلامية وتجربة التواصل مع المبيعات."
+      },
+      "eyebrow": {
+        "en": "Corporate / Real Estate Website",
+        "ar": "موقع شركة / تطوير عقاري"
+      },
+      "technologies": [
+        "WordPress",
+        "Real Estate",
+        "Corporate Website"
+      ],
+      "thumbnail": {
+        "original": "/projects/afaaq-developments/cover.png",
+        "avif480": "/projects/afaaq-developments/optimized/thumb-480.avif",
+        "avif800": "/projects/afaaq-developments/optimized/thumb-800.avif",
+        "webp480": "/projects/afaaq-developments/optimized/thumb-480.webp",
+        "webp800": "/projects/afaaq-developments/optimized/thumb-800.webp",
+        "width": 1440,
+        "height": 900,
+        "aspectRatio": 1.6
+      },
+      "caseStudy": {
+        "en": "/work/afaaq-developments/",
+        "ar": "/ar/work/afaaq-developments/"
+      },
+      "liveUrl": "https://afaaqdevelopments.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "nora24jewelry",
+      "slug": "nora24jewelry",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Nora 24 Luxury Jewelry",
+        "ar": "مجوهرات نورا 24 الفاخرة Nora 24"
+      },
+      "description": {
+        "en": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
+        "ar": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / وردبريس"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/nora24jewelry/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/nora24jewelry/",
+        "ar": "/ar/work/nora24jewelry/"
+      },
+      "liveUrl": "https://nora24jewelry.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "oryxbag",
+      "slug": "oryxbag",
+      "category": "ecommerce",
+      "featured": true,
+      "title": {
+        "en": "OryxBag E-Commerce Store",
+        "ar": "متجر OryxBag الإلكتروني"
+      },
+      "description": {
+        "en": "A bilingual WooCommerce store for a UAE bags brand, featuring custom storefront sections, product filters, color variations, product pages, wishlist, compare, rewards, and corporate orders.",
+        "ar": "متجر WooCommerce ثنائي اللغة لعلامة حقائب إماراتية، يضم واجهة مخصصة وفلاتر وخيارات ألوان وصفحات منتجات ومفضلة ومقارنة ومكافآت وطلبات شركات."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / Bilingual E-Commerce",
+        "ar": "WooCommerce / تجارة إلكترونية ثنائية اللغة"
+      },
+      "technologies": [
+        "WooCommerce",
+        "Bilingual UX",
+        "Product Variations"
+      ],
+      "thumbnail": {
+        "original": "/projects/oryxbag/home-en.jpg",
+        "avif480": "/projects/oryxbag/optimized/thumb-480.avif",
+        "avif800": "/projects/oryxbag/optimized/thumb-800.avif",
+        "webp480": "/projects/oryxbag/optimized/thumb-480.webp",
+        "webp800": "/projects/oryxbag/optimized/thumb-800.webp",
+        "width": 1440,
+        "height": 8547,
+        "aspectRatio": 0.16848016848016847
+      },
+      "caseStudy": {
+        "en": "/work/oryxbag/",
+        "ar": "/ar/work/oryxbag/"
+      },
+      "liveUrl": "https://oryxbag.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "gobe",
+      "slug": "gobe",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Gobe Agency",
+        "ar": "وكالة جو بي للتسويق"
+      },
+      "description": {
+        "en": "A creative digital agency platform showcasing strategic marketing, SEO, web development, and branding services.",
+        "ar": "منصة لوكالة إبداعية تقدم خدمات التسويق الاستراتيجي، تحسين محركات البحث، تطوير الويب، وبناء الهوية التجارية."
+      },
+      "eyebrow": {
+        "en": "Agency / Creative / Portfolio",
+        "ar": "وكالة إبداعية / بورتفوليو"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/gobe/featured-image.jpg",
+        "avif480": "/projects/gobe/optimized/thumb-480.avif",
+        "avif800": "/projects/gobe/optimized/thumb-800.avif",
+        "webp480": "/projects/gobe/optimized/thumb-480.webp",
+        "webp800": "/projects/gobe/optimized/thumb-800.webp",
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/gobe/",
+        "ar": "/ar/work/gobe/"
+      },
+      "liveUrl": "https://gobeagency.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "genedyeg",
+      "slug": "genedyeg",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Genedy Group Construction Platform",
+        "ar": "مجموعة الجنيدي للمقاولات Genedy Group"
+      },
+      "description": {
+        "en": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
+        "ar": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/genedyeg/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/genedyeg/",
+        "ar": "/ar/work/genedyeg/"
+      },
+      "liveUrl": "https://genedyeg.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "a2mkw",
+      "slug": "a2mkw",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "A2M Digital Marketing Agency",
+        "ar": "وكالة التسويق الرقمي A2M بالكويت"
+      },
+      "description": {
+        "en": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
+        "ar": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي."
+      },
+      "eyebrow": {
+        "en": "Agency / Creative / Portfolio",
+        "ar": "وكالة / إبداعي / بورتفوليو"
+      },
+      "technologies": [
+        "WordPress",
+        "Next.js",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/a2mkw/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/a2mkw/",
+        "ar": "/ar/work/a2mkw/"
+      },
+      "liveUrl": "https://a2mkw.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "nuc-kw",
+      "slug": "nuc-kw",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "National United Co. Profile",
+        "ar": "الشركة الوطنية المتحدة National United Co."
+      },
+      "description": {
+        "en": "An institutional presentation for National United Co., emphasizing structural reliability, mission alignment, and industrial services.",
+        "ar": "موقع تعريفي مؤسسي للشركة الوطنية المتحدة يعزز الهوية التجارية والخدمات الصناعية والتجارية للمجموعة في السوق الكويتي."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/nuc-kw/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/nuc-kw/",
+        "ar": "/ar/work/nuc-kw/"
+      },
+      "liveUrl": "https://nuc-kw.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "tbinnovation",
+      "slug": "tbinnovation",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "TB Innovation Tech Agency",
+        "ar": "وكالة تي بي للحلول الرقمية TB Innovation"
+      },
+      "description": {
+        "en": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
+        "ar": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/tbinnovation/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/tbinnovation/",
+        "ar": "/ar/work/tbinnovation/"
+      },
+      "liveUrl": "https://tbinnovation.net",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "mediaandmore",
+      "slug": "mediaandmore",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Media & More House of Software",
+        "ar": "ميديا أند مور هاوس أوف سوفتوير Media & More"
+      },
+      "description": {
+        "en": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
+        "ar": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية."
+      },
+      "eyebrow": {
+        "en": "Corporate Website / Software & Business Solutions",
+        "ar": "موقع شركة / شركة برمجيات وحلول أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/mediaandmore/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/mediaandmore/",
+        "ar": "/ar/work/mediaandmore/"
+      },
+      "liveUrl": "https://mediaandmore.org/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "ashhalanksa",
+      "slug": "ashhalanksa",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Ashhalan KSA Store",
+        "ar": "متجر أشهلان KSA"
+      },
+      "description": {
+        "en": "A fully custom-built e-commerce store specializing in hygiene and daily consumer products for homes, restaurants, companies, and institutions in Saudi Arabia. Features product browsing, categories, offers, cart, checkout, and quote requests.",
+        "ar": "متجر إلكتروني متخصص في بيع منتجات النظافة والاستهلاك اليومي للمنازل، المطاعم، الشركات والجهات المختلفة داخل المملكة العربية السعودية، مع تجربة تسوق سهلة تشمل عرض المنتجات، التصنيفات، العروض، السلة، الدفع، وطلب عروض الأسعار."
+      },
+      "eyebrow": {
+        "en": "E-commerce Website",
+        "ar": "متجر إلكتروني / E-commerce Website"
+      },
+      "technologies": [
+        "Custom Theme",
+        "Hardcoded Front-End",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/ashhalanksa/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/ashhalanksa/",
+        "ar": "/ar/work/ashhalanksa/"
+      },
+      "liveUrl": "https://ashhalanksa.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "ashhalanlogistics",
+      "slug": "ashhalanlogistics",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Ashhalan Logistics",
+        "ar": "أشهلان لوجستكس Ashhalan Logistics"
+      },
+      "description": {
+        "en": "A professional landing page for Ashhalan Logistics, specializing in parcel delivery, order fulfillment, and shipping solutions within Saudi Arabia. Built with Next.js using a fully custom interface, designed to clearly and quickly present the company's services, build trust, highlight speed and reliability, and facilitate easy contact for clients and businesses.",
+        "ar": "صفحة هبوط احترافية لشركة Ashhalan Logistics المتخصصة في خدمات النقل اللوجستي، نقل الطرود، توصيل الطلبات، وحلول الشحن داخل المملكة العربية السعودية. تم تنفيذ الصفحة باستخدام Next.js مع بناء واجهة مخصصة بالكامل من الصفر، لعرض خدمات الشركة بشكل واضح وسريع، وإبراز الثقة، السرعة، الأمان، وسهولة التواصل مع العملاء والشركات والمتاجر."
+      },
+      "eyebrow": {
+        "en": "Landing Page / Logistics Website",
+        "ar": "صفحة هبوط / موقع خدمات لوجستية"
+      },
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "JavaScript"
+      ],
+      "thumbnail": {
+        "original": "/projects/ashhalanlogistics/featured-image.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 900,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/ashhalanlogistics/",
+        "ar": "/ar/work/ashhalanlogistics/"
+      },
+      "liveUrl": "https://ashhalanlogistics.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "ashhalancarrental",
+      "slug": "ashhalancarrental",
+      "category": "services",
+      "featured": true,
+      "title": {
+        "en": "Ashhalan Car Rental Platform",
+        "ar": "منصة أشهلان لتأجير السيارات"
+      },
+      "description": {
+        "en": "A fully custom car rental and booking platform for Ashhalan in Saudi Arabia, featuring fleet browsing, pickup-based booking filters, car detail pages, add-ons, booking completion, a finance calculator, and bilingual Arabic/English UX.",
+        "ar": "منصة مخصصة بالكامل لتأجير السيارات والحجز لأشهلان في السعودية، تشمل تصفح الأسطول، وفلاتر الحجز حسب موقع الاستلام، وصفحات السيارات، والإضافات، وإكمال الحجز، وحاسبة التمويل، وتجربة عربية وإنجليزية."
+      },
+      "eyebrow": {
+        "en": "Custom Car Rental Platform / Booking System",
+        "ar": "منصة تأجير سيارات مخصصة / نظام حجز"
+      },
+      "technologies": [
+        "WordPress",
+        "Custom Theme",
+        "Booking Logic"
+      ],
+      "thumbnail": {
+        "original": "/projects/ashhalancarrental/home-en.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1440,
+        "height": 4873,
+        "aspectRatio": 0.2955058485532526
+      },
+      "caseStudy": {
+        "en": "/work/ashhalancarrental/",
+        "ar": "/ar/work/ashhalancarrental/"
+      },
+      "liveUrl": "https://ashhalancarrental.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "arabic-window",
+      "slug": "arabic-window",
+      "category": "platforms",
+      "featured": false,
+      "title": {
+        "en": "Arabic Window Academy",
+        "ar": "أكاديمية نافذة اللغة العربية التعليمية"
+      },
+      "description": {
+        "en": "A WordPress and WooCommerce online academy for Arabic, Quran, and Islamic studies, with course discovery, plans, registration, educational resources, and checkout.",
+        "ar": "منصة تعليم أونلاين مبنية على WordPress وWooCommerce لتعليم العربية والقرآن والدراسات الإسلامية، مع الدورات والخطط والتسجيل والمحتوى والدفع."
+      },
+      "eyebrow": {
+        "en": "Education / Content / Community",
+        "ar": "تعليم / محتوى / مجتمع"
+      },
+      "technologies": [
+        "WordPress",
+        "HTML",
+        "CSS"
+      ],
+      "thumbnail": {
+        "original": "/projects/arabic-window/full-page/01-home.jpg",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1440,
+        "height": 9082,
+        "aspectRatio": 0.15855538427659105
+      },
+      "caseStudy": {
+        "en": "/work/arabic-window/",
+        "ar": "/ar/work/arabic-window/"
+      },
+      "liveUrl": "https://arabicwindow.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "kuwait-arc",
+      "slug": "kuwait-arc",
+      "category": "platforms",
+      "featured": false,
+      "title": {
+        "en": "Kuwait Arc Industrial Platform",
+        "ar": "منصة كويت آرك للصناعات الحديدية Kuwait Arc"
+      },
+      "description": {
+        "en": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
+        "ar": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/kuwait-arc/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1440,
+        "height": 900,
+        "aspectRatio": 1.6
+      },
+      "caseStudy": {
+        "en": "/work/kuwait-arc/",
+        "ar": "/ar/work/kuwait-arc/"
+      },
+      "liveUrl": "https://kuwaitarc.com",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "torathyat",
+      "slug": "torathyat",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Torathyat Heritage Storefront",
+        "ar": "متجر تراثيات الإلكتروني"
+      },
+      "description": {
+        "en": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
+        "ar": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / Heritage E-Commerce",
+        "ar": "WooCommerce / متجر تراثي"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "Arabic Store"
+      ],
+      "thumbnail": {
+        "original": "/projects/torathyat/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1440,
+        "height": 900,
+        "aspectRatio": 1.6
+      },
+      "caseStudy": {
+        "en": "/work/torathyat/",
+        "ar": "/ar/work/torathyat/"
+      },
+      "liveUrl": "https://torathyat.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "armadillo-studio",
+      "slug": "armadillo-studio",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Armadillo Studio Creative Portfolio Platform",
+        "ar": "منصة Armadillo Studio الإبداعية"
+      },
+      "description": {
+        "en": "A creative portfolio website for Armadillo Studio, showcasing featured agency work, clients, and project storytelling through a bold visual layout.",
+        "ar": "موقع بورتفوليو إبداعي لـ Armadillo Studio يعرض الأعمال المختارة والعملاء ودراسات الحالة من خلال تجربة بصرية قوية."
+      },
+      "eyebrow": {
+        "en": "Agency / Creative / Portfolio",
+        "ar": "وكالة / إبداعي / بورتفوليو"
+      },
+      "technologies": [
+        "WordPress",
+        "Creative Agency",
+        "Portfolio Website"
+      ],
+      "thumbnail": {
+        "original": "/projects/armadillo-studio/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/armadillo-studio/",
+        "ar": "/ar/work/armadillo-studio/"
+      },
+      "liveUrl": "https://armadillo.studio/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "alrowad",
+      "slug": "alrowad",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Alrowad Packs Website",
+        "ar": "موقع الرواد للتعبئة والتغليف"
+      },
+      "description": {
+        "en": "An industrial packaging website with homepage, categories, machine, about, and contact pages.",
+        "ar": "موقع صناعي للتعبئة والتغليف يضم الرئيسية والأقسام والماكينات والتعريف والتواصل."
+      },
+      "eyebrow": {
+        "en": "Packaging / Industrial Website",
+        "ar": "تعبئة وتغليف / صناعي"
+      },
+      "technologies": [
+        "WordPress",
+        "Industrial",
+        "Arabic RTL"
+      ],
+      "thumbnail": {
+        "original": "/projects/alrowad/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 5245,
+        "aspectRatio": 0.36606291706387034
+      },
+      "caseStudy": {
+        "en": "/work/alrowad/",
+        "ar": "/ar/work/alrowad/"
+      },
+      "liveUrl": "https://alrowadpacks.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "crm-order-management-system",
+      "slug": "crm-order-management-system",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "CRM Order Management System",
+        "ar": "نظام CRM لإدارة الطلبات"
+      },
+      "description": {
+        "en": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
+        "ar": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks."
+      },
+      "eyebrow": {
+        "en": "Backend / Full-Stack CRM",
+        "ar": "باك إند / نظام CRM"
+      },
+      "technologies": [
+        "Backend",
+        "REST API",
+        "Admin Dashboard"
+      ],
+      "thumbnail": {
+        "original": "/projects/crm-order-management/dashboard.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 3481,
+        "aspectRatio": 0.5515656420568802
+      },
+      "caseStudy": {
+        "en": "/work/crm-order-management-system/",
+        "ar": "/ar/work/crm-order-management-system/"
+      },
+      "liveUrl": null,
+      "availability": "case-study",
+      "status": "published"
+    },
+    {
+      "id": "gold-mine-erp",
+      "slug": "gold-mine-erp",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "ERP Management System — Gold Mine Management in Saudi Arabia",
+        "ar": "نظام ERP لإدارة منجم ذهب في السعودية"
+      },
+      "description": {
+        "en": "A full ERP management platform built for managing a gold mine operation in Saudi Arabia. The system centralizes administration, departments, roles, users, mining reports, factory reports, warehouse operations, accounting reports, cash receipts, operating costs, tasks, and stock movements into one secure dashboard.",
+        "ar": "نظام ERP متكامل لإدارة عمليات منجم ذهب في السعودية، يجمع إدارة المستخدمين، الأقسام، الصلاحيات، تقارير المنجم، تقارير المصنع، المخازن، الحسابات، التكاليف، المقبوضات، المهام، وحركات المخزون داخل لوحة تحكم واحدة آمنة ومنظمة."
+      },
+      "eyebrow": {
+        "en": "Backend / Full-Stack ERP",
+        "ar": "باك إند / نظام ERP"
+      },
+      "technologies": [
+        "Backend",
+        "REST API",
+        "Database"
+      ],
+      "thumbnail": {
+        "original": "/projects/gold-mine-erp/login.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 868,
+        "aspectRatio": 2.2119815668202767
+      },
+      "caseStudy": {
+        "en": "/work/gold-mine-erp/",
+        "ar": "/ar/work/gold-mine-erp/"
+      },
+      "liveUrl": null,
+      "availability": "case-study",
+      "status": "published"
+    },
+    {
+      "id": "originals-hub",
+      "slug": "originals-hub",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Originals Hub WooCommerce Store",
+        "ar": "متجر أوريجينالز هب WooCommerce"
+      },
+      "description": {
+        "en": "A WooCommerce storefront focused on product discovery, store pages, and a polished shopping journey.",
+        "ar": "متجر WooCommerce يعرض المنتجات وصفحات المتجر وتجربة شراء واضحة ومنظمة."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / متجر إلكتروني"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/originals-hub/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/originals-hub/",
+        "ar": "/ar/work/originals-hub/"
+      },
+      "liveUrl": "https://originalhub.net/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "arcadia-digital",
+      "slug": "arcadia-digital",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Arcadia Digital Solutions",
+        "ar": "أركاديا الرقمية للحلول"
+      },
+      "description": {
+        "en": "A corporate service website for Arcadia Digital, presenting services, content, contact paths, and brand trust.",
+        "ar": "موقع شركة لأركاديا الرقمية يعرض الخدمات والمحتوى ومسارات التواصل وإشارات الثقة."
+      },
+      "eyebrow": {
+        "en": "Corporate / Business Website",
+        "ar": "موقع شركة / أعمال"
+      },
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/arcadia-digital/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/arcadia-digital/",
+        "ar": "/ar/work/arcadia-digital/"
+      },
+      "liveUrl": "https://arcadiadigital.co/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "diwaniya",
+      "slug": "diwaniya",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Diwaniya Cultural Platform",
+        "ar": "منصة الديوانية الثقافية"
+      },
+      "description": {
+        "en": "A community and cultural platform with registration, gallery, and event-focused pages.",
+        "ar": "منصة ثقافية ومجتمعية تضم التسجيل والمعرض وصفحات الفعاليات."
+      },
+      "eyebrow": {
+        "en": "Education / Content / Community",
+        "ar": "تعليم / محتوى / مجتمع"
+      },
+      "technologies": [
+        "WordPress",
+        "HTML",
+        "CSS"
+      ],
+      "thumbnail": {
+        "original": "/projects/diwaniya/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/diwaniya/",
+        "ar": "/ar/work/diwaniya/"
+      },
+      "liveUrl": "http://diwaniyah.org/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "mahmmoud-gomaa",
+      "slug": "mahmmoud-gomaa",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Mahmoud Gomaa Architecture Portfolio",
+        "ar": "بورتفوليو محمود جمعة المعماري"
+      },
+      "description": {
+        "en": "A personal architecture portfolio with project pages, blog content, and contact flows.",
+        "ar": "بورتفوليو معماري شخصي يعرض المشاريع والمقالات ومسارات التواصل."
+      },
+      "eyebrow": {
+        "en": "Portfolio / Architect Website",
+        "ar": "بورتفوليو / موقع معماري"
+      },
+      "technologies": [
+        "WordPress",
+        "Portfolio",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/mahmmoud-gomaa/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/mahmmoud-gomaa/",
+        "ar": "/ar/work/mahmmoud-gomaa/"
+      },
+      "liveUrl": "https://mahmoud-gomaa.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "meshari-alali",
+      "slug": "meshari-alali",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Meshari Alali Engineering Website",
+        "ar": "موقع مشاري العلي الهندسي"
+      },
+      "description": {
+        "en": "An engineering company website presenting services, projects, blog content, and company information.",
+        "ar": "موقع شركة هندسية يعرض الخدمات والمشاريع والمدونة ومعلومات الشركة."
+      },
+      "eyebrow": {
+        "en": "Engineering / Corporate Website",
+        "ar": "هندسة / موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "Engineering",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/meshari-alali/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1024,
+        "height": 700,
+        "aspectRatio": 1.4628571428571429
+      },
+      "caseStudy": {
+        "en": "/work/meshari-alali/",
+        "ar": "/ar/work/meshari-alali/"
+      },
+      "liveUrl": "https://mesharialali.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "light-islam",
+      "slug": "light-islam",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Light Islam Services Website",
+        "ar": "موقع نور الإسلام للخدمات"
+      },
+      "description": {
+        "en": "A services website covering maintenance, decor, portfolio work, blog content, and contact pages.",
+        "ar": "موقع خدمات يعرض الصيانة والديكور ومعرض الأعمال والمدونة وصفحات التواصل."
+      },
+      "eyebrow": {
+        "en": "Services / Maintenance Website",
+        "ar": "خدمات / صيانة"
+      },
+      "technologies": [
+        "WordPress",
+        "Services",
+        "Arabic RTL"
+      ],
+      "thumbnail": {
+        "original": "/projects/light-islam/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1024,
+        "height": 700,
+        "aspectRatio": 1.4628571428571429
+      },
+      "caseStudy": {
+        "en": "/work/light-islam/",
+        "ar": "/ar/work/light-islam/"
+      },
+      "liveUrl": "https://lightislam.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "juli-tourism",
+      "slug": "juli-tourism",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Juli Tourism & Travel",
+        "ar": "جولي للسياحة والسفر"
+      },
+      "description": {
+        "en": "A tourism website presenting travel packages, services, blog content, and contact paths.",
+        "ar": "موقع سياحة وسفر يعرض البرامج والخدمات والمقالات ومسارات التواصل."
+      },
+      "eyebrow": {
+        "en": "Travel / Tourism Website",
+        "ar": "سياحة / سفر"
+      },
+      "technologies": [
+        "WordPress",
+        "Travel",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/juli-tourism/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 5321,
+        "aspectRatio": 0.22552151851155797
+      },
+      "caseStudy": {
+        "en": "/work/juli-tourism/",
+        "ar": "/ar/work/juli-tourism/"
+      },
+      "liveUrl": "https://julitourism.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "baslim-auto",
+      "slug": "baslim-auto",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Basalim Auto Showroom",
+        "ar": "معرض بسالم للسيارات"
+      },
+      "description": {
+        "en": "An automotive showroom website with home, about, maintenance, and Arabic landing pages.",
+        "ar": "موقع معرض سيارات يضم الرئيسية والتعريف والصيانة والنسخة العربية."
+      },
+      "eyebrow": {
+        "en": "Automotive / Showroom Website",
+        "ar": "سيارات / معرض"
+      },
+      "technologies": [
+        "WordPress",
+        "Automotive",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/baslim-auto/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1200,
+        "height": 3972,
+        "aspectRatio": 0.3021148036253776
+      },
+      "caseStudy": {
+        "en": "/work/baslim-auto/",
+        "ar": "/ar/work/baslim-auto/"
+      },
+      "liveUrl": "https://basalimauto.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "fast-shopping",
+      "slug": "fast-shopping",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Fast Shopping 24 Store",
+        "ar": "متجر فاست شوبينج 24"
+      },
+      "description": {
+        "en": "A WooCommerce shopping website with home, shop, product, checkout, about, and contact pages.",
+        "ar": "متجر WooCommerce يضم الرئيسية والمتجر والمنتج والدفع والتعريف والتواصل."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / eCommerce",
+        "ar": "وكومرس / متجر إلكتروني"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/fast-shopping/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1024,
+        "height": 700,
+        "aspectRatio": 1.4628571428571429
+      },
+      "caseStudy": {
+        "en": "/work/fast-shopping/",
+        "ar": "/ar/work/fast-shopping/"
+      },
+      "liveUrl": "https://fastshopping24.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "mishari-oud",
+      "slug": "mishari-oud",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Mishari Oud Store",
+        "ar": "متجر مشاري للعود"
+      },
+      "description": {
+        "en": "A WooCommerce store for oud and perfumes with shop, product, cart, checkout, and contact pages.",
+        "ar": "متجر WooCommerce للعود والعطور يضم المتجر والمنتج والسلة والدفع والتواصل."
+      },
+      "eyebrow": {
+        "en": "WooCommerce / Perfume Store",
+        "ar": "وكومرس / متجر عطور"
+      },
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/mishari-oud/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1920,
+        "height": 4872,
+        "aspectRatio": 0.39408866995073893
+      },
+      "caseStudy": {
+        "en": "/work/mishari-oud/",
+        "ar": "/ar/work/mishari-oud/"
+      },
+      "liveUrl": "https://meemsa.net/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "lec-elevators",
+      "slug": "lec-elevators",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "LEC Elevators Company",
+        "ar": "الشركة الهندسية للمصاعد"
+      },
+      "description": {
+        "en": "A corporate website for an elevator company with services, portfolio, company profile, and contact pages.",
+        "ar": "موقع شركة مصاعد يعرض الخدمات والأعمال والتعريف بالشركة وصفحات التواصل."
+      },
+      "eyebrow": {
+        "en": "Elevators / Corporate Website",
+        "ar": "مصاعد / موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "Corporate",
+        "PHP"
+      ],
+      "thumbnail": {
+        "original": "/projects/lec-elevators/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 600,
+        "height": 2781,
+        "aspectRatio": 0.21574973031283712
+      },
+      "caseStudy": {
+        "en": "/work/lec-elevators/",
+        "ar": "/ar/work/lec-elevators/"
+      },
+      "liveUrl": "http://lec-eg.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "mashora",
+      "slug": "mashora",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Mashourah Lawyer Website",
+        "ar": "موقع مشورة للمحاماة"
+      },
+      "description": {
+        "en": "A legal services website presenting practice areas, about content, and service pages.",
+        "ar": "موقع خدمات قانونية يعرض مجالات العمل والتعريف بالمكتب والخدمات."
+      },
+      "eyebrow": {
+        "en": "Legal / Services Website",
+        "ar": "قانون / موقع خدمات"
+      },
+      "technologies": [
+        "WordPress",
+        "Services",
+        "Arabic RTL"
+      ],
+      "thumbnail": {
+        "original": "/projects/mashora/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 1200,
+        "aspectRatio": 1.3333333333333333
+      },
+      "caseStudy": {
+        "en": "/work/mashora/",
+        "ar": "/ar/work/mashora/"
+      },
+      "liveUrl": "http://mashourah-lawyer.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "top-pack",
+      "slug": "top-pack",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Top Pack Systems Website",
+        "ar": "موقع توب باك سيستمز"
+      },
+      "description": {
+        "en": "A packaging company website presenting products, services, videos, about content, and contact paths.",
+        "ar": "موقع شركة تعبئة وتغليف يعرض المنتجات والخدمات والفيديوهات والتواصل."
+      },
+      "eyebrow": {
+        "en": "Packaging / Corporate Website",
+        "ar": "تعبئة وتغليف / موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "Corporate",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/top-pack/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 4500,
+        "aspectRatio": 0.35555555555555557
+      },
+      "caseStudy": {
+        "en": "/work/top-pack/",
+        "ar": "/ar/work/top-pack/"
+      },
+      "liveUrl": "https://toppack-sys.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "omnas",
+      "slug": "omnas",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Omnas Website",
+        "ar": "موقع اومناس"
+      },
+      "description": {
+        "en": "A corporate website captured as a full-page presentation.",
+        "ar": "موقع شركة تم عرضه كلقطة صفحة كاملة."
+      },
+      "eyebrow": {
+        "en": "Corporate Website",
+        "ar": "موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "HTML",
+        "CSS"
+      ],
+      "thumbnail": {
+        "original": "/projects/omnas/cover.png",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 600,
+        "height": 2073,
+        "aspectRatio": 0.2894356005788712
+      },
+      "caseStudy": {
+        "en": "/work/omnas/",
+        "ar": "/ar/work/omnas/"
+      },
+      "liveUrl": "http://omnas.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "prowindow",
+      "slug": "prowindow",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Pro Window Egypt Website",
+        "ar": "موقع برو ويندو مصر"
+      },
+      "description": {
+        "en": "A product-led company website for windows, doors, shutters, insect screens, and glass systems.",
+        "ar": "موقع شركة لمنتجات الأبواب والشبابيك والشيش وسلك الناموس وأنظمة الزجاج."
+      },
+      "eyebrow": {
+        "en": "Windows / Corporate Website",
+        "ar": "أبواب وشبابيك / موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "Products",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/prowindow/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 3358,
+        "aspectRatio": 0.47647409172126265
+      },
+      "caseStudy": {
+        "en": "/work/prowindow/",
+        "ar": "/ar/work/prowindow/"
+      },
+      "liveUrl": "https://prowindow-eg.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "taha-ramadan",
+      "slug": "taha-ramadan",
+      "category": "services",
+      "featured": false,
+      "title": {
+        "en": "Dr Taha Ramadan Website",
+        "ar": "موقع دكتور طه رمضان"
+      },
+      "description": {
+        "en": "A medical website presenting home, about, analysis, follow-up, contact, and content pages.",
+        "ar": "موقع طبي يعرض الرئيسية والتعريف والتحاليل والمتابعة والتواصل والمحتوى."
+      },
+      "eyebrow": {
+        "en": "Medical / Doctor Website",
+        "ar": "طبي / موقع طبيب"
+      },
+      "technologies": [
+        "WordPress",
+        "Medical",
+        "Arabic RTL"
+      ],
+      "thumbnail": {
+        "original": "/projects/taha-ramadan/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 3643,
+        "aspectRatio": 0.43919846280538016
+      },
+      "caseStudy": {
+        "en": "/work/taha-ramadan/",
+        "ar": "/ar/work/taha-ramadan/"
+      },
+      "liveUrl": "https://drtaharamadan.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "asia-eg",
+      "slug": "asia-eg",
+      "category": "corporate",
+      "featured": false,
+      "title": {
+        "en": "Asia Egypt Website",
+        "ar": "موقع آسيا مصر"
+      },
+      "description": {
+        "en": "A corporate website with homepage and about-company presentation.",
+        "ar": "موقع شركة يعرض الصفحة الرئيسية والتعريف بالشركة."
+      },
+      "eyebrow": {
+        "en": "Corporate Website",
+        "ar": "موقع شركة"
+      },
+      "technologies": [
+        "WordPress",
+        "Corporate",
+        "HTML"
+      ],
+      "thumbnail": {
+        "original": "/projects/asia-eg/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 5645,
+        "aspectRatio": 0.283436669619132
+      },
+      "caseStudy": {
+        "en": "/work/asia-eg/",
+        "ar": "/ar/work/asia-eg/"
+      },
+      "liveUrl": "https://asia-eg.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
+      "id": "zeta-medicine",
+      "slug": "zeta-medicine",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Zeta Medicine Website",
+        "ar": "موقع زيتا ميديسن"
+      },
+      "description": {
+        "en": "A medicine-focused website with home, products, shop, affiliate, FAQ, about, and contact pages.",
+        "ar": "موقع طبي وتجاري يضم الرئيسية والمنتجات والمتجر والشركاء والأسئلة والتواصل."
+      },
+      "eyebrow": {
+        "en": "Medicine / eCommerce Website",
+        "ar": "طبي / متجر إلكتروني"
+      },
+      "technologies": [
+        "WordPress",
+        "Products",
+        "WooCommerce"
+      ],
+      "thumbnail": {
+        "original": "/projects/zeta-medicine/cover.webp",
+        "avif480": null,
+        "avif800": null,
+        "webp480": null,
+        "webp800": null,
+        "width": 1600,
+        "height": 3383,
+        "aspectRatio": 0.4729530002955956
+      },
+      "caseStudy": {
+        "en": "/work/zeta-medicine/",
+        "ar": "/ar/work/zeta-medicine/"
+      },
+      "liveUrl": "https://zetamedicine.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    }
+  ]
+}
