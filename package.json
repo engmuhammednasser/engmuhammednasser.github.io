@@ -10,8 +10,12 @@
     "fix:paths": "node scripts/fix-export-paths.mjs",
     "filter:work": "node scripts/add-work-filters.mjs",
     "upgrade:arabic-window": "node scripts/upgrade-arabic-window-case-study.mjs",
+    "images:normalize": "node scripts/normalize-image-delivery.mjs",
+    "images:thumbnails": "node scripts/generate-project-thumbnails.mjs",
+    "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
+    "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/check-static.mjs"
+    "check": "node scripts/check-static.mjs && node scripts/check-image-delivery.mjs"
   },
   "engines": {
     "node": ">=20"

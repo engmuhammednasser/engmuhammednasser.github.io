@@ -1,2 +1,12 @@
 node_modules/
 *.log
+
+# Local build, test, and capture output. The committed repository root is the
+# production static export and must remain tracked.
+.cache/
+coverage/
+dist/
+build/
+out/
+*.tmp
+*.bak

@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 3,
+  "source": "projects/gobe/featured-image.jpg",
+  "sourceBytes": 80455,
+  "sourceWidth": 1200,
+  "sourceHeight": 900,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 360,
+      "bytes": 7901,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 360,
+      "bytes": 7958,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 600,
+      "bytes": 14782,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 600,
+      "bytes": 15100,
+      "quality": 68
+    }
+  }
+}
