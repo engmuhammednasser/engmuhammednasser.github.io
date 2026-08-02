@@ -64,13 +64,22 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+function imageTags() {
+  return [...grid.innerHTML.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
+}
+
 assert(cardIds().length === 12, "initial render must contain 12 cards");
 assert(status.textContent === "Showing 12 of 43 projects", "initial status is incorrect");
+assert(/\bloading="eager"/.test(imageTags()[0]), "initial primary image must be eager");
+assert(/\bfetchpriority="high"/.test(imageTags()[0]), "initial primary image must be high priority");
+assert(imageTags().slice(1).every((image) => /\bloading="lazy"/.test(image) && !/\bfetchpriority="high"/.test(image)), "initial non-primary images must remain lazy and unprioritized");
+assert(imageTags()[0].includes("/projects/eventgift-egypt/optimized/"), "initial primary image must use an optimized source");
 
 listeners.get("corporate")();
 assert(cardIds().length === 12, "corporate filter must reset to the first 12 projects");
 assert(new Set(cardIds()).size === 12, "corporate filter must not duplicate cards");
 assert(filterButtons[2].getAttribute("aria-pressed") === "true", "corporate filter must expose aria-pressed=true");
+assert(imageTags().every((image) => /\bloading="lazy"/.test(image) && !/\bfetchpriority="high"/.test(image)), "filtered images must not retain the initial high-priority hint");
 
 loadMore.dispatch = listeners.get("click");
 listeners.get("click")();

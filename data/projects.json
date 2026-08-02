@@ -102,10 +102,10 @@
       ],
       "thumbnail": {
         "original": "/projects/eventgift-uae/home.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/eventgift-uae/optimized/thumb-480.avif",
+        "avif800": "/projects/eventgift-uae/optimized/thumb-800.avif",
+        "webp480": "/projects/eventgift-uae/optimized/thumb-480.webp",
+        "webp800": "/projects/eventgift-uae/optimized/thumb-800.webp",
         "width": 1911,
         "height": 14401,
         "aspectRatio": 0.13269911811679744

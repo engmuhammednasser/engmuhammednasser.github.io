@@ -59,8 +59,11 @@ function checkPilotPictures(content, relativePath) {
     const slug = match[1];
     const body = match[2];
     const image = body.match(/<img\b[^>]*>/i)?.[0] ?? "";
-    if (!/\bloading="lazy"/.test(image) || !/\bdecoding="async"/.test(image)) {
-      reportFailure(`${relativePath}: pilot thumbnail ${slug} is not lazy/async`);
+    if (!/\bloading="(?:lazy|eager)"/.test(image) || !/\bdecoding="async"/.test(image)) {
+      reportFailure(`${relativePath}: pilot thumbnail ${slug} has invalid loading/decoding policy`);
+    }
+    if (/\bloading="eager"/.test(image) && !/\bfetchpriority="high"/.test(image)) {
+      reportFailure(`${relativePath}: eager pilot thumbnail ${slug} is missing fetchpriority=high`);
     }
     if (!/\bwidth="\d+"/.test(image) || !/\bheight="\d+"/.test(image)) {
       reportFailure(`${relativePath}: pilot thumbnail ${slug} is missing intrinsic dimensions`);
@@ -72,10 +75,21 @@ function checkWorkImages(content, relativePath) {
   if (!new Set(["work/index.html", "ar/work/index.html"]).has(relativePath)) return;
   for (const match of content.matchAll(/<img\b[^>]*\bsrc="\/projects\/[^"]+"[^>]*>/gi)) {
     const image = match[0];
-    if (!/\bloading="lazy"/.test(image) || !/\bdecoding="async"/.test(image)) {
-      reportFailure(`${relativePath}: Work project image is not lazy/async`);
+    if (!/\bloading="(?:lazy|eager)"/.test(image) || !/\bdecoding="async"/.test(image)) {
+      reportFailure(`${relativePath}: Work project image has invalid loading/decoding policy`);
     }
   }
+  const images = [...content.matchAll(/<img\b[^>]*\bsrc="\/projects\/[^\"]+"[^>]*>/gi)].map((match) => match[0]);
+  if (images.length !== 12) reportFailure(`${relativePath}: expected 12 active Work project images, found ${images.length}`);
+  const primary = images[0] ?? "";
+  if (!/\bloading="eager"/.test(primary) || !/\bfetchpriority="high"/.test(primary)) {
+    reportFailure(`${relativePath}: primary Work image must be eager with fetchpriority=high`);
+  }
+  images.slice(1).forEach((image) => {
+    if (!/\bloading="lazy"/.test(image) || /\bfetchpriority="high"/.test(image)) {
+      reportFailure(`${relativePath}: non-primary Work image must remain lazy without high priority`);
+    }
+  });
 }
 
 function isCriticalImagePreload(href) {

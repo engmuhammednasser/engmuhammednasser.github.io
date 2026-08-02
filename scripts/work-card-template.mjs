@@ -36,7 +36,7 @@ export function escapeHtml(value = "") {
   }[character]));
 }
 
-function renderImage(project) {
+function renderImage(project, isPrimaryLcp = false) {
   const thumbnail = project.thumbnail;
   const alt = escapeHtml(project.title);
   const dimensions = `width="${thumbnail.width}" height="${thumbnail.height}"`;
@@ -58,10 +58,12 @@ function renderImage(project) {
   }
 
   const fallback = thumbnail.webp800 || thumbnail.webp480 || thumbnail.original;
+  const loading = isPrimaryLcp ? "eager" : "lazy";
+  const priority = isPrimaryLcp ? ` fetchpriority="high"` : "";
   const image = `<img src="${escapeHtml(fallback)}"${hasVariants ? ` srcset="${[
     thumbnail.webp480 && `${thumbnail.webp480} 480w`,
     thumbnail.webp800 && `${thumbnail.webp800} 800w`
-  ].filter(Boolean).join(", ")}"` : ""} sizes="${sizes}" ${dimensions} alt="${alt}" loading="lazy" decoding="async" class="h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100">`;
+  ].filter(Boolean).join(", ")}"` : ""} sizes="${sizes}" ${dimensions} alt="${alt}" loading="${loading}" decoding="async"${priority} class="h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100">`;
   const media = hasVariants
     ? `<picture data-pilot-thumbnail="${escapeHtml(project.slug)}">${sources.join("")}${image}</picture>`
     : image;
@@ -74,7 +76,7 @@ function renderLiveLink(project, copy) {
   return `<a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="${actionClasses} bg-[#22C55E]/10 text-[#22C55E] border-[#22C55E]/20 hover:bg-[#22C55E]/20 hover:border-[#22C55E]/40"><span class="h-1.5 w-1.5 rounded-full bg-[#22C55E]" aria-hidden="true"></span>${escapeHtml(copy.live)}</a>`;
 }
 
-export function renderProjectCard(project, locale) {
+export function renderProjectCard(project, locale, isPrimaryLcp = false) {
   const copy = localeCopy[locale];
   const localized = {
     ...project,
@@ -87,7 +89,7 @@ export function renderProjectCard(project, locale) {
 
   return `<article class="${cardClasses}" data-work-card data-project-id="${escapeHtml(project.id)}" data-work-category="${escapeHtml(project.category)}" data-availability="${escapeHtml(project.availability)}">
   <a class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#38BDF8]" href="${escapeHtml(localized.caseStudy)}">
-    ${renderImage({ ...localized, title: localized.title })}
+    ${renderImage({ ...localized, title: localized.title }, isPrimaryLcp)}
     <div class="flex flex-1 flex-col p-8">
       <div class="mb-3 text-xs font-bold uppercase tracking-widest text-[#38BDF8]">${escapeHtml(localized.eyebrow)}</div>
       <h3 class="mb-3 text-2xl font-bold leading-snug transition-colors group-hover:text-[#38BDF8]">${escapeHtml(localized.title)}</h3>

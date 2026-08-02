@@ -22,7 +22,7 @@ function element(type, key, props = {}) {
   return ["$", type, key, props];
 }
 
-function payloadImage(project, locale) {
+function payloadImage(project, locale, isPrimaryLcp = false) {
   const thumbnail = project.thumbnail;
   const fallback = thumbnail.webp800 || thumbnail.webp480 || thumbnail.original;
   const srcSet = [
@@ -36,8 +36,9 @@ function payloadImage(project, locale) {
     width: thumbnail.width,
     height: thumbnail.height,
     alt: project.title[locale],
-    loading: "lazy",
+    loading: isPrimaryLcp ? "eager" : "lazy",
     decoding: "async",
+    ...(isPrimaryLcp ? { fetchPriority: "high" } : {}),
     className: "h-full w-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
   });
   const media = thumbnail.avif480 || thumbnail.avif800 || thumbnail.webp480 || thumbnail.webp800
@@ -57,7 +58,7 @@ function payloadImage(project, locale) {
   });
 }
 
-function payloadCard(project, locale) {
+function payloadCard(project, locale, isPrimaryLcp = false) {
   const localizedCaseStudy = project.caseStudy[locale];
   const localized = project.title[locale];
   const liveLink = project.liveUrl
@@ -75,7 +76,7 @@ function payloadCard(project, locale) {
         className: "block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#38BDF8]",
         href: localizedCaseStudy,
         children: [
-          payloadImage(project, locale),
+          payloadImage(project, locale, isPrimaryLcp),
           element("div", null, {
             className: "flex flex-1 flex-col p-8",
             children: [
@@ -131,7 +132,7 @@ function updatePayload(relativeFile, locale) {
     element("div", null, {
       id: "work-project-grid",
       className: "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 work-project-grid",
-      children: data.projects.slice(0, initialCount).map((project) => payloadCard(project, locale))
+      children: data.projects.slice(0, initialCount).map((project, index) => payloadCard(project, locale, index === 0))
     }),
     element("div", null, {
       className: "mt-10 text-center",
@@ -157,7 +158,7 @@ function renderLocale(locale, file) {
   const initialProjects = data.projects.slice(0, initialCount);
   const archiveContent = [
     renderFilterShell(data, locale),
-    `<div id="work-project-grid" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 work-project-grid">${initialProjects.map((project) => renderProjectCard(project, locale)).join("")}</div>`,
+    `<div id="work-project-grid" class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 work-project-grid">${initialProjects.map((project, index) => renderProjectCard(project, locale, index === 0)).join("")}</div>`,
     renderLoadMore(data, locale),
     renderNoScriptList(data, locale),
     "</section>"

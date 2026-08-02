@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 3,
+  "source": "projects/eventgift-uae/home.webp",
+  "sourceBytes": 1100908,
+  "sourceWidth": 1911,
+  "sourceHeight": 14401,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 3617,
+      "bytes": 88191,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 3617,
+      "bytes": 108204,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 6029,
+      "bytes": 140844,
+      "quality": 45
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 6029,
+      "bytes": 148314,
+      "quality": 30
+    }
+  }
+}
