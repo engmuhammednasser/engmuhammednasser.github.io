@@ -2,9 +2,20 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, resolve } from "node:path";
 
 const root = resolve(process.cwd());
+// Development-only scripts and framework vendor output are excluded. The
+// production runtime files under scripts/ are added explicitly below.
 const ignoredDirectories = new Set([".git", "node_modules", "docs", "scripts", "_next"]);
 const textExtensions = new Set([".css", ".html", ".js", ".json", ".mjs", ".txt", ".xml"]);
-const files = [];
+const productionRuntimeAssets = [
+  "scripts/armadillo-studio-screenshots.js",
+  "scripts/case-study-screenshots.js",
+  "scripts/kuwait-arc-screenshots.js",
+  "scripts/portfolio-effects.css",
+  "scripts/portfolio-effects.js",
+  "scripts/torathyat-screenshots.js",
+  "scripts/work-archive.js"
+];
+const files = new Set();
 const errors = [];
 
 function collect(directory) {
@@ -13,7 +24,7 @@ function collect(directory) {
       if (!ignoredDirectories.has(entry.name)) collect(join(directory, entry.name));
       continue;
     }
-    if (entry.isFile() && textExtensions.has(extname(entry.name).toLowerCase())) files.push(join(directory, entry.name));
+    if (entry.isFile() && textExtensions.has(extname(entry.name).toLowerCase())) files.add(join(directory, entry.name));
   }
 }
 
@@ -29,10 +40,19 @@ function decode(value) {
 
 collect(root);
 
+for (const relative of productionRuntimeAssets) {
+  const file = resolve(root, relative);
+  if (!existsSync(file) || !statSync(file).isFile()) {
+    errors.push(`${relative}: production runtime asset is missing`);
+    continue;
+  }
+  files.add(file);
+}
+
 const localPathPattern = /(?:C:\\Users\\|C:\\Users\/|\/Users\/|\/home\/|file:\/\/|\blocalhost\b|\b127\.0\.0\.1\b)/i;
 const secretPattern = /(?:AKIA[0-9A-Z]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bsk-[A-Za-z0-9]{20,}\b)/;
 
-for (const file of files) {
+for (const file of [...files].sort()) {
   const relative = file.slice(root.length + 1);
   let content;
   try {
@@ -85,7 +105,8 @@ for (const file of files) {
   }
 }
 
-console.log(`Security/hygiene checked ${files.length} production text files (framework vendor output excluded).`);
+console.log(`Security/hygiene checked ${files.size} production text files (framework vendor output excluded).`);
+console.log(`Explicit production runtime assets scanned: ${productionRuntimeAssets.join(", ")}`);
 
 if (errors.length) {
   console.error(`Found ${errors.length} security/hygiene failures:`);
