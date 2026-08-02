@@ -140,7 +140,7 @@ function collectRecord(file) {
       labeledButtons: buttons.filter((button) => attr(button, "aria-label").trim() || button.replace(/<[^>]+>/g, "").trim()).length,
       forms: tagCount(html, "form"),
       labels: tagCount(html, "label"),
-      skipLink: /<a\b[^>]*href="#(?!$)[^"]*"/i.test(html),
+      skipLink: /<a\b[^>]*href="#(?:main-content|content|main)"/i.test(html),
       focusVisible: /focus-visible/i.test(html),
       workFilters: (html.match(/data-work-filter=/g) ?? []).length,
       loadMore: (html.match(/data-work-load-more(?:=|\b)/g) ?? []).length,
@@ -293,6 +293,8 @@ None observed from static inspection.
 
 This is a static and headless baseline, not a WCAG certification or a fabricated Lighthouse score. It does not prove visual contrast, screen-reader announcement quality, keyboard focus order through every mobile-menu state, or browser-specific assistive-technology behavior. Sprint 4 browser checks must cover those behaviors where Chrome headless can observe them.
 `;
-writeFileSync(resolve(root, "docs/audit/seo-accessibility-before.md"), beforeMarkdown, "utf8");
+if (process.argv.includes("--before")) {
+  writeFileSync(resolve(root, "docs/audit/seo-accessibility-before.md"), beforeMarkdown, "utf8");
+}
 console.log(`Generated SEO/accessibility inventory for ${routes.length} routes and ${representative.length} representative pages.`);
 console.log(JSON.stringify(aggregate));

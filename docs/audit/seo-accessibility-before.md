@@ -25,7 +25,7 @@ Representative coverage includes the homepage, Work, About, Services, Developer 
 | EN/AR language or RTL mismatches | 2 |
 | Images missing alt | 0 |
 | Images with empty alt | 6 |
-| Routes with skip links | 2 |
+| Routes with skip links to main content | 0 |
 | Routes with exactly one main landmark | 184 |
 | Functional forms | 0 |
 | Work filter routes | 2 |
@@ -98,7 +98,7 @@ None observed from static inspection.
 
 ### P1 — High
 
-- Skip navigation is not a site-wide invariant; only two legacy EventGift routes expose a skip target, while the remaining representative and indexable routes do not.
+- No route exposes a skip-navigation target to the main content. Two legacy EventGift routes contain unrelated fragment links, which are not skip navigation.
 - Navigation/menu semantics and focus restoration need browser verification on representative desktop/mobile states.
 - Inner-page heading sequences and route-specific landmark structure need deterministic validation rather than assuming the homepage pattern.
 

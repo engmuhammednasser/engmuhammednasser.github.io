@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404/
+Disallow: /_not-found/
+
+Sitemap: https://engmuhammednasser.github.io/sitemap.xml

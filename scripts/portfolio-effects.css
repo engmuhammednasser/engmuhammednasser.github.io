@@ -57,6 +57,37 @@
   opacity: 0.1;
 }
 
+/* Shared keyboard affordances added in Sprint 4. */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #38BDF8;
+  outline-offset: 3px;
+}
+
+[data-skip-link] {
+  position: fixed;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border: 2px solid #38BDF8;
+  border-radius: 0.6rem;
+  background: #38BDF8;
+  color: #020617;
+  font-weight: 800;
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+
+[data-skip-link]:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-skip-link] {
+    transition: none;
+  }
+}
+
 .portfolio-ambient-orb-blue {
   top: -32%;
   right: -18%;
