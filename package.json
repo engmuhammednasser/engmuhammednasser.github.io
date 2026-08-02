@@ -15,7 +15,7 @@
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/check-static.mjs && node scripts/check-image-delivery.mjs"
+    "check": "node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs"
   },
   "engines": {
     "node": ">=20"
