@@ -201,14 +201,32 @@ async function clickAt(cdp, selector) {
   await cdp.send("Input.dispatchMouseEvent", { type: "mouseMoved", x, y });
   await cdp.send("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", clickCount: 1 });
   await cdp.send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1 });
+  await sleep(360);
+}
+
+async function pressKey(cdp, key, code, keyCode, modifiers = 0) {
+  const text = key === "Enter" ? "\r" : key === " " ? " " : undefined;
+  await cdp.send("Input.dispatchKeyEvent", { type: "keyDown", key, code, text, unmodifiedText: text, modifiers, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
+  await cdp.send("Input.dispatchKeyEvent", { type: "keyUp", key, code, modifiers, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
   await sleep(180);
 }
 
-async function pressKey(cdp, key, code, keyCode) {
-  const text = key === "Enter" ? "\r" : key === " " ? " " : undefined;
-  await cdp.send("Input.dispatchKeyEvent", { type: "keyDown", key, code, text, unmodifiedText: text, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
-  await cdp.send("Input.dispatchKeyEvent", { type: "keyUp", key, code, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
-  await sleep(180);
+function focusStateExpression() {
+  return `(() => {
+    const menu = document.querySelector('[data-mobile-menu]');
+    const selector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusable = [...(menu?.querySelectorAll(selector) ?? [])].filter((element) => {
+      if (element.disabled || element.hidden || element.getAttribute('aria-hidden') === 'true' || element.getAttribute('aria-disabled') === 'true' || element.tabIndex < 0 || element.closest('[inert]')) return false;
+      const styles = window.getComputedStyle(element);
+      return styles.display !== 'none' && styles.visibility !== 'hidden' && element.getClientRects().length > 0;
+    });
+    return {
+      count: focusable.length,
+      activeInside: Boolean(menu?.contains(document.activeElement)),
+      activeIsFirst: focusable[0] === document.activeElement,
+      activeIsLast: focusable[focusable.length - 1] === document.activeElement
+    };
+  })()`;
 }
 
 function stopProcess(child) {
@@ -264,21 +282,46 @@ try {
     try {
       cdp.events.length = 0;
       await navigate(cdp, route);
-      const before = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return { locale: document.documentElement.lang, direction: document.documentElement.dir, closed: toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && menu?.classList.contains(document.documentElement.dir === 'rtl' ? 'translate-x-full' : '-translate-x-full'), togglePresent: Boolean(toggle), menuPresent: Boolean(menu) }; })()");
+      const before = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return { locale: document.documentElement.lang, direction: document.documentElement.dir, closed: toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && menu?.hasAttribute('inert') && menu?.classList.contains(document.documentElement.dir === 'rtl' ? 'translate-x-full' : '-translate-x-full'), togglePresent: Boolean(toggle), menuPresent: Boolean(menu), closeHookCount: menu?.querySelectorAll('[data-mobile-menu-close]').length ?? 0 }; })()");
       assert(before.togglePresent && before.menuPresent, `${route}: fallback hooks are missing`);
       assert(before.closed, `${route}: menu must start closed`);
+      assert(before.closeHookCount === 1, `${route}: close button hook is missing or duplicated`);
 
       await clickAt(cdp, "[data-mobile-menu-toggle]");
       const pointerOpen = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return toggle?.getAttribute('aria-expanded') === 'true' && menu?.getAttribute('aria-hidden') === 'false' && menu?.classList.contains('translate-x-0') && !menu?.hasAttribute('inert') && Boolean(document.querySelector('[data-mobile-menu-overlay]')); })()");
       assert(pointerOpen, `${route}: pointer activation did not open the menu`);
 
+      const openFocus = await evaluate(cdp, "(() => { const menu = document.querySelector('[data-mobile-menu]'); const active = document.activeElement; return menu?.contains(active) && active?.matches('[data-mobile-menu-close]'); })()");
+      assert(openFocus, `${route}: opening did not move focus into the menu`);
+
+      await clickAt(cdp, "[data-mobile-menu-close]");
+      const closeButtonClose = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && menu?.hasAttribute('inert') && menu?.classList.contains(document.documentElement.dir === 'rtl' ? 'translate-x-full' : '-translate-x-full') && document.activeElement === toggle; })()");
+      assert(closeButtonClose, `${route}: close button did not close and restore focus`);
+
       await clickAt(cdp, "[data-mobile-menu-toggle]");
-      const pointerClose = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && !document.querySelector('[data-mobile-menu-overlay]'); })()");
+      await clickAt(cdp, "[data-mobile-menu-toggle]");
+      const pointerClose = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && menu?.hasAttribute('inert') && menu?.classList.contains(document.documentElement.dir === 'rtl' ? 'translate-x-full' : '-translate-x-full') && document.activeElement === toggle && !document.querySelector('[data-mobile-menu-overlay]'); })()");
       assert(pointerClose, `${route}: second pointer activation did not close the menu`);
 
       await clickAt(cdp, "[data-mobile-menu-toggle]");
+      const focusTargets = await evaluate(cdp, "(() => { const menu = document.querySelector('[data-mobile-menu]'); const selector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex=\"-1\"])'; const focusable = [...(menu?.querySelectorAll(selector) ?? [])].filter((element) => !element.disabled && !element.hidden && element.getAttribute('aria-disabled') !== 'true' && element.tabIndex >= 0 && !element.closest('[inert]') && getComputedStyle(element).display !== 'none' && getComputedStyle(element).visibility !== 'hidden' && element.getClientRects().length > 0); focusable.at(-1)?.focus(); return { count: focusable.length }; })()");
+      assert(focusTargets.count > 0, `${route}: menu has no focusable controls`);
+      await pressKey(cdp, "Tab", "Tab", 9);
+      const forwardWrap = await evaluate(cdp, focusStateExpression());
+      assert(forwardWrap.activeInside && forwardWrap.activeIsFirst, `${route}: Tab escaped or did not wrap to the first menu control`);
+
+      await evaluate(cdp, "(() => { const menu = document.querySelector('[data-mobile-menu]'); const selector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex=\"-1\"])'; const focusable = [...(menu?.querySelectorAll(selector) ?? [])].filter((element) => !element.disabled && !element.hidden && element.getAttribute('aria-disabled') !== 'true' && element.tabIndex >= 0 && !element.closest('[inert]') && getComputedStyle(element).display !== 'none' && getComputedStyle(element).visibility !== 'hidden' && element.getClientRects().length > 0); focusable[0]?.focus(); })()");
+      await pressKey(cdp, "Tab", "Tab", 9, 8);
+      const reverseWrap = await evaluate(cdp, focusStateExpression());
+      assert(reverseWrap.activeInside && reverseWrap.activeIsLast, `${route}: Shift+Tab escaped or did not wrap to the last menu control`);
+
+      await evaluate(cdp, "document.querySelector('[data-mobile-menu-toggle]')?.focus()");
+      await pressKey(cdp, "Tab", "Tab", 9);
+      const unexpectedFocus = await evaluate(cdp, focusStateExpression());
+      assert(unexpectedFocus.activeInside && unexpectedFocus.activeIsFirst, `${route}: focus from outside the menu was not restored inside`);
+
       await pressKey(cdp, "Escape", "Escape", 27);
-      const escapeClose = await evaluate(cdp, "document.querySelector('[data-mobile-menu-toggle]')?.getAttribute('aria-expanded') === 'false'");
+      const escapeClose = await evaluate(cdp, "(() => { const toggle = document.querySelector('[data-mobile-menu-toggle]'); const menu = document.querySelector('[data-mobile-menu]'); return toggle?.getAttribute('aria-expanded') === 'false' && menu?.getAttribute('aria-hidden') === 'true' && menu?.hasAttribute('inert') && document.activeElement === toggle; })()");
       assert(escapeClose, `${route}: Escape did not close the menu`);
 
       await evaluate(cdp, "document.querySelector('[data-mobile-menu-toggle]')?.focus()");
@@ -296,7 +339,7 @@ try {
       const runtime = diagnostics(cdp);
       assert(runtime.unexpectedExceptions.length === 0, `${route}: unexpected runtime exception: ${runtime.unexpectedExceptions[0]}`);
       assert(runtime.consoleErrors.length === 0, `${route}: console error: ${runtime.consoleErrors[0]}`);
-      routeResults.push({ route, locale: before.locale, direction: before.direction, pointerOpen, pointerClose, escapeClose, enterOpen, spaceOpen, knownExceptions: runtime.knownExceptions });
+      routeResults.push({ route, locale: before.locale, direction: before.direction, pointerOpen, closeButtonClose, pointerClose, openFocus, forwardWrap, reverseWrap, unexpectedFocus, escapeClose, enterOpen, spaceOpen, knownExceptions: runtime.knownExceptions });
     } catch (error) {
       failures.push(error.message);
     }

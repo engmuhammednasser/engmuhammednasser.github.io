@@ -93,6 +93,16 @@ Chrome regression     PASS
 
 The security scanner explicitly includes `scripts/mobile-navigation.js`. No broad `MutationObserver` was added, no vendor Next chunk was edited, and no project data, SEO content, images, or case-study content is changed.
 
+## Final Review Fixes
+
+### Modal Focus Containment
+
+The standalone controller now remembers the element that opened the menu, focuses the stable close control after opening, and keeps focus inside the open dialog with native `Tab` and `Shift+Tab` wrapping. Escape, the close button, and the second toggle close the menu and restore focus to the remembered trigger. The focus calculations are scoped to the mobile-navigation panel and fail safely through a temporary `tabindex="-1"` fallback if no focusable child is available.
+
+### Stable Close Hook
+
+Every transformed page now marks the close control with `data-mobile-menu-close`. The runtime uses that stable hook instead of English or Arabic label text, while the accessible `aria-label` remains unchanged.
+
 ## Remaining Risk
 
 The generated Next/React hydration exception remains technical debt. Repairing it safely would require the unavailable original Next.js source/build configuration. The mobile navigation no longer depends on that hydration path for its required interaction behavior.

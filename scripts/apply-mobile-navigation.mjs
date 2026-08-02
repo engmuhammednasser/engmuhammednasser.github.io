@@ -39,6 +39,22 @@ function transform(file) {
     return addAttribute(transformed, "inert");
   });
 
+  const menuIdIndex = next.indexOf('id="mobile-navigation"');
+  if (menuIdIndex === -1) throw new Error(`${relative(root, file)} is missing the mobile navigation menu.`);
+  const menuOpenStart = next.lastIndexOf("<", menuIdIndex);
+  const menuOpenEnd = next.indexOf(">", menuOpenStart);
+  const firstMenuSectionEnd = next.indexOf("</div>", menuOpenEnd + 1);
+  const closeButtonStart = next.indexOf("<button", menuOpenEnd + 1);
+  const closeButtonEnd = next.indexOf(">", closeButtonStart);
+  if (menuOpenStart === -1 || menuOpenEnd === -1 || firstMenuSectionEnd === -1 || closeButtonStart === -1 || closeButtonStart > firstMenuSectionEnd || closeButtonEnd === -1) {
+    throw new Error(`${relative(root, file)} is missing the mobile menu close button.`);
+  }
+  const closeButtonTag = next.slice(closeButtonStart, closeButtonEnd + 1);
+  if (!/\baria-label\s*=/i.test(closeButtonTag)) {
+    throw new Error(`${relative(root, file)} has an unexpected mobile menu close button.`);
+  }
+  next = `${next.slice(0, closeButtonStart)}${addAttribute(closeButtonTag, "data-mobile-menu-close")}${next.slice(closeButtonEnd + 1)}`;
+
   const runtimeCount = (next.match(/data-mobile-navigation="script"/g) ?? []).length;
   if (runtimeCount > 1) {
     throw new Error(`${relative(root, file)} has duplicate mobile navigation runtime tags.`);
@@ -55,8 +71,9 @@ function transform(file) {
 
   const finalToggleCount = (next.match(/\bdata-mobile-menu-toggle(?:=|\s|>)/g) ?? []).length;
   const finalMenuCount = (next.match(/\bdata-mobile-menu(?:=|\s|>)/g) ?? []).length;
+  const finalCloseCount = (next.match(/\bdata-mobile-menu-close(?:=|\s|>)/g) ?? []).length;
   const finalRuntimeCount = (next.match(/data-mobile-navigation="script"/g) ?? []).length;
-  if (finalToggleCount !== 1 || finalMenuCount !== 1 || finalRuntimeCount !== 1) {
+  if (finalToggleCount !== 1 || finalMenuCount !== 1 || finalCloseCount !== 1 || finalRuntimeCount !== 1) {
     throw new Error(`${relative(root, file)} failed mobile navigation transformation validation.`);
   }
 
