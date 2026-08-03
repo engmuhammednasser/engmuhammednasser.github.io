@@ -121,7 +121,11 @@ for (const [locale, template] of Object.entries(templates)) {
   html = html.replace(/<script>self\.__next_f\.push\([\s\S]*?<\/script>/g, "");
   html = html.replace(/<script>\(self\.__next_f=self\.__next_f\|\|\[\]\)\.push\(\[0\]\)<\/script>/g, "");
   html = html.replace(/<script[^>]+src="\/_next\/[^\"]+"[^>]*><\/script>/g, "");
-  html = html.replace(/<link[^>]+href="\/_next\/[^\"]+"[^>]*>/g, "");
+  html = html.replace(/<link[^>]+href="\/_next\/[^\"]+"[^>]*>/g, (tag) => {
+    const keepsBaseStylesheet = /rel="stylesheet"/.test(tag) && /\/_next\/static\/chunks\//.test(tag);
+    const keepsPortfolioFont = /rel="preload"/.test(tag) && /as="font"/.test(tag) && /\/_next\/static\/media\//.test(tag);
+    return keepsBaseStylesheet || keepsPortfolioFont ? tag : "";
+  });
   if (!html.includes("/scripts/case-study-screenshots.js")) html = html.replace("</body>", '<script src="/scripts/case-study-screenshots.js" defer></script></body>');
   const output = path.join(root, outputs[locale]);
   fs.mkdirSync(path.dirname(output), { recursive: true });
