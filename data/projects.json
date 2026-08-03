@@ -239,6 +239,48 @@
       "status": "published"
     },
     {
+      "id": "mariam-fathy-shop",
+      "slug": "mariam-fathy-shop",
+      "category": "ecommerce",
+      "featured": false,
+      "title": {
+        "en": "Mariam Fathy Shop — Laravel E-Commerce Store",
+        "ar": "متجر مريم فتحي — متجر إلكتروني مبني بـ Laravel"
+      },
+      "description": {
+        "en": "A live Laravel e-commerce storefront for Mariam Fathy, pairing collection-led product discovery with cart, checkout, and a native MoonShine workspace for catalog and order operations.",
+        "ar": "متجر إلكتروني حي مبني بـ Laravel لعلامة مريم فتحي، يجمع بين اكتشاف المجموعات والمنتجات ومسار السلة والدفع ولوحة MoonShine لإدارة الكتالوج والطلبات."
+      },
+      "eyebrow": {
+        "en": "Laravel / E-Commerce",
+        "ar": "Laravel / التجارة الإلكترونية"
+      },
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MoonShine",
+        "Inertia.js",
+        "React"
+      ],
+      "thumbnail": {
+        "original": "/projects/mariam-fathy-shop/cover.png",
+        "avif480": "/projects/mariam-fathy-shop/optimized/thumb-480.avif",
+        "avif800": "/projects/mariam-fathy-shop/optimized/thumb-800.avif",
+        "webp480": "/projects/mariam-fathy-shop/optimized/thumb-480.webp",
+        "webp800": "/projects/mariam-fathy-shop/optimized/thumb-800.webp",
+        "width": 1920,
+        "height": 1080,
+        "aspectRatio": 1.7777777777777777
+      },
+      "caseStudy": {
+        "en": "/work/mariam-fathy-shop/",
+        "ar": "/ar/work/mariam-fathy-shop/"
+      },
+      "liveUrl": "https://mariamfathyshop.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
       "id": "ashhalan",
       "slug": "ashhalan",
       "category": "corporate",
