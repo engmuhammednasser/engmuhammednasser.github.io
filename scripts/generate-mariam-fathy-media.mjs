@@ -41,11 +41,12 @@ function flattenItems() {
   });
 }
 
-function generate(source, output, width, quality, extraArgs) {
+function generate(source, output, width, quality, extraArgs, preResizeArgs = []) {
   fs.mkdirSync(path.dirname(output), { recursive: true });
   runMagick([
     source,
     "-auto-orient",
+    ...preResizeArgs,
     "-resize",
     `${width}x>`,
     "-strip",
@@ -56,16 +57,28 @@ function generate(source, output, width, quality, extraArgs) {
   ]);
 }
 
-const heroSource = path.join(projectRoot, "cover.png");
+const heroSourceRelative = "desktop/en/06-home.png";
+const heroSource = path.join(projectRoot, heroSourceRelative);
 const heroSourceDimensions = identify(heroSource);
+const heroCropDimensions = {
+  width: heroSourceDimensions.width,
+  height: Math.min(heroSourceDimensions.height, Math.round(heroSourceDimensions.width * 9 / 16))
+};
 const heroManifest = {};
 
 for (const width of heroWidths) {
-  const dimensions = dimensionsFor(heroSourceDimensions, width);
+  const dimensions = dimensionsFor(heroCropDimensions, width);
   for (const format of heroFormats) {
     const filename = `hero-${width}.${format.extension}`;
     const output = path.join(projectRoot, "optimized", filename);
-    generate(heroSource, output, width, format.quality, format.extraArgs);
+    generate(
+      heroSource,
+      output,
+      width,
+      format.quality,
+      format.extraArgs,
+      ["-gravity", "North", "-crop", `${heroCropDimensions.width}x${heroCropDimensions.height}+0+0`, "+repage"]
+    );
     heroManifest[filename] = {
       width: dimensions.width,
       height: dimensions.height,
@@ -98,10 +111,16 @@ for (const { group, item } of flattenItems()) {
 const manifest = {
   schemaVersion: 1,
   hero: {
-    original: "cover.png",
+    original: heroSourceRelative,
     originalBytes: fs.statSync(heroSource).size,
     originalWidth: heroSourceDimensions.width,
     originalHeight: heroSourceDimensions.height,
+    crop: {
+      width: heroCropDimensions.width,
+      height: heroCropDimensions.height,
+      gravity: "north",
+      aspectRatio: heroCropDimensions.width / heroCropDimensions.height
+    },
     variants: heroManifest
   },
   gallery: {
