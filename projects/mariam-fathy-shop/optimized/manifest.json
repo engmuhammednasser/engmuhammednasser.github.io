@@ -1,9 +1,9 @@
 {
   "pipelineVersion": 3,
-  "source": "projects/mariam-fathy-shop/cover.png",
-  "sourceBytes": 2632399,
+  "source": "projects/mariam-fathy-shop/desktop/ar/03-home.png",
+  "sourceBytes": 5384327,
   "sourceWidth": 1920,
-  "sourceHeight": 1080,
+  "sourceHeight": 7567,
   "policy": {
     "widths": [
       480,
@@ -30,26 +30,26 @@
   "variants": {
     "thumb-480.avif": {
       "width": 480,
-      "height": 270,
-      "bytes": 9547,
+      "height": 1892,
+      "bytes": 39665,
       "quality": 55
     },
     "thumb-480.webp": {
       "width": 480,
-      "height": 270,
-      "bytes": 10100,
+      "height": 1892,
+      "bytes": 41816,
       "quality": 68
     },
     "thumb-800.avif": {
       "width": 800,
-      "height": 450,
-      "bytes": 21575,
+      "height": 3153,
+      "bytes": 82987,
       "quality": 55
     },
     "thumb-800.webp": {
       "width": 800,
-      "height": 450,
-      "bytes": 22458,
+      "height": 3153,
+      "bytes": 87878,
       "quality": 68
     }
   }
