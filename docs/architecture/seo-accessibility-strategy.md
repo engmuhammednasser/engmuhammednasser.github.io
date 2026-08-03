@@ -1,6 +1,8 @@
 # SEO & Accessibility Strategy
 
-Status: implemented in Sprint 4
+Status: historical Sprint 4 design record. The strategy remains in use, but route
+counts in this document predate PR #4. Current inventory and operational sequencing
+are in `PORTFOLIO_ENGINEERING_HANDOFF.md` and `PORTFOLIO_OPERATIONS_GUIDE.md`.
 
 This document describes the deterministic static-export transformation used for SEO and accessibility. It complements [project-data-model.md](project-data-model.md); it does not replace the canonical Work data contract.
 

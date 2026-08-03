@@ -1,3 +1,287 @@
+# Muhammed Nasser Portfolio — Engineering Handoff
+
+Status: production handoff after Sprints 0–5 and merged PRs #1–#8
+
+Authoritative production baseline: `main` at `5b4560cacf1d7965058ec7a93fa610f04362f38d`
+
+Production: <https://engmuhammednasser.github.io/>
+Last repository audit: 2026-08-03
+
+This document is the current engineering handoff. The Sprint reports under
+`docs/audit/` remain evidence of what was measured at the time; their old counts
+and branch names are historical snapshots, not the current production inventory.
+
+For day-to-day maintenance, use `PORTFOLIO_OPERATIONS_GUIDE.md`. For a new project,
+start with `NEW_PROJECT_INTAKE_TEMPLATE.md`.
+
+## Executive handoff
+
+The repository is a checked-in static export deployed by GitHub Pages from the
+root of `main`. It still contains compiled Next.js output, but it does **not**
+contain the original Next.js application source, `next.config.*`, or a reproducible
+framework build. Consequently, the tracked HTML, route payloads, assets, canonical
+data, and repository-owned generators together form the maintainable production
+system.
+
+The engineering program did not rebuild the site. It hardened the existing export:
+
+- Work metadata and ordering are centralized in `data/projects.json`.
+- The Work archive is rendered deterministically with 12 initial cards, filters,
+  Load More, localized no-JavaScript links, and a single prioritized first image.
+- SEO and accessibility metadata are generated and validated against a route
+  inventory.
+- Decorative effects have explicit capability and lifecycle gates and do not use a
+  broad `MutationObserver` or document-wide class scans.
+- A native mobile-navigation controller remains functional even when the compiled
+  React hydration path throws its known framework exception.
+- Image delivery uses bounded optimized derivatives while retaining originals for
+  full-view interactions where required.
+- Local and pull-request quality gates cover static references, data integrity,
+  image policy, runtime invariants, interactions, SEO/accessibility, security,
+  budgets, browser behavior, and generator idempotency.
+
+## Current architecture
+
+```text
+data/projects.json
+        |
+        +--> scripts/render-work-archive.mjs
+        |       +--> work/index.html + Work payload files
+        |       +--> ar/work/index.html + Work payload files
+        |       `--> scripts/work-archive.js enhances filter/Load More
+        |
+projects/<slug>/ originals + optimized derivatives + manifests
+        `--> referenced by Work cards and case-study HTML
+
+all static index.html routes
+        |
+        +--> scripts/inventory-seo-accessibility.mjs --> data/routes.json
+        +--> scripts/apply-seo-accessibility.mjs      --> route metadata/semantics
+        +--> scripts/generate-seo-assets.mjs          --> sitemap.xml + robots.txt
+        `--> scripts/apply-mobile-navigation.mjs      --> stable native menu hooks
+
+scripts/portfolio-effects.{js,css} --> shared guarded decorative runtime
+scripts/mobile-navigation.js       --> native mobile-menu fallback
+GitHub Pages                       --> serves repository root from main
+```
+
+### Deployment model
+
+GitHub Pages is configured as a legacy branch deployment from `main` at `/` with
+HTTPS enforced. The `.nojekyll` file allows the `_next` directory to be served.
+The `Portfolio quality` workflow runs on pull requests; it also has narrow historic
+push triggers for the original refactor branches. A normal direct push to `main`
+must not be treated as equivalent to PR validation.
+
+### Source-of-truth boundaries
+
+| Concern | Current source of truth | Generated or derived output | Important boundary |
+| --- | --- | --- | --- |
+| Work project metadata, order, category, availability, thumbnails, localized routes | `data/projects.json` | EN/AR Work markup and payload slices | Do not hand-edit generated Work cards. |
+| Work markup | `scripts/work-card-template.mjs` and `scripts/render-work-archive.mjs` | Six EN/AR Work HTML/payload files | First 12 are active; all localized case links remain in `<noscript>`. |
+| Work interaction | `scripts/work-archive.js` | Runtime filter and 12-item Load More batches | No duplicate cards; filtering resets the visible batch. |
+| Route existence | Tracked static route files | `data/routes.json` inventory | `data/routes.json` records routes; it does not create them. |
+| SEO/accessibility policy | SEO generator scripts plus `data/routes.json` and project data | Per-route metadata/semantics, `sitemap.xml`, `robots.txt` | Inventory new routes before applying SEO. |
+| Case-study body content | The route-specific generator when one exists; otherwise the reviewed EN/AR static HTML pair | Deployed case-study pages | There is no universal case-study generator. Do not assume a legacy script owns every route. |
+| Generic Work thumbnails | Original media, `scripts/generate-project-thumbnails.mjs`, and `projects/<slug>/optimized/manifest.json` | 480/800 AVIF and WebP variants | Generate only selected projects unless a full regeneration is intentional. |
+| Mariam case-study media | `data/mariam-fathy-gallery.json`, `scripts/generate-mariam-fathy-media.mjs`, and its media manifest | Six hero variants and 41 lazy WebP previews | This is a project-specific model, not the generic default. |
+| Shared effects | `scripts/portfolio-effects.js` and `.css` | One marked script and stylesheet per HTML file | Preserve capability, visibility, reduced-motion, idle, and DOM-scope gates. |
+| Mobile navigation | Stable HTML hooks plus `scripts/mobile-navigation.js` | Native fallback on eligible production pages | Preserve EN/LTR and AR/RTL behavior and update the eligible-page assertion when routes are added. |
+| Compiled framework assets | Tracked `_next/` files referenced by static pages | CSS, fonts, and vendor runtime | Do not edit minified vendor chunks as source code. |
+
+## Current production inventory
+
+The values below were recomputed from the tracked files at the authoritative SHA:
+
+| Inventory | Current value |
+| --- | ---: |
+| Canonical Work projects | 44 |
+| Work categories | 4 content categories plus `all` |
+| E-Commerce / Corporate / Services / Platforms | 14 / 21 / 7 / 2 |
+| Featured projects | 5 |
+| Projects with live URLs / case-study only | 42 / 2 |
+| Initial active Work cards | 12 per locale |
+| Route inventory records | 188 |
+| Indexable / noindex utility routes | 186 / 2 |
+| Indexable bilingual pairs | 93 |
+| Static HTML files | 189 |
+| Exported `.txt` payload files | 1,474 |
+
+The HTML total is one higher than the route inventory because the root-level
+`404.html` is not an `index.html` route record. The two noindex utility routes are
+`/404/` and `/_not-found/`.
+
+Mariam Fathy Shop is project number 6 in canonical Work order, immediately after
+Techmart. It remains `ecommerce`, `featured: false`, and uses the English storefront
+homepage (`desktop/en/06-home.png`) as the primary image source.
+
+## Sprint history
+
+### Sprint 0 — Forensic baseline and architecture decision
+
+Sprint 0 established what the repository actually contained before changes:
+
+- a generated Next.js static export without the original framework source/build;
+- 187 HTML documents and 43 Work cards at that historical point;
+- GitHub-reported repository storage of 640,384 KiB and an expanded checkout of
+  723,567,760 bytes, including 683,022,157 bytes under `projects/` at that
+  historical point;
+- distributed Work metadata and all cards present in the initial DOM;
+- generic inner-page metadata, no canonical/hreflang strategy, no sitemap/robots;
+- broad runtime scanning and unnecessary decorative work.
+
+The decision was to preserve the deployable export, introduce repository-owned data
+and generators, and validate their output. Reconstructing or inventing the missing
+Next.js application was explicitly out of scope. Evidence is in
+`docs/architecture/current-state.md`, `docs/architecture/target-state.md`, and
+`docs/audit/sprint-0-report.md`.
+
+### Sprint 1 — Image delivery pilot
+
+Sprint 1 removed four stale Afaaq preloads, normalized loading/decoding policy, and
+introduced the selective thumbnail pipeline. Five pilot Work cards received 480 and
+800 AVIF/WebP derivatives. Their combined 800px WebP fallback bytes fell from
+5,321,992 to 359,082 (a measured 93.3% reduction) while originals were retained.
+The image-delivery validator became a release gate. See
+`docs/audit/sprint-1-report.md`.
+
+### Sprint 2 — Runtime and effects hardening
+
+Sprint 2 replaced broad inference with bounded, explicit runtime behavior. It:
+
+- removed the splash cursor;
+- removed the document-level `MutationObserver` and broad descendant class scans;
+- prevented permanent `will-change` promotion;
+- gated WebGL by viewport, pointer/hover, reduced motion, capability, visibility,
+  and intersection state;
+- deferred decorative startup through idle scheduling with a fallback;
+- stopped/cancelled work when hidden or offscreen and retained static fallbacks.
+
+The invariants are enforced by `scripts/check-runtime-invariants.mjs`. See
+`docs/audit/sprint-2-report.md`.
+
+### Sprint 3 — Canonical Work data and progressive archive
+
+Sprint 3 centralized the historical 43-project set in `data/projects.json`, created
+deterministic EN/AR Work rendering, and reduced the active initial archive to 12
+cards. Filter controls and Load More operate in 12-item batches, reset cleanly on a
+category change, maintain AR behavior, and avoid duplicates. All localized project
+links remain available in `<noscript>` for direct access and crawlability. See
+`docs/audit/sprint-3-report.md` and the historical design record
+`docs/architecture/project-data-model.md`.
+
+### Sprint 4 — SEO and accessibility hardening
+
+Sprint 4 introduced route-specific titles/descriptions, self-canonicals, reciprocal
+EN/AR hreflang with English `x-default`, social metadata, valid generated JSON-LD,
+`sitemap.xml`, `robots.txt`, skip links, one `main#main-content`, navigation labels,
+heading checks, alt checks, safe external targets, and browser smoke coverage.
+Utility error routes remain noindex. The route totals in Sprint 4 reports predate
+Mariam and must not be reused as current counts. See `docs/audit/final-report.md`
+and `docs/architecture/seo-accessibility-strategy.md`.
+
+### Sprint 5 — Release quality and operationalization
+
+Sprint 5 assembled the full `npm run verify` gate, security/hygiene checks,
+practical artifact budgets, browser checks, generator idempotency, CI, release and
+rollback guidance, and the first full engineering handoff. It deliberately kept
+the export model and existing media instead of claiming a framework rebuild or a
+repository cleanup that did not occur.
+
+## Post-Sprint pull-request history
+
+All timestamps are UTC and all entries below were verified from GitHub PR metadata.
+
+| PR | Merged | Merge commit | Production change and durable lesson |
+| ---: | --- | --- | --- |
+| #1 | 2026-08-02 18:19 | `018d4163b111900cbd99243afee42a431d1a9aef` | Merged the Sprints 0–5 engineering program. Missing framework source/build, historical media/repository size, and lack of production field CWV remained accepted risks. The current architecture starts here. |
+| #2 | 2026-08-02 19:57 | `8f56c38b269263a39048946c20395ab93062e7c4` | Added the native mobile-navigation fallback after production hydration failures prevented the generated React menu from opening. Pointer, keyboard, focus, overlay, and EN/AR behavior are now tested independently. |
+| #3 | 2026-08-02 23:10 | `ad58b99c9851fd0833bd9fd716682ddd773d5cea` | Prioritized only the first Work card and optimized EventGift UAE. The policy is one eager/high initial image; all remaining Work images stay lazy and unprioritized with AVIF/WebP delivery. Controlled network/browser checks passed, so the performance task stopped rather than broadening into unrelated opportunities. |
+| #4 | 2026-08-03 16:14 | `1bbe9f343f7903941ed5510c5420e4fb4e156c9b` | Added the Mariam Fathy Laravel/PHP/MoonShine/Inertia/React project after Techmart, sanitized dashboard data, EN/AR case studies, 41 originals, 41 lazy previews, and optimized hero media. This raised Work from 43 to 44 projects and the route inventory from 186/184 indexable to 188/186. |
+| #5 | 2026-08-03 17:04 | `9715d432182d09327408c66a8a5acb0216908921` | Restored Mariam case-study styles. Its generator had removed required `_next` CSS/font links while stripping framework assets. A 200 response is not proof that a route is visually complete; preserve required compiled styles and verify a cold direct navigation. |
+| #6 | 2026-08-03 17:40 | `a9b4180471c2fe2fda4008f4c085bc2277d4f059` | Replaced the abstract Mariam Work cover with a real storefront homepage screenshot and a top-aligned crop that keeps the storefront header/navigation/hero visible. |
+| #7 | 2026-08-03 18:18 | `b4b6423d980835070c2baa839e4d2e6d61a0179b` | Standardized Mariam's Work cover and case-study hero on `projects/mariam-fathy-shop/desktop/en/06-home.png`. The hero is a deterministic north/top 16:9 crop with 800/1200/1600 AVIF/WebP variants; all 41 gallery mappings remained unchanged. |
+| #8 | 2026-08-03 18:52 | `5b4560cacf1d7965058ec7a93fa610f04362f38d` | Fixed Windows false positives caused by CRLF checkout plus LF-writing generators. Idempotency now normalizes CRLF to LF before hashing UTF-8 text, while semantic generated-output changes remain detectable and fail the gate. |
+
+## Known accepted risks
+
+These are known constraints, not automatic blockers for unrelated changes:
+
+1. **Original Next.js source/build configuration is unavailable.** The export cannot
+   be reproduced as a normal framework build from this repository.
+2. **Historical repository/media size remains large.** Originals were intentionally
+   retained; no destructive history rewrite or bulk media deletion was performed.
+3. **Production Core Web Vitals are not yet measured with real-user data.** Local
+   and synthetic checks protect delivery policy but do not claim field CWV.
+4. **Known compiled hydration exceptions remain.** Representative pages can emit
+   `t.reason.enqueueModel is not a function` or `Connection closed.` from the
+   generated framework path. PR #2 made mobile navigation independent of that path;
+   the exception itself was not repaired because the missing source prevents a safe
+   framework-level fix.
+5. **CI push coverage is narrow.** Pull requests run `Portfolio quality`; ordinary
+   direct pushes to arbitrary branches or `main` are not comprehensively covered by
+   the repository workflow. Use a PR and require its passing check.
+
+A diff that introduces a new failure related to one of these constraints is still a
+real regression. “Accepted risk” is not permission to broaden or worsen it.
+
+## Maintenance rules
+
+- Start every change from current `origin/main` on a focused branch.
+- Treat historical Sprint documents as evidence, not live inventory.
+- Change the narrowest current source of truth and regenerate only its owned output.
+- Keep EN and AR route/content/metadata changes paired and verify RTL explicitly.
+- Preserve project order unless a placement change is requested.
+- Never optimize by deleting originals that are still full-view/lightbox targets.
+- Never preload a gallery or make multiple Work thumbnails high priority.
+- Never remove `_next` stylesheet/font references based only on their generated
+  appearance; prove the cold route still has its intended design.
+- Never edit minified `_next` chunks to implement a feature or bug fix.
+- Never reintroduce a broad `MutationObserver`, full-document class scan, or
+  permanent `will-change` layer.
+- Never commit local filesystem paths, credentials, unsanitized client records,
+  browser profiles, temporary captures, or generated audit caches.
+- Run `npm ci`, `npm run verify`, and `git diff --check`; review the actual diff and
+  browser-visible EN/AR result; publish through a pull request.
+
+## Document status map
+
+Current operational documents:
+
+- `PORTFOLIO_ENGINEERING_HANDOFF.md` — current architecture and history.
+- `PORTFOLIO_OPERATIONS_GUIDE.md` — current maintenance and release procedure.
+- `NEW_PROJECT_INTAKE_TEMPLATE.md` — required project intake fields and approvals.
+- `docs/operations/release-checklist.md` — concise release gate.
+- `docs/operations/rollback.md` — non-destructive rollback procedure.
+
+Historical evidence:
+
+- `docs/audit/sprint-0-report.md` through `docs/audit/final-report.md` describe the
+  Sprint 0–5 state before PR #1 merged.
+- `docs/architecture/current-state.md` is the Sprint 0 baseline.
+- `docs/architecture/target-state.md` is the original target proposal.
+- `docs/architecture/project-data-model.md` and
+  `docs/architecture/seo-accessibility-strategy.md` record the Sprint 3/4 design and
+  contain counts from those dates.
+- `docs/operations/pr-draft.md` is the historical PR #1 draft, not a template for a
+  current release.
+- Post-Sprint audit reports describe the corresponding PR and should be interpreted
+  at that PR's commit.
+
+When a current operational statement conflicts with a historical report, verify the
+tracked data and scripts at current `main`, then update the current operational docs
+in the same PR as the behavior change.
+
+## Preserved Sprint 5 handoff (historical)
+
+The original pre-merge handoff is preserved below as point-in-time evidence. Every
+branch status, count, recommendation, and “current” statement inside this appendix
+refers to the Sprint 5 branch before PR #1 merged. It must not override the current
+sections above.
+
+<details>
+<summary>Open the original Sprint 5 handoff</summary>
+
 # Muhammed Nasser Portfolio — Engineering Handoff & Sprint Plan
 
 **Project:** Muhammed Nasser Portfolio  
@@ -1379,3 +1663,5 @@ Safe to deploy
 ```
 
 without sacrificing the current portfolio identity, English/Arabic content, or case-study history.
+
+</details>

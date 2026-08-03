@@ -1,5 +1,10 @@
 # Script Inventory
 
+> Historical record: classifications were audited at Sprint 5. New post-Sprint
+> scripts and behavior are documented in `PORTFOLIO_OPERATIONS_GUIDE.md`. In
+> particular, PR #8 changed idempotency hashing to compare UTF-8 text after CRLF-to-LF
+> normalization while still failing semantic output changes.
+
 This inventory covers every file under `scripts/` at Sprint 5 finalization. “Idempotent” means a supported rerun produces the same committed output. One-time migration and capture tools are intentionally not treated as release-pipeline inputs. No legacy script was deleted because historical project repair and capture provenance still need to remain recoverable.
 
 ## Classification rules
@@ -30,7 +35,7 @@ This inventory covers every file under `scripts/` at Sprint 5 finalization. “I
 | `capture-torathyat-pages.mjs` | Captures Torathyat pages | May write page assets | Environment-dependent | DEVELOPMENT ONLY |
 | `case-study-screenshots.js` | Runtime/helper capture script for case-study screenshots | No production route ownership | Browser-dependent | DEVELOPMENT ONLY |
 | `check-card.js` | Small historical Work card smoke check | No | Deterministic but narrow | DEVELOPMENT ONLY |
-| `check-idempotency.mjs` | Reruns Work, SEO, route inventory and sitemap generators and compares hashes | Indirectly exercises supported mutators | Determinism gate; must remain byte-stable | REQUIRED |
+| `check-idempotency.mjs` | Reruns Work, SEO, route inventory, sitemap, and mobile generators and compares normalized text hashes | Indirectly exercises supported mutators | Determinism gate; semantic content must remain stable while CRLF/LF-only differences are ignored | REQUIRED |
 | `check-image-delivery.mjs` | Validates responsive image markup, manifests, payloads and pilot budgets | No | Deterministic read-only check | REQUIRED |
 | `check-performance-budgets.mjs` | Enforces practical runtime/data/Work artifact size budgets | No | Deterministic read-only check | REQUIRED |
 | `check-runtime-invariants.mjs` | Checks effect inclusion, lifecycle, DOM scope, CSS and reduced-motion policy | No | Deterministic read-only check | REQUIRED |

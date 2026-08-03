@@ -1,6 +1,8 @@
 # Work Project Data Model
 
-Status: implemented in Sprint 3
+Status: historical Sprint 3 design record. The schema remains in use, but its
+43-project examples/counts predate PR #4. Current inventory and maintenance steps
+are in `PORTFOLIO_ENGINEERING_HANDOFF.md` and `PORTFOLIO_OPERATIONS_GUIDE.md`.
 
 ## Purpose
 
