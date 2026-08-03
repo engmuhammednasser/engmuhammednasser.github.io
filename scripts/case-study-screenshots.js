@@ -63,11 +63,9 @@
         if (zoomOverlay) zoomOverlay.style.backgroundColor = "rgba(0,0,0,0.2)";
       }
 
-      if (image.complete) {
-        measureOffset();
-      } else {
-        image.addEventListener("load", measureOffset, { once: true });
-      }
+      image.addEventListener("load", measureOffset, { once: true });
+      if (image.complete && image.naturalWidth > 0) measureOffset();
+      if (typeof image.decode === "function") image.decode().then(measureOffset).catch(function () {});
 
       window.addEventListener("resize", measureOffset);
       card.addEventListener("mouseenter", scrollPosition);

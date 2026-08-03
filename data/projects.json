@@ -244,12 +244,12 @@
       "category": "ecommerce",
       "featured": false,
       "title": {
-        "en": "Mariam Fathy Shop — Laravel E-Commerce Store",
-        "ar": "متجر مريم فتحي — متجر إلكتروني مبني بـ Laravel"
+        "en": "Mariam Fathy Shop — Laravel E-Commerce Platform",
+        "ar": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel"
       },
       "description": {
-        "en": "A live Laravel e-commerce storefront for Mariam Fathy, pairing collection-led product discovery with cart, checkout, and a native MoonShine workspace for catalog and order operations.",
-        "ar": "متجر إلكتروني حي مبني بـ Laravel لعلامة مريم فتحي، يجمع بين اكتشاف المجموعات والمنتجات ومسار السلة والدفع ولوحة MoonShine لإدارة الكتالوج والطلبات."
+        "en": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
+        "ar": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات."
       },
       "eyebrow": {
         "en": "Laravel / E-Commerce",

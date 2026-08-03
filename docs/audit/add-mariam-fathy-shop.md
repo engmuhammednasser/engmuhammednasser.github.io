@@ -1,69 +1,73 @@
 # Mariam Fathy Shop project addition
 
-## Classification
+## Screenshot Source
 
-- Project: `mariam-fathy-shop`
-- Category: `ecommerce`
-- Featured: `false`
-- Availability: `case-study+live`
-- Status: `published`
-- Placement: inserted after the existing Techmart e-commerce entry in the canonical project order.
-- Live URL: `https://mariamfathyshop.com/`
-- Case-study routes: `/work/mariam-fathy-shop/` and `/ar/work/mariam-fathy-shop/`
+- Authoritative read-only source: `C:\Users\CITY STORE\Desktop\screen-shot-marim`
+- Source groups used: `dashboard`, `desktop`, and `mobile`.
+- The source directory was inspected but not modified. No production dashboard or production database was accessed.
+- The live storefront remains behind a Cloudflare verification challenge, so the supplied screenshot source is the evidence used for this portfolio gallery.
 
-The project is kept out of the featured set because this addition is a new portfolio entry and the request did not establish a featured placement. It is visible in both Work archives, in the e-commerce filter, in the no-JavaScript list, and through its localized case-study routes.
+## Counts
+
+- Dashboard: 9 screenshots
+- Desktop: 16 screenshots (8 Arabic, 8 English)
+- Mobile: 16 screenshots (7 Arabic, 9 English)
+- Total: 41 screenshots
+
+## Sequence
+
+The final sequence is deterministic and identical in the English and Arabic case-study routes:
+
+1. Dashboard
+2. Desktop Storefront
+3. Mobile Storefront
+
+Within the Desktop and Mobile groups, variants are ordered Arabic then English. Files within each source folder use natural filename order. The source folders and source files remain unchanged.
+
+## Privacy
+
+- The user confirmed that the customer name, phone number, and receipt information visible in the dashboard screenshots are fictional/assumed values.
+- All 41 supplied screenshots are therefore included; none were skipped for privacy reasons.
+- The dashboard gallery is published as a visual project record only. No live dashboard URL, credentials, session data, production customer data, tokens, or private files were used.
+
+## Gallery
+
+The committed gallery assets are grouped and ordered as follows:
+
+- Dashboard: `dashboard/01-category-edit.png`, `dashboard/02-categories.png`, `dashboard/03-orders-management.png`, `dashboard/04-hero-slides.png`, `dashboard/05-dashboard-light.png`, `dashboard/06-admin-login.png`, `dashboard/07-dashboard-dark.png`, `dashboard/08-media-library.png`, `dashboard/09-orders-receipt.png`.
+- Desktop Arabic: `desktop/ar/01-contact.png`, `desktop/ar/02-checkout.png`, `desktop/ar/03-home.png`, `desktop/ar/04-cart.png`, `desktop/ar/05-shop.png`, `desktop/ar/06-product.png`, `desktop/ar/07-about.png`, `desktop/ar/08-journal.png`.
+- Desktop English: `desktop/en/01-about.png`, `desktop/en/02-journal.png`, `desktop/en/03-cart.png`, `desktop/en/04-checkout.png`, `desktop/en/05-contact.png`, `desktop/en/06-home.png`, `desktop/en/07-shop.png`, `desktop/en/08-product.png`.
+- Mobile Arabic: `mobile/ar/01-contact.webp`, `mobile/ar/02-checkout.webp`, `mobile/ar/03-home.webp`, `mobile/ar/04-cart.png`, `mobile/ar/05-shop.webp`, `mobile/ar/06-product.webp`, `mobile/ar/07-journal.webp`.
+- Mobile English: `mobile/en/01-about.webp`, `mobile/en/02-cart.png`, `mobile/en/03-checkout.webp`, `mobile/en/04-contact.webp`, `mobile/en/05-full-cart.webp`, `mobile/en/06-home.webp`, `mobile/en/07-journal.webp`, `mobile/en/08-shop.webp`, `mobile/en/09-product.webp`.
+
+The ordered source-to-target mapping is canonicalized in `data/mariam-fathy-gallery.json`. Captions are localized and contain no internal-source or local-demo wording.
+
+## Performance
+
+- All 41 gallery images use `loading="lazy"` and `decoding="async"`.
+- The gallery does not preload or eagerly load screenshot assets. Only the existing project cover remains the Work-card/hero visual.
+- Desktop and dashboard previews use a bounded viewport; mobile previews use a bounded portrait viewport with width-constrained, auto-height images so the source aspect ratio is preserved without distortion.
+- The existing `scripts/case-study-screenshots.js` runtime is reused for hover/focus screenshot scrolling and keyboard-accessible controls; its image-load/decode measurement now also handles lazy images that were not complete at initialization.
+- The existing optimized cover variants remain under `projects/mariam-fathy-shop/optimized/`; no second derivative thumbnail set was generated for the gallery.
 
 ## Content
 
-The entry uses the canonical `data/projects.json` schema and includes English and Arabic titles, descriptions, eyebrows, case-study paths, technologies, thumbnail variants, live URL, availability, and publication status.
-
-The case study describes the Laravel storefront, catalog and collection discovery, product presentation, cart and checkout journey, and the native MoonShine workspace for catalog, media, products, and orders. It does not add unsupported traffic, conversion, performance, revenue, or delivery metrics.
-
-The implementation content was checked against the available local Laravel application copy and the supplied project brief. The public storefront could not be independently crawled during this work because the live domain returned a Cloudflare JavaScript/cookie verification challenge to both direct HTTP and a fresh headless Chrome session. No live dashboard was accessed.
-
-## Screenshots
-
-The case study uses five local assets: one public-facing storefront representative render and four native dashboard screens.
-
-- `storefront-home.png`: local representative storefront render. It is not presented as a verified production capture while the public domain is behind the Cloudflare challenge.
-- `dashboard-overview.png`: native MoonShine dashboard overview with fictional local demo data.
-- `orders-index.png`: native order list with `DEMO-1001` and fictional demo customer data.
-- `order-detail.png`: native order detail with fictional demo contact, address, order, and request metadata.
-- `products-index.png`: native product catalog with `DEMO-0001` through `DEMO-0005` products.
-
-Dashboard screenshot provenance and privacy checks:
-
-- Screens were captured from a clean local Laravel copy using a fresh local SQLite database.
-- The dashboard user, customer, products, order, address, IP, and user-agent values are fictional demo values.
-- No production dashboard, production database, customer media, credentials, session data, API tokens, or private files were inspected or used.
-- The screenshot labels identify dashboard images as local demo screens and the storefront image as a local representative render.
-
-## Assets
-
-The cover is stored at `/projects/mariam-fathy-shop/cover.png`; the gallery assets are stored beside it. The Work card uses the generated optimized variants under `/projects/mariam-fathy-shop/optimized/`:
-
-- `thumb-480.avif`
-- `thumb-480.webp`
-- `thumb-800.avif`
-- `thumb-800.webp`
-
-All four generated thumbnail files are below the repository's 150 KB project-thumbnail budget. `npm run images:thumbnails -- --projects mariam-fathy-shop` generated the manifest and variants. No local filesystem paths, local environment files, credentials, or unrelated binary/generated files are part of this addition.
+- The Work entry remains in the `ecommerce` category, immediately after Techmart, with `featured: false`.
+- The title, eyebrow, description, hero opening, badges, features, role, and CTA now identify the project clearly as a custom Laravel e-commerce platform with a MoonShine administration dashboard.
+- The verified stack remains `Laravel`, `PHP`, `MoonShine`, `Inertia.js`, and `React`.
+- The live URL remains `https://mariamfathyshop.com/`; no unsupported business, traffic, revenue, or performance claims were added.
 
 ## Validation
 
-Completed checks:
-
-- `npm ci` — passed; no package vulnerabilities reported.
-- `npm run work:data` — passed; 44 canonical projects and 88 localized case-study routes.
-- `npm run filter:work` — passed; 12 initial cards per locale and all 44 no-JavaScript project routes per locale.
-- `npm run seo:inventory`, `npm run seo:apply`, and `npm run seo:assets` — passed; both new routes are indexable with canonical, reciprocal hreflang, sitemap, robots, and JSON-LD output.
-- `npm run verify` — passed, including static references, image delivery, runtime invariants, Work filtering/Load More behavior, accessibility/SEO checks, security hygiene, performance budgets, Chrome browser checks, mobile navigation, idempotency, and `git diff --check`.
-- Targeted local route checks — HTTP 200 for both localized case-study routes, both Work archives, both optimized thumbnail variants, `sitemap.xml`, and `robots.txt`.
-- Targeted HTML checks — EN/AR reciprocal links, localized Arabic contact CTA, JSON-LD parsing, screenshot runtime inclusion, and removal of inherited Techmart payload markers.
+- `npm ci` — passed.
+- `npm run work:data` — passed.
+- `npm run filter:work` — passed.
+- `npm run seo:apply` — passed after the content revision.
+- `npm run verify` — passed, including static references, image delivery, runtime invariants, Work filtering/Load More behavior, accessibility/SEO, security hygiene, performance budgets, Chrome checks, mobile navigation, idempotency, and `git diff --check`.
+- Targeted browser checks passed for both localized routes at desktop and mobile viewport sizes, including 41 gallery cards, group order, Arabic direction, portrait mobile layout, image paths, and keyboard/focus screenshot scrolling.
 
 ## Risks / notes
 
-- The live storefront is currently protected by a Cloudflare verification challenge, so production storefront navigation and production screenshot capture remain content-review items rather than verified evidence in this change.
-- The dashboard gallery is intentionally local-only. It must not be replaced with production dashboard captures unless the owner supplies an approved, sanitized capture process.
-- The local Laravel source copy lacked the optional GD extension needed by its original image-fixture helper; that helper was not used to create dashboard evidence and no production data was touched.
-- The accepted repository risks remain separate: incomplete or unavailable original Next.js source/build configuration, historical repository/media size, and production Core Web Vitals not yet measured.
+- The live storefront's Cloudflare verification challenge prevents independent production navigation and production screenshot capture during this revision.
+- The dashboard screenshots remain local evidence and must not be represented as live administrative access.
+- Accepted repository risks remain separate: incomplete or unavailable original Next.js source/build configuration, historical repository/media size, and production Core Web Vitals not yet measured.

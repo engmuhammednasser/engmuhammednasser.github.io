@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "sourceGroups": [
+    {
+      "id": "dashboard",
+      "sourceFolder": "dashboard",
+      "title": {
+        "en": "Laravel Administration Dashboard",
+        "ar": "لوحة إدارة Laravel"
+      },
+      "intro": {
+        "en": "A custom operational administration experience built with Laravel and MoonShine for catalog, product, media, and order workflows.",
+        "ar": "تجربة إدارية تشغيلية مخصصة مبنية بـ Laravel وMoonShine لإدارة الكتالوج والمنتجات والوسائط والطلبات."
+      },
+      "items": [
+        {"source":"add prodcut.png","target":"dashboard/01-category-edit.png","caption":{"en":"Category Management","ar":"إدارة التصنيفات"}},
+        {"source":"Categories.png","target":"dashboard/02-categories.png","caption":{"en":"Categories","ar":"التصنيفات"}},
+        {"source":"dashboard setting.png","target":"dashboard/03-orders-management.png","caption":{"en":"Orders Management","ar":"إدارة الطلبات"}},
+        {"source":"home edit.png","target":"dashboard/04-hero-slides.png","caption":{"en":"Hero Slides","ar":"شرائح الواجهة الرئيسية"}},
+        {"source":"light dashboard.png","target":"dashboard/05-dashboard-light.png","caption":{"en":"Dashboard Overview — Light Theme","ar":"نظرة عامة على لوحة التحكم — المظهر الفاتح"}},
+        {"source":"login.png","target":"dashboard/06-admin-login.png","caption":{"en":"Administration Login","ar":"تسجيل دخول الإدارة"}},
+        {"source":"main dashbaord.png","target":"dashboard/07-dashboard-dark.png","caption":{"en":"Dashboard Overview — Dark Theme","ar":"نظرة عامة على لوحة التحكم — المظهر الداكن"}},
+        {"source":"media.png","target":"dashboard/08-media-library.png","caption":{"en":"Media Library","ar":"مكتبة الوسائط"}},
+        {"source":"oeders.png","target":"dashboard/09-orders-receipt.png","caption":{"en":"Orders Management — Receipt View","ar":"إدارة الطلبات — عرض الإيصال"}}
+      ]
+    },
+    {
+      "id": "desktop",
+      "sourceFolder": "desktop",
+      "title": {
+        "en": "Desktop Storefront Experience",
+        "ar": "تجربة المتجر على سطح المكتب"
+      },
+      "intro": {
+        "en": "The desktop customer journey across the Arabic and English storefront experiences, kept in the supplied source order.",
+        "ar": "رحلة العميل على سطح المكتب عبر واجهتي المتجر العربية والإنجليزية، مع الحفاظ على ترتيب المصدر المقدم."
+      },
+      "variants": [
+        {
+          "id": "ar",
+          "label": {"en":"Arabic Storefront","ar":"واجهة المتجر العربية"},
+          "sourceFolder": "ar",
+          "items": [
+            {"source":"اتصل بنا.png","target":"desktop/ar/01-contact.png","caption":{"en":"Contact Page — Arabic","ar":"صفحة التواصل — العربية"}},
+            {"source":"اتمام الطلب.png","target":"desktop/ar/02-checkout.png","caption":{"en":"Checkout Page — Arabic","ar":"صفحة إتمام الطلب — العربية"}},
+            {"source":"الرئيسيه.png","target":"desktop/ar/03-home.png","caption":{"en":"Storefront Homepage — Arabic","ar":"الصفحة الرئيسية للمتجر — العربية"}},
+            {"source":"السلة.png","target":"desktop/ar/04-cart.png","caption":{"en":"Shopping Cart — Arabic","ar":"السلة — العربية"}},
+            {"source":"السوق.png","target":"desktop/ar/05-shop.png","caption":{"en":"Shop Listing — Arabic","ar":"صفحة المتجر — العربية"}},
+            {"source":"صفحة المنتج.png","target":"desktop/ar/06-product.png","caption":{"en":"Product Details — Arabic","ar":"تفاصيل المنتج — العربية"}},
+            {"source":"معلومات عن.png","target":"desktop/ar/07-about.png","caption":{"en":"About Page — Arabic","ar":"صفحة معلومات عنا — العربية"}},
+            {"source":"مقالات.png","target":"desktop/ar/08-journal.png","caption":{"en":"Journal — Arabic","ar":"المقالات — العربية"}}
+          ]
+        },
+        {
+          "id": "en",
+          "label": {"en":"English Storefront","ar":"واجهة المتجر الإنجليزية"},
+          "sourceFolder": "en",
+          "items": [
+            {"source":"about.png","target":"desktop/en/01-about.png","caption":{"en":"About Page — English","ar":"صفحة التعريف — الإنجليزية"}},
+            {"source":"articles.png","target":"desktop/en/02-journal.png","caption":{"en":"Journal — English","ar":"المقالات — الإنجليزية"}},
+            {"source":"cart.png","target":"desktop/en/03-cart.png","caption":{"en":"Shopping Cart — English","ar":"السلة — الإنجليزية"}},
+            {"source":"checkout.png","target":"desktop/en/04-checkout.png","caption":{"en":"Checkout Page — English","ar":"صفحة إتمام الطلب — الإنجليزية"}},
+            {"source":"contact.png","target":"desktop/en/05-contact.png","caption":{"en":"Contact Page — English","ar":"صفحة التواصل — الإنجليزية"}},
+            {"source":"home.png","target":"desktop/en/06-home.png","caption":{"en":"Storefront Homepage — English","ar":"الصفحة الرئيسية للمتجر — الإنجليزية"}},
+            {"source":"shop.png","target":"desktop/en/07-shop.png","caption":{"en":"Shop Listing — English","ar":"صفحة المتجر — الإنجليزية"}},
+            {"source":"singel prodcut.png","target":"desktop/en/08-product.png","caption":{"en":"Product Details — English","ar":"تفاصيل المنتج — الإنجليزية"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "sourceFolder": "mobile",
+      "title": {
+        "en": "Mobile Storefront Experience",
+        "ar": "تجربة المتجر على الموبايل"
+      },
+      "intro": {
+        "en": "Responsive mobile storefront screens showing the same customer journey across smaller viewports.",
+        "ar": "شاشات متجر متجاوبة على الموبايل توضح رحلة العميل نفسها عبر الشاشات الأصغر."
+      },
+      "variants": [
+        {
+          "id": "ar",
+          "label": {"en":"Arabic Mobile Storefront","ar":"واجهة المتجر العربية على الموبايل"},
+          "sourceFolder": "ar",
+          "items": [
+            {"source":"اتصل بنا.webp","target":"mobile/ar/01-contact.webp","caption":{"en":"Contact Page — Arabic Mobile","ar":"صفحة التواصل — العربية على الموبايل"}},
+            {"source":"اتمام الطلب.webp","target":"mobile/ar/02-checkout.webp","caption":{"en":"Checkout Page — Arabic Mobile","ar":"صفحة إتمام الطلب — العربية على الموبايل"}},
+            {"source":"الرئيسيه.webp","target":"mobile/ar/03-home.webp","caption":{"en":"Storefront Homepage — Arabic Mobile","ar":"الصفحة الرئيسية — العربية على الموبايل"}},
+            {"source":"السلة.png","target":"mobile/ar/04-cart.png","caption":{"en":"Shopping Cart — Arabic Mobile","ar":"السلة — العربية على الموبايل"}},
+            {"source":"السوق.webp","target":"mobile/ar/05-shop.webp","caption":{"en":"Shop Listing — Arabic Mobile","ar":"صفحة المتجر — العربية على الموبايل"}},
+            {"source":"صفحة المنتج.webp","target":"mobile/ar/06-product.webp","caption":{"en":"Product Details — Arabic Mobile","ar":"تفاصيل المنتج — العربية على الموبايل"}},
+            {"source":"مقالات.webp","target":"mobile/ar/07-journal.webp","caption":{"en":"Journal — Arabic Mobile","ar":"المقالات — العربية على الموبايل"}}
+          ]
+        },
+        {
+          "id": "en",
+          "label": {"en":"English Mobile Storefront","ar":"واجهة المتجر الإنجليزية على الموبايل"},
+          "sourceFolder": "en",
+          "items": [
+            {"source":"about.webp","target":"mobile/en/01-about.webp","caption":{"en":"About Page — English Mobile","ar":"صفحة التعريف — الإنجليزية على الموبايل"}},
+            {"source":"cart.png","target":"mobile/en/02-cart.png","caption":{"en":"Shopping Cart — English Mobile","ar":"السلة — الإنجليزية على الموبايل"}},
+            {"source":"checkout.webp","target":"mobile/en/03-checkout.webp","caption":{"en":"Checkout Page — English Mobile","ar":"صفحة إتمام الطلب — الإنجليزية على الموبايل"}},
+            {"source":"contact us.webp","target":"mobile/en/04-contact.webp","caption":{"en":"Contact Page — English Mobile","ar":"صفحة التواصل — الإنجليزية على الموبايل"}},
+            {"source":"full cart.webp","target":"mobile/en/05-full-cart.webp","caption":{"en":"Full Cart View — English Mobile","ar":"عرض السلة الكامل — الإنجليزية على الموبايل"}},
+            {"source":"home.webp","target":"mobile/en/06-home.webp","caption":{"en":"Storefront Homepage — English Mobile","ar":"الصفحة الرئيسية — الإنجليزية على الموبايل"}},
+            {"source":"journal.webp","target":"mobile/en/07-journal.webp","caption":{"en":"Journal — English Mobile","ar":"المقالات — الإنجليزية على الموبايل"}},
+            {"source":"shop.webp","target":"mobile/en/08-shop.webp","caption":{"en":"Shop Listing — English Mobile","ar":"صفحة المتجر — الإنجليزية على الموبايل"}},
+            {"source":"singel prodcut.webp","target":"mobile/en/09-product.webp","caption":{"en":"Product Details — English Mobile","ar":"تفاصيل المنتج — الإنجليزية على الموبايل"}}
+          ]
+        }
+      ]
+    }
+  ]
+}

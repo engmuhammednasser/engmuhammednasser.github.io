@@ -5604,22 +5604,22 @@
       "enEquivalent": "/work/mariam-fathy-shop/",
       "arEquivalent": "/ar/work/mariam-fathy-shop/",
       "title": {
-        "value": "متجر مريم فتحي — متجر إلكتروني مبني بـ Laravel | محمد ناصر",
+        "value": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
         "source": "static-html"
       },
       "description": {
-        "value": "متجر إلكتروني حي مبني بـ Laravel لعلامة مريم فتحي، يجمع بين اكتشاف المجموعات والمنتجات ومسار السلة والدفع ولوحة MoonShine لإدارة الكتالوج والطلبات.",
+        "value": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
         "source": "static-html"
       },
       "ogImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
       "metadata": {
-        "ogTitle": "متجر مريم فتحي — متجر إلكتروني مبني بـ Laravel | محمد ناصر",
-        "ogDescription": "متجر إلكتروني حي مبني بـ Laravel لعلامة مريم فتحي، يجمع بين اكتشاف المجموعات والمنتجات ومسار السلة والدفع ولوحة MoonShine لإدارة الكتالوج والطلبات.",
+        "ogTitle": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
+        "ogDescription": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
         "ogUrl": "https://engmuhammednasser.github.io/ar/work/mariam-fathy-shop/",
         "ogType": "website",
         "twitterCard": "summary_large_image",
-        "twitterTitle": "متجر مريم فتحي — متجر إلكتروني مبني بـ Laravel | محمد ناصر",
-        "twitterDescription": "متجر إلكتروني حي مبني بـ Laravel لعلامة مريم فتحي، يجمع بين اكتشاف المجموعات والمنتجات ومسار السلة والدفع ولوحة MoonShine لإدارة الكتالوج والطلبات.",
+        "twitterTitle": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
+        "twitterDescription": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
         "twitterImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
@@ -5631,7 +5631,7 @@
           "nav": 2,
           "main": 1,
           "footer": 1,
-          "section": 4
+          "section": 6
         },
         "headings": [
           1,
@@ -5640,17 +5640,23 @@
           2,
           3,
           3,
-          2
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3
         ],
         "images": {
-          "total": 7,
-          "meaningfulAlt": 7,
+          "total": 43,
+          "meaningfulAlt": 43,
           "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 7,
-        "labeledButtons": 7,
+        "buttons": 43,
+        "labeledButtons": 43,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -12188,22 +12194,22 @@
       "enEquivalent": "/work/mariam-fathy-shop/",
       "arEquivalent": "/ar/work/mariam-fathy-shop/",
       "title": {
-        "value": "Mariam Fathy Shop — Laravel E-Commerce Store | Muhammed Nasser",
+        "value": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
         "source": "static-html"
       },
       "description": {
-        "value": "A live Laravel e-commerce storefront for Mariam Fathy, pairing collection-led product discovery with cart, checkout, and a native MoonShine workspace for catalog and order operations.",
+        "value": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
         "source": "static-html"
       },
       "ogImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
       "metadata": {
-        "ogTitle": "Mariam Fathy Shop — Laravel E-Commerce Store | Muhammed Nasser",
-        "ogDescription": "A live Laravel e-commerce storefront for Mariam Fathy, pairing collection-led product discovery with cart, checkout, and a native MoonShine workspace for catalog and order operations.",
+        "ogTitle": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
+        "ogDescription": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
         "ogUrl": "https://engmuhammednasser.github.io/work/mariam-fathy-shop/",
         "ogType": "website",
         "twitterCard": "summary_large_image",
-        "twitterTitle": "Mariam Fathy Shop — Laravel E-Commerce Store | Muhammed Nasser",
-        "twitterDescription": "A live Laravel e-commerce storefront for Mariam Fathy, pairing collection-led product discovery with cart, checkout, and a native MoonShine workspace for catalog and order operations.",
+        "twitterTitle": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
+        "twitterDescription": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
         "twitterImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
@@ -12215,7 +12221,7 @@
           "nav": 2,
           "main": 1,
           "footer": 1,
-          "section": 4
+          "section": 6
         },
         "headings": [
           1,
@@ -12224,17 +12230,23 @@
           2,
           3,
           3,
-          2
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3
         ],
         "images": {
-          "total": 7,
-          "meaningfulAlt": 7,
+          "total": 43,
+          "meaningfulAlt": 43,
           "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 7,
-        "labeledButtons": 7,
+        "buttons": 43,
+        "labeledButtons": 43,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
