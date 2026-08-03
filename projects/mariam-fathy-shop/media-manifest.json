@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "hero": {
+    "original": "cover.png",
+    "originalBytes": 2632399,
+    "originalWidth": 1920,
+    "originalHeight": 1080,
+    "variants": {
+      "hero-800.avif": {
+        "width": 800,
+        "height": 450,
+        "bytes": 21575,
+        "quality": 55
+      },
+      "hero-800.webp": {
+        "width": 800,
+        "height": 450,
+        "bytes": 23766,
+        "quality": 72
+      },
+      "hero-1200.avif": {
+        "width": 1200,
+        "height": 675,
+        "bytes": 41493,
+        "quality": 55
+      },
+      "hero-1200.webp": {
+        "width": 1200,
+        "height": 675,
+        "bytes": 44558,
+        "quality": 72
+      },
+      "hero-1600.avif": {
+        "width": 1600,
+        "height": 900,
+        "bytes": 64805,
+        "quality": 55
+      },
+      "hero-1600.webp": {
+        "width": 1600,
+        "height": 900,
+        "bytes": 69188,
+        "quality": 72
+      }
+    }
+  },
+  "gallery": {
+    "originalCount": 41,
+    "previewFormat": "webp",
+    "previewWidths": {
+      "dashboard": 960,
+      "desktop": 960,
+      "mobile": 480
+    },
+    "items": [
+      {
+        "group": "dashboard",
+        "original": "dashboard/01-category-edit.png",
+        "preview": "previews/dashboard/01-category-edit.webp",
+        "width": 960,
+        "height": 808,
+        "bytes": 12906
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/02-categories.png",
+        "preview": "previews/dashboard/02-categories.webp",
+        "width": 960,
+        "height": 454,
+        "bytes": 10170
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/03-orders-management.png",
+        "preview": "previews/dashboard/03-orders-management.webp",
+        "width": 960,
+        "height": 433,
+        "bytes": 13520
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/04-hero-slides.png",
+        "preview": "previews/dashboard/04-hero-slides.webp",
+        "width": 960,
+        "height": 435,
+        "bytes": 9102
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/05-dashboard-light.png",
+        "preview": "previews/dashboard/05-dashboard-light.webp",
+        "width": 960,
+        "height": 474,
+        "bytes": 15660
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/06-admin-login.png",
+        "preview": "previews/dashboard/06-admin-login.webp",
+        "width": 960,
+        "height": 435,
+        "bytes": 4644
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/07-dashboard-dark.png",
+        "preview": "previews/dashboard/07-dashboard-dark.webp",
+        "width": 960,
+        "height": 474,
+        "bytes": 15878
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/08-media-library.png",
+        "preview": "previews/dashboard/08-media-library.webp",
+        "width": 960,
+        "height": 433,
+        "bytes": 19018
+      },
+      {
+        "group": "dashboard",
+        "original": "dashboard/09-orders-receipt.png",
+        "preview": "previews/dashboard/09-orders-receipt.webp",
+        "width": 960,
+        "height": 435,
+        "bytes": 11662
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/01-contact.png",
+        "preview": "previews/desktop/ar/01-contact.webp",
+        "width": 960,
+        "height": 737,
+        "bytes": 15010
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/02-checkout.png",
+        "preview": "previews/desktop/ar/02-checkout.webp",
+        "width": 960,
+        "height": 1106,
+        "bytes": 19958
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/03-home.png",
+        "preview": "previews/desktop/ar/03-home.webp",
+        "width": 960,
+        "height": 3784,
+        "bytes": 118778
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/04-cart.png",
+        "preview": "previews/desktop/ar/04-cart.webp",
+        "width": 960,
+        "height": 712,
+        "bytes": 14054
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/05-shop.png",
+        "preview": "previews/desktop/ar/05-shop.webp",
+        "width": 960,
+        "height": 1483,
+        "bytes": 52174
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/06-product.png",
+        "preview": "previews/desktop/ar/06-product.webp",
+        "width": 960,
+        "height": 1809,
+        "bytes": 39244
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/07-about.png",
+        "preview": "previews/desktop/ar/07-about.webp",
+        "width": 960,
+        "height": 2063,
+        "bytes": 40562
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/ar/08-journal.png",
+        "preview": "previews/desktop/ar/08-journal.webp",
+        "width": 960,
+        "height": 855,
+        "bytes": 16690
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/01-about.png",
+        "preview": "previews/desktop/en/01-about.webp",
+        "width": 960,
+        "height": 2248,
+        "bytes": 55210
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/02-journal.png",
+        "preview": "previews/desktop/en/02-journal.webp",
+        "width": 960,
+        "height": 851,
+        "bytes": 17648
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/03-cart.png",
+        "preview": "previews/desktop/en/03-cart.webp",
+        "width": 960,
+        "height": 725,
+        "bytes": 14798
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/04-checkout.png",
+        "preview": "previews/desktop/en/04-checkout.webp",
+        "width": 960,
+        "height": 1119,
+        "bytes": 22800
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/05-contact.png",
+        "preview": "previews/desktop/en/05-contact.webp",
+        "width": 960,
+        "height": 750,
+        "bytes": 18520
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/06-home.png",
+        "preview": "previews/desktop/en/06-home.webp",
+        "width": 960,
+        "height": 3861,
+        "bytes": 111852
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/07-shop.png",
+        "preview": "previews/desktop/en/07-shop.webp",
+        "width": 960,
+        "height": 1496,
+        "bytes": 53612
+      },
+      {
+        "group": "desktop",
+        "original": "desktop/en/08-product.png",
+        "preview": "previews/desktop/en/08-product.webp",
+        "width": 960,
+        "height": 1829,
+        "bytes": 39948
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/01-contact.webp",
+        "preview": "previews/mobile/ar/01-contact.webp",
+        "width": 480,
+        "height": 2931,
+        "bytes": 29306
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/02-checkout.webp",
+        "preview": "previews/mobile/ar/02-checkout.webp",
+        "width": 480,
+        "height": 3909,
+        "bytes": 48942
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/03-home.webp",
+        "preview": "previews/mobile/ar/03-home.webp",
+        "width": 480,
+        "height": 8759,
+        "bytes": 141452
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/04-cart.png",
+        "preview": "previews/mobile/ar/04-cart.webp",
+        "width": 318,
+        "height": 620,
+        "bytes": 8142
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/05-shop.webp",
+        "preview": "previews/mobile/ar/05-shop.webp",
+        "width": 480,
+        "height": 4594,
+        "bytes": 84006
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/06-product.webp",
+        "preview": "previews/mobile/ar/06-product.webp",
+        "width": 480,
+        "height": 4769,
+        "bytes": 63426
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/ar/07-journal.webp",
+        "preview": "previews/mobile/ar/07-journal.webp",
+        "width": 480,
+        "height": 3173,
+        "bytes": 36266
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/01-about.webp",
+        "preview": "previews/mobile/en/01-about.webp",
+        "width": 480,
+        "height": 6917,
+        "bytes": 95800
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/02-cart.png",
+        "preview": "previews/mobile/en/02-cart.webp",
+        "width": 318,
+        "height": 618,
+        "bytes": 8314
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/03-checkout.webp",
+        "preview": "previews/mobile/en/03-checkout.webp",
+        "width": 480,
+        "height": 3990,
+        "bytes": 57466
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/04-contact.webp",
+        "preview": "previews/mobile/en/04-contact.webp",
+        "width": 480,
+        "height": 3023,
+        "bytes": 38038
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/05-full-cart.webp",
+        "preview": "previews/mobile/en/05-full-cart.webp",
+        "width": 480,
+        "height": 2902,
+        "bytes": 37488
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/06-home.webp",
+        "preview": "previews/mobile/en/06-home.webp",
+        "width": 480,
+        "height": 8906,
+        "bytes": 155382
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/07-journal.webp",
+        "preview": "previews/mobile/en/07-journal.webp",
+        "width": 480,
+        "height": 3252,
+        "bytes": 38720
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/08-shop.webp",
+        "preview": "previews/mobile/en/08-shop.webp",
+        "width": 480,
+        "height": 3284,
+        "bytes": 50418
+      },
+      {
+        "group": "mobile",
+        "original": "mobile/en/09-product.webp",
+        "preview": "previews/mobile/en/09-product.webp",
+        "width": 480,
+        "height": 4850,
+        "bytes": 68924
+      }
+    ]
+  }
+}

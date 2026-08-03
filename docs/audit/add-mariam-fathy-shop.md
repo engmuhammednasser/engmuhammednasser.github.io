@@ -45,10 +45,29 @@ The ordered source-to-target mapping is canonicalized in `data/mariam-fathy-gall
 ## Performance
 
 - All 41 gallery images use `loading="lazy"` and `decoding="async"`.
-- The gallery does not preload or eagerly load screenshot assets. Only the existing project cover remains the Work-card/hero visual.
+- The gallery does not preload or eagerly load screenshot assets. Only the responsive hero is critical; the Work card continues to use the existing optimized thumbnail pipeline.
 - Desktop and dashboard previews use a bounded viewport; mobile previews use a bounded portrait viewport with width-constrained, auto-height images so the source aspect ratio is preserved without distortion.
-- The existing `scripts/case-study-screenshots.js` runtime is reused for hover/focus screenshot scrolling and keyboard-accessible controls; its image-load/decode measurement now also handles lazy images that were not complete at initialization.
-- The existing optimized cover variants remain under `projects/mariam-fathy-shop/optimized/`; no second derivative thumbnail set was generated for the gallery.
+- The existing `scripts/case-study-screenshots.js` runtime remains scoped and event-driven for hover/focus screenshot scrolling; its image-load/decode measurement handles lazy previews that were not complete at initialization.
+- Gallery cards render WebP previews from `projects/mariam-fathy-shop/previews/`; originals remain available through `data-full-src` and are not used as card `src` values.
+
+## Final Media Delivery
+
+### Hero
+
+- Original cover: `projects/mariam-fathy-shop/cover.png` — 2,632,399 bytes.
+- Optimized mobile candidate: `projects/mariam-fathy-shop/optimized/hero-800.avif` — 21,575 bytes on disk; Chrome transfer measured 21,770 bytes at 390x844.
+- Optimized desktop candidate: `projects/mariam-fathy-shop/optimized/hero-1200.avif` — 41,493 bytes on disk; Chrome transfer measured 41,688 bytes at 1350x940.
+- The responsive AVIF preload and `<picture>` selected the same candidate. `cover.png` was not requested and no duplicate hero request was observed.
+- WebP sources remain available as the fallback; the optimized 1200px hero remained visually sharp at the tested desktop width.
+
+### Gallery
+
+- 41 original screenshots are preserved.
+- 41 optimized WebP preview representations are available; total preview bytes: 1,725,508.
+- Dashboard/Desktop previews are constrained to 960px wide; Mobile previews are constrained to 480px wide with preserved portrait aspect ratios.
+- Preview images remain lazy-loaded and async-decoded. No gallery preload, eager loading, or `fetchpriority="high"` was added.
+- Network inspection found no gallery originals on initial load or after progressive preview scrolling. The first original loaded only after the full-view interaction and displayed successfully in the accessible full-view dialog.
+- `projects/mariam-fathy-shop/media-manifest.json` records the deterministic hero and gallery media outputs.
 
 ## Content
 
@@ -64,7 +83,7 @@ The ordered source-to-target mapping is canonicalized in `data/mariam-fathy-gall
 - `npm run filter:work` — passed.
 - `npm run seo:apply` — passed after the content revision.
 - `npm run verify` — passed, including static references, image delivery, runtime invariants, Work filtering/Load More behavior, accessibility/SEO, security hygiene, performance budgets, Chrome checks, mobile navigation, idempotency, and `git diff --check`.
-- Targeted browser checks passed for both localized routes at desktop and mobile viewport sizes, including 41 gallery cards, group order, Arabic direction, portrait mobile layout, image paths, and keyboard/focus screenshot scrolling.
+- Targeted Chrome/CDP checks passed for both localized routes at 390x844 and 1350x940, including responsive hero selection, no duplicate hero/original-gallery requests, lazy preview loading, full-view original loading, 41 gallery cards, group order, Arabic direction, portrait mobile layout, keyboard/focus scrolling, and no horizontal overflow.
 
 ## Risks / notes
 
