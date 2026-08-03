@@ -5228,7 +5228,7 @@
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 96,
+        "links": 97,
         "buttons": 8,
         "labeledButtons": 2,
         "forms": 0,
@@ -5594,6 +5594,82 @@
         "dir": "rtl"
       },
       "file": "ar/work/mahmmoud-gomaa/index.html"
+    },
+    {
+      "route": "/ar/work/mariam-fathy-shop/",
+      "locale": "ar",
+      "canonicalURL": "https://engmuhammednasser.github.io/ar/work/mariam-fathy-shop/",
+      "indexable": true,
+      "pageType": "case-study",
+      "enEquivalent": "/work/mariam-fathy-shop/",
+      "arEquivalent": "/ar/work/mariam-fathy-shop/",
+      "title": {
+        "value": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
+        "source": "static-html"
+      },
+      "description": {
+        "value": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
+        "source": "static-html"
+      },
+      "ogImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
+      "metadata": {
+        "ogTitle": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
+        "ogDescription": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
+        "ogUrl": "https://engmuhammednasser.github.io/ar/work/mariam-fathy-shop/",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "متجر مريم فتحي — منصة تجارة إلكترونية مبنية بـ Laravel | محمد ناصر",
+        "twitterDescription": "منصة تجارة إلكترونية مخصصة مبنية بـ Laravel، تضم متجرًا متجاوبًا للعملاء ولوحة إدارة MoonShine للكتالوج والوسائط والمنتجات والطلبات.",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
+        "robots": null,
+        "hreflangCount": 3,
+        "structuredDataCount": 1
+      },
+      "accessibility": {
+        "landmarks": {
+          "header": 2,
+          "nav": 2,
+          "main": 1,
+          "footer": 1,
+          "section": 6
+        },
+        "headings": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3
+        ],
+        "images": {
+          "total": 43,
+          "meaningfulAlt": 43,
+          "emptyAlt": 0,
+          "missingAlt": 0
+        },
+        "links": 19,
+        "buttons": 43,
+        "labeledButtons": 43,
+        "forms": 0,
+        "labels": 0,
+        "skipLink": true,
+        "focusVisible": true,
+        "workFilters": 0,
+        "loadMore": 0,
+        "externalLinksWithoutSafeRel": 0
+      },
+      "language": {
+        "lang": "ar",
+        "dir": "rtl"
+      },
+      "file": "ar/work/mariam-fathy-shop/index.html"
     },
     {
       "route": "/ar/work/mashora/",
@@ -11742,7 +11818,7 @@
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 96,
+        "links": 97,
         "buttons": 8,
         "labeledButtons": 2,
         "forms": 0,
@@ -12108,6 +12184,82 @@
         "dir": "ltr"
       },
       "file": "work/mahmmoud-gomaa/index.html"
+    },
+    {
+      "route": "/work/mariam-fathy-shop/",
+      "locale": "en",
+      "canonicalURL": "https://engmuhammednasser.github.io/work/mariam-fathy-shop/",
+      "indexable": true,
+      "pageType": "case-study",
+      "enEquivalent": "/work/mariam-fathy-shop/",
+      "arEquivalent": "/ar/work/mariam-fathy-shop/",
+      "title": {
+        "value": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
+        "source": "static-html"
+      },
+      "description": {
+        "value": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
+        "source": "static-html"
+      },
+      "ogImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
+      "metadata": {
+        "ogTitle": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
+        "ogDescription": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
+        "ogUrl": "https://engmuhammednasser.github.io/work/mariam-fathy-shop/",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Mariam Fathy Shop — Laravel E-Commerce Platform | Muhammed Nasser",
+        "twitterDescription": "A custom Laravel e-commerce platform with a responsive customer storefront and a MoonShine administration dashboard for catalog, media, products, and orders.",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mariam-fathy-shop/optimized/thumb-800.webp",
+        "robots": null,
+        "hreflangCount": 3,
+        "structuredDataCount": 1
+      },
+      "accessibility": {
+        "landmarks": {
+          "header": 2,
+          "nav": 2,
+          "main": 1,
+          "footer": 1,
+          "section": 6
+        },
+        "headings": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3
+        ],
+        "images": {
+          "total": 43,
+          "meaningfulAlt": 43,
+          "emptyAlt": 0,
+          "missingAlt": 0
+        },
+        "links": 19,
+        "buttons": 43,
+        "labeledButtons": 43,
+        "forms": 0,
+        "labels": 0,
+        "skipLink": true,
+        "focusVisible": true,
+        "workFilters": 0,
+        "loadMore": 0,
+        "externalLinksWithoutSafeRel": 0
+      },
+      "language": {
+        "lang": "en",
+        "dir": "ltr"
+      },
+      "file": "work/mariam-fathy-shop/index.html"
     },
     {
       "route": "/work/mashora/",

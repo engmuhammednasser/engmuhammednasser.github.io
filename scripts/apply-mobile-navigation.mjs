@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { extname, join, relative, resolve } from "node:path";
 
 const root = resolve(process.cwd());
-const expectedPageCount = 184;
+const expectedPageCount = 186;
 const runtimeTag = '<script src="/scripts/mobile-navigation.js" defer data-mobile-navigation="script"></script>';
 const htmlFiles = [];
 

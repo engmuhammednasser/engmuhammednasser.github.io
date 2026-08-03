@@ -69,7 +69,7 @@ function imageTags() {
 }
 
 assert(cardIds().length === 12, "initial render must contain 12 cards");
-assert(status.textContent === "Showing 12 of 43 projects", "initial status is incorrect");
+assert(status.textContent === `Showing 12 of ${projectsDocument.projects.length} projects`, "initial status is incorrect");
 assert(/\bloading="eager"/.test(imageTags()[0]), "initial primary image must be eager");
 assert(/\bfetchpriority="high"/.test(imageTags()[0]), "initial primary image must be high priority");
 assert(imageTags().slice(1).every((image) => /\bloading="lazy"/.test(image) && !/\bfetchpriority="high"/.test(image)), "initial non-primary images must remain lazy and unprioritized");

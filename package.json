@@ -24,6 +24,7 @@
     "upgrade:arabic-window": "node scripts/upgrade-arabic-window-case-study.mjs",
     "images:normalize": "node scripts/normalize-image-delivery.mjs",
     "images:thumbnails": "node scripts/generate-project-thumbnails.mjs",
+    "media:mariam": "node scripts/generate-mariam-fathy-media.mjs",
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
