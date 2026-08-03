@@ -1,5 +1,10 @@
 # Final Engineering Report
 
+> Historical record: this was the Sprint 5 release-readiness report before PR #1.
+> PR #1 and subsequent PRs #2–#8 have since merged. Counts and the “ready for PR
+> review” recommendation below apply only to that historical branch state. See
+> `PORTFOLIO_ENGINEERING_HANDOFF.md` for current production status.
+
 Release recommendation: **READY FOR PR REVIEW**.
 
 Branch: `refactor/performance-clean-architecture`  

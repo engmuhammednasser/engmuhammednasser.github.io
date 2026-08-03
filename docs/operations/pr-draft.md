@@ -1,5 +1,11 @@
 # Pull Request Draft
 
+> Historical record: this was the draft for PR #1 (Sprints 0–5), merged on
+> 2026-08-02 as `018d4163b111900cbd99243afee42a431d1a9aef`. Its 43-project and
+> 184-indexable-route counts are correct only for that review point. Do not use this
+> as the current release template; follow `PORTFOLIO_OPERATIONS_GUIDE.md` and the
+> current release checklist.
+
 ## Suggested title
 
 `refactor: finalize portfolio architecture and release quality gates`
