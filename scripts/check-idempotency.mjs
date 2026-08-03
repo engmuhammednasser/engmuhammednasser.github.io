@@ -18,9 +18,14 @@ function collect(directory, output = []) {
   return output;
 }
 
+function hashTextFile(file) {
+  const content = readFileSync(file, "utf8").replace(/\r\n/g, "\n");
+  return createHash("sha256").update(content, "utf8").digest("hex");
+}
+
 function snapshot() {
   const files = collect(root).sort();
-  return new Map(files.map((file) => [file.slice(root.length + 1), createHash("sha256").update(readFileSync(file)).digest("hex")]));
+  return new Map(files.map((file) => [file.slice(root.length + 1), hashTextFile(file)]));
 }
 
 function run(script) {
