@@ -1,45 +1,51 @@
 {
   "schemaVersion": 1,
   "hero": {
-    "original": "cover.png",
-    "originalBytes": 2632399,
+    "original": "desktop/en/06-home.png",
+    "originalBytes": 4500610,
     "originalWidth": 1920,
-    "originalHeight": 1080,
+    "originalHeight": 7721,
+    "crop": {
+      "width": 1920,
+      "height": 1080,
+      "gravity": "north",
+      "aspectRatio": 1.7777777777777777
+    },
     "variants": {
       "hero-800.avif": {
         "width": 800,
         "height": 450,
-        "bytes": 21575,
+        "bytes": 11695,
         "quality": 55
       },
       "hero-800.webp": {
         "width": 800,
         "height": 450,
-        "bytes": 23766,
+        "bytes": 12112,
         "quality": 72
       },
       "hero-1200.avif": {
         "width": 1200,
         "height": 675,
-        "bytes": 41493,
+        "bytes": 19784,
         "quality": 55
       },
       "hero-1200.webp": {
         "width": 1200,
         "height": 675,
-        "bytes": 44558,
+        "bytes": 20560,
         "quality": 72
       },
       "hero-1600.avif": {
         "width": 1600,
         "height": 900,
-        "bytes": 64805,
+        "bytes": 27642,
         "quality": 55
       },
       "hero-1600.webp": {
         "width": 1600,
         "height": 900,
-        "bytes": 69188,
+        "bytes": 28946,
         "quality": 72
       }
     }

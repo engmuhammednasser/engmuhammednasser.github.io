@@ -263,14 +263,14 @@
         "React"
       ],
       "thumbnail": {
-        "original": "/projects/mariam-fathy-shop/desktop/ar/03-home.png",
+        "original": "/projects/mariam-fathy-shop/desktop/en/06-home.png",
         "avif480": "/projects/mariam-fathy-shop/optimized/thumb-480.avif",
         "avif800": "/projects/mariam-fathy-shop/optimized/thumb-800.avif",
         "webp480": "/projects/mariam-fathy-shop/optimized/thumb-480.webp",
         "webp800": "/projects/mariam-fathy-shop/optimized/thumb-800.webp",
         "width": 1920,
-        "height": 7567,
-        "aspectRatio": 0.253731016258763
+        "height": 7721,
+        "aspectRatio": 0.24867245175495403
       },
       "caseStudy": {
         "en": "/work/mariam-fathy-shop/",
