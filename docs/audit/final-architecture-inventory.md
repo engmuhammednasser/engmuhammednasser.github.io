@@ -1,6 +1,9 @@
 # Final Architecture Inventory
 
-Status: Sprint 5 final inventory for `refactor/performance-clean-architecture`.
+Status: historical Sprint 5 final inventory for
+`refactor/performance-clean-architecture` before PR #1 merged. Its 43-project and
+184-indexable-route counts are point-in-time evidence, not the current production
+inventory. See `PORTFOLIO_ENGINEERING_HANDOFF.md` for current state.
 
 This is the architecture that exists in the repository at release-readiness review. It describes the committed static export and the supported maintenance pipeline; it does not describe a hypothetical rebuild.
 

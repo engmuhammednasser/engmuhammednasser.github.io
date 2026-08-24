@@ -1,25 +1,40 @@
 # Muhammed Nasser Portfolio
 
-This repository contains the statically exported website published with GitHub Pages.
+Static portfolio published by GitHub Pages from the root of `main`:
+<https://engmuhammednasser.github.io/>.
 
-## Local development
+The repository contains the deployed static export. The original Next.js
+application source/build configuration is unavailable, so tracked HTML, payloads,
+compiled assets, canonical data, and repository-owned generators are production
+artifacts—not a disposable build directory.
 
-Requirements: Node.js 20 or newer.
+## Documentation
 
-```powershell
+- [`PORTFOLIO_ENGINEERING_HANDOFF.md`](PORTFOLIO_ENGINEERING_HANDOFF.md) — current
+  architecture, inventory, Sprint history, PR #1–#8 history, and accepted risks.
+- [`PORTFOLIO_OPERATIONS_GUIDE.md`](PORTFOLIO_OPERATIONS_GUIDE.md) — maintenance,
+  project, media, SEO, validation, release, and rollback workflow.
+- [`NEW_PROJECT_INTAKE_TEMPLATE.md`](NEW_PROJECT_INTAKE_TEMPLATE.md) — required
+  content, privacy, media, localization, and acceptance inputs for a new project.
+
+## Local use
+
+Requirements: Node.js 20+ and Chrome/Chromium/Edge. ImageMagick 7 is additionally
+required for media generation.
+
+```bash
+npm ci
 npm start
 ```
 
-The site will be available at `http://127.0.0.1:3000`.
+The local site is served at <http://127.0.0.1:3000/>.
 
-After replacing the static export, normalize its generated asset and English-language paths:
+## Validation
 
-```powershell
-npm run fix:paths
+```bash
+npm run verify
+git diff --check
 ```
 
-To verify that local page, image, stylesheet, and script references resolve:
-
-```powershell
-npm run check
-```
+Use focused branches and pull requests. Do not merge or deploy without explicit
+authorization.
