@@ -71,78 +71,47 @@
 
       var gradient = card.children[1] || null;
       var hint = card.children[3] || null;
-      var zoomOverlay = card.children[4] || null;
-      var maxOffset = 0;
-      var pinnedToBottom = false;
-      var scrollDuration = 6;
+      var hasFullView = Boolean(card.getAttribute("data-full-src"));
+      var pointerMoved = false;
+      var pointerStartX = 0;
+      var pointerStartY = 0;
 
       card.style.position = "relative";
-      card.style.overflow = "hidden";
-      image.style.position = "absolute";
-      image.style.left = "0";
-      image.style.top = "0";
+      card.style.overflowX = "hidden";
+      card.style.overflowY = "auto";
+      card.style.webkitOverflowScrolling = "touch";
+      card.style.overscrollBehavior = "contain";
+      card.style.touchAction = "pan-y";
+      card.style.scrollbarWidth = "thin";
+      card.style.scrollbarColor = "rgba(148,163,184,.8) rgba(15,23,42,.65)";
+      image.style.position = "static";
       image.style.width = "100%";
       image.style.height = "auto";
       image.style.maxWidth = "none";
       image.style.transform = "translateY(0)";
-      image.style.transition = "transform 0.9s ease-out";
+      image.style.transition = "none";
+      image.style.willChange = "auto";
 
-      function measureOffset() {
-        image.style.transform = "translateY(0)";
+      if (gradient) gradient.style.position = "sticky";
+      if (hint) hint.style.position = "sticky";
 
-        window.requestAnimationFrame(function () {
-          var overflow = image.getBoundingClientRect().height - card.clientHeight;
-          maxOffset = overflow > 0 ? overflow : 0;
-          scrollDuration = Math.min(18, Math.max(6, maxOffset / 110));
+      card.addEventListener("pointerdown", function (event) {
+        pointerMoved = false;
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+      });
 
-          if (pinnedToBottom && maxOffset > 0) {
-            image.style.transition = "transform " + scrollDuration + "s linear";
-            image.style.transform = "translateY(-" + maxOffset + "px)";
-          }
-        });
-      }
+      card.addEventListener("pointermove", function (event) {
+        if (Math.abs(event.clientX - pointerStartX) > 6 || Math.abs(event.clientY - pointerStartY) > 6) {
+          pointerMoved = true;
+        }
+      });
 
-      function resetPosition() {
-        pinnedToBottom = false;
-        image.style.transition = "transform 0.9s ease-out";
-        image.style.transform = "translateY(0)";
-        if (gradient) gradient.style.opacity = "1";
-        if (hint) hint.style.opacity = "0.85";
-        if (zoomOverlay) zoomOverlay.style.backgroundColor = "rgba(0,0,0,0)";
-      }
-
-      function scrollPosition() {
-        if (!maxOffset) return;
-
-        pinnedToBottom = true;
-        image.style.transition = "transform " + scrollDuration + "s linear";
-        image.style.transform = "translateY(-" + maxOffset + "px)";
-        if (gradient) gradient.style.opacity = "0";
-        if (hint) hint.style.opacity = "0";
-        if (zoomOverlay) zoomOverlay.style.backgroundColor = "rgba(0,0,0,0.2)";
-      }
-
-      image.addEventListener("load", measureOffset, { once: true });
-      if (image.complete && image.naturalWidth > 0) measureOffset();
-      if (typeof image.decode === "function") image.decode().then(measureOffset).catch(function () {});
-
-      window.addEventListener("resize", measureOffset);
-      card.addEventListener("mouseenter", scrollPosition);
-      card.addEventListener("mouseleave", resetPosition);
-      card.addEventListener("focusin", scrollPosition);
-      card.addEventListener("focusout", resetPosition);
-      card.addEventListener("click", function () {
-        if (card.getAttribute("data-full-src")) {
+      card.addEventListener("click", function (event) {
+        if (hasFullView && !pointerMoved) {
+          event.preventDefault();
           openFullView(card);
-          return;
         }
-
-        if (pinnedToBottom) {
-          resetPosition();
-          return;
-        }
-
-        scrollPosition();
       });
     });
   }
