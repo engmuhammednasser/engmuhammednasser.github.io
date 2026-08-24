@@ -170,6 +170,13 @@ export function normalizeScreenshotButton(markup, locale = "en") {
   return appendCanonicalHint(next, locale);
 }
 
+function normalizeScreenshotRuntime(html) {
+  let next = html.replace(/<script\b[^>]*src="\/scripts\/case-study-screenshots\.js"[^>]*><\/script>/gi, "");
+  const mobileRuntime = next.match(/<script\b[^>]*data-mobile-navigation="script"[^>]*><\/script>/i)?.[0];
+  if (mobileRuntime) return next.replace(mobileRuntime, `${screenshotRuntime}${mobileRuntime}`);
+  return next.replace("</body>", `${screenshotRuntime}</body>`);
+}
+
 export function normalizeCaseStudyHtml(html) {
   const buttons = findScreenshotButtons(html);
   const serializedSources = findSerializedScreenshotSources(html);
@@ -191,9 +198,7 @@ export function normalizeCaseStudyHtml(html) {
     /<div id="case-modal"[\s\S]*?<\/div><script>\(function\(\)\{document\.querySelectorAll\('\.case-shot'\)[\s\S]*?<\/script>/g,
     "",
   );
-  if (!next.includes("/scripts/case-study-screenshots.js")) {
-    next = next.replace("</body>", `${screenshotRuntime}</body>`);
-  }
+  next = normalizeScreenshotRuntime(next);
   const count = buttons.length || serializedSources.length;
   return { html: next, count, buttonCount: buttons.length, serializedCount: serializedSources.length, changedCount };
 }
