@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { relative, resolve } from "node:path";
-import { caseStudyRouteFiles, findScreenshotButtons } from "./case-study-screenshot-scroll-utils.mjs";
+import { caseStudyRouteFiles, findScreenshotButtons, legacyHintTextPattern } from "./case-study-screenshot-scroll-utils.mjs";
 
 const root = resolve(process.cwd());
 const errors = [];
@@ -17,6 +17,9 @@ if (!runtime.includes("data-case-study-scroll-hint")) fail(resolve(root, "script
 if (!runtime.includes("scrollHeight > card.clientHeight")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not gate hint on native overflow");
 if (!runtime.includes("data-full-src\") || card.getAttribute(\"data-src")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not support current and legacy full-view sources");
 if (!runtime.includes("pointercancel") || !runtime.includes("pointerup")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing pointer gesture reset handling");
+if (!runtime.includes("cleanupScrollHints")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing defensive hint deduplication");
+
+const legacyHintPattern = new RegExp(legacyHintTextPattern, "i");
 
 for (const file of caseStudyRouteFiles(root)) {
   const html = readFileSync(file, "utf8");
@@ -36,7 +39,11 @@ for (const file of caseStudyRouteFiles(root)) {
   buttons.forEach((button, index) => {
     const label = `screenshot button ${index + 1}`;
     const markup = button.markup;
+    const hintCount = (markup.match(/\bdata-case-study-scroll-hint\b/gi) || []).length;
     if (!/\bdata-case-study-screenshot\b/i.test(markup)) fail(file, `${label} missing data-case-study-screenshot`);
+    if (hintCount !== 1) fail(file, `${label} must contain exactly one canonical scroll hint; found ${hintCount}`);
+    const withoutCanonicalHint = markup.replace(/<(span|div)\b[^>]*\bdata-case-study-scroll-hint\b[^>]*>[\s\S]*?<\/\1>/gi, "");
+    if (legacyHintPattern.test(withoutCanonicalHint)) fail(file, `${label} still contains legacy scroll hint text`);
     if (!/\bdata-full-src="/i.test(markup)) fail(file, `${label} missing normalized data-full-src`);
     if (/overflow\s*:\s*hidden/i.test(markup)) fail(file, `${label} still uses overflow:hidden`);
     if (!/overflow-y\s*:\s*auto/i.test(markup)) fail(file, `${label} missing overflow-y:auto`);
