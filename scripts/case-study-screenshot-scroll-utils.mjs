@@ -5,7 +5,7 @@ export const screenshotRuntime = '<script src="/scripts/case-study-screenshots.j
 
 export function caseStudyRouteFiles(root) {
   const files = [];
-  for (const base of ["work", join("ar", "work")]) {
+  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend")]) {
     const directory = join(root, base);
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
       if (entry.isDirectory() && !entry.name.startsWith("_")) {
@@ -15,6 +15,15 @@ export function caseStudyRouteFiles(root) {
     }
   }
   return files.sort((a, b) => relative(root, a).localeCompare(relative(root, b)));
+}
+
+export function routeFamily(root, file) {
+  const route = relative(root, file).replaceAll("\\", "/");
+  return route.startsWith("backend/") || route.startsWith("ar/backend/") ? "backend" : "work";
+}
+
+export function findSerializedScreenshotSources(html) {
+  return [...new Set([...html.matchAll(/\\"src\\":\\"(\/projects\/[^\\"]+)\\"/g)].map((match) => match[1]))];
 }
 
 export function findScreenshotButtons(html) {
@@ -163,7 +172,8 @@ export function normalizeScreenshotButton(markup, locale = "en") {
 
 export function normalizeCaseStudyHtml(html) {
   const buttons = findScreenshotButtons(html);
-  if (!buttons.length) return { html, count: 0 };
+  const serializedSources = findSerializedScreenshotSources(html);
+  if (!buttons.length && !serializedSources.length) return { html, count: 0 };
   const locale = /<html\b[^>]*\blang="ar"/i.test(html) ? "ar" : "en";
 
   let next = "";
@@ -184,5 +194,6 @@ export function normalizeCaseStudyHtml(html) {
   if (!next.includes("/scripts/case-study-screenshots.js")) {
     next = next.replace("</body>", `${screenshotRuntime}</body>`);
   }
-  return { html: next, count: buttons.length, changedCount };
+  const count = buttons.length || serializedSources.length;
+  return { html: next, count, buttonCount: buttons.length, serializedCount: serializedSources.length, changedCount };
 }

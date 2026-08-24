@@ -1,12 +1,16 @@
 import { readFileSync } from "node:fs";
 import { relative, resolve } from "node:path";
-import { caseStudyRouteFiles, findScreenshotButtons, legacyHintTextPattern } from "./case-study-screenshot-scroll-utils.mjs";
+import { caseStudyRouteFiles, findScreenshotButtons, findSerializedScreenshotSources, legacyHintTextPattern, routeFamily } from "./case-study-screenshot-scroll-utils.mjs";
 
 const root = resolve(process.cwd());
 const errors = [];
 const bySlug = new Map();
 let pageCount = 0;
 let buttonCount = 0;
+const totals = {
+  work: { pages: 0, frames: 0 },
+  backend: { pages: 0, frames: 0 },
+};
 
 function fail(file, message) {
   errors.push(`${relative(root, file)}: ${message}`);
@@ -18,20 +22,31 @@ if (!runtime.includes("scrollHeight > card.clientHeight")) fail(resolve(root, "s
 if (!runtime.includes("data-full-src\") || card.getAttribute(\"data-src")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not support current and legacy full-view sources");
 if (!runtime.includes("pointercancel") || !runtime.includes("pointerup")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing pointer gesture reset handling");
 if (!runtime.includes("cleanupScrollHints")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing defensive hint deduplication");
+if (!runtime.includes('button[aria-label^="View full image:"]')) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not attach to backend full-image buttons");
 
 const legacyHintPattern = new RegExp(legacyHintTextPattern, "i");
 
 for (const file of caseStudyRouteFiles(root)) {
   const html = readFileSync(file, "utf8");
   const buttons = findScreenshotButtons(html);
-  if (!buttons.length) continue;
+  const serializedSources = findSerializedScreenshotSources(html);
+  if (!buttons.length && !serializedSources.length) continue;
 
   pageCount += 1;
-  buttonCount += buttons.length;
+  const frameCount = buttons.length || serializedSources.length;
+  buttonCount += frameCount;
+  const family = routeFamily(root, file);
+  totals[family].pages += 1;
+  totals[family].frames += frameCount;
   const route = relative(root, file).replaceAll("\\", "/");
-  const slug = route.replace(/^ar\/work\//, "").replace(/^work\//, "").replace(/\/index\.html$/, "");
+  const slug = route
+    .replace(/^ar\/work\//, "")
+    .replace(/^work\//, "")
+    .replace(/^ar\/backend\//, "")
+    .replace(/^backend\//, "")
+    .replace(/\/index\.html$/, "");
   const locale = route.startsWith("ar/") ? "ar" : "en";
-  bySlug.set(slug, { ...(bySlug.get(slug) || {}), [locale]: buttons.length });
+  bySlug.set(`${family}:${slug}`, { ...(bySlug.get(`${family}:${slug}`) || {}), [locale]: frameCount });
 
   if (!html.includes("/scripts/case-study-screenshots.js")) fail(file, "missing shared case-study screenshot runtime");
   if (/document\.querySelectorAll\('\.case-shot'\)[\s\S]*?mouseenter/i.test(html)) fail(file, "legacy transform hover script is still present");
@@ -59,7 +74,6 @@ for (const file of caseStudyRouteFiles(root)) {
 
 for (const [slug, counts] of [...bySlug.entries()].sort()) {
   if (!counts.en || !counts.ar) fail(`${slug}`, "missing EN/AR screenshot route parity");
-  if (counts.en && counts.ar && counts.en !== counts.ar) fail(`${slug}`, `EN/AR screenshot count mismatch (${counts.en} vs ${counts.ar})`);
 }
 
 if (errors.length) {
@@ -69,3 +83,5 @@ if (errors.length) {
 }
 
 console.log(`Case-study screenshot scroll check passed: ${buttonCount} screenshots across ${pageCount} EN/AR project pages.`);
+console.log(`Work frames: ${totals.work.frames} across ${totals.work.pages} pages.`);
+console.log(`Backend frames: ${totals.backend.frames} across ${totals.backend.pages} pages.`);

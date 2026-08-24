@@ -46,11 +46,11 @@
   }
 
   function openFullView(card) {
-    var source = card.getAttribute("data-full-src") || card.getAttribute("data-src");
+    var preview = card.querySelector("img");
+    var source = card.getAttribute("data-full-src") || card.getAttribute("data-src") || (preview ? preview.currentSrc || preview.src : "");
     if (!source) return;
 
     var view = getFullView();
-    var preview = card.querySelector("img");
     view.setPreviousFocus(document.activeElement === document.body ? card : document.activeElement);
     view.image.src = source;
     view.image.alt = preview ? preview.alt : "Full screenshot";
@@ -104,7 +104,7 @@
 
   function initCaseStudyScreenshots() {
     var cards = document.querySelectorAll(
-      "button[data-case-study-screenshot]"
+      'button[data-case-study-screenshot], button[aria-label^="View full image:"]'
     );
 
     cards.forEach(function (card) {
@@ -112,7 +112,10 @@
       if (!image) return;
 
       var gradient = findGradientOverlay(card);
-      var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src"));
+      if (!card.hasAttribute("data-case-study-screenshot")) card.setAttribute("data-case-study-screenshot", "");
+      if (!card.getAttribute("data-full-src")) card.setAttribute("data-full-src", card.getAttribute("data-src") || image.currentSrc || image.src);
+
+      var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src") || image.currentSrc || image.src);
       var pointerMoved = false;
       var pointerActive = false;
       var pointerStartX = 0;
