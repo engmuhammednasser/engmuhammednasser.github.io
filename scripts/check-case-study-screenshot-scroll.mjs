@@ -12,6 +12,12 @@ function fail(file, message) {
   errors.push(`${relative(root, file)}: ${message}`);
 }
 
+const runtime = readFileSync(resolve(root, "scripts/case-study-screenshots.js"), "utf8");
+if (!runtime.includes("data-case-study-scroll-hint")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing scroll hint contract");
+if (!runtime.includes("scrollHeight > card.clientHeight")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not gate hint on native overflow");
+if (!runtime.includes("data-full-src\") || card.getAttribute(\"data-src")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime does not support current and legacy full-view sources");
+if (!runtime.includes("pointercancel") || !runtime.includes("pointerup")) fail(resolve(root, "scripts/case-study-screenshots.js"), "runtime missing pointer gesture reset handling");
+
 for (const file of caseStudyRouteFiles(root)) {
   const html = readFileSync(file, "utf8");
   const buttons = findScreenshotButtons(html);
@@ -31,6 +37,7 @@ for (const file of caseStudyRouteFiles(root)) {
     const label = `screenshot button ${index + 1}`;
     const markup = button.markup;
     if (!/\bdata-case-study-screenshot\b/i.test(markup)) fail(file, `${label} missing data-case-study-screenshot`);
+    if (!/\bdata-full-src="/i.test(markup)) fail(file, `${label} missing normalized data-full-src`);
     if (/overflow\s*:\s*hidden/i.test(markup)) fail(file, `${label} still uses overflow:hidden`);
     if (!/overflow-y\s*:\s*auto/i.test(markup)) fail(file, `${label} missing overflow-y:auto`);
     if (!/-webkit-overflow-scrolling\s*:\s*touch/i.test(markup)) fail(file, `${label} missing touch momentum scrolling`);
