@@ -45,7 +45,7 @@
   }
 
   function openFullView(card) {
-    var source = card.getAttribute("data-full-src");
+    var source = card.getAttribute("data-full-src") || card.getAttribute("data-src");
     if (!source) return;
 
     var view = getFullView();
@@ -62,7 +62,7 @@
 
   function initCaseStudyScreenshots() {
     var cards = document.querySelectorAll(
-      'button[aria-label*="full screenshot"], button[aria-label*="كاملاً"]'
+      'button[data-case-study-screenshot], button[aria-label*="full screenshot"], button[aria-label*="كاملاً"], button.case-shot'
     );
 
     cards.forEach(function (card) {
@@ -71,7 +71,7 @@
 
       var gradient = card.children[1] || null;
       var hint = card.children[3] || null;
-      var hasFullView = Boolean(card.getAttribute("data-full-src"));
+      var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src"));
       var pointerMoved = false;
       var pointerStartX = 0;
       var pointerStartY = 0;

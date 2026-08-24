@@ -3637,14 +3637,14 @@
           2
         ],
         "images": {
-          "total": 11,
+          "total": 10,
           "meaningfulAlt": 10,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 11,
-        "labeledButtons": 3,
+        "buttons": 10,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -3925,14 +3925,14 @@
           2
         ],
         "images": {
-          "total": 17,
+          "total": 16,
           "meaningfulAlt": 16,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 17,
-        "labeledButtons": 3,
+        "buttons": 16,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -6289,14 +6289,14 @@
           2
         ],
         "images": {
-          "total": 27,
+          "total": 26,
           "meaningfulAlt": 26,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 27,
-        "labeledButtons": 3,
+        "buttons": 26,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -10227,14 +10227,14 @@
           2
         ],
         "images": {
-          "total": 11,
+          "total": 10,
           "meaningfulAlt": 10,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 11,
-        "labeledButtons": 3,
+        "buttons": 10,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -10515,14 +10515,14 @@
           2
         ],
         "images": {
-          "total": 17,
+          "total": 16,
           "meaningfulAlt": 16,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 17,
-        "labeledButtons": 3,
+        "buttons": 16,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -12879,14 +12879,14 @@
           2
         ],
         "images": {
-          "total": 27,
+          "total": 26,
           "meaningfulAlt": 26,
-          "emptyAlt": 1,
+          "emptyAlt": 0,
           "missingAlt": 0
         },
         "links": 20,
-        "buttons": 27,
-        "labeledButtons": 3,
+        "buttons": 26,
+        "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
