@@ -44,6 +44,11 @@ function upsertAttribute(tag, name, value = "") {
   return tag.replace(/>$/, value ? ` ${name}="${value}">` : ` ${name}>`);
 }
 
+function readAttribute(tag, name) {
+  const match = tag.match(new RegExp(`\\s${name}="([^"]*)"`, "i"));
+  return match ? match[1] : "";
+}
+
 function upsertStyleProperty(style, property, value) {
   const parts = style.split(";").map((part) => part.trim()).filter(Boolean);
   const next = [];
@@ -87,8 +92,10 @@ function updateStyleAttribute(tag, updates) {
   return tag.replace(/>$/, ` style="${style}">`);
 }
 
-function normalizeButtonTag(tag) {
+function normalizeButtonTag(tag, fallbackSource) {
   let next = upsertAttribute(tag, "data-case-study-screenshot");
+  const source = readAttribute(next, "data-src") || readAttribute(next, "data-full-src") || fallbackSource;
+  if (source && !readAttribute(next, "data-full-src")) next = upsertAttribute(next, "data-full-src", source);
   next = updateStyleAttribute(next, [
     ["overflow", null],
     ["overflow-x", "hidden"],
@@ -126,7 +133,8 @@ function normalizeStickyOverlay(tag) {
 }
 
 export function normalizeScreenshotButton(markup) {
-  let next = markup.replace(/^<button\b[^>]*>/i, (tag) => normalizeButtonTag(tag));
+  const imageSource = readAttribute(markup.match(/<img\b[^>]*>/i)?.[0] || "", "src");
+  let next = markup.replace(/^<button\b[^>]*>/i, (tag) => normalizeButtonTag(tag, imageSource));
   next = next.replace(/<img\b[^>]*>/i, (tag) => normalizeImageTag(tag));
   next = next.replace(/<(div|span)\b[^>]*aria-hidden="true"[^>]*>/gi, (tag) => normalizeStickyOverlay(tag));
   return next;

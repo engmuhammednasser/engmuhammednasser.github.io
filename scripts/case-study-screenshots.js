@@ -2,6 +2,7 @@
   "use strict";
 
   var fullView = null;
+  var movementThreshold = 8;
 
   function getFullView() {
     if (fullView) return fullView;
@@ -62,7 +63,7 @@
 
   function initCaseStudyScreenshots() {
     var cards = document.querySelectorAll(
-      'button[data-case-study-screenshot], button[aria-label*="full screenshot"], button[aria-label*="كاملاً"], button.case-shot'
+      "button[data-case-study-screenshot]"
     );
 
     cards.forEach(function (card) {
@@ -70,11 +71,20 @@
       if (!image) return;
 
       var gradient = card.children[1] || null;
-      var hint = card.children[3] || null;
       var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src"));
       var pointerMoved = false;
+      var pointerActive = false;
       var pointerStartX = 0;
       var pointerStartY = 0;
+      var hint = card.querySelector("[data-case-study-scroll-hint]");
+
+      if (!hint) {
+        hint = document.createElement("span");
+        hint.setAttribute("data-case-study-scroll-hint", "");
+        hint.setAttribute("aria-hidden", "true");
+        hint.textContent = document.documentElement.lang === "ar" ? "مرّر لعرض الصورة" : "Scroll to explore";
+        card.appendChild(hint);
+      }
 
       card.style.position = "relative";
       card.style.overflowX = "hidden";
@@ -84,6 +94,7 @@
       card.style.touchAction = "pan-y";
       card.style.scrollbarWidth = "thin";
       card.style.scrollbarColor = "rgba(148,163,184,.8) rgba(15,23,42,.65)";
+      card.style.cursor = hasFullView ? "zoom-in" : "default";
       image.style.position = "static";
       image.style.width = "100%";
       image.style.height = "auto";
@@ -93,25 +104,53 @@
       image.style.willChange = "auto";
 
       if (gradient) gradient.style.position = "sticky";
-      if (hint) hint.style.position = "sticky";
+      hint.style.cssText = "position:sticky;bottom:12px;left:50%;transform:translateX(-50%);display:none;width:max-content;max-width:calc(100% - 32px);margin:-40px auto 12px;padding:6px 12px;border-radius:999px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.78);font-size:12px;font-weight:600;line-height:1.2;white-space:nowrap;pointer-events:none;z-index:3;box-shadow:0 8px 24px rgba(0,0,0,.18)";
+
+      function updateHint() {
+        var scrollable = card.scrollHeight > card.clientHeight + 2;
+        hint.style.display = scrollable ? "block" : "none";
+        hint.style.opacity = scrollable && card.scrollTop < 8 ? "1" : ".38";
+      }
+
+      function endPointerTracking() {
+        pointerActive = false;
+      }
+
+      function resetPointerState() {
+        pointerActive = false;
+        pointerMoved = false;
+      }
+
+      if (image.complete) updateHint();
+      else image.addEventListener("load", updateHint, { once: true });
+      window.addEventListener("resize", updateHint);
+      card.addEventListener("scroll", updateHint, { passive: true });
+      updateHint();
 
       card.addEventListener("pointerdown", function (event) {
         pointerMoved = false;
+        pointerActive = true;
         pointerStartX = event.clientX;
         pointerStartY = event.clientY;
       });
 
       card.addEventListener("pointermove", function (event) {
-        if (Math.abs(event.clientX - pointerStartX) > 6 || Math.abs(event.clientY - pointerStartY) > 6) {
+        if (!pointerActive) return;
+        if (Math.abs(event.clientX - pointerStartX) > movementThreshold || Math.abs(event.clientY - pointerStartY) > movementThreshold) {
           pointerMoved = true;
         }
       });
+
+      card.addEventListener("pointerup", endPointerTracking);
+      card.addEventListener("pointercancel", resetPointerState);
+      card.addEventListener("lostpointercapture", resetPointerState);
 
       card.addEventListener("click", function (event) {
         if (hasFullView && !pointerMoved) {
           event.preventDefault();
           openFullView(card);
         }
+        pointerMoved = false;
       });
     });
   }
