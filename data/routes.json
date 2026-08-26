@@ -1756,21 +1756,22 @@
           2,
           2,
           2,
+          2,
           2
         ],
         "images": {
-          "total": 6,
-          "meaningfulAlt": 6,
+          "total": 7,
+          "meaningfulAlt": 7,
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 22,
+        "links": 25,
         "buttons": 2,
         "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
-        "focusVisible": false,
+        "focusVisible": true,
         "workFilters": 0,
         "loadMore": 0,
         "externalLinksWithoutSafeRel": 0
@@ -5228,7 +5229,7 @@
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 97,
+        "links": 98,
         "buttons": 8,
         "labeledButtons": 2,
         "forms": 0,
@@ -6454,6 +6455,89 @@
         "dir": "rtl"
       },
       "file": "ar/work/prowindow/index.html"
+    },
+    {
+      "route": "/ar/work/shipping-delivery-operations-platform/",
+      "locale": "ar",
+      "canonicalURL": "https://engmuhammednasser.github.io/ar/work/shipping-delivery-operations-platform/",
+      "indexable": true,
+      "pageType": "case-study",
+      "enEquivalent": "/work/shipping-delivery-operations-platform/",
+      "arEquivalent": "/ar/work/shipping-delivery-operations-platform/",
+      "title": {
+        "value": "منصة إدارة عمليات الشحن والتوصيل | محمد ناصر",
+        "source": "static-html"
+      },
+      "description": {
+        "value": "منصة تشغيل لشركة واحدة لإدارة دورة الشحنات والصلاحيات والتتبع العام وعمليات المخازن وتجربة التاجر والعمليات المالية المرتبطة بالشحن.",
+        "source": "static-html"
+      },
+      "ogImage": "https://engmuhammednasser.github.io/projects/shipping-delivery-operations-platform/optimized/thumb-800.webp",
+      "metadata": {
+        "ogTitle": "منصة إدارة عمليات الشحن والتوصيل | محمد ناصر",
+        "ogDescription": "منصة تشغيل لشركة واحدة لإدارة دورة الشحنات والصلاحيات والتتبع العام وعمليات المخازن وتجربة التاجر والعمليات المالية المرتبطة بالشحن.",
+        "ogUrl": "https://engmuhammednasser.github.io/ar/work/shipping-delivery-operations-platform/",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "منصة إدارة عمليات الشحن والتوصيل | محمد ناصر",
+        "twitterDescription": "منصة تشغيل لشركة واحدة لإدارة دورة الشحنات والصلاحيات والتتبع العام وعمليات المخازن وتجربة التاجر والعمليات المالية المرتبطة بالشحن.",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/shipping-delivery-operations-platform/optimized/thumb-800.webp",
+        "robots": null,
+        "hreflangCount": 3,
+        "structuredDataCount": 1
+      },
+      "accessibility": {
+        "landmarks": {
+          "header": 1,
+          "nav": 2,
+          "main": 1,
+          "footer": 1,
+          "section": 17
+        },
+        "headings": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "images": {
+          "total": 29,
+          "meaningfulAlt": 29,
+          "emptyAlt": 0,
+          "missingAlt": 0
+        },
+        "links": 19,
+        "buttons": 30,
+        "labeledButtons": 30,
+        "forms": 0,
+        "labels": 0,
+        "skipLink": true,
+        "focusVisible": true,
+        "workFilters": 0,
+        "loadMore": 0,
+        "externalLinksWithoutSafeRel": 0
+      },
+      "language": {
+        "lang": "ar",
+        "dir": "rtl"
+      },
+      "file": "ar/work/shipping-delivery-operations-platform/index.html"
     },
     {
       "route": "/ar/work/taha-ramadan/",
@@ -8346,21 +8430,22 @@
           2,
           2,
           2,
+          2,
           2
         ],
         "images": {
-          "total": 6,
-          "meaningfulAlt": 6,
+          "total": 7,
+          "meaningfulAlt": 7,
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 22,
+        "links": 25,
         "buttons": 2,
         "labeledButtons": 2,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
-        "focusVisible": false,
+        "focusVisible": true,
         "workFilters": 0,
         "loadMore": 0,
         "externalLinksWithoutSafeRel": 0
@@ -11818,7 +11903,7 @@
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 97,
+        "links": 98,
         "buttons": 8,
         "labeledButtons": 2,
         "forms": 0,
@@ -13044,6 +13129,89 @@
         "dir": "ltr"
       },
       "file": "work/prowindow/index.html"
+    },
+    {
+      "route": "/work/shipping-delivery-operations-platform/",
+      "locale": "en",
+      "canonicalURL": "https://engmuhammednasser.github.io/work/shipping-delivery-operations-platform/",
+      "indexable": true,
+      "pageType": "case-study",
+      "enEquivalent": "/work/shipping-delivery-operations-platform/",
+      "arEquivalent": "/ar/work/shipping-delivery-operations-platform/",
+      "title": {
+        "value": "Shipping & Delivery Operations Platform | Muhammed Nasser",
+        "source": "static-html"
+      },
+      "description": {
+        "value": "A single-company logistics operations platform for managing shipment lifecycle, role-based workflows, public tracking, warehouse operations, merchant workflows, and financial shipping operations.",
+        "source": "static-html"
+      },
+      "ogImage": "https://engmuhammednasser.github.io/projects/shipping-delivery-operations-platform/optimized/thumb-800.webp",
+      "metadata": {
+        "ogTitle": "Shipping & Delivery Operations Platform | Muhammed Nasser",
+        "ogDescription": "A single-company logistics operations platform for managing shipment lifecycle, role-based workflows, public tracking, warehouse operations, merchant workflows, and financial shipping operations.",
+        "ogUrl": "https://engmuhammednasser.github.io/work/shipping-delivery-operations-platform/",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Shipping & Delivery Operations Platform | Muhammed Nasser",
+        "twitterDescription": "A single-company logistics operations platform for managing shipment lifecycle, role-based workflows, public tracking, warehouse operations, merchant workflows, and financial shipping operations.",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/shipping-delivery-operations-platform/optimized/thumb-800.webp",
+        "robots": null,
+        "hreflangCount": 3,
+        "structuredDataCount": 1
+      },
+      "accessibility": {
+        "landmarks": {
+          "header": 1,
+          "nav": 2,
+          "main": 1,
+          "footer": 1,
+          "section": 17
+        },
+        "headings": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "images": {
+          "total": 29,
+          "meaningfulAlt": 29,
+          "emptyAlt": 0,
+          "missingAlt": 0
+        },
+        "links": 19,
+        "buttons": 30,
+        "labeledButtons": 30,
+        "forms": 0,
+        "labels": 0,
+        "skipLink": true,
+        "focusVisible": true,
+        "workFilters": 0,
+        "loadMore": 0,
+        "externalLinksWithoutSafeRel": 0
+      },
+      "language": {
+        "lang": "en",
+        "dir": "ltr"
+      },
+      "file": "work/shipping-delivery-operations-platform/index.html"
     },
     {
       "route": "/work/taha-ramadan/",
