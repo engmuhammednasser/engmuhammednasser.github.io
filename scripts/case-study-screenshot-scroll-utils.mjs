@@ -5,7 +5,7 @@ export const screenshotRuntime = '<script src="/scripts/case-study-screenshots.j
 
 export function caseStudyRouteFiles(root) {
   const files = [];
-  for (const base of ["work", join("ar", "work")]) {
+  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend")]) {
     const directory = join(root, base);
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
       if (entry.isDirectory() && !entry.name.startsWith("_")) {
@@ -15,6 +15,15 @@ export function caseStudyRouteFiles(root) {
     }
   }
   return files.sort((a, b) => relative(root, a).localeCompare(relative(root, b)));
+}
+
+export function routeFamily(root, file) {
+  const route = relative(root, file).replaceAll("\\", "/");
+  return route.startsWith("backend/") || route.startsWith("ar/backend/") ? "backend" : "work";
+}
+
+export function findSerializedScreenshotSources(html) {
+  return [...new Set([...html.matchAll(/\\"src\\":\\"(\/projects\/[^\\"]+)\\"/g)].map((match) => match[1]))];
 }
 
 export function findScreenshotButtons(html) {
@@ -37,6 +46,12 @@ export function isScreenshotButton(markup) {
     || /aria-label="[^"]*(?:full screenshot|كاملاً)[^"]*"/i.test(markup)
     || /(?:Hover to scroll preview|Tap to view|Full page|صفحة كاملة|مرّر داخل الإطار)/i.test(markup);
 }
+
+export function canonicalScrollHint(locale) {
+  return locale === "ar" ? "مرّر لعرض الصورة" : "Scroll to explore";
+}
+
+export const legacyHintTextPattern = "(?:Scroll\\s+(?:inside|screenshot|to\\s+view)|Hover\\s+to\\s+scroll|Tap\\s+to\\s+view|مرر|مرّر|اسحب)";
 
 function upsertAttribute(tag, name, value = "") {
   const pattern = new RegExp(`\\s${name}(?:="[^"]*")?`, "i");
@@ -132,23 +147,47 @@ function normalizeStickyOverlay(tag) {
   return next;
 }
 
-export function normalizeScreenshotButton(markup) {
+function removeLegacyHintNodes(markup) {
+  let next = markup;
+  next = next.replace(/<(span|div)\b[^>]*\bdata-case-study-scroll-hint\b[^>]*>[\s\S]*?<\/\1>/gi, "");
+  next = next.replace(new RegExp(`<div\\b(?=[^>]*aria-hidden)(?=[\\s\\S]*?${legacyHintTextPattern})[\\s\\S]*?<\\/div>`, "gi"), "");
+  next = next.replace(new RegExp(`<span\\b(?=[^>]*(?:bottom-|bottom:|left-1\\/2))(?=[\\s\\S]*?${legacyHintTextPattern})[\\s\\S]*?<\\/span>\\s*<\\/span>`, "gi"), "");
+  next = next.replace(new RegExp(`<span\\b(?=[^>]*(?:bottom-|bottom:|left-1\\/2))(?=[\\s\\S]*?${legacyHintTextPattern})[\\s\\S]*?<\\/span>`, "gi"), "");
+  return next;
+}
+
+function appendCanonicalHint(markup, locale) {
+  const hint = `<span data-case-study-scroll-hint aria-hidden="true">${canonicalScrollHint(locale)}</span>`;
+  return markup.replace(/<\/button>$/i, `${hint}</button>`);
+}
+
+export function normalizeScreenshotButton(markup, locale = "en") {
   const imageSource = readAttribute(markup.match(/<img\b[^>]*>/i)?.[0] || "", "src");
-  let next = markup.replace(/^<button\b[^>]*>/i, (tag) => normalizeButtonTag(tag, imageSource));
+  let next = removeLegacyHintNodes(markup);
+  next = next.replace(/^<button\b[^>]*>/i, (tag) => normalizeButtonTag(tag, imageSource));
   next = next.replace(/<img\b[^>]*>/i, (tag) => normalizeImageTag(tag));
   next = next.replace(/<(div|span)\b[^>]*aria-hidden="true"[^>]*>/gi, (tag) => normalizeStickyOverlay(tag));
-  return next;
+  return appendCanonicalHint(next, locale);
+}
+
+function normalizeScreenshotRuntime(html) {
+  let next = html.replace(/<script\b[^>]*src="\/scripts\/case-study-screenshots\.js"[^>]*><\/script>/gi, "");
+  const mobileRuntime = next.match(/<script\b[^>]*data-mobile-navigation="script"[^>]*><\/script>/i)?.[0];
+  if (mobileRuntime) return next.replace(mobileRuntime, `${screenshotRuntime}${mobileRuntime}`);
+  return next.replace("</body>", `${screenshotRuntime}</body>`);
 }
 
 export function normalizeCaseStudyHtml(html) {
   const buttons = findScreenshotButtons(html);
-  if (!buttons.length) return { html, count: 0 };
+  const serializedSources = findSerializedScreenshotSources(html);
+  if (!buttons.length && !serializedSources.length) return { html, count: 0 };
+  const locale = /<html\b[^>]*\blang="ar"/i.test(html) ? "ar" : "en";
 
   let next = "";
   let cursor = 0;
   let changedCount = 0;
   for (const button of buttons) {
-    const normalized = normalizeScreenshotButton(button.markup);
+    const normalized = normalizeScreenshotButton(button.markup, locale);
     next += html.slice(cursor, button.start) + normalized;
     cursor = button.end;
     if (normalized !== button.markup) changedCount += 1;
@@ -159,8 +198,7 @@ export function normalizeCaseStudyHtml(html) {
     /<div id="case-modal"[\s\S]*?<\/div><script>\(function\(\)\{document\.querySelectorAll\('\.case-shot'\)[\s\S]*?<\/script>/g,
     "",
   );
-  if (!next.includes("/scripts/case-study-screenshots.js")) {
-    next = next.replace("</body>", `${screenshotRuntime}</body>`);
-  }
-  return { html: next, count: buttons.length, changedCount };
+  next = normalizeScreenshotRuntime(next);
+  const count = buttons.length || serializedSources.length;
+  return { html: next, count, buttonCount: buttons.length, serializedCount: serializedSources.length, changedCount };
 }

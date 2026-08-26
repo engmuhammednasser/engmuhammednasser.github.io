@@ -46,11 +46,11 @@
   }
 
   function openFullView(card) {
-    var source = card.getAttribute("data-full-src") || card.getAttribute("data-src");
+    var preview = card.querySelector("img");
+    var source = card.getAttribute("data-full-src") || card.getAttribute("data-src") || (preview ? preview.currentSrc || preview.src : "");
     if (!source) return;
 
     var view = getFullView();
-    var preview = card.querySelector("img");
     view.setPreviousFocus(document.activeElement === document.body ? card : document.activeElement);
     view.image.src = source;
     view.image.alt = preview ? preview.alt : "Full screenshot";
@@ -61,30 +61,66 @@
     view.closeButton.focus();
   }
 
+  function canonicalHintText() {
+    return document.documentElement.lang === "ar" ? "مرّر لعرض الصورة" : "Scroll to explore";
+  }
+
+  function isLegacyHintElement(element) {
+    if (!element || element.hasAttribute("data-case-study-scroll-hint")) return false;
+    var text = (element.textContent || "").replace(/\s+/g, " ").trim();
+    return /Scroll\s+(inside|screenshot|to view)|Hover\s+to\s+scroll|Tap\s+to\s+view|مرر|مرّر|اسحب/i.test(text);
+  }
+
+  function cleanupScrollHints(card) {
+    var hints = Array.prototype.slice.call(card.querySelectorAll("[data-case-study-scroll-hint]"));
+    var hint = hints[0] || null;
+
+    hints.slice(1).forEach(function (duplicate) {
+      duplicate.remove();
+    });
+
+    Array.prototype.slice.call(card.querySelectorAll("span, div")).forEach(function (element) {
+      if (isLegacyHintElement(element)) element.remove();
+    });
+
+    if (!hint || !hint.isConnected) {
+      hint = document.createElement("span");
+      hint.setAttribute("data-case-study-scroll-hint", "");
+      hint.setAttribute("aria-hidden", "true");
+      card.appendChild(hint);
+    }
+
+    hint.textContent = canonicalHintText();
+    return hint;
+  }
+
+  function findGradientOverlay(card) {
+    var overlays = Array.prototype.slice.call(card.querySelectorAll('[aria-hidden="true"]'));
+    return overlays.find(function (element) {
+      var style = element.getAttribute("style") || "";
+      return /linear-gradient/i.test(style) || /gradient/i.test(element.className || "");
+    }) || null;
+  }
+
   function initCaseStudyScreenshots() {
     var cards = document.querySelectorAll(
-      "button[data-case-study-screenshot]"
+      'button[data-case-study-screenshot], button[aria-label^="View full image:"]'
     );
 
     cards.forEach(function (card) {
       var image = card.querySelector("img");
       if (!image) return;
 
-      var gradient = card.children[1] || null;
-      var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src"));
+      var gradient = findGradientOverlay(card);
+      if (!card.hasAttribute("data-case-study-screenshot")) card.setAttribute("data-case-study-screenshot", "");
+      if (!card.getAttribute("data-full-src")) card.setAttribute("data-full-src", card.getAttribute("data-src") || image.currentSrc || image.src);
+
+      var hasFullView = Boolean(card.getAttribute("data-full-src") || card.getAttribute("data-src") || image.currentSrc || image.src);
       var pointerMoved = false;
       var pointerActive = false;
       var pointerStartX = 0;
       var pointerStartY = 0;
-      var hint = card.querySelector("[data-case-study-scroll-hint]");
-
-      if (!hint) {
-        hint = document.createElement("span");
-        hint.setAttribute("data-case-study-scroll-hint", "");
-        hint.setAttribute("aria-hidden", "true");
-        hint.textContent = document.documentElement.lang === "ar" ? "مرّر لعرض الصورة" : "Scroll to explore";
-        card.appendChild(hint);
-      }
+      var hint = cleanupScrollHints(card);
 
       card.style.position = "relative";
       card.style.overflowX = "hidden";
