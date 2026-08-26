@@ -73,7 +73,7 @@ assert(status.textContent === `Showing 12 of ${projectsDocument.projects.length}
 assert(/\bloading="eager"/.test(imageTags()[0]), "initial primary image must be eager");
 assert(/\bfetchpriority="high"/.test(imageTags()[0]), "initial primary image must be high priority");
 assert(imageTags().slice(1).every((image) => /\bloading="lazy"/.test(image) && !/\bfetchpriority="high"/.test(image)), "initial non-primary images must remain lazy and unprioritized");
-assert(imageTags()[0].includes("/projects/eventgift-egypt/optimized/"), "initial primary image must use an optimized source");
+assert(imageTags()[0].includes(`/projects/${projectsDocument.projects[0].slug}/optimized/`), "initial primary image must use an optimized source");
 
 listeners.get("corporate")();
 assert(cardIds().length === 12, "corporate filter must reset to the first 12 projects");

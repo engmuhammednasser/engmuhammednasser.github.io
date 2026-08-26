@@ -39,6 +39,48 @@
   ],
   "projects": [
     {
+      "id": "shipping-delivery-operations-platform",
+      "slug": "shipping-delivery-operations-platform",
+      "category": "platforms",
+      "featured": true,
+      "title": {
+        "en": "Shipping & Delivery Operations Platform",
+        "ar": "منصة إدارة عمليات الشحن والتوصيل"
+      },
+      "description": {
+        "en": "A single-company logistics operations platform for managing shipment lifecycle, role-based workflows, public tracking, warehouse operations, merchant workflows, and financial shipping operations.",
+        "ar": "منصة تشغيل لشركة واحدة لإدارة دورة الشحنات والصلاحيات والتتبع العام وعمليات المخازن وتجربة التاجر والعمليات المالية المرتبطة بالشحن."
+      },
+      "eyebrow": {
+        "en": "Product UI/UX • Laravel Operations Platform",
+        "ar": "تصميم تجربة المنتج • منصة تشغيل Laravel"
+      },
+      "technologies": [
+        "Laravel",
+        "Vue 3",
+        "TypeScript",
+        "REST API",
+        "RBAC"
+      ],
+      "thumbnail": {
+        "original": "/projects/shipping-delivery-operations-platform/01-admin-dashboard.webp",
+        "avif480": "/projects/shipping-delivery-operations-platform/optimized/thumb-480.avif",
+        "avif800": "/projects/shipping-delivery-operations-platform/optimized/thumb-800.avif",
+        "webp480": "/projects/shipping-delivery-operations-platform/optimized/thumb-480.webp",
+        "webp800": "/projects/shipping-delivery-operations-platform/optimized/thumb-800.webp",
+        "width": 1920,
+        "height": 2185,
+        "aspectRatio": 0.8787185354691075
+      },
+      "caseStudy": {
+        "en": "/work/shipping-delivery-operations-platform/",
+        "ar": "/ar/work/shipping-delivery-operations-platform/"
+      },
+      "liveUrl": "https://smartdeliverysa.com/",
+      "availability": "case-study+live",
+      "status": "published"
+    },
+    {
       "id": "eventgift-egypt",
       "slug": "eventgift-egypt",
       "category": "ecommerce",
