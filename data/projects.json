@@ -928,31 +928,31 @@
       "category": "ecommerce",
       "featured": false,
       "title": {
-        "en": "Torathyat Heritage Storefront",
-        "ar": "متجر تراثيات الإلكتروني"
+        "en": "Bin Hilal — Torathyat Store Upgrade",
+        "ar": "بن هلال — تطوير متجر تراثيات"
       },
       "description": {
-        "en": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
-        "ar": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا."
+        "en": "From Torathyat on WordPress and WooCommerce to Bin Hilal on Laravel: a completed store rebuild with a new name and logo, documented in one project.",
+        "ar": "رحلة تطوير متجر تراثيات من WordPress وWooCommerce إلى بن هلال باستخدام Laravel، مع تحديث الاسم والشعار وتسليم النسخة الجديدة."
       },
       "eyebrow": {
-        "en": "WooCommerce / Heritage E-Commerce",
-        "ar": "WooCommerce / متجر تراثي"
+        "en": "Laravel / Store Rebuild & Rebrand",
+        "ar": "Laravel / إعادة بناء المتجر وتحديث الهوية"
       },
       "technologies": [
-        "WordPress",
-        "WooCommerce",
+        "Laravel",
+        "PHP",
         "Arabic Store"
       ],
       "thumbnail": {
-        "original": "/projects/torathyat/cover.png",
+        "original": "/projects/torathyat/bin-hilal/cover.jpg",
         "avif480": "/projects/torathyat/optimized/thumb-480.avif",
         "avif800": "/projects/torathyat/optimized/thumb-800.avif",
         "webp480": "/projects/torathyat/optimized/thumb-480.webp",
         "webp800": "/projects/torathyat/optimized/thumb-800.webp",
-        "width": 1440,
-        "height": 900,
-        "aspectRatio": 1.6
+        "width": 1265,
+        "height": 712,
+        "aspectRatio": 1.7767
       },
       "caseStudy": {
         "en": "/work/torathyat/",

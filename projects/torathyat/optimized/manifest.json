@@ -1,9 +1,9 @@
 {
   "pipelineVersion": 4,
-  "source": "projects/torathyat/cover.png",
-  "sourceBytes": 231983,
-  "sourceWidth": 1440,
-  "sourceHeight": 900,
+  "source": "projects/torathyat/bin-hilal/cover.jpg",
+  "sourceBytes": 67077,
+  "sourceWidth": 1265,
+  "sourceHeight": 712,
   "policy": {
     "widths": [
       480,
@@ -30,26 +30,26 @@
   "variants": {
     "thumb-480.avif": {
       "width": 480,
-      "height": 300,
-      "bytes": 7288,
+      "height": 270,
+      "bytes": 7917,
       "quality": 55
     },
     "thumb-480.webp": {
       "width": 480,
-      "height": 300,
-      "bytes": 7106,
+      "height": 270,
+      "bytes": 7960,
       "quality": 68
     },
     "thumb-800.avif": {
       "width": 800,
-      "height": 500,
-      "bytes": 12990,
+      "height": 450,
+      "bytes": 14963,
       "quality": 55
     },
     "thumb-800.webp": {
       "width": 800,
-      "height": 500,
-      "bytes": 14278,
+      "height": 450,
+      "bytes": 16248,
       "quality": 68
     }
   }
