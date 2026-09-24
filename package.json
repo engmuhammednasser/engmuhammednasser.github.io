@@ -30,16 +30,18 @@
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs",
+    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs",
     "verify": "npm run check && npm run test:idempotency && git diff --check",
     "runtime:static": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/apply-static-runtime.mjs",
-    "images:display": "node scripts/optimize-display-images.mjs",
-    "test:static:browser": "node scripts/test-static-runtime.mjs"
+    "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs",
+    "test:static:browser": "node scripts/test-static-runtime.mjs",
+    "test:deep": "node scripts/test-deep-browser.mjs"
   },
   "engines": {
     "node": ">=20.9.0"
   },
   "devDependencies": {
+    "axe-core": "4.13.0",
     "playwright-core": "1.58.2",
     "sharp": "0.35.4"
   }

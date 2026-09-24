@@ -346,10 +346,10 @@
       ],
       "thumbnail": {
         "original": "/projects/ashhalan/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/ashhalan/optimized/thumb-480.avif",
+        "avif800": "/projects/ashhalan/optimized/thumb-800.avif",
+        "webp480": "/projects/ashhalan/optimized/thumb-480.webp",
+        "webp800": "/projects/ashhalan/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -426,10 +426,10 @@
       ],
       "thumbnail": {
         "original": "/projects/nora24jewelry/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/nora24jewelry/optimized/thumb-480.avif",
+        "avif800": "/projects/nora24jewelry/optimized/thumb-800.avif",
+        "webp480": "/projects/nora24jewelry/optimized/thumb-480.webp",
+        "webp800": "/projects/nora24jewelry/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -586,10 +586,10 @@
       ],
       "thumbnail": {
         "original": "/projects/a2mkw/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/a2mkw/optimized/thumb-480.avif",
+        "avif800": "/projects/a2mkw/optimized/thumb-800.avif",
+        "webp480": "/projects/a2mkw/optimized/thumb-480.webp",
+        "webp800": "/projects/a2mkw/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -666,10 +666,10 @@
       ],
       "thumbnail": {
         "original": "/projects/tbinnovation/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/tbinnovation/optimized/thumb-480.avif",
+        "avif800": "/projects/tbinnovation/optimized/thumb-800.avif",
+        "webp480": "/projects/tbinnovation/optimized/thumb-480.webp",
+        "webp800": "/projects/tbinnovation/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -706,10 +706,10 @@
       ],
       "thumbnail": {
         "original": "/projects/mediaandmore/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/mediaandmore/optimized/thumb-480.avif",
+        "avif800": "/projects/mediaandmore/optimized/thumb-800.avif",
+        "webp480": "/projects/mediaandmore/optimized/thumb-480.webp",
+        "webp800": "/projects/mediaandmore/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -1146,10 +1146,10 @@
       ],
       "thumbnail": {
         "original": "/projects/originals-hub/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/originals-hub/optimized/thumb-480.avif",
+        "avif800": "/projects/originals-hub/optimized/thumb-800.avif",
+        "webp480": "/projects/originals-hub/optimized/thumb-480.webp",
+        "webp800": "/projects/originals-hub/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1186,10 +1186,10 @@
       ],
       "thumbnail": {
         "original": "/projects/arcadia-digital/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/arcadia-digital/optimized/thumb-480.avif",
+        "avif800": "/projects/arcadia-digital/optimized/thumb-800.avif",
+        "webp480": "/projects/arcadia-digital/optimized/thumb-480.webp",
+        "webp800": "/projects/arcadia-digital/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1306,10 +1306,10 @@
       ],
       "thumbnail": {
         "original": "/projects/meshari-alali/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/meshari-alali/optimized/thumb-480.avif",
+        "avif800": "/projects/meshari-alali/optimized/thumb-800.avif",
+        "webp480": "/projects/meshari-alali/optimized/thumb-480.webp",
+        "webp800": "/projects/meshari-alali/optimized/thumb-800.webp",
         "width": 1024,
         "height": 700,
         "aspectRatio": 1.4628571428571429
@@ -1466,10 +1466,10 @@
       ],
       "thumbnail": {
         "original": "/projects/fast-shopping/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/fast-shopping/optimized/thumb-480.avif",
+        "avif800": "/projects/fast-shopping/optimized/thumb-800.avif",
+        "webp480": "/projects/fast-shopping/optimized/thumb-480.webp",
+        "webp800": "/projects/fast-shopping/optimized/thumb-800.webp",
         "width": 1024,
         "height": 700,
         "aspectRatio": 1.4628571428571429

@@ -185,6 +185,16 @@
   position: relative;
 }
 
+/* The complete desktop navigation needs more room than the old 768px cutoff. */
+@media (max-width: 1023px) {
+  .portfolio-polished > header nav[class~="md:flex"] {
+    display: none;
+  }
+  .portfolio-polished > header [class~="md:hidden"] {
+    display: flex;
+  }
+}
+
 /* Keep case-study sidebars in normal flow on the single-column layout. */
 @media (max-width: 767px) {
   .portfolio-polished main aside.sticky {
@@ -242,6 +252,11 @@
   box-shadow:
     0 28px 90px rgba(2, 6, 23, 0.48),
     inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Dark text keeps solid green contact actions readable in both locales. */
+.portfolio-polished main a[class~="bg-[#22C55E]"] {
+  color: #052e16;
 }
 
 .portfolio-hero-effect::before,

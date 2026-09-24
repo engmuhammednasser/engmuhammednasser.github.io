@@ -27,8 +27,9 @@ cover the following gallery heading.
 
 ## Images
 
-`npm run images:display` discovers currently rendered project images larger than
-300,000 bytes without responsive variants. It creates WebP derivatives at up to
+`npm run images:display` normalizes gallery controls, then discovers currently
+rendered project, plugin, backend and profile images larger than 100,000 bytes
+without responsive variants. It creates WebP derivatives at up to
 480, 960 and 1600 pixels wide, preserving aspect ratio and avoiding enlargement.
 The 16,380-pixel height limit accommodates long screenshots within WebP limits.
 Metadata and byte counts are stored in `data/image-delivery.json`. Original files
@@ -37,9 +38,23 @@ visitor opens full view. Existing specialized responsive pictures are retained.
 
 The script updates image `srcset`, sizes and matching image preloads together to
 avoid downloading both the original and the preview. Its manifest lets subsequent
-runs skip unchanged sources. Preview quality starts at 82 (falling back to 76 or
-70 only when needed to beat the original file size); inspect text and screenshot
-crops when introducing different source material.
+runs skip unchanged sources and recipes. Preview quality starts at 72 with encoder
+effort 6 (falling back to 68 only when needed to beat the original file size).
+Existing smaller derivatives are retained instead of growing them. The recipe is
+recorded per image; three bounded workers encode from the originals, not from
+lossy previews. Inspect text and screenshot crops when changing source material.
+
+Lazy previews use `sizes="auto, ..."` so supported browsers select a derivative
+from the actual rendered width, with the existing sizes list as a fallback.
+Preloads of images used only by lazy previews are removed. Explicit width/height
+attributes remain present. Lab screenshots share the original-resolution full-view
+controller used by project galleries. Original bytes and SHA-256 hashes are checked.
+
+Body/hero presentation classes are rendered into HTML rather than waiting for idle
+JavaScript. The tablet header uses the mobile navigation until 1024px. Resizing or
+leaving a page closes the menu and restores scrolling. Load More appends new cards,
+preserves existing image nodes and focuses the first new result. Full view makes
+the background inert, resets its scroll position and releases the original on close.
 
 Generic Work thumbnails use the locked Sharp dependency and the canonical project
 catalog, including projects outside the initial 12 cards. Select explicitly:
@@ -59,4 +74,9 @@ legacy media generators can still require ImageMagick.
 strict console/HTTP checks, CSS presence, deferred originals, mobile/desktop EN/AR
 filtering, navigation, full-view keyboard behavior and all prior repository gates.
 `npm run test:static:browser` runs the additional browser checks independently.
+`npm run test:deep` adds 320/768px coverage across all HTML pages, WCAG-tagged axe
+checks on 11 representative templates in both locales, no-JavaScript Work browsing,
+tablet-menu transitions, image selection and full-view state restoration. It also
+checks that the localhost server blocks development metadata/dependencies and
+handles GET/HEAD while rejecting other methods. The same gate runs in CI.
 Production real-user performance must still be measured separately.

@@ -12,6 +12,7 @@
     var image = document.createElement("img");
     var previousFocus = null;
     var previousOverflow = "";
+    var background = [];
 
     modal.hidden = true;
     modal.setAttribute("role", "dialog");
@@ -30,8 +31,11 @@
 
     function close() {
       modal.hidden = true;
+      image.removeAttribute("src");
       document.body.style.overflow = previousOverflow;
-      if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+      background.forEach(function (entry) { entry.element.inert = entry.inert; });
+      background = [];
+      if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus({ preventScroll: true });
     }
 
     closeButton.addEventListener("click", close);
@@ -48,7 +52,17 @@
       if (event.key === "Escape" && !modal.hidden) close();
     });
 
-    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) { previousFocus = element; previousOverflow = document.body.style.overflow; } };
+    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) {
+      previousFocus = element;
+      previousOverflow = document.body.style.overflow;
+      background = Array.prototype.filter.call(document.body.children, function (child) {
+        return child !== modal && !/^(SCRIPT|STYLE|LINK)$/.test(child.tagName);
+      }).map(function (child) {
+        var entry = { element: child, inert: child.inert };
+        child.inert = true;
+        return entry;
+      });
+    } };
     return fullView;
   }
 
@@ -64,6 +78,7 @@
     view.image.loading = "eager";
     view.image.decoding = "async";
     view.modal.hidden = false;
+    view.modal.scrollTop = 0;
     document.body.style.overflow = "hidden";
     view.closeButton.focus();
   }

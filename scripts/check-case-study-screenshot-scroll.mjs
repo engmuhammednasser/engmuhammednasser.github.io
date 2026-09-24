@@ -10,6 +10,7 @@ let buttonCount = 0;
 const totals = {
   work: { pages: 0, frames: 0 },
   backend: { pages: 0, frames: 0 },
+  lab: { pages: 0, frames: 0 },
 };
 
 function fail(file, message) {
@@ -44,6 +45,7 @@ for (const file of caseStudyRouteFiles(root)) {
     .replace(/^work\//, "")
     .replace(/^ar\/backend\//, "")
     .replace(/^backend\//, "")
+    .replace(/^(?:ar\/)?lab\/plugins\//, "")
     .replace(/\/index\.html$/, "");
   const locale = route.startsWith("ar/") ? "ar" : "en";
   bySlug.set(`${family}:${slug}`, { ...(bySlug.get(`${family}:${slug}`) || {}), [locale]: frameCount });
@@ -85,3 +87,4 @@ if (errors.length) {
 console.log(`Case-study screenshot scroll check passed: ${buttonCount} screenshots across ${pageCount} EN/AR project pages.`);
 console.log(`Work frames: ${totals.work.frames} across ${totals.work.pages} pages.`);
 console.log(`Backend frames: ${totals.backend.frames} across ${totals.backend.pages} pages.`);
+console.log(`Lab frames: ${totals.lab.frames} across ${totals.lab.pages} pages.`);

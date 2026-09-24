@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import sharp from "sharp";
+import { createHash } from "node:crypto";
 import { attribute, htmlFiles, routeFor } from "./static-site-utils.mjs";
 
 const root = resolve(".");
@@ -22,12 +23,14 @@ for (const file of htmlFiles(root)) {
     assert(entry, `${route}: missing preview manifest entry ${source}`);
     assert(entry.variants.some((v) => v.url === attribute(tag, "src")), `${route}: incorrect preview fallback`);
     assert(attribute(tag, "srcset"), `${route}: missing responsive preview sizes`);
+    if (attribute(tag, "loading") === "lazy") assert(attribute(tag, "sizes").startsWith("auto,"), `${route}: lazy preview should match its layout size`);
     previews++;
   }
   pages++;
 }
 for (const [source, entry] of Object.entries(manifest.images)) {
   assert.equal(statSync(local(source)).size, entry.sourceBytes, `Original changed: ${source}`);
+  assert.equal(createHash("sha256").update(readFileSync(local(source))).digest("hex"), entry.sourceHash, `Original content changed: ${source}`);
   for (const variant of entry.variants) {
     assert(existsSync(local(variant.url)), `Missing ${variant.url}`);
     assert.equal(statSync(local(variant.url)).size, variant.bytes, `Stale bytes for ${variant.url}`);
@@ -40,7 +43,7 @@ for (const [source, entry] of Object.entries(manifest.images)) {
 }
 const catalog = JSON.parse(readFileSync("data/projects.json", "utf8"));
 for (const project of catalog.projects) {
-  if (statSync(local(project.thumbnail.original)).size > 150000) {
+  if (statSync(local(project.thumbnail.original)).size > manifest.policy.minimumSourceBytes) {
     assert(project.thumbnail.webp800 && project.thumbnail.avif800, `${project.slug}: oversized unoptimized Work thumbnail`);
   }
 }

@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, renameSync, existsSync, unlinkSync } from "node:fs";
 import { join, relative } from "node:path";
 
 export function htmlFiles(root) {
@@ -27,7 +27,19 @@ export function setAttribute(tag, name, value) {
 
 export function writeChanged(file, content) {
   if (readFileSync(file, "utf8").replace(/\r\n/g, "\n") === content.replace(/\r\n/g, "\n")) return false;
-  writeFileSync(file, content);
+  // Readers see either the old or complete new page, never a truncated document.
+  const temporary = `${file}.${process.pid}.tmp`;
+  try {
+    writeFileSync(temporary, content);
+    for (let attempt = 0; ; attempt++) {
+      try { renameSync(temporary, file); break; }
+      catch (error) {
+        if (process.platform !== "win32" || attempt >= 3 || !["EACCES", "EPERM", "EBUSY", "UNKNOWN"].includes(error.code)) throw error;
+        // Windows indexers can briefly hold a generated file open.
+        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 50 * (attempt + 1));
+      }
+    }
+  } finally { if (existsSync(temporary)) unlinkSync(temporary); }
   return true;
 }
 

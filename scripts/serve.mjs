@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, statSync, realpathSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize, resolve, sep } from "node:path";
 
@@ -24,6 +24,8 @@ const mimeTypes = {
 
 function resolveRequestPath(urlPath) {
   const decodedPath = decodeURIComponent(urlPath.split("?")[0]);
+  // Development metadata and dependencies are never public site assets.
+  if (decodedPath.split(/[/\\]+/).some((part) => part.startsWith(".") || part === "node_modules")) return null;
   const relativePath = normalize(decodedPath).replace(/^([/\\])+/, "");
   const requestedPath = resolve(root, relativePath);
 
@@ -41,7 +43,7 @@ function resolveRequestPath(urlPath) {
 
   return candidates.find((candidate) => {
     try {
-      return existsSync(candidate) && statSync(candidate).isFile();
+      return existsSync(candidate) && statSync(candidate).isFile() && realpathSync(candidate).startsWith(`${root}${sep}`);
     } catch {
       return false;
     }
@@ -49,6 +51,11 @@ function resolveRequestPath(urlPath) {
 }
 
 const server = createServer((request, response) => {
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    response.writeHead(405, { Allow: "GET, HEAD" });
+    response.end();
+    return;
+  }
   let filePath;
 
   try {
@@ -62,15 +69,19 @@ const server = createServer((request, response) => {
   if (!filePath) {
     const notFoundPath = join(root, "404.html");
     response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
-    createReadStream(notFoundPath).pipe(response);
+    if (request.method === "HEAD") response.end();
+    else createReadStream(notFoundPath).on("error", () => response.destroy()).pipe(response);
     return;
   }
 
   response.writeHead(200, {
     "Cache-Control": "no-cache",
+    "Content-Length": statSync(filePath).size,
+    "X-Content-Type-Options": "nosniff",
     "Content-Type": mimeTypes[extname(filePath).toLowerCase()] ?? "application/octet-stream"
   });
-  createReadStream(filePath).pipe(response);
+  if (request.method === "HEAD") response.end();
+  else createReadStream(filePath).on("error", () => response.destroy()).pipe(response);
 });
 
 server.listen(port, host, () => {

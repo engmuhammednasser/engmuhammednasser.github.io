@@ -5,7 +5,7 @@ export const screenshotRuntime = '<script src="/scripts/case-study-screenshots.j
 
 export function caseStudyRouteFiles(root) {
   const files = [];
-  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend")]) {
+  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend"), join("lab", "plugins"), join("ar", "lab", "plugins")]) {
     const directory = join(root, base);
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
       if (entry.isDirectory() && !entry.name.startsWith("_")) {
@@ -19,6 +19,7 @@ export function caseStudyRouteFiles(root) {
 
 export function routeFamily(root, file) {
   const route = relative(root, file).replaceAll("\\", "/");
+  if (/^(?:ar\/)?lab\/plugins\//.test(route)) return "lab";
   return route.startsWith("backend/") || route.startsWith("ar/backend/") ? "backend" : "work";
 }
 
@@ -128,6 +129,8 @@ function normalizeButtonTag(tag, fallbackSource) {
 function normalizeImageTag(tag) {
   // Older normalization inserted attributes after a self-closing slash.
   tag = tag.replace(/"\/(?=\s+\w+=)/g, '"');
+  tag = upsertAttribute(tag, "loading", "lazy");
+  tag = upsertAttribute(tag, "decoding", "async");
   return updateStyleAttribute(tag, [
     ["position", "static"],
     ["width", "100%"],
@@ -189,8 +192,8 @@ export function normalizeCaseStudyHtml(html) {
   // originals, provide an explicit full-view control to retain access to detail.
   html = html.replace(/<div\b([^>]*)>(<img\b[^>]*>)<\/div>/gi, (markup, attributes, image) => {
     const classes = readAttribute(`<div${attributes}>`, "class");
-    if (!classes.includes("aspect-video") || !classes.includes("hover:border-")) return markup;
     const source = readAttribute(image, "data-optimized-preview") || readAttribute(image, "src");
+    if (!classes.includes("hover:border-") || (!classes.includes("aspect-video") && !source.startsWith("/plugins/"))) return markup;
     const alt = readAttribute(image, "alt");
     let button = `<button${attributes}>`;
     button = upsertAttribute(button, "type", "button");
