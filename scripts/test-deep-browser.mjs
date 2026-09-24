@@ -13,7 +13,7 @@ const failures = [];
 let browser;
 const expect = (value, message) => { if (!value) failures.push(message); };
 const manifest = JSON.parse(readFileSync("data/image-delivery.json", "utf8"));
-const variants = new Map(Object.values(manifest.images).flatMap(entry => entry.variants.map(v => [v.url, v])));
+const variants = new Map(Object.values(manifest.images).flatMap(entry => [...entry.variants, ...(entry.avifVariants ?? [])].map(v => [v.url, v])));
 try {
   await new Promise((done, reject) => {
     const timer = setTimeout(() => reject(new Error("Server startup timeout")), 10000);
@@ -97,6 +97,35 @@ try {
     expect(await fallback.locator("noscript li a").count() === 45, `${prefix}: no-JS project routes are missing`);
     await noScript.close();
   }
+  // Exercise native picture selection and the WebP fallback with cold caches.
+  // An unsupported source MIME simulates a browser without AVIF capability.
+  for (const prefix of ["", "/ar"]) for (const width of [320, 1280]) for (const avif of [true, false]) {
+    const context = await browser.newContext({ viewport: { width, height: 844 }, deviceScaleFactor: width === 320 ? 2 : 1, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    const requested = new Set();
+    const label = `${prefix || "/en"}/${width}/${avif ? "avif" : "webp"}`;
+    page.on("request", request => requested.add(decodeURIComponent(new URL(request.url()).pathname)));
+    page.on("pageerror", error => failures.push(`${label}: ${error.message}`));
+    page.on("response", response => { if (response.status() >= 400) failures.push(`${label}: HTTP ${response.status()} ${response.url()}`); });
+    if (!avif) await page.route("**/work/a2mkw/", async route => {
+      const response = await route.fetch();
+      await route.fulfill({ response, body: (await response.text()).replaceAll('type="image/avif"', 'type="image/x-unsupported-format"') });
+    });
+    try {
+      await page.goto(origin + prefix + "/work/a2mkw/");
+      const image = page.locator("picture[data-optimized-avif] img").first();
+      await image.scrollIntoViewIfNeeded();
+      await image.evaluate(image => image.decode());
+      const state = await image.evaluate(image => ({ source: image.dataset.optimizedPreview, delivered: new URL(image.currentSrc).pathname, width: image.getBoundingClientRect().width }));
+      const entry = manifest.images[state.source];
+      const expected = avif ? entry.avifVariants : entry.variants;
+      const unused = avif ? entry.variants : entry.avifVariants;
+      expect(expected.some(v => v.url === state.delivered), `${label}: incorrect image format selected`);
+      expect(!unused.some(v => requested.has(decodeURIComponent(v.url))), `${label}: downloaded both fallback and AVIF`);
+      expect(!requested.has(decodeURIComponent(state.source)), `${label}: full-resolution original was fetched before interaction`);
+      expect(state.width > 100 && state.width <= width, `${label}: picture wrapper changed the gallery layout`);
+    } finally { await context.close(); }
+  }
   assert.equal(failures.length, 0, failures.join("\n"));
-  console.log(`Deep checks passed: ${routes.length} pages at 320/768px, 44 template accessibility scans, native state transitions, responsive gallery selection, no-JS fallback and private-file protection.`);
+  console.log(`Deep checks passed: ${routes.length} pages at 320/768px, 44 template accessibility scans, 8 AVIF/WebP selection checks, native state transitions, responsive gallery selection, no-JS fallback and private-file protection.`);
 } finally { await browser?.close(); server.kill(); }

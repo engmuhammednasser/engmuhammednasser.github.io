@@ -69,3 +69,54 @@ transitions, retained Work cards/keyboard focus, gallery candidate selection,
 modal state, no-JavaScript access to all 45 Work links and localhost boundaries.
 Desktop cold checks still cover all 191 pages. Automated checks are supplemented
 by EN/AR visual inspection; they are not a claim of complete WCAG conformance.
+
+## Follow-up verification and selective AVIF compression
+
+A second requested review compared against `5697061e`. All rendered raster images
+without responsive candidates were inventoried; none exceeded the existing
+100,000-byte selection threshold. The remaining heavy responsive previews were
+then evaluated with the locked Sharp/libvips tools. No new production interaction
+defect was found in this follow-up.
+
+55 sources had an approximately 960px WebP preview larger than 150,000 bytes.
+AVIF at quality 55, effort 5 and 4:4:4 chroma was encoded from each source, using
+the same dimensions. 50 sources passed the requirement to save at least 10% at
+**every** width; five retained WebP only. The accepted 150 AVIF files are used in
+186 picture deliveries across 58 EN/AR pages. Existing WebP files and all original
+media remain byte-identical. These are delivery savings, not repository-size
+savings: the fallback and original formats are retained.
+
+| Same 50-source group | Existing WebP | New AVIF |
+| --- | ---: | ---: |
+| Approximately 960px previews | 12,452,610 B | 9,732,139 B |
+| All three responsive widths | 39,540,496 B | 30,584,436 B |
+
+The 960px reduction is **21.85% additional** for this selected group. Four visual
+samples covered fine English text, Arabic headings/body copy and photographic
+detail, including a separate crop of small Arabic body text at native resolution.
+
+Cold local Chrome measurements used fresh contexts, 320px/2x and 1280px/1x,
+reduced motion, explicit decoding of the first three gallery images and a final
+network-idle wait. These rows had matching requested resource identities after
+normalizing `.avif` to `.webp`:
+
+| Page and viewport | Before image-body bytes | After image-body bytes |
+| --- | ---: | ---: |
+| EN A2M, 320px/2x | 731,030 | 661,644 |
+| EN A2M, 1280px/1x | 1,870,390 | 1,546,592 |
+| AR A2M, 320px/2x | 727,063 | 657,677 |
+| EN Genedy, 320px/2x | 2,589,921 | 2,306,747 |
+| EN Genedy, 1280px/1x | 3,103,511 | 2,783,564 |
+
+Other gallery samples are excluded from before/after totals because Chrome's
+lazy-loading window requested different additional images. These measurements do
+not establish a load-time percentage or field Core Web Vitals.
+
+The repeatable pipeline is `npm run images:display`, with the selective AVIF step
+also available as `npm run images:heavy`. Cached results prevent progressive
+recompression. `npm run verify` now additionally checks AVIF dimensions/byte
+savings, source/fallback markup and generator idempotency. Eight cold EN/AR
+mobile/desktop format cases cover native AVIF selection, a simulated unsupported
+AVIF type falling back to WebP, no duplicate-format downloads, deferred originals
+and preserved gallery width. Existing all-191-page desktop/mobile/tablet checks,
+44 automated accessibility scans and interactive regression coverage remain.

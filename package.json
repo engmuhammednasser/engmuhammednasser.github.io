@@ -33,7 +33,8 @@
     "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs",
     "verify": "npm run check && npm run test:idempotency && git diff --check",
     "runtime:static": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/apply-static-runtime.mjs",
-    "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs",
+    "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs && node scripts/optimize-heavy-previews.mjs",
+    "images:heavy": "node scripts/optimize-heavy-previews.mjs",
     "test:static:browser": "node scripts/test-static-runtime.mjs",
     "test:deep": "node scripts/test-deep-browser.mjs"
   },

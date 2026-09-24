@@ -44,6 +44,16 @@ Existing smaller derivatives are retained instead of growing them. The recipe is
 recorded per image; three bounded workers encode from the originals, not from
 lossy previews. Inspect text and screenshot crops when changing source material.
 
+The final `images:display` step (`npm run images:heavy` independently) selectively
+tries AVIF for sources whose approximately 960px WebP preview exceeds 150,000
+bytes. Sharp/libvips encodes directly from the original at quality 55, effort 5
+and 4:4:4 chroma to retain colored text detail. AVIF is published only when every
+responsive width is at least 10% smaller than its existing WebP counterpart.
+Unbeneficial attempts are cached, and repeated runs do not recompress previews.
+Native `<picture>` markup selects AVIF with the existing responsive WebP image as
+a fallback. Matching preloads, sizes, aspect ratios and full-view targets stay
+consistent. The manifest records both formats, dimensions and actual byte counts.
+
 Lazy previews use `sizes="auto, ..."` so supported browsers select a derivative
 from the actual rendered width, with the existing sizes list as a fallback.
 Preloads of images used only by lazy previews are removed. Explicit width/height
@@ -79,4 +89,7 @@ checks on 11 representative templates in both locales, no-JavaScript Work browsi
 tablet-menu transitions, image selection and full-view state restoration. It also
 checks that the localhost server blocks development metadata/dependencies and
 handles GET/HEAD while rejecting other methods. The same gate runs in CI.
+Eight EN/AR image-format cases at mobile 2x and desktop 1x validate AVIF selection,
+simulated unsupported-format WebP fallback, no duplicate-format downloads and
+deferred originals. The heavy-preview generator is also checked for idempotency.
 Production real-user performance must still be measured separately.

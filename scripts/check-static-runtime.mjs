@@ -26,6 +26,21 @@ for (const file of htmlFiles(root)) {
     if (attribute(tag, "loading") === "lazy") assert(attribute(tag, "sizes").startsWith("auto,"), `${route}: lazy preview should match its layout size`);
     previews++;
   }
+  for (const [picture] of html.matchAll(/<picture\b[^>]*data-optimized-avif[^>]*>[\s\S]*?<\/picture>/gi)) {
+    const image = picture.match(/<img\b[^>]*>/i)?.[0] ?? "";
+    const source = picture.match(/<source\b[^>]*>/i)?.[0] ?? "";
+    const variants = manifest.images[attribute(image, "data-optimized-preview")]?.avifVariants;
+    assert(variants?.length, `${route}: missing AVIF manifest entry`);
+    assert.equal(attribute(source, "type"), "image/avif", `${route}: incorrect picture type`);
+    assert.equal(attribute(source, "sizes"), attribute(image, "sizes"), `${route}: AVIF/WebP sizes mismatch`);
+    assert.equal(attribute(source, "srcset"), variants.map(v => `${v.url} ${v.width}w`).join(", "), `${route}: incorrect AVIF srcset`);
+  }
+  for (const [tag] of html.matchAll(/<link\b[^>]*data-optimized-preload[^>]*>/gi)) {
+    const entry = manifest.images[attribute(tag, "data-optimized-preload")];
+    const variants = attribute(tag, "type") === "image/avif" ? entry?.avifVariants : entry?.variants;
+    assert(variants?.some(v => v.url === attribute(tag, "href")), `${route}: mismatched preview preload format`);
+    assert.equal(attribute(tag, "imagesrcset"), variants.map(v => `${v.url} ${v.width}w`).join(", "), `${route}: mismatched preview preload candidates`);
+  }
   pages++;
 }
 for (const [source, entry] of Object.entries(manifest.images)) {
@@ -39,6 +54,18 @@ for (const [source, entry] of Object.entries(manifest.images)) {
     assert.equal(metadata.height, variant.height, `Incorrect preview height: ${variant.url}`);
     assert(variant.bytes < entry.sourceBytes, `Preview is larger than its original: ${variant.url}`);
     assert(variant.width <= entry.width && variant.height <= entry.height, `Upscaled ${variant.url}`);
+  }
+  if (entry.avifVariants?.length) {
+    assert.equal(entry.avifVariants.length, entry.variants.length, `Incomplete AVIF width coverage: ${source}`);
+    for (const variant of entry.avifVariants) {
+      const webp = entry.variants.find(v => v.width === variant.width);
+      assert(webp && webp.height === variant.height, `AVIF dimensions differ from fallback: ${source}`);
+      assert.equal(statSync(local(variant.url)).size, variant.bytes, `Stale AVIF bytes: ${variant.url}`);
+      const metadata = await sharp(local(variant.url)).metadata();
+      assert.equal(metadata.width, variant.width, `Incorrect AVIF width: ${variant.url}`);
+      assert.equal(metadata.height, variant.height, `Incorrect AVIF height: ${variant.url}`);
+      assert(variant.bytes <= webp.bytes * (1 - manifest.avifPolicy.minimumSaving), `Insufficient AVIF savings: ${variant.url}`);
+    }
   }
 }
 const catalog = JSON.parse(readFileSync("data/projects.json", "utf8"));

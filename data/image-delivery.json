@@ -687,7 +687,31 @@
           "bytes": 251636,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/a2mkw/previews/d6baa5936d0db823-480.avif",
+          "width": 480,
+          "height": 2884,
+          "bytes": 52705,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/d6baa5936d0db823-960.avif",
+          "width": 960,
+          "height": 5768,
+          "bytes": 130163,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/d6baa5936d0db823-1272.avif",
+          "width": 1272,
+          "height": 7642,
+          "bytes": 194708,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/a2mkw/001_ar_contact.png": {
       "sourceHash": "c2c95eb16d36bb69804df84c6a01fd5d4dc83558aeb94891d5ba94f00dcb5d9a",
@@ -867,7 +891,31 @@
           "bytes": 371408,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/a2mkw/previews/2e99d4d3fb019198-480.avif",
+          "width": 480,
+          "height": 1489,
+          "bytes": 75921,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/2e99d4d3fb019198-960.avif",
+          "width": 960,
+          "height": 2977,
+          "bytes": 206720,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/2e99d4d3fb019198-1272.avif",
+          "width": 1272,
+          "height": 3945,
+          "bytes": 272710,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/a2mkw/007_ar_blogs_9-e-commerce-strategies-to-double-your-sales-in-2025.png": {
       "sourceHash": "7dc6b45ded1b28ea90062024dcb7b51f09b3b5c399b9b282eb954a060a044019",
@@ -897,7 +945,31 @@
           "bytes": 497378,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/a2mkw/previews/0b4614ee8f48b71a-480.avif",
+          "width": 480,
+          "height": 1797,
+          "bytes": 99976,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/0b4614ee8f48b71a-960.avif",
+          "width": 960,
+          "height": 3593,
+          "bytes": 276925,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/0b4614ee8f48b71a-1272.avif",
+          "width": 1272,
+          "height": 4761,
+          "bytes": 358645,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/a2mkw/008_ar_blogs_professional-website-design-the-difference-between-a-website-that-sells-and-one-that-goes-unseen.png": {
       "sourceHash": "b41d1f3ad4ba7454f0e0cfcbbdfe83177c95d4032b14d2d6046e96b7ace3f6a4",
@@ -927,7 +999,31 @@
           "bytes": 346638,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/a2mkw/previews/28e9cd489a481a12-480.avif",
+          "width": 480,
+          "height": 1416,
+          "bytes": 69987,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/28e9cd489a481a12-960.avif",
+          "width": 960,
+          "height": 2832,
+          "bytes": 194030,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/28e9cd489a481a12-1272.avif",
+          "width": 1272,
+          "height": 3753,
+          "bytes": 253546,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/a2mkw/009_ar_blogs.png": {
       "sourceHash": "56218c67832905e5c3d6ab5b3fd286b5e127726e088c8f0a2034aa46fd6921c8",
@@ -987,7 +1083,31 @@
           "bytes": 251636,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/a2mkw/previews/ae8b19ac54d3d904-480.avif",
+          "width": 480,
+          "height": 2884,
+          "bytes": 52705,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/ae8b19ac54d3d904-960.avif",
+          "width": 960,
+          "height": 5768,
+          "bytes": 130163,
+          "quality": 55
+        },
+        {
+          "url": "/projects/a2mkw/previews/ae8b19ac54d3d904-1272.avif",
+          "width": 1272,
+          "height": 7642,
+          "bytes": 194708,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/afaaq-developments/cover.png": {
       "sourceHash": "d1779e9ba2258b3892a3b33ede0b7075a8100bfb4194e114caf484659e58f623",
@@ -1047,7 +1167,9 @@
           "bytes": 386318,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/afaaq-developments/full-page/02-about-us.jpg": {
       "sourceHash": "ac77fb2e4b195c11b91dd15b2c1be925fb4dea855c3c0cec29bb8e46c8f91083",
@@ -1077,7 +1199,31 @@
           "bytes": 327540,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/afaaq-developments/previews/7db01b660b8c6a2f-480.avif",
+          "width": 480,
+          "height": 1912,
+          "bytes": 50659,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/7db01b660b8c6a2f-960.avif",
+          "width": 960,
+          "height": 3825,
+          "bytes": 149465,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/7db01b660b8c6a2f-1440.avif",
+          "width": 1440,
+          "height": 5737,
+          "bytes": 272945,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/afaaq-developments/full-page/04-amorada-new-cairo.jpg": {
       "sourceHash": "5c6c5d72c0d4541ead08d7ce1f7852d624d76df2d6030abcb27ce38cc393cf56",
@@ -1107,7 +1253,31 @@
           "bytes": 426980,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/afaaq-developments/previews/fd9b4f0c2735ea52-480.avif",
+          "width": 480,
+          "height": 2022,
+          "bytes": 54728,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/fd9b4f0c2735ea52-960.avif",
+          "width": 960,
+          "height": 4044,
+          "bytes": 168767,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/fd9b4f0c2735ea52-1440.avif",
+          "width": 1440,
+          "height": 6066,
+          "bytes": 344482,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/afaaq-developments/full-page/05-amorada-hub.jpg": {
       "sourceHash": "331925a39b890738bbe21617a38c027b7c01a442fa95211b9cfbac2c8d16b2b6",
@@ -1137,7 +1307,31 @@
           "bytes": 334712,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/afaaq-developments/previews/fa98f3e0ad648e2e-480.avif",
+          "width": 480,
+          "height": 1803,
+          "bytes": 47029,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/fa98f3e0ad648e2e-960.avif",
+          "width": 960,
+          "height": 3605,
+          "bytes": 142255,
+          "quality": 55
+        },
+        {
+          "url": "/projects/afaaq-developments/previews/fa98f3e0ad648e2e-1440.avif",
+          "width": 1440,
+          "height": 5408,
+          "bytes": 276071,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/afaaq-developments/full-page/06-press-media.jpg": {
       "sourceHash": "87a7f763a850a9d635e4480a8838e17f79bf5bedbb72bdca2808eb3bfcc67c75",
@@ -1437,7 +1631,31 @@
           "bytes": 402438,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/arabic-window/previews/20dd6a707c000159-480.avif",
+          "width": 480,
+          "height": 3027,
+          "bytes": 69582,
+          "quality": 55
+        },
+        {
+          "url": "/projects/arabic-window/previews/20dd6a707c000159-960.avif",
+          "width": 960,
+          "height": 6055,
+          "bytes": 186792,
+          "quality": 55
+        },
+        {
+          "url": "/projects/arabic-window/previews/20dd6a707c000159-1440.avif",
+          "width": 1440,
+          "height": 9082,
+          "bytes": 313112,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/arabic-window/full-page/02-courses.jpg": {
       "sourceHash": "db952d89f8189d6b694f676943cc1bf6e251dfb21f6ca3da1d6c208a7c7face7",
@@ -2007,7 +2225,31 @@
           "bytes": 488828,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/armadillo-studio/previews/c2e8b1002b3bfaaf-480.avif",
+          "width": 480,
+          "height": 4120,
+          "bytes": 70580,
+          "quality": 55
+        },
+        {
+          "url": "/projects/armadillo-studio/previews/c2e8b1002b3bfaaf-960.avif",
+          "width": 960,
+          "height": 8240,
+          "bytes": 196474,
+          "quality": 55
+        },
+        {
+          "url": "/projects/armadillo-studio/previews/c2e8b1002b3bfaaf-1600.avif",
+          "width": 1600,
+          "height": 13733,
+          "bytes": 389660,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/armadillo-studio/full-page/02-partners.png": {
       "sourceHash": "362e9b291dfbf46f3046cb79eab64ecb3c5d14bd5e6d0174348e17518af2aa36",
@@ -2997,7 +3239,31 @@
           "bytes": 315910,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/ashhalanksa/previews/d46b8b7a4d9e0255-480.avif",
+          "width": 480,
+          "height": 2079,
+          "bytes": 49607,
+          "quality": 55
+        },
+        {
+          "url": "/projects/ashhalanksa/previews/d46b8b7a4d9e0255-960.avif",
+          "width": 960,
+          "height": 4159,
+          "bytes": 132016,
+          "quality": 55
+        },
+        {
+          "url": "/projects/ashhalanksa/previews/d46b8b7a4d9e0255-1600.avif",
+          "width": 1600,
+          "height": 6931,
+          "bytes": 257394,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/ashhalanksa/detergents.png": {
       "sourceHash": "4347103ec8a003ab0cd07b1cdc6694511a022307ab91a2f96b69458e5014bab7",
@@ -3057,7 +3323,31 @@
           "bytes": 315910,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/ashhalanksa/previews/f8ab4af463dfff87-480.avif",
+          "width": 480,
+          "height": 2079,
+          "bytes": 49607,
+          "quality": 55
+        },
+        {
+          "url": "/projects/ashhalanksa/previews/f8ab4af463dfff87-960.avif",
+          "width": 960,
+          "height": 4159,
+          "bytes": 132016,
+          "quality": 55
+        },
+        {
+          "url": "/projects/ashhalanksa/previews/f8ab4af463dfff87-1600.avif",
+          "width": 1600,
+          "height": 6931,
+          "bytes": 257394,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/ashhalanksa/landing-page.png": {
       "sourceHash": "a3c1e76818eadb27213eb04b582d276a01e1c44c6cf919f526cfa5672d450c97",
@@ -4317,7 +4607,31 @@
           "bytes": 388224,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/atour/previews/f9d746ba5152f502-480.avif",
+          "width": 480,
+          "height": 1450,
+          "bytes": 36152,
+          "quality": 55
+        },
+        {
+          "url": "/projects/atour/previews/f9d746ba5152f502-960.avif",
+          "width": 960,
+          "height": 2900,
+          "bytes": 131453,
+          "quality": 55
+        },
+        {
+          "url": "/projects/atour/previews/f9d746ba5152f502-1600.avif",
+          "width": 1600,
+          "height": 4833,
+          "bytes": 299937,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/baslim-auto/cover.png": {
       "sourceHash": "6c9ab5721e03f8130f43b91b828d722081ff05f6cd0afaaaae69a4d7e3613c9f",
@@ -4557,7 +4871,31 @@
           "bytes": 508844,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/botella/previews/3b1d2d35a84f299d-480.avif",
+          "width": 480,
+          "height": 2675,
+          "bytes": 86073,
+          "quality": 55
+        },
+        {
+          "url": "/projects/botella/previews/3b1d2d35a84f299d-960.avif",
+          "width": 960,
+          "height": 5350,
+          "bytes": 240010,
+          "quality": 55
+        },
+        {
+          "url": "/projects/botella/previews/3b1d2d35a84f299d-1600.avif",
+          "width": 1600,
+          "height": 8917,
+          "bytes": 435071,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/botella/03-shop-en.webp": {
       "sourceHash": "68250f4d40f344e559110f58526348e8bfe91e02feb56a5bd937b19e33136c77",
@@ -4797,7 +5135,31 @@
           "bytes": 440540,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/botella/previews/7cbbd28b8df5f88b-480.avif",
+          "width": 480,
+          "height": 2985,
+          "bytes": 90120,
+          "quality": 55
+        },
+        {
+          "url": "/projects/botella/previews/7cbbd28b8df5f88b-960.avif",
+          "width": 960,
+          "height": 5970,
+          "bytes": 231981,
+          "quality": 55
+        },
+        {
+          "url": "/projects/botella/previews/7cbbd28b8df5f88b-1282.avif",
+          "width": 1282,
+          "height": 7972,
+          "bytes": 359325,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/botella/15-المتجر-ar.webp": {
       "sourceHash": "63a5f7ecd54ba48d7a3cee668cdfacd8b8d502e2a17c6a8c712fe7671de0ed84",
@@ -5937,7 +6299,31 @@
           "bytes": 275066,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-egypt/previews/0dc295945da2505d-480.avif",
+          "width": 480,
+          "height": 1411,
+          "bytes": 51219,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/0dc295945da2505d-960.avif",
+          "width": 960,
+          "height": 2823,
+          "bytes": 130348,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/0dc295945da2505d-1378.avif",
+          "width": 1378,
+          "height": 4052,
+          "bytes": 210617,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-egypt/09-unknown-sales-center-full.webp": {
       "sourceHash": "8a3df2d36aee9255670c541a981e1f92b5b75f0234da3494506b1da3c02af4a9",
@@ -5997,7 +6383,31 @@
           "bytes": 515948,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-egypt/previews/6cf9207a2292c9b1-480.avif",
+          "width": 480,
+          "height": 4015,
+          "bytes": 82253,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/6cf9207a2292c9b1-960.avif",
+          "width": 960,
+          "height": 8030,
+          "bytes": 242783,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/6cf9207a2292c9b1-1365.avif",
+          "width": 1365,
+          "height": 11417,
+          "bytes": 371850,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-egypt/14-unknown-sustainable-gifts-full.webp": {
       "sourceHash": "e895dc98d9eb2ae4c3e512b7a90859e03219e67d4dab8f1b21643cbdf3e31d82",
@@ -6087,7 +6497,31 @@
           "bytes": 514590,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-egypt/previews/ab93930f48eea746-480.avif",
+          "width": 480,
+          "height": 3306,
+          "bytes": 83768,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/ab93930f48eea746-960.avif",
+          "width": 960,
+          "height": 6612,
+          "bytes": 216589,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-egypt/previews/ab93930f48eea746-1349.avif",
+          "width": 1349,
+          "height": 9291,
+          "bytes": 341543,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-egypt/shop-01-product-before-add-full.webp": {
       "sourceHash": "f19456d37491993c6b83d4c0bf26a685cd4e822f5b5f58a1982605d2e0ed438d",
@@ -6207,7 +6641,31 @@
           "bytes": 431336,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-saudi/previews/a2ccb64cfcbe4ac9-480.avif",
+          "width": 480,
+          "height": 1472,
+          "bytes": 49853,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/a2ccb64cfcbe4ac9-960.avif",
+          "width": 960,
+          "height": 2943,
+          "bytes": 163028,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/a2ccb64cfcbe4ac9-1600.avif",
+          "width": 1600,
+          "height": 4905,
+          "bytes": 295029,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-saudi/08-other-blog-full.webp": {
       "sourceHash": "bd7679a5f4704eca3e1ea17fb3fbce542af62e4f1a8af9129d4464dc083d902e",
@@ -6237,7 +6695,31 @@
           "bytes": 632160,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-saudi/previews/f769753a7dcc4039-480.avif",
+          "width": 480,
+          "height": 3336,
+          "bytes": 104493,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/f769753a7dcc4039-960.avif",
+          "width": 960,
+          "height": 6673,
+          "bytes": 271795,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/f769753a7dcc4039-1364.avif",
+          "width": 1364,
+          "height": 9481,
+          "bytes": 467074,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-saudi/09-other-privacy-full.webp": {
       "sourceHash": "acfa713834ac154bbeb9d8c14a4fa21ad285e348d82eafb4e6572d24ba49ba80",
@@ -6267,7 +6749,31 @@
           "bytes": 1063954,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-saudi/previews/23cfdc25e19a293f-480.avif",
+          "width": 480,
+          "height": 4602,
+          "bytes": 143609,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/23cfdc25e19a293f-960.avif",
+          "width": 960,
+          "height": 9204,
+          "bytes": 475745,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/23cfdc25e19a293f-1364.avif",
+          "width": 1364,
+          "height": 13077,
+          "bytes": 886709,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-saudi/11-unknown-sales-center-full.webp": {
       "sourceHash": "f041e2e6a882fb73ccd05e784fbac553b378814fadfd9446d887cda0dcb9adf7",
@@ -6327,7 +6833,31 @@
           "bytes": 499478,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-saudi/previews/48f68ce5731efb01-480.avif",
+          "width": 480,
+          "height": 3864,
+          "bytes": 79211,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/48f68ce5731efb01-960.avif",
+          "width": 960,
+          "height": 7728,
+          "bytes": 232985,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/48f68ce5731efb01-1351.avif",
+          "width": 1351,
+          "height": 10875,
+          "bytes": 354954,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-saudi/15-unknown-gift-category-sustainable-gifts-full.webp": {
       "sourceHash": "33a73fefa75f8562ac7f4e431001a59bd96e572d57e2387d76c919b1d192fa2f",
@@ -6417,7 +6947,31 @@
           "bytes": 503072,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-saudi/previews/2c9d99a486b7d231-480.avif",
+          "width": 480,
+          "height": 2017,
+          "bytes": 60162,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/2c9d99a486b7d231-960.avif",
+          "width": 960,
+          "height": 4034,
+          "bytes": 181949,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-saudi/previews/2c9d99a486b7d231-1600.avif",
+          "width": 1600,
+          "height": 6722,
+          "bytes": 340457,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-saudi/landing-page.webp": {
       "sourceHash": "c98f86706dfebe0868e068b5f4bdd2a2e22c07d9732ede37d44f81de92cc911b",
@@ -6537,7 +7091,31 @@
           "bytes": 477714,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-uae/previews/2acce0a30ba04a39-480.avif",
+          "width": 480,
+          "height": 1972,
+          "bytes": 57294,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/2acce0a30ba04a39-960.avif",
+          "width": 960,
+          "height": 3943,
+          "bytes": 175520,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/2acce0a30ba04a39-1600.avif",
+          "width": 1600,
+          "height": 6572,
+          "bytes": 332780,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-uae/checkout.webp": {
       "sourceHash": "ab59c2860efae99aa4d17f55f40deae38e10c6c7ffb1fb1881c4fca99c3c3fa6",
@@ -6597,7 +7175,31 @@
           "bytes": 390550,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-uae/previews/be8af531b5b9335c-480.avif",
+          "width": 480,
+          "height": 601,
+          "bytes": 17599,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/be8af531b5b9335c-960.avif",
+          "width": 960,
+          "height": 1201,
+          "bytes": 76157,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/be8af531b5b9335c-1600.avif",
+          "width": 1600,
+          "height": 2002,
+          "bytes": 210513,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-uae/gift-items.webp": {
       "sourceHash": "7b70b1347274cbcf9dc95f681b8521a7bf5e809718f66e6239b33e2305fd2374",
@@ -6657,7 +7259,31 @@
           "bytes": 574888,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-uae/previews/09d6d65817d1e382-480.avif",
+          "width": 480,
+          "height": 3617,
+          "bytes": 88945,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/09d6d65817d1e382-960.avif",
+          "width": 960,
+          "height": 7234,
+          "bytes": 237321,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/09d6d65817d1e382-1600.avif",
+          "width": 1600,
+          "height": 12057,
+          "bytes": 463646,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-uae/landing-page.webp": {
       "sourceHash": "c82d6a959ebcee4eb860a12d14d711b5d9f6deca7b823993a819cf4199310d78",
@@ -6717,7 +7343,31 @@
           "bytes": 331546,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift-uae/previews/c1706f95c05e9f3c-480.avif",
+          "width": 480,
+          "height": 1660,
+          "bytes": 52022,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/c1706f95c05e9f3c-960.avif",
+          "width": 960,
+          "height": 3320,
+          "bytes": 149561,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift-uae/previews/c1706f95c05e9f3c-1600.avif",
+          "width": 1600,
+          "height": 5532,
+          "bytes": 260036,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift-uae/shop.webp": {
       "sourceHash": "b0f151c04f003ab6d4da95a4764cd45b08197bffd0bc6b962f528a7933cbf1aa",
@@ -6897,7 +7547,31 @@
           "bytes": 508412,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/57fac6c9e3bf98d0-480.avif",
+          "width": 480,
+          "height": 3306,
+          "bytes": 87727,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/57fac6c9e3bf98d0-960.avif",
+          "width": 960,
+          "height": 6612,
+          "bytes": 228637,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/57fac6c9e3bf98d0-1349.avif",
+          "width": 1349,
+          "height": 9291,
+          "bytes": 322389,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift/egypt-homepage-hero-desktop.png": {
       "sourceHash": "2816b10a084f0c42e0cd7c1ea13d7e2cf731d1e8912adb6b5c9718363c2c0ee8",
@@ -7077,7 +7751,31 @@
           "bytes": 587464,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/ee3ed3c6edd6b224-480.avif",
+          "width": 480,
+          "height": 2017,
+          "bytes": 62812,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/ee3ed3c6edd6b224-960.avif",
+          "width": 960,
+          "height": 4034,
+          "bytes": 187883,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/ee3ed3c6edd6b224-1600.avif",
+          "width": 1600,
+          "height": 6723,
+          "bytes": 385537,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift/saudi-homepage-hero-desktop.png": {
       "sourceHash": "d62e13699e58dc80ad64ebcc15c5e9ae94b51c212eaad7ff66a56e4ce676b027",
@@ -7227,7 +7925,31 @@
           "bytes": 553238,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/ed65856f08a23f15-480.avif",
+          "width": 480,
+          "height": 1972,
+          "bytes": 58450,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/ed65856f08a23f15-960.avif",
+          "width": 960,
+          "height": 3943,
+          "bytes": 187824,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/ed65856f08a23f15-1600.avif",
+          "width": 1600,
+          "height": 6572,
+          "bytes": 379664,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift/uae-cart-action-flow.png": {
       "sourceHash": "22ec795b37bcced50be61063309b61b590c74edc8dfcc1b12b80da2f1b6be724",
@@ -7287,7 +8009,31 @@
           "bytes": 458042,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/eb07682644938ad0-480.avif",
+          "width": 480,
+          "height": 601,
+          "bytes": 15729,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/eb07682644938ad0-960.avif",
+          "width": 960,
+          "height": 1201,
+          "bytes": 81983,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/eb07682644938ad0-1600.avif",
+          "width": 1600,
+          "height": 2002,
+          "bytes": 253481,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift/uae-catalog-navigation-desktop.png": {
       "sourceHash": "f7a40fe9baa3af3c2efc1664e5ef656a1c41f203ccde8fdc437969387a6eca90",
@@ -7347,7 +8093,31 @@
           "bytes": 663128,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/76ec1c08b458e267-480.avif",
+          "width": 480,
+          "height": 3617,
+          "bytes": 92463,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/76ec1c08b458e267-960.avif",
+          "width": 960,
+          "height": 7234,
+          "bytes": 252900,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/76ec1c08b458e267-1600.avif",
+          "width": 1600,
+          "height": 12057,
+          "bytes": 524022,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/eventgift/uae-homepage-hero-desktop.png": {
       "sourceHash": "45c446ae735cdf98dc1665c5e6495a3ddf62acbd829ea32707d96a767aabefe6",
@@ -7497,7 +8267,31 @@
           "bytes": 379540,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/eventgift/previews/02b06ae5a7b831c1-480.avif",
+          "width": 480,
+          "height": 1660,
+          "bytes": 53839,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/02b06ae5a7b831c1-960.avif",
+          "width": 960,
+          "height": 3320,
+          "bytes": 152696,
+          "quality": 55
+        },
+        {
+          "url": "/projects/eventgift/previews/02b06ae5a7b831c1-1600.avif",
+          "width": 1600,
+          "height": 5533,
+          "bytes": 294710,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/fast-shopping/cover.png": {
       "sourceHash": "b0897d0bfd48826851b8e64424ac5882220520f73ddec9c3cb321da775887c4e",
@@ -7797,7 +8591,31 @@
           "bytes": 341132,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/genedyeg/previews/8474c13ffe0eb359-480.avif",
+          "width": 480,
+          "height": 1336,
+          "bytes": 42971,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/8474c13ffe0eb359-960.avif",
+          "width": 960,
+          "height": 2671,
+          "bytes": 124648,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/8474c13ffe0eb359-1600.avif",
+          "width": 1600,
+          "height": 4452,
+          "bytes": 266276,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/genedyeg/Careers - Construction.png": {
       "sourceHash": "6575ce61c1fbf42112099924ebcaba7117c6e19fec9ac26fc3bc3a9be2fdedae",
@@ -7857,7 +8675,31 @@
           "bytes": 374746,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/genedyeg/previews/0d127d069d3b1047-480.avif",
+          "width": 480,
+          "height": 1718,
+          "bytes": 55625,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/0d127d069d3b1047-960.avif",
+          "width": 960,
+          "height": 3435,
+          "bytes": 153810,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/0d127d069d3b1047-1600.avif",
+          "width": 1600,
+          "height": 5725,
+          "bytes": 302025,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/genedyeg/GENEDY CONSTRUCTION - Construction.png": {
       "sourceHash": "dcd8dc9da44ce69883fbdbe96750ad71dad07908929916d0352da3663978c22c",
@@ -7917,7 +8759,31 @@
           "bytes": 374746,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/genedyeg/previews/250c07fd97c557a7-480.avif",
+          "width": 480,
+          "height": 1718,
+          "bytes": 55625,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/250c07fd97c557a7-960.avif",
+          "width": 960,
+          "height": 3435,
+          "bytes": 153810,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/250c07fd97c557a7-1600.avif",
+          "width": 1600,
+          "height": 5725,
+          "bytes": 302025,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/genedyeg/News Update - Construction.png": {
       "sourceHash": "1392011f91e442c486dead9fdab3fadd1de7627dbc6dd8785cc54fe22dde2756",
@@ -7977,7 +8843,31 @@
           "bytes": 466986,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/genedyeg/previews/8d6c7cd8a9d8177c-480.avif",
+          "width": 480,
+          "height": 1036,
+          "bytes": 49244,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/8d6c7cd8a9d8177c-960.avif",
+          "width": 960,
+          "height": 2071,
+          "bytes": 157398,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/8d6c7cd8a9d8177c-1600.avif",
+          "width": 1600,
+          "height": 3452,
+          "bytes": 358874,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/genedyeg/sectors.png": {
       "sourceHash": "907df65f6251e7a7f4016f7f2e0589630b534651645e127fc279c5cb6c1e27c4",
@@ -8007,7 +8897,31 @@
           "bytes": 990606,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/genedyeg/previews/148a74b345cbb2fe-480.avif",
+          "width": 480,
+          "height": 2517,
+          "bytes": 120066,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/148a74b345cbb2fe-960.avif",
+          "width": 960,
+          "height": 5033,
+          "bytes": 360888,
+          "quality": 55
+        },
+        {
+          "url": "/projects/genedyeg/previews/148a74b345cbb2fe-1600.avif",
+          "width": 1600,
+          "height": 8388,
+          "bytes": 713753,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/genedyeg/single job caeers.png": {
       "sourceHash": "994e30e7c9b817b6f4787bed71e6903e87d96d2a7dfb183f9331a27fbc1d01d3",
@@ -8967,7 +9881,31 @@
           "bytes": 355644,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/5ef9a1de36f6e2b2-480.avif",
+          "width": 480,
+          "height": 2093,
+          "bytes": 72816,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/5ef9a1de36f6e2b2-960.avif",
+          "width": 960,
+          "height": 4186,
+          "bytes": 198098,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/5ef9a1de36f6e2b2-1200.avif",
+          "width": 1200,
+          "height": 5233,
+          "bytes": 293666,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/cover.webp": {
       "sourceHash": "09fcbb9be71da092148e8141904b3590ae45ded4c2224b42611ff212e4805761",
@@ -8997,7 +9935,31 @@
           "bytes": 341756,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/ed45e60102959d4d-480.avif",
+          "width": 480,
+          "height": 2128,
+          "bytes": 68147,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/ed45e60102959d4d-960.avif",
+          "width": 960,
+          "height": 4257,
+          "bytes": 190278,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/ed45e60102959d4d-1200.avif",
+          "width": 1200,
+          "height": 5321,
+          "bytes": 293269,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/full-page/01-الري-يسيه.webp": {
       "sourceHash": "09fcbb9be71da092148e8141904b3590ae45ded4c2224b42611ff212e4805761",
@@ -9027,7 +9989,31 @@
           "bytes": 341756,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/a0be47c44d5ec70a-480.avif",
+          "width": 480,
+          "height": 2128,
+          "bytes": 68147,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/a0be47c44d5ec70a-960.avif",
+          "width": 960,
+          "height": 4257,
+          "bytes": 190278,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/a0be47c44d5ec70a-1200.avif",
+          "width": 1200,
+          "height": 5321,
+          "bytes": 293269,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/full-page/02-ترفال.webp": {
       "sourceHash": "b90672022ba3ba7e9761b754681785335117fe718c2c7c123735c166c14963ef",
@@ -9087,7 +10073,31 @@
           "bytes": 473060,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/43ac1fa0e03145bd-480.avif",
+          "width": 480,
+          "height": 2226,
+          "bytes": 89237,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/43ac1fa0e03145bd-960.avif",
+          "width": 960,
+          "height": 4451,
+          "bytes": 248262,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/43ac1fa0e03145bd-1200.avif",
+          "width": 1200,
+          "height": 5564,
+          "bytes": 389372,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/full-page/04-blog.webp": {
       "sourceHash": "162020a9956c8ca8c60baf809acafcc6a7e5b8fdf417973160a3c7e8d8584376",
@@ -9207,7 +10217,31 @@
           "bytes": 355644,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/491329ce0fcc1808-480.avif",
+          "width": 480,
+          "height": 2093,
+          "bytes": 72816,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/491329ce0fcc1808-960.avif",
+          "width": 960,
+          "height": 4186,
+          "bytes": 198098,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/491329ce0fcc1808-1200.avif",
+          "width": 1200,
+          "height": 5233,
+          "bytes": 293666,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/full-page/08-travel-badget.webp": {
       "sourceHash": "e721c3f7209659f20e573529a92b593f8841b832320396340044baa35eea824e",
@@ -9237,7 +10271,9 @@
           "bytes": 283320,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/preview-01.png": {
       "sourceHash": "3d22d209c6057f9a9cf929ae1bfddae39c21076996df745c6aa6ec5a485063f4",
@@ -9267,7 +10303,31 @@
           "bytes": 355644,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/juli-tourism/previews/3bb5a35e269245d3-480.avif",
+          "width": 480,
+          "height": 2093,
+          "bytes": 72816,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/3bb5a35e269245d3-960.avif",
+          "width": 960,
+          "height": 4186,
+          "bytes": 198098,
+          "quality": 55
+        },
+        {
+          "url": "/projects/juli-tourism/previews/3bb5a35e269245d3-1200.avif",
+          "width": 1200,
+          "height": 5233,
+          "bytes": 293666,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/juli-tourism/preview-02.png": {
       "sourceHash": "14a055cc81bd9ab27859933f7ce0ae14a4cd296ade5caef72b1840781714984c",
@@ -10003,7 +11063,31 @@
           "bytes": 374996,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/lec-elevators/previews/40194adf1ed1e7f9-480.avif",
+          "width": 480,
+          "height": 2224,
+          "bytes": 59628,
+          "quality": 55
+        },
+        {
+          "url": "/projects/lec-elevators/previews/40194adf1ed1e7f9-960.avif",
+          "width": 960,
+          "height": 4449,
+          "bytes": 172271,
+          "quality": 55
+        },
+        {
+          "url": "/projects/lec-elevators/previews/40194adf1ed1e7f9-1400.avif",
+          "width": 1400,
+          "height": 6488,
+          "bytes": 306419,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/lec-elevators/preview-02.png": {
       "sourceHash": "159baaf42e004082f2bcc2ae1e74106676493bd5076a86dd56858a7ca3873bc0",
@@ -10033,7 +11117,9 @@
           "bytes": 269668,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/light-islam/full-page/02-الري-يسيه.webp": {
       "sourceHash": "95b5b75b50ae371340b4c2706e2a212000d3e32dc16718aa8a8d0532dcc6a55a",
@@ -10441,7 +11527,9 @@
           "bytes": 151308,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/mashora/cover.png": {
       "sourceHash": "2f60dfd53512440cf879b3af80248f685e42c5b5de586f5dee8028b478e3b61e",
@@ -10914,7 +12002,31 @@
           "bytes": 434602,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/mediaandmore/previews/3a23a28899ec4f29-480.avif",
+          "width": 480,
+          "height": 1939,
+          "bytes": 54645,
+          "quality": 55
+        },
+        {
+          "url": "/projects/mediaandmore/previews/3a23a28899ec4f29-960.avif",
+          "width": 960,
+          "height": 3879,
+          "bytes": 169738,
+          "quality": 55
+        },
+        {
+          "url": "/projects/mediaandmore/previews/3a23a28899ec4f29-1600.avif",
+          "width": 1600,
+          "height": 6464,
+          "bytes": 349161,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/meshari-alali/cover.png": {
       "sourceHash": "47e0922dc9e9e055cfb0d6f9e447755d5b344c46b632cf0f4f4e90ebb787fd98",
@@ -11994,7 +13106,31 @@
           "bytes": 486556,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/nuc-kw/previews/7bc3411d51100b97-480.avif",
+          "width": 480,
+          "height": 1274,
+          "bytes": 54999,
+          "quality": 55
+        },
+        {
+          "url": "/projects/nuc-kw/previews/7bc3411d51100b97-960.avif",
+          "width": 960,
+          "height": 2549,
+          "bytes": 173562,
+          "quality": 55
+        },
+        {
+          "url": "/projects/nuc-kw/previews/7bc3411d51100b97-1600.avif",
+          "width": 1600,
+          "height": 4248,
+          "bytes": 383480,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/nuc-kw/Pricing - NUC.png": {
       "sourceHash": "797199b9357ae46db18225764768fe87b289b596c4ad915db4e5dc223bbcca9c",
@@ -12294,7 +13430,31 @@
           "bytes": 473980,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/nuc-kw/previews/194dcefa91471f06-480.avif",
+          "width": 480,
+          "height": 1295,
+          "bytes": 55784,
+          "quality": 55
+        },
+        {
+          "url": "/projects/nuc-kw/previews/194dcefa91471f06-960.avif",
+          "width": 960,
+          "height": 2591,
+          "bytes": 171309,
+          "quality": 55
+        },
+        {
+          "url": "/projects/nuc-kw/previews/194dcefa91471f06-1600.avif",
+          "width": 1600,
+          "height": 4318,
+          "bytes": 375514,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/nuc-kw/تواصل معنا - NUC.png": {
       "sourceHash": "4aeda82859cf1b7f5d1766f413e7eab7082db25cf8746e34049f74209edd4818",
@@ -12940,7 +14100,31 @@
           "bytes": 696704,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/oryxbag/previews/29ba0330bd378f06-480.avif",
+          "width": 480,
+          "height": 3335,
+          "bytes": 111450,
+          "quality": 55
+        },
+        {
+          "url": "/projects/oryxbag/previews/29ba0330bd378f06-960.avif",
+          "width": 960,
+          "height": 6670,
+          "bytes": 315667,
+          "quality": 55
+        },
+        {
+          "url": "/projects/oryxbag/previews/29ba0330bd378f06-1440.avif",
+          "width": 1440,
+          "height": 10005,
+          "bytes": 584143,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/oryxbag/home-en.jpg": {
       "sourceHash": "ef0a556ad7ff8a8821d2ed3eee9a756b8c0c67b5b8cbca8847071c6cc9ef73c0",
@@ -12970,7 +14154,31 @@
           "bytes": 585270,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [
+        {
+          "url": "/projects/oryxbag/previews/cc631d1bad8192d9-480.avif",
+          "width": 480,
+          "height": 2849,
+          "bytes": 93376,
+          "quality": 55
+        },
+        {
+          "url": "/projects/oryxbag/previews/cc631d1bad8192d9-960.avif",
+          "width": 960,
+          "height": 5698,
+          "bytes": 260992,
+          "quality": 55
+        },
+        {
+          "url": "/projects/oryxbag/previews/cc631d1bad8192d9-1440.avif",
+          "width": 1440,
+          "height": 8547,
+          "bytes": 484729,
+          "quality": 55
+        }
+      ],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/oryxbag/rewards-ar.jpg": {
       "sourceHash": "992266d70fc3d5183b00a40e1ea03ea098ca5e1d3ccf67747237fab7fa1d98a0",
@@ -13360,7 +14568,9 @@
           "bytes": 407712,
           "quality": 72
         }
-      ]
+      ],
+      "avifVariants": [],
+      "avifRecipe": "avif-q55-e5-444-v1"
     },
     "/projects/ozone-clinic/frontend/03-dental-services-desktop.png": {
       "sourceHash": "32f560e264047364f2f07dace416f072db9f52c6fed17f73d96e76a077cf2700",
@@ -15808,5 +17018,12 @@
         }
       ]
     }
+  },
+  "avifPolicy": {
+    "minimumPreviewBytes": 150000,
+    "minimumSaving": 0.1,
+    "quality": 55,
+    "effort": 5,
+    "chromaSubsampling": "4:4:4"
   }
 }

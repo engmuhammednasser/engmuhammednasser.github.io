@@ -101,9 +101,14 @@ for (const file of files) {
     const source = attribute(tag, "data-optimized-preload") || attribute(tag, "href"), entry = images[source];
     if (attribute(tag, "as") === "image" && lazySources.has(source) && !eagerSources.has(source)) return "";
     if (!entry || attribute(tag, "as") !== "image") return tag;
-    const fallback = entry.variants.find((v) => v.width >= 960) ?? entry.variants.at(-1);
+    // Keep an already-selected AVIF preload aligned with its picture. Running
+    // the WebP step must not temporarily pair an AVIF MIME type with a WebP URL.
+    const avif = attribute(tag, "type") === "image/avif" && entry.avifVariants?.length;
+    const variants = avif ? entry.avifVariants : entry.variants;
+    const fallback = variants.find((v) => v.width >= 960) ?? variants.at(-1);
     let next = setAttribute(tag, "href", fallback.url);
-    next = setAttribute(next, "imagesrcset", entry.variants.map((v) => `${v.url} ${v.width}w`).join(", "));
+    if (attribute(tag, "type")) next = setAttribute(next, "type", avif ? "image/avif" : "image/webp");
+    next = setAttribute(next, "imagesrcset", variants.map((v) => `${v.url} ${v.width}w`).join(", "));
     next = setAttribute(next, "imagesizes", (sizesBySource.get(source) || "(min-width: 1280px) 1200px, 100vw").replace(/^auto,\s*/, ""));
     return setAttribute(next, "data-optimized-preload", source);
   });
