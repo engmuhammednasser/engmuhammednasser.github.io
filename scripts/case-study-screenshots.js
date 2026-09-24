@@ -11,6 +11,7 @@
     var closeButton = document.createElement("button");
     var image = document.createElement("img");
     var previousFocus = null;
+    var previousOverflow = "";
 
     modal.hidden = true;
     modal.setAttribute("role", "dialog");
@@ -29,11 +30,17 @@
 
     function close() {
       modal.hidden = true;
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
     }
 
     closeButton.addEventListener("click", close);
+    modal.addEventListener("keydown", function (event) {
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeButton.focus();
+      }
+    });
     modal.addEventListener("click", function (event) {
       if (event.target === modal) close();
     });
@@ -41,7 +48,7 @@
       if (event.key === "Escape" && !modal.hidden) close();
     });
 
-    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) { previousFocus = element; } };
+    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) { previousFocus = element; previousOverflow = document.body.style.overflow; } };
     return fullView;
   }
 
@@ -182,7 +189,7 @@
       card.addEventListener("lostpointercapture", resetPointerState);
 
       card.addEventListener("click", function (event) {
-        if (hasFullView && !pointerMoved) {
+        if (hasFullView && (!pointerMoved || event.detail === 0)) {
           event.preventDefault();
           openFullView(card);
         }

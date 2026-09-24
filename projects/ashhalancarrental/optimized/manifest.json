@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 4,
+  "source": "projects/ashhalancarrental/home-en.jpg",
+  "sourceBytes": 580031,
+  "sourceWidth": 1440,
+  "sourceHeight": 4873,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 1624,
+      "bytes": 41869,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 1624,
+      "bytes": 44192,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 2707,
+      "bytes": 86324,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 2707,
+      "bytes": 95686,
+      "quality": 68
+    }
+  }
+}

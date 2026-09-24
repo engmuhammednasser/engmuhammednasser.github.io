@@ -6,6 +6,10 @@
 
 Status: current at `main` commit `5b4560cacf1d7965058ec7a93fa610f04362f38d`
 
+Runtime/image maintenance update: [standalone runtime and responsive delivery](docs/operations/static-runtime.md).
+This update supersedes the historical framework-exception allowance and generic
+thumbnail ImageMagick requirement in this baseline guide.
+
 Production: <https://engmuhammednasser.github.io/>
 Companion history: `PORTFOLIO_ENGINEERING_HANDOFF.md`
 
@@ -490,8 +494,8 @@ Use browser developer tools for claims the static gate cannot prove:
 - absence of initial original/gallery requests;
 - absence of unexpected console errors.
 
-The mobile test permits only the two documented compiled hydration exception
-patterns. Any other runtime exception is a failure.
+All browser runtime exceptions now fail verification. The historical compiled
+hydration exception allowance has been removed.
 
 ### Step 10 — Pull request and deployment
 

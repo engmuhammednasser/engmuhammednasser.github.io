@@ -2,6 +2,10 @@
 
 Status: production handoff after Sprints 0–5 and merged PRs #1–#8
 
+Current maintenance update: [static runtime and responsive images](docs/operations/static-runtime.md)
+supersedes the historical hydration-exception allowance below. Native controllers
+now own browser interactions and browser verification rejects all runtime errors.
+
 Authoritative production baseline: `main` at `5b4560cacf1d7965058ec7a93fa610f04362f38d`
 
 Production: <https://engmuhammednasser.github.io/>
@@ -213,11 +217,10 @@ These are known constraints, not automatic blockers for unrelated changes:
    retained; no destructive history rewrite or bulk media deletion was performed.
 3. **Production Core Web Vitals are not yet measured with real-user data.** Local
    and synthetic checks protect delivery policy but do not claim field CWV.
-4. **Known compiled hydration exceptions remain.** Representative pages can emit
-   `t.reason.enqueueModel is not a function` or `Connection closed.` from the
-   generated framework path. PR #2 made mobile navigation independent of that path;
-   the exception itself was not repaired because the missing source prevents a safe
-   framework-level fix.
+4. **Compiled hydration was retired from served HTML.** The original framework
+   source is still unavailable, but complete static pages now use maintained native
+   controllers. Archival chunks/payloads remain tracked. New browser exceptions are
+   failures; see the current runtime maintenance note linked above.
 5. **CI push coverage is narrow.** Pull requests run `Portfolio quality`; ordinary
    direct pushes to arbitrary branches or `main` are not comprehensively covered by
    the repository workflow. Use a PR and require its passing check.

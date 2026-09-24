@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 4,
+  "source": "projects/lec-elevators/cover.png",
+  "sourceBytes": 421994,
+  "sourceWidth": 600,
+  "sourceHeight": 2781,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 2225,
+      "bytes": 67038,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 2225,
+      "bytes": 74892,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 600,
+      "height": 2781,
+      "bytes": 102125,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 600,
+      "height": 2781,
+      "bytes": 107992,
+      "quality": 68
+    }
+  }
+}

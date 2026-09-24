@@ -2,15 +2,14 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
-  readdirSync,
   statSync,
   writeFileSync
 } from "node:fs";
-import { extname, join, relative, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { join, relative, resolve } from "node:path";
+import sharp from "sharp";
 
 const root = resolve(process.cwd());
-const pipelineVersion = 3;
+const pipelineVersion = 4;
 const maxVariantBytes = 150_000;
 const widths = [480, 800];
 const formats = [
@@ -18,36 +17,21 @@ const formats = [
     extension: "avif",
     initialQuality: 55,
     minimumQuality: 35,
-    qualityStep: 5,
-    extraArgs: ["-define", "heic:speed=6"]
+    qualityStep: 5
   },
   {
     extension: "webp",
     initialQuality: 68,
     minimumQuality: 30,
-    qualityStep: 5,
-    extraArgs: ["-define", "webp:method=6"]
+    qualityStep: 5
   }
 ];
 
 function readWorkCardSources() {
-  const sources = new Map();
-
-  for (const relativePath of ["work/index.html", "ar/work/index.html"]) {
-    const content = readFileSync(join(root, relativePath), "utf8");
-    const imagePattern = /<img\b[^>]*\bsrc="(\/projects\/[^"?]+)"[^>]*>/gi;
-
-    for (const match of content.matchAll(imagePattern)) {
-      const sourceUrl = match[1];
-      const parts = sourceUrl.split("/").filter(Boolean);
-      const project = parts[1];
-      if (project && !sources.has(project)) {
-        sources.set(project, sourceUrl);
-      }
-    }
-  }
-
-  return sources;
+  // The rendered archive contains only the first 12 projects. Always use the
+  // canonical catalog so later projects and aliases can also be optimized.
+  const data = JSON.parse(readFileSync(join(root, "data/projects.json"), "utf8"));
+  return new Map(data.projects.map((project) => [project.slug, project.thumbnail.original]));
 }
 
 function resolveOriginalSource(project, sourceUrl) {
@@ -83,25 +67,8 @@ function parseProjectArguments() {
   return new Set(values);
 }
 
-function runMagick(args) {
-  const result = spawnSync("magick", args, { encoding: "utf8" });
-  if (result.error) {
-    throw new Error(`Could not run ImageMagick (magick): ${result.error.message}`);
-  }
-  if (result.status !== 0) {
-    throw new Error(`ImageMagick failed: ${result.stderr || result.stdout}`);
-  }
-}
-
-function identify(file) {
-  const result = spawnSync("magick", ["identify", "-format", "%w %h", file], {
-    encoding: "utf8"
-  });
-  if (result.status !== 0) {
-    throw new Error(`Could not identify ${file}: ${result.stderr || result.stdout}`);
-  }
-
-  const [width, height] = result.stdout.trim().split(/\s+/).map(Number);
+async function identify(file) {
+  const { width, height } = await sharp(file).metadata();
   if (!Number.isFinite(width) || !Number.isFinite(height)) {
     throw new Error(`Invalid dimensions returned for ${file}.`);
   }
@@ -124,21 +91,13 @@ function shouldGenerate(output, source, manifest, key) {
   return statSync(output).mtimeMs < statSync(source).mtimeMs;
 }
 
-function generateVariant(source, output, format, width) {
+async function generateVariant(source, output, format, width) {
   let quality = format.initialQuality;
 
   while (true) {
-    runMagick([
-      source,
-      "-auto-orient",
-      "-resize",
-      `${width}x>`,
-      "-strip",
-      "-quality",
-      String(quality),
-      ...format.extraArgs,
-      output
-    ]);
+    const image = sharp(source).rotate().resize({ width, withoutEnlargement: true });
+    if (format.extension === "avif") await image.avif({ quality, effort: 4 }).toFile(output);
+    else await image.webp({ quality, effort: 6 }).toFile(output);
 
     if (statSync(output).size <= maxVariantBytes || quality <= format.minimumQuality) {
       return quality;
@@ -173,10 +132,10 @@ for (const project of projects) {
   }
   const sourceUrl = resolveOriginalSource(project, selectedSourceUrl);
 
-  const source = join(root, sourceUrl.replace(/^\//, "").replaceAll("/", "\\"));
+  const source = join(root, decodeURIComponent(sourceUrl.replace(/^\//, "")));
   if (!existsSync(source)) throw new Error(`Missing source image: ${sourceUrl}`);
 
-  const sourceDimensions = identify(source);
+  const sourceDimensions = await identify(source);
   const optimizedDirectory = join(root, "projects", project, "optimized");
   mkdirSync(optimizedDirectory, { recursive: true });
   const manifestPath = join(optimizedDirectory, "manifest.json");
@@ -218,7 +177,7 @@ for (const project of projects) {
       let qualityUsed = format.initialQuality;
 
       if (shouldGenerate(output, source, previousManifest, key)) {
-        qualityUsed = generateVariant(source, output, format, width);
+        qualityUsed = await generateVariant(source, output, format, width);
         generated += 1;
       } else {
         skipped += 1;
