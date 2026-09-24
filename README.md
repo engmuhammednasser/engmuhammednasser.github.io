@@ -19,8 +19,14 @@ artifacts—not a disposable build directory.
 
 ## Local use
 
-Requirements: Node.js 20+ and Chrome/Chromium/Edge. ImageMagick 7 is additionally
-required for media generation.
+Requirements: Node.js 20.9+ and Chrome/Chromium/Edge. Responsive previews and generic
+Work thumbnails use the locked Sharp dependency. Specialized legacy media
+generators additionally require ImageMagick 7.
+
+Pages use maintained native JavaScript controllers, with compiled CSS/fonts
+preserved and obsolete framework hydration retired. See
+[`docs/operations/static-runtime.md`](docs/operations/static-runtime.md) for image
+generation, standalone runtime normalization and strict browser validation.
 
 ```bash
 npm ci

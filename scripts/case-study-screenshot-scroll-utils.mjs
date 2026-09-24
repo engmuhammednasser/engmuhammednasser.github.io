@@ -5,7 +5,7 @@ export const screenshotRuntime = '<script src="/scripts/case-study-screenshots.j
 
 export function caseStudyRouteFiles(root) {
   const files = [];
-  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend")]) {
+  for (const base of ["work", join("ar", "work"), "backend", join("ar", "backend"), join("lab", "plugins"), join("ar", "lab", "plugins")]) {
     const directory = join(root, base);
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
       if (entry.isDirectory() && !entry.name.startsWith("_")) {
@@ -19,6 +19,7 @@ export function caseStudyRouteFiles(root) {
 
 export function routeFamily(root, file) {
   const route = relative(root, file).replaceAll("\\", "/");
+  if (/^(?:ar\/)?lab\/plugins\//.test(route)) return "lab";
   return route.startsWith("backend/") || route.startsWith("ar/backend/") ? "backend" : "work";
 }
 
@@ -41,6 +42,7 @@ export function findScreenshotButtons(html) {
 
 export function isScreenshotButton(markup) {
   return /\bdata-case-study-screenshot\b/i.test(markup)
+    || /aria-label="View full image:/i.test(markup)
     || /\bclass="[^"]*\bcase-shot\b/i.test(markup)
     || /\bdata-(?:full-)?src="/i.test(markup)
     || /aria-label="[^"]*(?:full screenshot|كاملاً)[^"]*"/i.test(markup)
@@ -56,7 +58,7 @@ export const legacyHintTextPattern = "(?:Scroll\\s+(?:inside|screenshot|to\\s+vi
 function upsertAttribute(tag, name, value = "") {
   const pattern = new RegExp(`\\s${name}(?:="[^"]*")?`, "i");
   if (pattern.test(tag)) return tag.replace(pattern, value ? ` ${name}="${value}"` : ` ${name}`);
-  return tag.replace(/>$/, value ? ` ${name}="${value}">` : ` ${name}>`);
+  return tag.replace(/\/?>$/, value ? ` ${name}="${value}">` : ` ${name}>`);
 }
 
 function readAttribute(tag, name) {
@@ -104,7 +106,7 @@ function updateStyleAttribute(tag, updates) {
     else style = upsertStyleProperty(style, property, value);
   }
   if (styleMatch) return tag.replace(/\sstyle="[^"]*"/i, ` style="${style}"`);
-  return tag.replace(/>$/, ` style="${style}">`);
+  return tag.replace(/\/?>$/, ` style="${style}">`);
 }
 
 function normalizeButtonTag(tag, fallbackSource) {
@@ -125,6 +127,10 @@ function normalizeButtonTag(tag, fallbackSource) {
 }
 
 function normalizeImageTag(tag) {
+  // Older normalization inserted attributes after a self-closing slash.
+  tag = tag.replace(/"\/(?=\s+\w+=)/g, '"');
+  tag = upsertAttribute(tag, "loading", "lazy");
+  tag = upsertAttribute(tag, "decoding", "async");
   return updateStyleAttribute(tag, [
     ["position", "static"],
     ["width", "100%"],
@@ -172,16 +178,34 @@ export function normalizeScreenshotButton(markup, locale = "en") {
 
 function normalizeScreenshotRuntime(html) {
   let next = html.replace(/<script\b[^>]*src="\/scripts\/case-study-screenshots\.js"[^>]*><\/script>/gi, "");
+  // The shared controller owns scrolling and full view; legacy hover handlers
+  // otherwise reapply transforms/overflow:hidden after a preview image loads.
+  next = next.replace(/<script\b[^>]*src="\/scripts\/(?:kuwait-arc|armadillo-studio|torathyat)-screenshots\.js"[^>]*><\/script>/gi, "");
   const mobileRuntime = next.match(/<script\b[^>]*data-mobile-navigation="script"[^>]*><\/script>/i)?.[0];
   if (mobileRuntime) return next.replace(mobileRuntime, `${screenshotRuntime}${mobileRuntime}`);
   return next.replace("</body>", `${screenshotRuntime}</body>`);
 }
 
 export function normalizeCaseStudyHtml(html) {
+  const locale = /<html\b[^>]*\blang="ar"/i.test(html) ? "ar" : "en";
+  // Legacy backend galleries used noninteractive divs. Once previews replace
+  // originals, provide an explicit full-view control to retain access to detail.
+  html = html.replace(/<div\b([^>]*)>(<img\b[^>]*>)<\/div>/gi, (markup, attributes, image) => {
+    const classes = readAttribute(`<div${attributes}>`, "class");
+    const source = readAttribute(image, "data-optimized-preview") || readAttribute(image, "src");
+    if (!classes.includes("hover:border-") || (!classes.includes("aspect-video") && !source.startsWith("/plugins/"))) return markup;
+    const alt = readAttribute(image, "alt");
+    let button = `<button${attributes}>`;
+    button = upsertAttribute(button, "type", "button");
+    button = upsertAttribute(button, "class", `${classes} block w-full`);
+    button = upsertAttribute(button, "data-case-study-screenshot");
+    button = upsertAttribute(button, "data-full-src", source);
+    button = upsertAttribute(button, "aria-label", `${locale === "ar" ? "عرض الصورة كاملة:" : "View full image:"} ${alt}`);
+    return `${button}${image}</button>`;
+  });
   const buttons = findScreenshotButtons(html);
   const serializedSources = findSerializedScreenshotSources(html);
   if (!buttons.length && !serializedSources.length) return { html, count: 0 };
-  const locale = /<html\b[^>]*\blang="ar"/i.test(html) ? "ar" : "en";
 
   let next = "";
   let cursor = 0;

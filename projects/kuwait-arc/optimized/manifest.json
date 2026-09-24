@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 4,
+  "source": "projects/kuwait-arc/cover.png",
+  "sourceBytes": 397007,
+  "sourceWidth": 1440,
+  "sourceHeight": 900,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 300,
+      "bytes": 9819,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 300,
+      "bytes": 10300,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 500,
+      "bytes": 22450,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 500,
+      "bytes": 24276,
+      "quality": 68
+    }
+  }
+}

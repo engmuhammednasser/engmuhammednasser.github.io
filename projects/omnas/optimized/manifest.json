@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 4,
+  "source": "projects/omnas/cover.png",
+  "sourceBytes": 262671,
+  "sourceWidth": 600,
+  "sourceHeight": 2073,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 1658,
+      "bytes": 52884,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 1658,
+      "bytes": 58762,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 600,
+      "height": 2073,
+      "bytes": 79302,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 600,
+      "height": 2073,
+      "bytes": 85664,
+      "quality": 68
+    }
+  }
+}

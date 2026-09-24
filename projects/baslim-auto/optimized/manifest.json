@@ -1,0 +1,56 @@
+{
+  "pipelineVersion": 4,
+  "source": "projects/baslim-auto/cover.webp",
+  "sourceBytes": 253182,
+  "sourceWidth": 1200,
+  "sourceHeight": 3972,
+  "policy": {
+    "widths": [
+      480,
+      800
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "preserveAspectRatio": true,
+    "noUpscaling": true,
+    "maxBytes": 150000,
+    "quality": {
+      "avif": {
+        "initial": 55,
+        "minimum": 35
+      },
+      "webp": {
+        "initial": 68,
+        "minimum": 30
+      }
+    }
+  },
+  "variants": {
+    "thumb-480.avif": {
+      "width": 480,
+      "height": 1589,
+      "bytes": 34279,
+      "quality": 55
+    },
+    "thumb-480.webp": {
+      "width": 480,
+      "height": 1589,
+      "bytes": 35226,
+      "quality": 68
+    },
+    "thumb-800.avif": {
+      "width": 800,
+      "height": 2648,
+      "bytes": 67598,
+      "quality": 55
+    },
+    "thumb-800.webp": {
+      "width": 800,
+      "height": 2648,
+      "bytes": 70784,
+      "quality": 68
+    }
+  }
+}

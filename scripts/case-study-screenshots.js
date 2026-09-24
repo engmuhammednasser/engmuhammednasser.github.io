@@ -11,6 +11,8 @@
     var closeButton = document.createElement("button");
     var image = document.createElement("img");
     var previousFocus = null;
+    var previousOverflow = "";
+    var background = [];
 
     modal.hidden = true;
     modal.setAttribute("role", "dialog");
@@ -29,11 +31,20 @@
 
     function close() {
       modal.hidden = true;
-      document.body.style.overflow = "";
-      if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+      image.removeAttribute("src");
+      document.body.style.overflow = previousOverflow;
+      background.forEach(function (entry) { entry.element.inert = entry.inert; });
+      background = [];
+      if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus({ preventScroll: true });
     }
 
     closeButton.addEventListener("click", close);
+    modal.addEventListener("keydown", function (event) {
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeButton.focus();
+      }
+    });
     modal.addEventListener("click", function (event) {
       if (event.target === modal) close();
     });
@@ -41,7 +52,17 @@
       if (event.key === "Escape" && !modal.hidden) close();
     });
 
-    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) { previousFocus = element; } };
+    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) {
+      previousFocus = element;
+      previousOverflow = document.body.style.overflow;
+      background = Array.prototype.filter.call(document.body.children, function (child) {
+        return child !== modal && !/^(SCRIPT|STYLE|LINK)$/.test(child.tagName);
+      }).map(function (child) {
+        var entry = { element: child, inert: child.inert };
+        child.inert = true;
+        return entry;
+      });
+    } };
     return fullView;
   }
 
@@ -57,6 +78,7 @@
     view.image.loading = "eager";
     view.image.decoding = "async";
     view.modal.hidden = false;
+    view.modal.scrollTop = 0;
     document.body.style.overflow = "hidden";
     view.closeButton.focus();
   }
@@ -182,7 +204,7 @@
       card.addEventListener("lostpointercapture", resetPointerState);
 
       card.addEventListener("click", function (event) {
-        if (hasFullView && !pointerMoved) {
+        if (hasFullView && (!pointerMoved || event.detail === 0)) {
           event.preventDefault();
           openFullView(card);
         }

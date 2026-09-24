@@ -102,6 +102,10 @@ function isCriticalImagePreload(href) {
 function checkPreloads(content, relativePath) {
   for (const match of content.matchAll(/<link\b(?=[^>]*\brel="preload")(?=[^>]*\bas="image")[^>]*>/gi)) {
     const href = match[0].match(/\bhref="([^"]+)"/i)?.[1] ?? "";
+    if (/\bdata-optimized-preload="/.test(match[0])) {
+      if (!/\bimagesrcset="/.test(match[0]) || !localPathExists(href)) reportFailure(`${relativePath}: invalid responsive image preload`);
+      continue;
+    }
     if (href === "/profile.png") reportFailure(`${relativePath}: profile.png is still preloaded`);
     if ((href.startsWith("/projects/") || href.startsWith("/backend/")) && !isCriticalImagePreload(href)) {
       reportFailure(`${relativePath}: noncritical image preload remains: ${href}`);

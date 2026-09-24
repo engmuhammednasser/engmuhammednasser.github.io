@@ -43,6 +43,8 @@ run("inventory-seo-accessibility.mjs");
 run("generate-seo-assets.mjs");
 run("apply-mobile-navigation.mjs");
 run("apply-case-study-screenshot-scroll.mjs");
+run("apply-static-runtime.mjs");
+run("optimize-heavy-previews.mjs");
 const after = snapshot();
 const changed = [];
 const allFiles = new Set([...before.keys(), ...after.keys()]);

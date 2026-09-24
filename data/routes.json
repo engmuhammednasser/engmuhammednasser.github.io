@@ -60,8 +60,8 @@
         "externalLinksWithoutSafeRel": 0
       },
       "language": {
-        "lang": null,
-        "dir": null
+        "lang": "en",
+        "dir": "ltr"
       },
       "file": "404/index.html"
     },
@@ -122,8 +122,8 @@
         "externalLinksWithoutSafeRel": 0
       },
       "language": {
-        "lang": null,
-        "dir": null
+        "lang": "en",
+        "dir": "ltr"
       },
       "file": "_not-found/index.html"
     },
@@ -301,7 +301,7 @@
         "value": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "وكالة التسويق الرقمي A2M بالكويت | أنظمة Backend | محمد ناصر",
         "ogDescription": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
@@ -310,7 +310,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "وكالة التسويق الرقمي A2M بالكويت | أنظمة Backend | محمد ناصر",
         "twitterDescription": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -339,8 +339,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 12,
+        "labeledButtons": 12,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -371,7 +371,7 @@
         "value": "أكاديمية تعليمية متخصصة لتعليم اللغة العربية والقرآن الكريم لغير الناطقين بها، تتميز بتصنيف المناهج وسهولة حجز الدروس التعليمية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "أكاديمية نافذة اللغة العربية التعليمية | أنظمة Backend | محمد ناصر",
         "ogDescription": "أكاديمية تعليمية متخصصة لتعليم اللغة العربية والقرآن الكريم لغير الناطقين بها، تتميز بتصنيف المناهج وسهولة حجز الدروس التعليمية.",
@@ -380,7 +380,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "أكاديمية نافذة اللغة العربية التعليمية | أنظمة Backend | محمد ناصر",
         "twitterDescription": "أكاديمية تعليمية متخصصة لتعليم اللغة العربية والقرآن الكريم لغير الناطقين بها، تتميز بتصنيف المناهج وسهولة حجز الدروس التعليمية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -409,8 +409,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -441,7 +441,7 @@
         "value": "موقع شركة أركاديا الرقمية لعرض حلول التسويق الرقمي وتطوير العلامات التجارية وتصميم الاستراتيجيات الإعلانية المتكاملة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "أركاديا الرقمية للحلول Arcadia Digital | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع شركة أركاديا الرقمية لعرض حلول التسويق الرقمي وتطوير العلامات التجارية وتصميم الاستراتيجيات الإعلانية المتكاملة.",
@@ -450,7 +450,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "أركاديا الرقمية للحلول Arcadia Digital | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع شركة أركاديا الرقمية لعرض حلول التسويق الرقمي وتطوير العلامات التجارية وتصميم الاستراتيجيات الإعلانية المتكاملة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -479,8 +479,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -511,7 +511,7 @@
         "value": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجموعة أشهلان القابضة Ashhalan | أنظمة Backend | محمد ناصر",
         "ogDescription": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
@@ -520,7 +520,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجموعة أشهلان القابضة Ashhalan | أنظمة Backend | محمد ناصر",
         "twitterDescription": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -549,8 +549,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 15,
+        "labeledButtons": 15,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -581,7 +581,7 @@
         "value": "موقع خدمة وتأجير سيارات يعرض أساطيل المركبات المتوفرة وحلول التأجير المتنوعة للأفراد والشركات بطريقة مبسطة وجذابة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة أشهلان لتأجير السيارات Ashhalan Car Rental | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع خدمة وتأجير سيارات يعرض أساطيل المركبات المتوفرة وحلول التأجير المتنوعة للأفراد والشركات بطريقة مبسطة وجذابة.",
@@ -590,7 +590,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة أشهلان لتأجير السيارات Ashhalan Car Rental | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع خدمة وتأجير سيارات يعرض أساطيل المركبات المتوفرة وحلول التأجير المتنوعة للأفراد والشركات بطريقة مبسطة وجذابة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -619,8 +619,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -689,8 +689,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 9,
+        "labeledButtons": 9,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -759,8 +759,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 10,
+        "labeledButtons": 10,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -865,7 +865,7 @@
         "value": "معرض سيارات رقمي يستعرض السيارات المتاحة للبيع والبدائل وخطط التمويل الميسرة لتسهيل قرار شراء السيارات بالكويت.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "معرض بسالم للسيارات Baslim Auto | أنظمة Backend | محمد ناصر",
         "ogDescription": "معرض سيارات رقمي يستعرض السيارات المتاحة للبيع والبدائل وخطط التمويل الميسرة لتسهيل قرار شراء السيارات بالكويت.",
@@ -874,7 +874,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "معرض بسالم للسيارات Baslim Auto | أنظمة Backend | محمد ناصر",
         "twitterDescription": "معرض سيارات رقمي يستعرض السيارات المتاحة للبيع والبدائل وخطط التمويل الميسرة لتسهيل قرار شراء السيارات بالكويت.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -903,8 +903,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -935,7 +935,7 @@
         "value": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر زجاجات المياه بوتيلا Botella | أنظمة Backend | محمد ناصر",
         "ogDescription": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
@@ -944,7 +944,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر زجاجات المياه بوتيلا Botella | أنظمة Backend | محمد ناصر",
         "twitterDescription": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -973,8 +973,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 26,
+        "labeledButtons": 26,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1005,7 +1005,7 @@
         "value": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "نظام CRM لإدارة الطلبات | أنظمة Backend | محمد ناصر",
         "ogDescription": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
@@ -1014,7 +1014,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "نظام CRM لإدارة الطلبات | أنظمة Backend | محمد ناصر",
         "twitterDescription": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1083,7 +1083,7 @@
         "value": "موقع لتوثيق الجلسات والندوات الثقافية واللقاءات الدورية لديوانية الأربعاء، وبناء صلة وصل تفاعلية مع المجتمع والمثقفين.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة ديوانية الأربعاء الثقافية | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع لتوثيق الجلسات والندوات الثقافية واللقاءات الدورية لديوانية الأربعاء، وبناء صلة وصل تفاعلية مع المجتمع والمثقفين.",
@@ -1092,7 +1092,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة ديوانية الأربعاء الثقافية | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع لتوثيق الجلسات والندوات الثقافية واللقاءات الدورية لديوانية الأربعاء، وبناء صلة وصل تفاعلية مع المجتمع والمثقفين.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1121,8 +1121,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1266,8 +1266,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 21,
+        "labeledButtons": 21,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1298,7 +1298,7 @@
         "value": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "ايفنت جيفت السعودية — واجهة المتجر | أنظمة Backend | محمد ناصر",
         "ogDescription": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
@@ -1307,7 +1307,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "ايفنت جيفت السعودية — واجهة المتجر | أنظمة Backend | محمد ناصر",
         "twitterDescription": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1337,8 +1337,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 20,
+        "labeledButtons": 20,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1408,8 +1408,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 15,
+        "labeledButtons": 15,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1440,7 +1440,7 @@
         "value": "متجر إلكتروني متعدد الأقسام مبني على ووكومرس يركز على تصفح المنتجات المتنوعة وإتمام عمليات الدفع والشحن بسرعة فائقة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر التسوق السريع Fast Shopping | أنظمة Backend | محمد ناصر",
         "ogDescription": "متجر إلكتروني متعدد الأقسام مبني على ووكومرس يركز على تصفح المنتجات المتنوعة وإتمام عمليات الدفع والشحن بسرعة فائقة.",
@@ -1449,7 +1449,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر التسوق السريع Fast Shopping | أنظمة Backend | محمد ناصر",
         "twitterDescription": "متجر إلكتروني متعدد الأقسام مبني على ووكومرس يركز على تصفح المنتجات المتنوعة وإتمام عمليات الدفع والشحن بسرعة فائقة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1478,8 +1478,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1510,7 +1510,7 @@
         "value": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجموعة الجنيدي للمقاولات Genedy Group | أنظمة Backend | محمد ناصر",
         "ogDescription": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
@@ -1519,7 +1519,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجموعة الجنيدي للمقاولات Genedy Group | أنظمة Backend | محمد ناصر",
         "twitterDescription": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1548,8 +1548,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1618,8 +1618,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 14,
+        "labeledButtons": 14,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1798,7 +1798,7 @@
         "value": "منصة خدمية وجمالية لشركة سياحة وسفر تستعرض البرامج السياحية والرحلات الخارجية وحلول حجز تذاكر الطيران وتأجير الفنادق.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "جولي للسياحة والسفر Juli Tourism | أنظمة Backend | محمد ناصر",
         "ogDescription": "منصة خدمية وجمالية لشركة سياحة وسفر تستعرض البرامج السياحية والرحلات الخارجية وحلول حجز تذاكر الطيران وتأجير الفنادق.",
@@ -1807,7 +1807,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "جولي للسياحة والسفر Juli Tourism | أنظمة Backend | محمد ناصر",
         "twitterDescription": "منصة خدمية وجمالية لشركة سياحة وسفر تستعرض البرامج السياحية والرحلات الخارجية وحلول حجز تذاكر الطيران وتأجير الفنادق.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1836,8 +1836,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1868,7 +1868,7 @@
         "value": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة كويت آرك للصناعات الحديدية Kuwait Arc | أنظمة Backend | محمد ناصر",
         "ogDescription": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
@@ -1877,7 +1877,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة كويت آرك للصناعات الحديدية Kuwait Arc | أنظمة Backend | محمد ناصر",
         "twitterDescription": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1906,8 +1906,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -1938,7 +1938,7 @@
         "value": "موقع تعريفي لشركة مصاعد رائدة يستعرض خدمات التوريد والتركيب والصيانة وتصنيفات المصاعد والحلول الهندسية المختلفة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "شركة إل إي سي للمصاعد LEC Elevators | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع تعريفي لشركة مصاعد رائدة يستعرض خدمات التوريد والتركيب والصيانة وتصنيفات المصاعد والحلول الهندسية المختلفة.",
@@ -1947,7 +1947,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "شركة إل إي سي للمصاعد LEC Elevators | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع تعريفي لشركة مصاعد رائدة يستعرض خدمات التوريد والتركيب والصيانة وتصنيفات المصاعد والحلول الهندسية المختلفة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -1976,8 +1976,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2046,8 +2046,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2116,8 +2116,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2148,7 +2148,7 @@
         "value": "بوابة تعريفية وخدمية متخصصة في تقديم الاستشارات الإدارية وحلول تطوير المشاريع وتهيئة الشركات الناشئة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة مشورة للاستشارات وإدارة الأعمال Mashora | أنظمة Backend | محمد ناصر",
         "ogDescription": "بوابة تعريفية وخدمية متخصصة في تقديم الاستشارات الإدارية وحلول تطوير المشاريع وتهيئة الشركات الناشئة.",
@@ -2157,7 +2157,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة مشورة للاستشارات وإدارة الأعمال Mashora | أنظمة Backend | محمد ناصر",
         "twitterDescription": "بوابة تعريفية وخدمية متخصصة في تقديم الاستشارات الإدارية وحلول تطوير المشاريع وتهيئة الشركات الناشئة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2186,8 +2186,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2218,7 +2218,7 @@
         "value": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "ميديا أند مور هاوس أوف سوفتوير Media & More | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
@@ -2227,7 +2227,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "ميديا أند مور هاوس أوف سوفتوير Media & More | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2256,8 +2256,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 10,
+        "labeledButtons": 10,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2288,7 +2288,7 @@
         "value": "موقع تعريفي لمكتب استشارات هندسية وتصميم معماري كويتي يستعرض سوابق المشاريع الإنشائية السكنية والتجارية بدقة واحترافية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مكتب مشاري العلي للاستشارات الهندسية | أنظمة Backend | محمد ناصر",
         "ogDescription": "موقع تعريفي لمكتب استشارات هندسية وتصميم معماري كويتي يستعرض سوابق المشاريع الإنشائية السكنية والتجارية بدقة واحترافية.",
@@ -2297,7 +2297,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مكتب مشاري العلي للاستشارات الهندسية | أنظمة Backend | محمد ناصر",
         "twitterDescription": "موقع تعريفي لمكتب استشارات هندسية وتصميم معماري كويتي يستعرض سوابق المشاريع الإنشائية السكنية والتجارية بدقة واحترافية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2326,8 +2326,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2358,7 +2358,7 @@
         "value": "متجر إلكتروني راقٍ مبني على ووكومرس لتجارة العطور الفاخرة والبخور والعود وتوثيق تجارب المنتجات الفاخرة وسهولة الدفع.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر مشاري للعود والبخور Mishari Oud | أنظمة Backend | محمد ناصر",
         "ogDescription": "متجر إلكتروني راقٍ مبني على ووكومرس لتجارة العطور الفاخرة والبخور والعود وتوثيق تجارب المنتجات الفاخرة وسهولة الدفع.",
@@ -2367,7 +2367,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر مشاري للعود والبخور Mishari Oud | أنظمة Backend | محمد ناصر",
         "twitterDescription": "متجر إلكتروني راقٍ مبني على ووكومرس لتجارة العطور الفاخرة والبخور والعود وتوثيق تجارب المنتجات الفاخرة وسهولة الدفع.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2396,8 +2396,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2428,7 +2428,7 @@
         "value": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجوهرات نورا 24 الفاخرة Nora 24 | أنظمة Backend | محمد ناصر",
         "ogDescription": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
@@ -2437,7 +2437,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجوهرات نورا 24 الفاخرة Nora 24 | أنظمة Backend | محمد ناصر",
         "twitterDescription": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2466,8 +2466,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 9,
+        "labeledButtons": 9,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2536,8 +2536,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 26,
+        "labeledButtons": 26,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2568,7 +2568,7 @@
         "value": "متجر إلكتروني مميز للأزياء والموضة مبني على ووكومرس يتميز بالتصفح السلس للعلامات التجارية وسهولة اختيار المقاسات والدفع.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر أوريجينالز هاب للأزياء Originals Hub | أنظمة Backend | محمد ناصر",
         "ogDescription": "متجر إلكتروني مميز للأزياء والموضة مبني على ووكومرس يتميز بالتصفح السلس للعلامات التجارية وسهولة اختيار المقاسات والدفع.",
@@ -2577,7 +2577,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر أوريجينالز هاب للأزياء Originals Hub | أنظمة Backend | محمد ناصر",
         "twitterDescription": "متجر إلكتروني مميز للأزياء والموضة مبني على ووكومرس يتميز بالتصفح السلس للعلامات التجارية وسهولة اختيار المقاسات والدفع.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2606,8 +2606,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2711,7 +2711,7 @@
         "value": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "وكالة تي بي للحلول الرقمية TB Innovation | أنظمة Backend | محمد ناصر",
         "ogDescription": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
@@ -2720,7 +2720,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "وكالة تي بي للحلول الرقمية TB Innovation | أنظمة Backend | محمد ناصر",
         "twitterDescription": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -2749,8 +2749,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 12,
+        "labeledButtons": 12,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -2819,8 +2819,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -3138,8 +3138,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 5,
+        "labeledButtons": 5,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -3208,8 +3208,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 6,
+        "labeledButtons": 6,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -3279,8 +3279,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 7,
+        "labeledButtons": 7,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -3387,7 +3387,7 @@
         "value": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "وكالة التسويق الرقمي A2M بالكويت | محمد ناصر",
         "ogDescription": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
@@ -3396,7 +3396,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "وكالة التسويق الرقمي A2M بالكويت | محمد ناصر",
         "twitterDescription": "منصة متكاملة لوكالة تسويق رقمي تسلط الضوء على الخدمات الإعلانية وحلول تحسين محركات البحث وحملات التواصل الاجتماعي.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3527,7 +3527,7 @@
         "value": "موقع صناعي للتعبئة والتغليف يضم الرئيسية والأقسام والماكينات والتعريف والتواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/alrowad/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع الرواد للتعبئة والتغليف | محمد ناصر",
         "ogDescription": "موقع صناعي للتعبئة والتغليف يضم الرئيسية والأقسام والماكينات والتعريف والتواصل.",
@@ -3536,7 +3536,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع الرواد للتعبئة والتغليف | محمد ناصر",
         "twitterDescription": "موقع صناعي للتعبئة والتغليف يضم الرئيسية والأقسام والماكينات والتعريف والتواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/alrowad/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3597,7 +3597,7 @@
         "value": "منصة تعليم أونلاين مبنية على WordPress وWooCommerce لتعليم العربية والقرآن والدراسات الإسلامية، مع الدورات والخطط والتسجيل والمحتوى والدفع.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "أكاديمية نافذة اللغة العربية التعليمية | محمد ناصر",
         "ogDescription": "منصة تعليم أونلاين مبنية على WordPress وWooCommerce لتعليم العربية والقرآن والدراسات الإسلامية، مع الدورات والخطط والتسجيل والمحتوى والدفع.",
@@ -3606,7 +3606,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "أكاديمية نافذة اللغة العربية التعليمية | محمد ناصر",
         "twitterDescription": "منصة تعليم أونلاين مبنية على WordPress وWooCommerce لتعليم العربية والقرآن والدراسات الإسلامية، مع الدورات والخطط والتسجيل والمحتوى والدفع.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3676,7 +3676,7 @@
         "value": "موقع شركة لأركاديا الرقمية يعرض الخدمات والمحتوى ومسارات التواصل وإشارات الثقة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "أركاديا الرقمية للحلول | محمد ناصر",
         "ogDescription": "موقع شركة لأركاديا الرقمية يعرض الخدمات والمحتوى ومسارات التواصل وإشارات الثقة.",
@@ -3685,7 +3685,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "أركاديا الرقمية للحلول | محمد ناصر",
         "twitterDescription": "موقع شركة لأركاديا الرقمية يعرض الخدمات والمحتوى ومسارات التواصل وإشارات الثقة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3746,7 +3746,7 @@
         "value": "موقع بورتفوليو إبداعي لـ Armadillo Studio يعرض الأعمال المختارة والعملاء ودراسات الحالة من خلال تجربة بصرية قوية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/armadillo-studio/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة Armadillo Studio الإبداعية | محمد ناصر",
         "ogDescription": "موقع بورتفوليو إبداعي لـ Armadillo Studio يعرض الأعمال المختارة والعملاء ودراسات الحالة من خلال تجربة بصرية قوية.",
@@ -3755,7 +3755,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة Armadillo Studio الإبداعية | محمد ناصر",
         "twitterDescription": "موقع بورتفوليو إبداعي لـ Armadillo Studio يعرض الأعمال المختارة والعملاء ودراسات الحالة من خلال تجربة بصرية قوية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/armadillo-studio/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3816,7 +3816,7 @@
         "value": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجموعة أشهلان القابضة Ashhalan | محمد ناصر",
         "ogDescription": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
@@ -3825,7 +3825,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجموعة أشهلان القابضة Ashhalan | محمد ناصر",
         "twitterDescription": "منصة رقمية موحدة لمجموعة أشهلان القابضة لعرض أعمالها المتنوعة وهيكلها التنظيمي وبناء الثقة لدى المستثمرين والعملاء.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -3886,7 +3886,7 @@
         "value": "منصة مخصصة بالكامل لتأجير السيارات والحجز لأشهلان في السعودية، تشمل تصفح الأسطول، وفلاتر الحجز حسب موقع الاستلام، وصفحات السيارات، والإضافات، وإكمال الحجز، وحاسبة التمويل، وتجربة عربية وإنجليزية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة أشهلان لتأجير السيارات | محمد ناصر",
         "ogDescription": "منصة مخصصة بالكامل لتأجير السيارات والحجز لأشهلان في السعودية، تشمل تصفح الأسطول، وفلاتر الحجز حسب موقع الاستلام، وصفحات السيارات، والإضافات، وإكمال الحجز، وحاسبة التمويل، وتجربة عربية وإنجليزية.",
@@ -3895,7 +3895,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة أشهلان لتأجير السيارات | محمد ناصر",
         "twitterDescription": "منصة مخصصة بالكامل لتأجير السيارات والحجز لأشهلان في السعودية، تشمل تصفح الأسطول، وفلاتر الحجز حسب موقع الاستلام، وصفحات السيارات، والإضافات، وإكمال الحجز، وحاسبة التمويل، وتجربة عربية وإنجليزية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4104,7 +4104,7 @@
         "value": "موقع شركة يعرض الصفحة الرئيسية والتعريف بالشركة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/asia-eg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع آسيا مصر | محمد ناصر",
         "ogDescription": "موقع شركة يعرض الصفحة الرئيسية والتعريف بالشركة.",
@@ -4113,7 +4113,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع آسيا مصر | محمد ناصر",
         "twitterDescription": "موقع شركة يعرض الصفحة الرئيسية والتعريف بالشركة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/asia-eg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4249,7 +4249,7 @@
         "value": "موقع معرض سيارات يضم الرئيسية والتعريف والصيانة والنسخة العربية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "معرض بسالم للسيارات | محمد ناصر",
         "ogDescription": "موقع معرض سيارات يضم الرئيسية والتعريف والصيانة والنسخة العربية.",
@@ -4258,7 +4258,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "معرض بسالم للسيارات | محمد ناصر",
         "twitterDescription": "موقع معرض سيارات يضم الرئيسية والتعريف والصيانة والنسخة العربية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4319,7 +4319,7 @@
         "value": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر زجاجات المياه بوتيلا Botella | محمد ناصر",
         "ogDescription": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
@@ -4328,7 +4328,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر زجاجات المياه بوتيلا Botella | محمد ناصر",
         "twitterDescription": "متجر تسوق مباشر للمستهلكين (DTC) يتميز بتصميمه العصري لتقديم منتجات زجاجات المياه الرياضية الأنيقة وحلول الشراء السريعة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4389,7 +4389,7 @@
         "value": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "نظام CRM لإدارة الطلبات | محمد ناصر",
         "ogDescription": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
@@ -4398,7 +4398,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "نظام CRM لإدارة الطلبات | محمد ناصر",
         "twitterDescription": "نظام CRM متكامل لإدارة الطلبات والعملاء، يتضمن لوحة تحكم تحليلية، إدارة الطلبات، العملاء، المستخدمين، الأدوار، الصلاحيات، الإعدادات، الجداول الديناميكية، حالات الدفع والشحن والمرتجعات، أسباب التأخير والإلغاء، ومزامنة الطلبات مع ووكومرس من خلال Webhooks.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4462,7 +4462,7 @@
         "value": "منصة ثقافية ومجتمعية تضم التسجيل والمعرض وصفحات الفعاليات.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة الديوانية الثقافية | محمد ناصر",
         "ogDescription": "منصة ثقافية ومجتمعية تضم التسجيل والمعرض وصفحات الفعاليات.",
@@ -4471,7 +4471,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة الديوانية الثقافية | محمد ناصر",
         "twitterDescription": "منصة ثقافية ومجتمعية تضم التسجيل والمعرض وصفحات الفعاليات.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4679,7 +4679,7 @@
         "value": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "ايفنت جيفت السعودية — واجهة المتجر | محمد ناصر",
         "ogDescription": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
@@ -4688,7 +4688,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "ايفنت جيفت السعودية — واجهة المتجر | محمد ناصر",
         "twitterDescription": "الواجهة المخصصة لسوق السعودية لمنصة ايفنت جيفت، توفر هدايا للفرق وخيارات هدايا مستدامة وميزات مخصصة لإدارة الحسابات في السوق السعودي.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4901,7 +4901,7 @@
         "value": "متجر WooCommerce يضم الرئيسية والمتجر والمنتج والدفع والتعريف والتواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر فاست شوبينج 24 | محمد ناصر",
         "ogDescription": "متجر WooCommerce يضم الرئيسية والمتجر والمنتج والدفع والتعريف والتواصل.",
@@ -4910,7 +4910,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر فاست شوبينج 24 | محمد ناصر",
         "twitterDescription": "متجر WooCommerce يضم الرئيسية والمتجر والمنتج والدفع والتعريف والتواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -4971,7 +4971,7 @@
         "value": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجموعة الجنيدي للمقاولات Genedy Group | محمد ناصر",
         "ogDescription": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
@@ -4980,7 +4980,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجموعة الجنيدي للمقاولات Genedy Group | محمد ناصر",
         "twitterDescription": "منصة رقمية لشركة مقاولات وإنشاءات رائدة لعرض مشاريعها الضخمة، وهيكلها التنظيمي، وبناء الثقة في قطاع البناء.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5262,7 +5262,7 @@
         "value": "موقع سياحة وسفر يعرض البرامج والخدمات والمقالات ومسارات التواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "جولي للسياحة والسفر | محمد ناصر",
         "ogDescription": "موقع سياحة وسفر يعرض البرامج والخدمات والمقالات ومسارات التواصل.",
@@ -5271,7 +5271,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "جولي للسياحة والسفر | محمد ناصر",
         "twitterDescription": "موقع سياحة وسفر يعرض البرامج والخدمات والمقالات ومسارات التواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5332,7 +5332,7 @@
         "value": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "منصة كويت آرك للصناعات الحديدية Kuwait Arc | محمد ناصر",
         "ogDescription": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
@@ -5341,7 +5341,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "منصة كويت آرك للصناعات الحديدية Kuwait Arc | محمد ناصر",
         "twitterDescription": "بوابة رقمية تعريفية لمصنع كويت آرك الرائد في تشكيل الحديد والألومنيوم والستانلس ستيل، تستعرض سوابق أعماله وخبراته الممتدة لعقود.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5402,7 +5402,7 @@
         "value": "موقع شركة مصاعد يعرض الخدمات والأعمال والتعريف بالشركة وصفحات التواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "الشركة الهندسية للمصاعد | محمد ناصر",
         "ogDescription": "موقع شركة مصاعد يعرض الخدمات والأعمال والتعريف بالشركة وصفحات التواصل.",
@@ -5411,7 +5411,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "الشركة الهندسية للمصاعد | محمد ناصر",
         "twitterDescription": "موقع شركة مصاعد يعرض الخدمات والأعمال والتعريف بالشركة وصفحات التواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5688,7 +5688,7 @@
         "value": "موقع خدمات قانونية يعرض مجالات العمل والتعريف بالمكتب والخدمات.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع مشورة للمحاماة | محمد ناصر",
         "ogDescription": "موقع خدمات قانونية يعرض مجالات العمل والتعريف بالمكتب والخدمات.",
@@ -5697,7 +5697,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع مشورة للمحاماة | محمد ناصر",
         "twitterDescription": "موقع خدمات قانونية يعرض مجالات العمل والتعريف بالمكتب والخدمات.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5758,7 +5758,7 @@
         "value": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "ميديا أند مور هاوس أوف سوفتوير Media & More | محمد ناصر",
         "ogDescription": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
@@ -5767,7 +5767,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "ميديا أند مور هاوس أوف سوفتوير Media & More | محمد ناصر",
         "twitterDescription": "موقع رسمي لشركة Media & More المتخصصة في تطوير البرمجيات وحلول الأعمال، ويعرض خدمات تصميم وتطوير المواقع، أنظمة ERP وCRM، التجارة الإلكترونية، تطبيقات الموبايل، الاستضافة، وحلول التسويق الرقمي للشركات والعلامات التجارية.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5828,7 +5828,7 @@
         "value": "موقع شركة هندسية يعرض الخدمات والمشاريع والمدونة ومعلومات الشركة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع مشاري العلي الهندسي | محمد ناصر",
         "ogDescription": "موقع شركة هندسية يعرض الخدمات والمشاريع والمدونة ومعلومات الشركة.",
@@ -5837,7 +5837,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع مشاري العلي الهندسي | محمد ناصر",
         "twitterDescription": "موقع شركة هندسية يعرض الخدمات والمشاريع والمدونة ومعلومات الشركة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5898,7 +5898,7 @@
         "value": "متجر WooCommerce للعود والعطور يضم المتجر والمنتج والسلة والدفع والتواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر مشاري للعود | محمد ناصر",
         "ogDescription": "متجر WooCommerce للعود والعطور يضم المتجر والمنتج والسلة والدفع والتواصل.",
@@ -5907,7 +5907,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر مشاري للعود | محمد ناصر",
         "twitterDescription": "متجر WooCommerce للعود والعطور يضم المتجر والمنتج والسلة والدفع والتواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -5968,7 +5968,7 @@
         "value": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "مجوهرات نورا 24 الفاخرة Nora 24 | محمد ناصر",
         "ogDescription": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
@@ -5977,7 +5977,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "مجوهرات نورا 24 الفاخرة Nora 24 | محمد ناصر",
         "twitterDescription": "متجر إلكتروني راقٍ لعلامة مجوهرات فاخرة يعتمد على العرض البصري الجذاب والتصفح السلس للقطع الفنية النادرة وسهولة الطلب.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6108,7 +6108,7 @@
         "value": "موقع شركة تم عرضه كلقطة صفحة كاملة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/omnas/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع اومناس | محمد ناصر",
         "ogDescription": "موقع شركة تم عرضه كلقطة صفحة كاملة.",
@@ -6117,7 +6117,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع اومناس | محمد ناصر",
         "twitterDescription": "موقع شركة تم عرضه كلقطة صفحة كاملة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/omnas/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6178,7 +6178,7 @@
         "value": "متجر WooCommerce يعرض المنتجات وصفحات المتجر وتجربة شراء واضحة ومنظمة.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر أوريجينالز هب WooCommerce | محمد ناصر",
         "ogDescription": "متجر WooCommerce يعرض المنتجات وصفحات المتجر وتجربة شراء واضحة ومنظمة.",
@@ -6187,7 +6187,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر أوريجينالز هب WooCommerce | محمد ناصر",
         "twitterDescription": "متجر WooCommerce يعرض المنتجات وصفحات المتجر وتجربة شراء واضحة ومنظمة.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6402,7 +6402,7 @@
         "value": "موقع شركة لمنتجات الأبواب والشبابيك والشيش وسلك الناموس وأنظمة الزجاج.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/prowindow/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع برو ويندو مصر | محمد ناصر",
         "ogDescription": "موقع شركة لمنتجات الأبواب والشبابيك والشيش وسلك الناموس وأنظمة الزجاج.",
@@ -6411,7 +6411,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع برو ويندو مصر | محمد ناصر",
         "twitterDescription": "موقع شركة لمنتجات الأبواب والشبابيك والشيش وسلك الناموس وأنظمة الزجاج.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/prowindow/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6555,7 +6555,7 @@
         "value": "موقع طبي يعرض الرئيسية والتعريف والتحاليل والمتابعة والتواصل والمحتوى.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/taha-ramadan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع دكتور طه رمضان | محمد ناصر",
         "ogDescription": "موقع طبي يعرض الرئيسية والتعريف والتحاليل والمتابعة والتواصل والمحتوى.",
@@ -6564,7 +6564,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع دكتور طه رمضان | محمد ناصر",
         "twitterDescription": "موقع طبي يعرض الرئيسية والتعريف والتحاليل والمتابعة والتواصل والمحتوى.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/taha-ramadan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6625,7 +6625,7 @@
         "value": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "وكالة تي بي للحلول الرقمية TB Innovation | محمد ناصر",
         "ogDescription": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
@@ -6634,7 +6634,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "وكالة تي بي للحلول الرقمية TB Innovation | محمد ناصر",
         "twitterDescription": "بوابة رقمية تعرض خدمات التحول الرقمي والتطوير التقني وحلول الأعمال الذكية التي تقدمها وكالة TB Innovation.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6765,7 +6765,7 @@
         "value": "موقع شركة تعبئة وتغليف يعرض المنتجات والخدمات والفيديوهات والتواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/top-pack/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع توب باك سيستمز | محمد ناصر",
         "ogDescription": "موقع شركة تعبئة وتغليف يعرض المنتجات والخدمات والفيديوهات والتواصل.",
@@ -6774,7 +6774,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع توب باك سيستمز | محمد ناصر",
         "twitterDescription": "موقع شركة تعبئة وتغليف يعرض المنتجات والخدمات والفيديوهات والتواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/top-pack/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6835,7 +6835,7 @@
         "value": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "متجر تراثيات الإلكتروني | محمد ناصر",
         "ogDescription": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
@@ -6844,7 +6844,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "متجر تراثيات الإلكتروني | محمد ناصر",
         "twitterDescription": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6905,7 +6905,7 @@
         "value": "موقع طبي وتجاري يضم الرئيسية والمنتجات والمتجر والشركاء والأسئلة والتواصل.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/zeta-medicine/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "موقع زيتا ميديسن | محمد ناصر",
         "ogDescription": "موقع طبي وتجاري يضم الرئيسية والمنتجات والمتجر والشركاء والأسئلة والتواصل.",
@@ -6914,7 +6914,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "موقع زيتا ميديسن | محمد ناصر",
         "twitterDescription": "موقع طبي وتجاري يضم الرئيسية والمنتجات والمتجر والشركاء والأسئلة والتواصل.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/zeta-medicine/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -6975,7 +6975,7 @@
         "value": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "A2M Digital Marketing Agency | Backend Systems | Muhammed Nasser",
         "ogDescription": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
@@ -6984,7 +6984,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "A2M Digital Marketing Agency | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7013,8 +7013,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 12,
+        "labeledButtons": 12,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7045,7 +7045,7 @@
         "value": "A professional Islamic online academy for Arabic, Quran, and Islamic studies, featuring structured course discovery and high-authority education services.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Arabic Window Academy | Backend Systems | Muhammed Nasser",
         "ogDescription": "A professional Islamic online academy for Arabic, Quran, and Islamic studies, featuring structured course discovery and high-authority education services.",
@@ -7054,7 +7054,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Arabic Window Academy | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A professional Islamic online academy for Arabic, Quran, and Islamic studies, featuring structured course discovery and high-authority education services.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7083,8 +7083,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7115,7 +7115,7 @@
         "value": "A robust service platform for Arcadia Digital, showcasing a comprehensive suite of digital marketing, advertising, and branding solutions.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Arcadia Digital Solutions | Backend Systems | Muhammed Nasser",
         "ogDescription": "A robust service platform for Arcadia Digital, showcasing a comprehensive suite of digital marketing, advertising, and branding solutions.",
@@ -7124,7 +7124,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Arcadia Digital Solutions | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A robust service platform for Arcadia Digital, showcasing a comprehensive suite of digital marketing, advertising, and branding solutions.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7153,8 +7153,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7185,7 +7185,7 @@
         "value": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Ashhalan Group Corporate Brand Platform | Backend Systems | Muhammed Nasser",
         "ogDescription": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
@@ -7194,7 +7194,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Ashhalan Group Corporate Brand Platform | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7223,8 +7223,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 15,
+        "labeledButtons": 15,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7255,7 +7255,7 @@
         "value": "A comprehensive mobility platform for vehicle rentals, featuring high-volume fleet browsing, structured rental plan selection, and localized booking flows.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Ashhalan Car Rental Platform | Backend Systems | Muhammed Nasser",
         "ogDescription": "A comprehensive mobility platform for vehicle rentals, featuring high-volume fleet browsing, structured rental plan selection, and localized booking flows.",
@@ -7264,7 +7264,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Ashhalan Car Rental Platform | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A comprehensive mobility platform for vehicle rentals, featuring high-volume fleet browsing, structured rental plan selection, and localized booking flows.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7293,8 +7293,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7363,8 +7363,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 9,
+        "labeledButtons": 9,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7433,8 +7433,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 10,
+        "labeledButtons": 10,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7539,7 +7539,7 @@
         "value": "A high-authority digital showroom for Baslim Auto (بسالم للسيارات), engineered for streamlined vehicle discovery and lead acquisition.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Baslim Auto Showroom | Backend Systems | Muhammed Nasser",
         "ogDescription": "A high-authority digital showroom for Baslim Auto (بسالم للسيارات), engineered for streamlined vehicle discovery and lead acquisition.",
@@ -7548,7 +7548,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Baslim Auto Showroom | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A high-authority digital showroom for Baslim Auto (بسالم للسيارات), engineered for streamlined vehicle discovery and lead acquisition.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7577,8 +7577,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7609,7 +7609,7 @@
         "value": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Botella Water Bottles Store | Backend Systems | Muhammed Nasser",
         "ogDescription": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
@@ -7618,7 +7618,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Botella Water Bottles Store | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7647,8 +7647,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 26,
+        "labeledButtons": 26,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7679,7 +7679,7 @@
         "value": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "CRM Order Management System | Backend Systems | Muhammed Nasser",
         "ogDescription": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
@@ -7688,7 +7688,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "CRM Order Management System | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7757,7 +7757,7 @@
         "value": "A refined digital showcase for Diwaniya Al-Arbe'a, focusing on community engagement, cultural storytelling, and session documentation.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Diwaniya Cultural Platform | Backend Systems | Muhammed Nasser",
         "ogDescription": "A refined digital showcase for Diwaniya Al-Arbe'a, focusing on community engagement, cultural storytelling, and session documentation.",
@@ -7766,7 +7766,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Diwaniya Cultural Platform | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A refined digital showcase for Diwaniya Al-Arbe'a, focusing on community engagement, cultural storytelling, and session documentation.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -7795,8 +7795,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7940,8 +7940,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 21,
+        "labeledButtons": 21,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -7972,7 +7972,7 @@
         "value": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "EventGift Saudi Arabia — Storefront Case Study | Backend Systems | Muhammed Nasser",
         "ogDescription": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
@@ -7981,7 +7981,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "EventGift Saudi Arabia — Storefront Case Study | Backend Systems | Muhammed Nasser",
         "twitterDescription": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8011,8 +8011,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 20,
+        "labeledButtons": 20,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8082,8 +8082,8 @@
           "missingAlt": 0
         },
         "links": 18,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 15,
+        "labeledButtons": 15,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8114,7 +8114,7 @@
         "value": "A high-performance WooCommerce platform for Fast Shopping, optimized for rapid product discovery and dynamic cart conversions.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Fast Shopping E-Commerce | Backend Systems | Muhammed Nasser",
         "ogDescription": "A high-performance WooCommerce platform for Fast Shopping, optimized for rapid product discovery and dynamic cart conversions.",
@@ -8123,7 +8123,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Fast Shopping E-Commerce | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A high-performance WooCommerce platform for Fast Shopping, optimized for rapid product discovery and dynamic cart conversions.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8152,8 +8152,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8184,7 +8184,7 @@
         "value": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Genedy Group Construction Platform | Backend Systems | Muhammed Nasser",
         "ogDescription": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
@@ -8193,7 +8193,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Genedy Group Construction Platform | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8222,8 +8222,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8292,8 +8292,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 14,
+        "labeledButtons": 14,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8472,7 +8472,7 @@
         "value": "A creative and professional digital platform for Juli Tourism Company, featuring innovative travel service architectures and seamless engagement flows.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Juli for Tourism & Travel | Backend Systems | Muhammed Nasser",
         "ogDescription": "A creative and professional digital platform for Juli Tourism Company, featuring innovative travel service architectures and seamless engagement flows.",
@@ -8481,7 +8481,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Juli for Tourism & Travel | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A creative and professional digital platform for Juli Tourism Company, featuring innovative travel service architectures and seamless engagement flows.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8510,8 +8510,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8542,7 +8542,7 @@
         "value": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Kuwait Arc Industrial Platform | Backend Systems | Muhammed Nasser",
         "ogDescription": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
@@ -8551,7 +8551,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Kuwait Arc Industrial Platform | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8580,8 +8580,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8612,7 +8612,7 @@
         "value": "A robust and authoritative digital presence for LEC, a leading elevator company, showcasing their engineering capabilities and product lines.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "LEC Elevator Company | Backend Systems | Muhammed Nasser",
         "ogDescription": "A robust and authoritative digital presence for LEC, a leading elevator company, showcasing their engineering capabilities and product lines.",
@@ -8621,7 +8621,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "LEC Elevator Company | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A robust and authoritative digital presence for LEC, a leading elevator company, showcasing their engineering capabilities and product lines.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8650,8 +8650,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8720,8 +8720,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8790,8 +8790,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8822,7 +8822,7 @@
         "value": "A professional service platform for business consultation and strategic planning, focusing on expertise presentation and client engagement.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Mashora Business Consultation | Backend Systems | Muhammed Nasser",
         "ogDescription": "A professional service platform for business consultation and strategic planning, focusing on expertise presentation and client engagement.",
@@ -8831,7 +8831,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Mashora Business Consultation | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A professional service platform for business consultation and strategic planning, focusing on expertise presentation and client engagement.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8860,8 +8860,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8892,7 +8892,7 @@
         "value": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Media & More House of Software | Backend Systems | Muhammed Nasser",
         "ogDescription": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
@@ -8901,7 +8901,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Media & More House of Software | Backend Systems | Muhammed Nasser",
         "twitterDescription": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -8930,8 +8930,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 10,
+        "labeledButtons": 10,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -8962,7 +8962,7 @@
         "value": "A high-authority digital presence for Meshari Al-Ali Engineering Consulting Office, showcasing specialized architectural and engineering expertise.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Meshari Al-Ali Engineering Consulting | Backend Systems | Muhammed Nasser",
         "ogDescription": "A high-authority digital presence for Meshari Al-Ali Engineering Consulting Office, showcasing specialized architectural and engineering expertise.",
@@ -8971,7 +8971,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Meshari Al-Ali Engineering Consulting | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A high-authority digital presence for Meshari Al-Ali Engineering Consulting Office, showcasing specialized architectural and engineering expertise.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -9000,8 +9000,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9032,7 +9032,7 @@
         "value": "An elegant e-commerce experience for Mishari Oud, designed to reflect the luxury and heritage of premium fragrances and incense.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Mishari Oud Store | Backend Systems | Muhammed Nasser",
         "ogDescription": "An elegant e-commerce experience for Mishari Oud, designed to reflect the luxury and heritage of premium fragrances and incense.",
@@ -9041,7 +9041,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Mishari Oud Store | Backend Systems | Muhammed Nasser",
         "twitterDescription": "An elegant e-commerce experience for Mishari Oud, designed to reflect the luxury and heritage of premium fragrances and incense.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -9070,8 +9070,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9102,7 +9102,7 @@
         "value": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Nora 24 Luxury Jewelry | Backend Systems | Muhammed Nasser",
         "ogDescription": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
@@ -9111,7 +9111,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Nora 24 Luxury Jewelry | Backend Systems | Muhammed Nasser",
         "twitterDescription": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -9140,8 +9140,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 9,
+        "labeledButtons": 9,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9210,8 +9210,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 26,
+        "labeledButtons": 26,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9242,7 +9242,7 @@
         "value": "A high-performance WooCommerce storefront designed for seamless product discovery, featuring custom collection grids and a refined shopping experience.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Originals Hub WooCommerce Store | Backend Systems | Muhammed Nasser",
         "ogDescription": "A high-performance WooCommerce storefront designed for seamless product discovery, featuring custom collection grids and a refined shopping experience.",
@@ -9251,7 +9251,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Originals Hub WooCommerce Store | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A high-performance WooCommerce storefront designed for seamless product discovery, featuring custom collection grids and a refined shopping experience.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -9280,8 +9280,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 4,
+        "labeledButtons": 4,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9385,7 +9385,7 @@
         "value": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "TB Innovation Tech Agency | Backend Systems | Muhammed Nasser",
         "ogDescription": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
@@ -9394,7 +9394,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "TB Innovation Tech Agency | Backend Systems | Muhammed Nasser",
         "twitterDescription": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -9423,8 +9423,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 12,
+        "labeledButtons": 12,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9493,8 +9493,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9812,8 +9812,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 5,
+        "labeledButtons": 5,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9882,8 +9882,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 6,
+        "labeledButtons": 6,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -9953,8 +9953,8 @@
           "missingAlt": 0
         },
         "links": 19,
-        "buttons": 2,
-        "labeledButtons": 2,
+        "buttons": 7,
+        "labeledButtons": 7,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -10061,7 +10061,7 @@
         "value": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "A2M Digital Marketing Agency | Muhammed Nasser",
         "ogDescription": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
@@ -10070,7 +10070,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "A2M Digital Marketing Agency | Muhammed Nasser",
         "twitterDescription": "A digital marketing agency platform focusing on service comprehensiveness, digital presence, and high-performance campaign management.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/a2mkw/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10201,7 +10201,7 @@
         "value": "An industrial packaging website with homepage, categories, machine, about, and contact pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/alrowad/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Alrowad Packs Website | Muhammed Nasser",
         "ogDescription": "An industrial packaging website with homepage, categories, machine, about, and contact pages.",
@@ -10210,7 +10210,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Alrowad Packs Website | Muhammed Nasser",
         "twitterDescription": "An industrial packaging website with homepage, categories, machine, about, and contact pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/alrowad/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10271,7 +10271,7 @@
         "value": "A WordPress and WooCommerce online academy for Arabic, Quran, and Islamic studies, with course discovery, plans, registration, educational resources, and checkout.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Arabic Window Academy | Muhammed Nasser",
         "ogDescription": "A WordPress and WooCommerce online academy for Arabic, Quran, and Islamic studies, with course discovery, plans, registration, educational resources, and checkout.",
@@ -10280,7 +10280,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Arabic Window Academy | Muhammed Nasser",
         "twitterDescription": "A WordPress and WooCommerce online academy for Arabic, Quran, and Islamic studies, with course discovery, plans, registration, educational resources, and checkout.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arabic-window/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10350,7 +10350,7 @@
         "value": "A corporate service website for Arcadia Digital, presenting services, content, contact paths, and brand trust.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Arcadia Digital Solutions | Muhammed Nasser",
         "ogDescription": "A corporate service website for Arcadia Digital, presenting services, content, contact paths, and brand trust.",
@@ -10359,7 +10359,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Arcadia Digital Solutions | Muhammed Nasser",
         "twitterDescription": "A corporate service website for Arcadia Digital, presenting services, content, contact paths, and brand trust.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/arcadia-digital/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10420,7 +10420,7 @@
         "value": "A creative portfolio website for Armadillo Studio, showcasing featured agency work, clients, and project storytelling through a bold visual layout.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/armadillo-studio/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Armadillo Studio Creative Portfolio Platform | Muhammed Nasser",
         "ogDescription": "A creative portfolio website for Armadillo Studio, showcasing featured agency work, clients, and project storytelling through a bold visual layout.",
@@ -10429,7 +10429,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Armadillo Studio Creative Portfolio Platform | Muhammed Nasser",
         "twitterDescription": "A creative portfolio website for Armadillo Studio, showcasing featured agency work, clients, and project storytelling through a bold visual layout.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/armadillo-studio/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10490,7 +10490,7 @@
         "value": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Ashhalan Group Corporate Brand Platform | Muhammed Nasser",
         "ogDescription": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
@@ -10499,7 +10499,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Ashhalan Group Corporate Brand Platform | Muhammed Nasser",
         "twitterDescription": "A corporate group platform built to present a diversified business portfolio with clearer structure, stronger trust signals, and subsidiary visibility.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10560,7 +10560,7 @@
         "value": "A fully custom car rental and booking platform for Ashhalan in Saudi Arabia, featuring fleet browsing, pickup-based booking filters, car detail pages, add-ons, booking completion, a finance calculator, and bilingual Arabic/English UX.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Ashhalan Car Rental Platform | Muhammed Nasser",
         "ogDescription": "A fully custom car rental and booking platform for Ashhalan in Saudi Arabia, featuring fleet browsing, pickup-based booking filters, car detail pages, add-ons, booking completion, a finance calculator, and bilingual Arabic/English UX.",
@@ -10569,7 +10569,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Ashhalan Car Rental Platform | Muhammed Nasser",
         "twitterDescription": "A fully custom car rental and booking platform for Ashhalan in Saudi Arabia, featuring fleet browsing, pickup-based booking filters, car detail pages, add-ons, booking completion, a finance calculator, and bilingual Arabic/English UX.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/ashhalancarrental/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10778,7 +10778,7 @@
         "value": "A corporate website with homepage and about-company presentation.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/asia-eg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Asia Egypt Website | Muhammed Nasser",
         "ogDescription": "A corporate website with homepage and about-company presentation.",
@@ -10787,7 +10787,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Asia Egypt Website | Muhammed Nasser",
         "twitterDescription": "A corporate website with homepage and about-company presentation.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/asia-eg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10923,7 +10923,7 @@
         "value": "An automotive showroom website with home, about, maintenance, and Arabic landing pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Basalim Auto Showroom | Muhammed Nasser",
         "ogDescription": "An automotive showroom website with home, about, maintenance, and Arabic landing pages.",
@@ -10932,7 +10932,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Basalim Auto Showroom | Muhammed Nasser",
         "twitterDescription": "An automotive showroom website with home, about, maintenance, and Arabic landing pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/baslim-auto/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -10993,7 +10993,7 @@
         "value": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Botella Water Bottles Store | Muhammed Nasser",
         "ogDescription": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
@@ -11002,7 +11002,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Botella Water Bottles Store | Muhammed Nasser",
         "twitterDescription": "A brand-led drinkware storefront built around product collections, variant-rich shopping, and a cleaner direct-to-consumer browsing experience.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/botella/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11063,7 +11063,7 @@
         "value": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "CRM Order Management System | Muhammed Nasser",
         "ogDescription": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
@@ -11072,7 +11072,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "CRM Order Management System | Muhammed Nasser",
         "twitterDescription": "A full CRM and order management dashboard built for managing customer orders, customers, payment statuses, shipment statuses, returns, delays, follow-ups, dynamic lookup tables, user roles, permissions, and WooCommerce webhook integration from one centralized Arabic RTL dashboard.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/crm-order-management-system/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11136,7 +11136,7 @@
         "value": "A community and cultural platform with registration, gallery, and event-focused pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Diwaniya Cultural Platform | Muhammed Nasser",
         "ogDescription": "A community and cultural platform with registration, gallery, and event-focused pages.",
@@ -11145,7 +11145,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Diwaniya Cultural Platform | Muhammed Nasser",
         "twitterDescription": "A community and cultural platform with registration, gallery, and event-focused pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/diwaniya/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11353,7 +11353,7 @@
         "value": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "EventGift Saudi Arabia — Storefront Case Study | Muhammed Nasser",
         "ogDescription": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
@@ -11362,7 +11362,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "EventGift Saudi Arabia — Storefront Case Study | Muhammed Nasser",
         "twitterDescription": "The tailored Saudi Arabian storefront for EventGift, bringing team gifts, sustainable options, and dedicated account management features to the Saudi market.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/eventgift-saudi/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11575,7 +11575,7 @@
         "value": "A WooCommerce shopping website with home, shop, product, checkout, about, and contact pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Fast Shopping 24 Store | Muhammed Nasser",
         "ogDescription": "A WooCommerce shopping website with home, shop, product, checkout, about, and contact pages.",
@@ -11584,7 +11584,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Fast Shopping 24 Store | Muhammed Nasser",
         "twitterDescription": "A WooCommerce shopping website with home, shop, product, checkout, about, and contact pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/fast-shopping/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11645,7 +11645,7 @@
         "value": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Genedy Group Construction Platform | Muhammed Nasser",
         "ogDescription": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
@@ -11654,7 +11654,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Genedy Group Construction Platform | Muhammed Nasser",
         "twitterDescription": "A corporate profile structured to present large-scale construction sectors, landmark projects, and institutional trust.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/genedyeg/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -11936,7 +11936,7 @@
         "value": "A tourism website presenting travel packages, services, blog content, and contact paths.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Juli Tourism & Travel | Muhammed Nasser",
         "ogDescription": "A tourism website presenting travel packages, services, blog content, and contact paths.",
@@ -11945,7 +11945,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Juli Tourism & Travel | Muhammed Nasser",
         "twitterDescription": "A tourism website presenting travel packages, services, blog content, and contact paths.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/juli-tourism/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12006,7 +12006,7 @@
         "value": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Kuwait Arc Industrial Platform | Muhammed Nasser",
         "ogDescription": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
@@ -12015,7 +12015,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Kuwait Arc Industrial Platform | Muhammed Nasser",
         "twitterDescription": "A high-authority industrial platform for Kuwait Arc, showcasing over 50 years of excellence in stainless steel and aluminum fabrication.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/kuwait-arc/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12076,7 +12076,7 @@
         "value": "A corporate website for an elevator company with services, portfolio, company profile, and contact pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "LEC Elevators Company | Muhammed Nasser",
         "ogDescription": "A corporate website for an elevator company with services, portfolio, company profile, and contact pages.",
@@ -12085,7 +12085,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "LEC Elevators Company | Muhammed Nasser",
         "twitterDescription": "A corporate website for an elevator company with services, portfolio, company profile, and contact pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/lec-elevators/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12362,7 +12362,7 @@
         "value": "A legal services website presenting practice areas, about content, and service pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Mashourah Lawyer Website | Muhammed Nasser",
         "ogDescription": "A legal services website presenting practice areas, about content, and service pages.",
@@ -12371,7 +12371,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Mashourah Lawyer Website | Muhammed Nasser",
         "twitterDescription": "A legal services website presenting practice areas, about content, and service pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mashora/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12432,7 +12432,7 @@
         "value": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Media & More House of Software | Muhammed Nasser",
         "ogDescription": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
@@ -12441,7 +12441,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Media & More House of Software | Muhammed Nasser",
         "twitterDescription": "The official website for Media & More, specializing in software development and business solutions. It showcases services such as web design and development, ERP/CRM systems, e-commerce, mobile apps, hosting, and digital marketing solutions for brands and companies.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mediaandmore/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12502,7 +12502,7 @@
         "value": "An engineering company website presenting services, projects, blog content, and company information.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Meshari Alali Engineering Website | Muhammed Nasser",
         "ogDescription": "An engineering company website presenting services, projects, blog content, and company information.",
@@ -12511,7 +12511,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Meshari Alali Engineering Website | Muhammed Nasser",
         "twitterDescription": "An engineering company website presenting services, projects, blog content, and company information.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/meshari-alali/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12572,7 +12572,7 @@
         "value": "A WooCommerce store for oud and perfumes with shop, product, cart, checkout, and contact pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Mishari Oud Store | Muhammed Nasser",
         "ogDescription": "A WooCommerce store for oud and perfumes with shop, product, cart, checkout, and contact pages.",
@@ -12581,7 +12581,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Mishari Oud Store | Muhammed Nasser",
         "twitterDescription": "A WooCommerce store for oud and perfumes with shop, product, cart, checkout, and contact pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/mishari-oud/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12642,7 +12642,7 @@
         "value": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Nora 24 Luxury Jewelry | Muhammed Nasser",
         "ogDescription": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
@@ -12651,7 +12651,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Nora 24 Luxury Jewelry | Muhammed Nasser",
         "twitterDescription": "An elegant luxury storefront focusing on product collections, high-value visual merchandising, and seamless retail discovery.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/nora24jewelry/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12782,7 +12782,7 @@
         "value": "A corporate website captured as a full-page presentation.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/omnas/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Omnas Website | Muhammed Nasser",
         "ogDescription": "A corporate website captured as a full-page presentation.",
@@ -12791,7 +12791,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Omnas Website | Muhammed Nasser",
         "twitterDescription": "A corporate website captured as a full-page presentation.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/omnas/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -12852,7 +12852,7 @@
         "value": "A WooCommerce storefront focused on product discovery, store pages, and a polished shopping journey.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Originals Hub WooCommerce Store | Muhammed Nasser",
         "ogDescription": "A WooCommerce storefront focused on product discovery, store pages, and a polished shopping journey.",
@@ -12861,7 +12861,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Originals Hub WooCommerce Store | Muhammed Nasser",
         "twitterDescription": "A WooCommerce storefront focused on product discovery, store pages, and a polished shopping journey.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/originals-hub/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13076,7 +13076,7 @@
         "value": "A product-led company website for windows, doors, shutters, insect screens, and glass systems.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/prowindow/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Pro Window Egypt Website | Muhammed Nasser",
         "ogDescription": "A product-led company website for windows, doors, shutters, insect screens, and glass systems.",
@@ -13085,7 +13085,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Pro Window Egypt Website | Muhammed Nasser",
         "twitterDescription": "A product-led company website for windows, doors, shutters, insect screens, and glass systems.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/prowindow/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13229,7 +13229,7 @@
         "value": "A medical website presenting home, about, analysis, follow-up, contact, and content pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/taha-ramadan/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Dr Taha Ramadan Website | Muhammed Nasser",
         "ogDescription": "A medical website presenting home, about, analysis, follow-up, contact, and content pages.",
@@ -13238,7 +13238,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Dr Taha Ramadan Website | Muhammed Nasser",
         "twitterDescription": "A medical website presenting home, about, analysis, follow-up, contact, and content pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/taha-ramadan/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13299,7 +13299,7 @@
         "value": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "TB Innovation Tech Agency | Muhammed Nasser",
         "ogDescription": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
@@ -13308,7 +13308,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "TB Innovation Tech Agency | Muhammed Nasser",
         "twitterDescription": "A technology-focused agency platform prioritizing digital innovation, technical service methodologies, and innovation cases.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/tbinnovation/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13439,7 +13439,7 @@
         "value": "A packaging company website presenting products, services, videos, about content, and contact paths.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/top-pack/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Top Pack Systems Website | Muhammed Nasser",
         "ogDescription": "A packaging company website presenting products, services, videos, about content, and contact paths.",
@@ -13448,7 +13448,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Top Pack Systems Website | Muhammed Nasser",
         "twitterDescription": "A packaging company website presenting products, services, videos, about content, and contact paths.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/top-pack/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13509,7 +13509,7 @@
         "value": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Torathyat Heritage Storefront | Muhammed Nasser",
         "ogDescription": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
@@ -13518,7 +13518,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Torathyat Heritage Storefront | Muhammed Nasser",
         "twitterDescription": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1
@@ -13579,7 +13579,7 @@
         "value": "A medicine-focused website with home, products, shop, affiliate, FAQ, about, and contact pages.",
         "source": "static-html"
       },
-      "ogImage": "https://engmuhammednasser.github.io/profile.png",
+      "ogImage": "https://engmuhammednasser.github.io/projects/zeta-medicine/optimized/thumb-800.webp",
       "metadata": {
         "ogTitle": "Zeta Medicine Website | Muhammed Nasser",
         "ogDescription": "A medicine-focused website with home, products, shop, affiliate, FAQ, about, and contact pages.",
@@ -13588,7 +13588,7 @@
         "twitterCard": "summary_large_image",
         "twitterTitle": "Zeta Medicine Website | Muhammed Nasser",
         "twitterDescription": "A medicine-focused website with home, products, shop, affiliate, FAQ, about, and contact pages.",
-        "twitterImage": "https://engmuhammednasser.github.io/profile.png",
+        "twitterImage": "https://engmuhammednasser.github.io/projects/zeta-medicine/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
         "structuredDataCount": 1

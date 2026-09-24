@@ -184,10 +184,10 @@
       ],
       "thumbnail": {
         "original": "/projects/eventgift-saudi/homepage-full.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/eventgift-saudi/optimized/thumb-480.avif",
+        "avif800": "/projects/eventgift-saudi/optimized/thumb-800.avif",
+        "webp480": "/projects/eventgift-saudi/optimized/thumb-480.webp",
+        "webp800": "/projects/eventgift-saudi/optimized/thumb-800.webp",
         "width": 1920,
         "height": 8067,
         "aspectRatio": 0.238006693938267
@@ -224,10 +224,10 @@
       ],
       "thumbnail": {
         "original": "/projects/botella/02-home-page-en.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/botella/optimized/thumb-480.avif",
+        "avif800": "/projects/botella/optimized/thumb-800.avif",
+        "webp480": "/projects/botella/optimized/thumb-480.webp",
+        "webp800": "/projects/botella/optimized/thumb-800.webp",
         "width": 1920,
         "height": 10700,
         "aspectRatio": 0.17943925233644858
@@ -346,10 +346,10 @@
       ],
       "thumbnail": {
         "original": "/projects/ashhalan/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/ashhalan/optimized/thumb-480.avif",
+        "avif800": "/projects/ashhalan/optimized/thumb-800.avif",
+        "webp480": "/projects/ashhalan/optimized/thumb-480.webp",
+        "webp800": "/projects/ashhalan/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -426,10 +426,10 @@
       ],
       "thumbnail": {
         "original": "/projects/nora24jewelry/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/nora24jewelry/optimized/thumb-480.avif",
+        "avif800": "/projects/nora24jewelry/optimized/thumb-800.avif",
+        "webp480": "/projects/nora24jewelry/optimized/thumb-480.webp",
+        "webp800": "/projects/nora24jewelry/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -546,10 +546,10 @@
       ],
       "thumbnail": {
         "original": "/projects/genedyeg/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/genedyeg/optimized/thumb-480.avif",
+        "avif800": "/projects/genedyeg/optimized/thumb-800.avif",
+        "webp480": "/projects/genedyeg/optimized/thumb-480.webp",
+        "webp800": "/projects/genedyeg/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -586,10 +586,10 @@
       ],
       "thumbnail": {
         "original": "/projects/a2mkw/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/a2mkw/optimized/thumb-480.avif",
+        "avif800": "/projects/a2mkw/optimized/thumb-800.avif",
+        "webp480": "/projects/a2mkw/optimized/thumb-480.webp",
+        "webp800": "/projects/a2mkw/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -666,10 +666,10 @@
       ],
       "thumbnail": {
         "original": "/projects/tbinnovation/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/tbinnovation/optimized/thumb-480.avif",
+        "avif800": "/projects/tbinnovation/optimized/thumb-800.avif",
+        "webp480": "/projects/tbinnovation/optimized/thumb-480.webp",
+        "webp800": "/projects/tbinnovation/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -706,10 +706,10 @@
       ],
       "thumbnail": {
         "original": "/projects/mediaandmore/featured-image.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/mediaandmore/optimized/thumb-480.avif",
+        "avif800": "/projects/mediaandmore/optimized/thumb-800.avif",
+        "webp480": "/projects/mediaandmore/optimized/thumb-480.webp",
+        "webp800": "/projects/mediaandmore/optimized/thumb-800.webp",
         "width": 1200,
         "height": 900,
         "aspectRatio": 1.3333333333333333
@@ -826,10 +826,10 @@
       ],
       "thumbnail": {
         "original": "/projects/ashhalancarrental/home-en.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/ashhalancarrental/optimized/thumb-480.avif",
+        "avif800": "/projects/ashhalancarrental/optimized/thumb-800.avif",
+        "webp480": "/projects/ashhalancarrental/optimized/thumb-480.webp",
+        "webp800": "/projects/ashhalancarrental/optimized/thumb-800.webp",
         "width": 1440,
         "height": 4873,
         "aspectRatio": 0.2955058485532526
@@ -866,10 +866,10 @@
       ],
       "thumbnail": {
         "original": "/projects/arabic-window/full-page/01-home.jpg",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/arabic-window/optimized/thumb-480.avif",
+        "avif800": "/projects/arabic-window/optimized/thumb-800.avif",
+        "webp480": "/projects/arabic-window/optimized/thumb-480.webp",
+        "webp800": "/projects/arabic-window/optimized/thumb-800.webp",
         "width": 1440,
         "height": 9082,
         "aspectRatio": 0.15855538427659105
@@ -906,10 +906,10 @@
       ],
       "thumbnail": {
         "original": "/projects/kuwait-arc/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/kuwait-arc/optimized/thumb-480.avif",
+        "avif800": "/projects/kuwait-arc/optimized/thumb-800.avif",
+        "webp480": "/projects/kuwait-arc/optimized/thumb-480.webp",
+        "webp800": "/projects/kuwait-arc/optimized/thumb-800.webp",
         "width": 1440,
         "height": 900,
         "aspectRatio": 1.6
@@ -946,10 +946,10 @@
       ],
       "thumbnail": {
         "original": "/projects/torathyat/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/torathyat/optimized/thumb-480.avif",
+        "avif800": "/projects/torathyat/optimized/thumb-800.avif",
+        "webp480": "/projects/torathyat/optimized/thumb-480.webp",
+        "webp800": "/projects/torathyat/optimized/thumb-800.webp",
         "width": 1440,
         "height": 900,
         "aspectRatio": 1.6
@@ -986,10 +986,10 @@
       ],
       "thumbnail": {
         "original": "/projects/armadillo-studio/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/armadillo-studio/optimized/thumb-480.avif",
+        "avif800": "/projects/armadillo-studio/optimized/thumb-800.avif",
+        "webp480": "/projects/armadillo-studio/optimized/thumb-480.webp",
+        "webp800": "/projects/armadillo-studio/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1026,10 +1026,10 @@
       ],
       "thumbnail": {
         "original": "/projects/alrowad/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/alrowad/optimized/thumb-480.avif",
+        "avif800": "/projects/alrowad/optimized/thumb-800.avif",
+        "webp480": "/projects/alrowad/optimized/thumb-480.webp",
+        "webp800": "/projects/alrowad/optimized/thumb-800.webp",
         "width": 1920,
         "height": 5245,
         "aspectRatio": 0.36606291706387034
@@ -1066,10 +1066,10 @@
       ],
       "thumbnail": {
         "original": "/projects/crm-order-management/dashboard.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/crm-order-management-system/optimized/thumb-480.avif",
+        "avif800": "/projects/crm-order-management-system/optimized/thumb-800.avif",
+        "webp480": "/projects/crm-order-management-system/optimized/thumb-480.webp",
+        "webp800": "/projects/crm-order-management-system/optimized/thumb-800.webp",
         "width": 1920,
         "height": 3481,
         "aspectRatio": 0.5515656420568802
@@ -1146,10 +1146,10 @@
       ],
       "thumbnail": {
         "original": "/projects/originals-hub/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/originals-hub/optimized/thumb-480.avif",
+        "avif800": "/projects/originals-hub/optimized/thumb-800.avif",
+        "webp480": "/projects/originals-hub/optimized/thumb-480.webp",
+        "webp800": "/projects/originals-hub/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1186,10 +1186,10 @@
       ],
       "thumbnail": {
         "original": "/projects/arcadia-digital/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/arcadia-digital/optimized/thumb-480.avif",
+        "avif800": "/projects/arcadia-digital/optimized/thumb-800.avif",
+        "webp480": "/projects/arcadia-digital/optimized/thumb-480.webp",
+        "webp800": "/projects/arcadia-digital/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1226,10 +1226,10 @@
       ],
       "thumbnail": {
         "original": "/projects/diwaniya/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/diwaniya/optimized/thumb-480.avif",
+        "avif800": "/projects/diwaniya/optimized/thumb-800.avif",
+        "webp480": "/projects/diwaniya/optimized/thumb-480.webp",
+        "webp800": "/projects/diwaniya/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1306,10 +1306,10 @@
       ],
       "thumbnail": {
         "original": "/projects/meshari-alali/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/meshari-alali/optimized/thumb-480.avif",
+        "avif800": "/projects/meshari-alali/optimized/thumb-800.avif",
+        "webp480": "/projects/meshari-alali/optimized/thumb-480.webp",
+        "webp800": "/projects/meshari-alali/optimized/thumb-800.webp",
         "width": 1024,
         "height": 700,
         "aspectRatio": 1.4628571428571429
@@ -1386,10 +1386,10 @@
       ],
       "thumbnail": {
         "original": "/projects/juli-tourism/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/juli-tourism/optimized/thumb-480.avif",
+        "avif800": "/projects/juli-tourism/optimized/thumb-800.avif",
+        "webp480": "/projects/juli-tourism/optimized/thumb-480.webp",
+        "webp800": "/projects/juli-tourism/optimized/thumb-800.webp",
         "width": 1200,
         "height": 5321,
         "aspectRatio": 0.22552151851155797
@@ -1426,10 +1426,10 @@
       ],
       "thumbnail": {
         "original": "/projects/baslim-auto/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/baslim-auto/optimized/thumb-480.avif",
+        "avif800": "/projects/baslim-auto/optimized/thumb-800.avif",
+        "webp480": "/projects/baslim-auto/optimized/thumb-480.webp",
+        "webp800": "/projects/baslim-auto/optimized/thumb-800.webp",
         "width": 1200,
         "height": 3972,
         "aspectRatio": 0.3021148036253776
@@ -1466,10 +1466,10 @@
       ],
       "thumbnail": {
         "original": "/projects/fast-shopping/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/fast-shopping/optimized/thumb-480.avif",
+        "avif800": "/projects/fast-shopping/optimized/thumb-800.avif",
+        "webp480": "/projects/fast-shopping/optimized/thumb-480.webp",
+        "webp800": "/projects/fast-shopping/optimized/thumb-800.webp",
         "width": 1024,
         "height": 700,
         "aspectRatio": 1.4628571428571429
@@ -1506,10 +1506,10 @@
       ],
       "thumbnail": {
         "original": "/projects/mishari-oud/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/mishari-oud/optimized/thumb-480.avif",
+        "avif800": "/projects/mishari-oud/optimized/thumb-800.avif",
+        "webp480": "/projects/mishari-oud/optimized/thumb-480.webp",
+        "webp800": "/projects/mishari-oud/optimized/thumb-800.webp",
         "width": 1920,
         "height": 4872,
         "aspectRatio": 0.39408866995073893
@@ -1546,10 +1546,10 @@
       ],
       "thumbnail": {
         "original": "/projects/lec-elevators/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/lec-elevators/optimized/thumb-480.avif",
+        "avif800": "/projects/lec-elevators/optimized/thumb-800.avif",
+        "webp480": "/projects/lec-elevators/optimized/thumb-480.webp",
+        "webp800": "/projects/lec-elevators/optimized/thumb-800.webp",
         "width": 600,
         "height": 2781,
         "aspectRatio": 0.21574973031283712
@@ -1586,10 +1586,10 @@
       ],
       "thumbnail": {
         "original": "/projects/mashora/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/mashora/optimized/thumb-480.avif",
+        "avif800": "/projects/mashora/optimized/thumb-800.avif",
+        "webp480": "/projects/mashora/optimized/thumb-480.webp",
+        "webp800": "/projects/mashora/optimized/thumb-800.webp",
         "width": 1600,
         "height": 1200,
         "aspectRatio": 1.3333333333333333
@@ -1626,10 +1626,10 @@
       ],
       "thumbnail": {
         "original": "/projects/top-pack/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/top-pack/optimized/thumb-480.avif",
+        "avif800": "/projects/top-pack/optimized/thumb-800.avif",
+        "webp480": "/projects/top-pack/optimized/thumb-480.webp",
+        "webp800": "/projects/top-pack/optimized/thumb-800.webp",
         "width": 1600,
         "height": 4500,
         "aspectRatio": 0.35555555555555557
@@ -1666,10 +1666,10 @@
       ],
       "thumbnail": {
         "original": "/projects/omnas/cover.png",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/omnas/optimized/thumb-480.avif",
+        "avif800": "/projects/omnas/optimized/thumb-800.avif",
+        "webp480": "/projects/omnas/optimized/thumb-480.webp",
+        "webp800": "/projects/omnas/optimized/thumb-800.webp",
         "width": 600,
         "height": 2073,
         "aspectRatio": 0.2894356005788712
@@ -1706,10 +1706,10 @@
       ],
       "thumbnail": {
         "original": "/projects/prowindow/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/prowindow/optimized/thumb-480.avif",
+        "avif800": "/projects/prowindow/optimized/thumb-800.avif",
+        "webp480": "/projects/prowindow/optimized/thumb-480.webp",
+        "webp800": "/projects/prowindow/optimized/thumb-800.webp",
         "width": 1600,
         "height": 3358,
         "aspectRatio": 0.47647409172126265
@@ -1746,10 +1746,10 @@
       ],
       "thumbnail": {
         "original": "/projects/taha-ramadan/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/taha-ramadan/optimized/thumb-480.avif",
+        "avif800": "/projects/taha-ramadan/optimized/thumb-800.avif",
+        "webp480": "/projects/taha-ramadan/optimized/thumb-480.webp",
+        "webp800": "/projects/taha-ramadan/optimized/thumb-800.webp",
         "width": 1600,
         "height": 3643,
         "aspectRatio": 0.43919846280538016
@@ -1786,10 +1786,10 @@
       ],
       "thumbnail": {
         "original": "/projects/asia-eg/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/asia-eg/optimized/thumb-480.avif",
+        "avif800": "/projects/asia-eg/optimized/thumb-800.avif",
+        "webp480": "/projects/asia-eg/optimized/thumb-480.webp",
+        "webp800": "/projects/asia-eg/optimized/thumb-800.webp",
         "width": 1600,
         "height": 5645,
         "aspectRatio": 0.283436669619132
@@ -1826,10 +1826,10 @@
       ],
       "thumbnail": {
         "original": "/projects/zeta-medicine/cover.webp",
-        "avif480": null,
-        "avif800": null,
-        "webp480": null,
-        "webp800": null,
+        "avif480": "/projects/zeta-medicine/optimized/thumb-480.avif",
+        "avif800": "/projects/zeta-medicine/optimized/thumb-800.avif",
+        "webp480": "/projects/zeta-medicine/optimized/thumb-480.webp",
+        "webp800": "/projects/zeta-medicine/optimized/thumb-800.webp",
         "width": 1600,
         "height": 3383,
         "aspectRatio": 0.4729530002955956

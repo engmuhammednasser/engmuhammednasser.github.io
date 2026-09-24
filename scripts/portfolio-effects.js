@@ -267,7 +267,6 @@
       if (pointerLoop) pointerLoop.destroy();
       if (onPointerMove) window.removeEventListener("pointermove", onPointerMove);
       ambient.remove();
-      document.body.classList.remove("portfolio-polished");
       document.body.classList.remove("portfolio-page-hidden");
       globalMoodElement = null;
       globalMoodPointerEnabled = false;
@@ -535,7 +534,6 @@
     var cleanupGrainient = mountGrainient(hero);
     activeCleanup = function () {
       cleanupGrainient();
-      hero.classList.remove("portfolio-hero-effect");
       var legacyGlow = hero.querySelector("[data-portfolio-legacy-glow]");
       if (legacyGlow) legacyGlow.removeAttribute("data-portfolio-legacy-glow");
       activeHero = null;

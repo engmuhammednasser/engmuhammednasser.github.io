@@ -249,9 +249,7 @@ function diagnostics(cdp) {
   const consoleErrors = cdp.events
     .filter((event) => event.method === "Runtime.consoleAPICalled" && ["error", "assert"].includes(event.params.type))
     .map((event) => event.params.args?.map((argument) => argument.value ?? argument.description).join(" ") ?? event.params.type);
-  const knownExceptions = exceptions.filter((exception) => /t\.reason\.enqueueModel is not a function|Error: Connection closed\./.test(exception));
-  const unexpectedExceptions = exceptions.filter((exception) => !/t\.reason\.enqueueModel is not a function|Error: Connection closed\./.test(exception));
-  return { knownExceptions, unexpectedExceptions, consoleErrors };
+  return { unexpectedExceptions: exceptions, consoleErrors };
 }
 
 const chrome = findBrowser();
@@ -339,7 +337,7 @@ try {
       const runtime = diagnostics(cdp);
       assert(runtime.unexpectedExceptions.length === 0, `${route}: unexpected runtime exception: ${runtime.unexpectedExceptions[0]}`);
       assert(runtime.consoleErrors.length === 0, `${route}: console error: ${runtime.consoleErrors[0]}`);
-      routeResults.push({ route, locale: before.locale, direction: before.direction, pointerOpen, closeButtonClose, pointerClose, openFocus, forwardWrap, reverseWrap, unexpectedFocus, escapeClose, enterOpen, spaceOpen, knownExceptions: runtime.knownExceptions });
+      routeResults.push({ route, locale: before.locale, direction: before.direction, pointerOpen, closeButtonClose, pointerClose, openFocus, forwardWrap, reverseWrap, unexpectedFocus, escapeClose, enterOpen, spaceOpen });
     } catch (error) {
       failures.push(error.message);
     }

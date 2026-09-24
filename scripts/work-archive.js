@@ -100,10 +100,19 @@
     }
   }
 
-  function update(projects, category, visibleCount, prioritizeFirst) {
+  function update(projects, category, visibleCount, prioritizeFirst, append) {
     var matching = category === "all" ? projects : projects.filter(function (project) { return project.category === category; });
     var visible = matching.slice(0, visibleCount);
-    grid.innerHTML = visible.map(function (project, index) { return renderCard(project, prioritizeFirst && index === 0); }).join("");
+    if (append) {
+      var previousCount = grid.children.length;
+      grid.insertAdjacentHTML("beforeend", visible.slice(previousCount).map(function (project) { return renderCard(project, false); }).join(""));
+      var nextLink = grid.children[previousCount] && grid.children[previousCount].querySelector("a[href]");
+      if (nextLink) nextLink.focus();
+    } else if (!prioritizeFirst || grid.children.length !== visible.length || !visible.every(function (project, index) {
+      return grid.children[index].getAttribute("data-project-id") === project.id;
+    })) {
+      grid.innerHTML = visible.map(function (project, index) { return renderCard(project, prioritizeFirst && index === 0); }).join("");
+    }
     if (status) status.textContent = copy.showing(visible.length, matching.length);
     if (empty) {
       empty.textContent = copy.empty;
@@ -138,7 +147,7 @@
       if (loadMore) {
         loadMore.addEventListener("click", function () {
           visibleCount += initialBatch;
-          update(projects, category, visibleCount, false);
+          update(projects, category, visibleCount, false, true);
         });
       }
       update(projects, category, visibleCount, true);

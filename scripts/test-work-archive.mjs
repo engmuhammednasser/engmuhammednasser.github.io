@@ -27,6 +27,8 @@ const controller = {
 };
 const grid = {
   value: "",
+  get children() { return [...this.value.matchAll(/data-project-id=/g)].map(() => ({ querySelector: () => ({ focus() {} }) })); },
+  insertAdjacentHTML(_position, value) { this.value += value; },
   set innerHTML(value) { this.value = value; },
   get innerHTML() { return this.value; }
 };

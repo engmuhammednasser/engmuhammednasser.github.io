@@ -16,6 +16,7 @@
   var open = false;
   var rememberedFocus = null;
   var menuFallbackFocus = false;
+  var previousOverflow = "";
 
   function focus(element) {
     if (!element || typeof element.focus !== "function") return;
@@ -107,7 +108,11 @@
   }
 
   function setOpen(nextOpen, shouldRestoreFocus) {
-    if (nextOpen && !open) rememberFocus();
+    var wasOpen = open;
+    if (nextOpen && !open) {
+      rememberFocus();
+      previousOverflow = document.body.style.overflow;
+    }
     open = Boolean(nextOpen);
     menu.classList.remove(closedClass, openClass);
     menu.classList.add(open ? openClass : closedClass);
@@ -116,7 +121,8 @@
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("data-mobile-menu-state", open ? "open" : "closed");
     setInert(!open);
-    document.body.style.overflow = open ? "hidden" : "";
+    if (open) document.body.style.overflow = "hidden";
+    else if (wasOpen) document.body.style.overflow = previousOverflow;
 
     if (open) {
       createOverlay();
@@ -173,6 +179,16 @@
       focus(focusableElements[nextIndex]);
     }
   });
+
+  window.addEventListener("resize", function () {
+    if (!open || toggle.getClientRects().length) return;
+    var focusWasInMenu = menu.contains(document.activeElement);
+    setOpen(false, false);
+    if (focusWasInMenu) focus(document.querySelector("header a[href]"));
+  }, { passive: true });
+  window.addEventListener("pagehide", function () {
+    if (open) setOpen(false, false);
+  }, { passive: true });
 
   setOpen(false, false);
 })();
