@@ -1,0 +1,29 @@
+/* Scoped to the two Torathyat / Bin Hilal case-study routes. */
+.project-evolution { max-width: 72rem; margin-inline: auto; }
+.project-evolution p { color: #b6c2d3; line-height: 1.9; }
+.project-evolution__intro { max-width: 52rem; margin-block: 1rem 2rem; }
+.project-evolution__steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; list-style: none; padding: 0; }
+.project-evolution__step { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid #334155; border-radius: 1rem; background: #111827; }
+.project-evolution__step--current { border-color: #297c66; background: linear-gradient(135deg, #112c2a, #111827); }
+.project-evolution__label { display: block; color: #7dd3fc; font-size: .8rem; font-weight: 700; margin-block-end: 1rem; }
+.project-evolution__step h3 { font-size: 1.75rem; font-weight: 800; margin-block-end: .75rem; }
+.project-evolution__stack { display: block; color: #f8fafc; font-weight: 700; margin-block-end: 1rem; }
+.project-evolution__status { display: inline-flex; padding: .5rem 1rem; border: 1px solid #297c66; border-radius: 999px; background: #112c2a; color: #a7f3d0; font-size: .875rem; font-weight: 700; }
+.project-evolution__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 1.5rem; padding-block-start: 1rem; }
+.project-evolution__links a { color: #7dd3fc; text-decoration: underline; text-underline-offset: .3em; }
+.project-evolution__gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.project-evolution__shot { min-width: 0; overflow: hidden; border-radius: 1rem; border: 1px solid #334155; background: #111827; }
+.project-evolution__shot button { display: block; width: 100%; height: 320px; position: relative; cursor: zoom-in; background: #0b1020; }
+.project-evolution__shot:not(.project-evolution__shot--mobile) button { height: auto; aspect-ratio: 1265 / 712; }
+.project-evolution__shot button:focus-visible { outline: 3px solid #38bdf8; outline-offset: -3px; }
+.project-evolution__shot img { display: block; }
+.project-evolution__caption { padding: 1.25rem; }
+.project-evolution__caption h3 { font-size: 1.1rem; font-weight: 700; margin-block-end: .5rem; }
+.project-evolution__caption p { font-size: .95rem; }
+.project-evolution__shot--mobile button { max-width: 250px; margin-inline: auto; }
+.project-evolution__archive { padding-block-start: 2.5rem; border-block-start: 1px solid #334155; scroll-margin-top: 7rem; }
+#bin-hilal-screenshots { scroll-margin-top: 7rem; }
+@media (max-width: 640px) {
+  .project-evolution__steps, .project-evolution__gallery { grid-template-columns: 1fr; }
+  .project-evolution__shot button { height: 260px; }
+}
