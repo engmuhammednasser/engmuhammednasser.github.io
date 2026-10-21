@@ -9,7 +9,7 @@ const htmlFiles = [];
 
 function collect(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-    if (entry.name === ".git") continue;
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
     const absolute = path.join(directory, entry.name);
     if (entry.isDirectory()) collect(absolute);
     else if (entry.isFile() && entry.name.endsWith(".html")) htmlFiles.push(absolute);

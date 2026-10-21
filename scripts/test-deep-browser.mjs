@@ -8,6 +8,7 @@ import { resolve } from "node:path";
 const executablePath = [process.env.CHROME_PATH, "C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe", "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"].filter(Boolean).find(existsSync);
 assert(executablePath, "Chrome/Chromium/Edge is required.");
 const origin = "http://127.0.0.1:38127";
+const siteRoot = resolve(process.env.SITE_ROOT ?? ".");
 const server = spawn(process.execPath, ["scripts/serve.mjs"], { env: { ...process.env, PORT: "38127", HOST: "127.0.0.1" }, stdio: ["ignore", "pipe", "pipe"], windowsHide: true });
 const failures = [];
 let browser;
@@ -29,7 +30,7 @@ try {
   const head = await fetch(origin + "/", { method: "HEAD" });
   expect(head.status === 200 && (await head.text()) === "" && Number(head.headers.get("content-length")) > 0, "Incorrect HEAD response");
   browser = await chromium.launch({ executablePath, headless: true });
-  const routes = htmlFiles(resolve(".")).map(file => routeFor(resolve("."), file));
+  const routes = htmlFiles(siteRoot).map(file => routeFor(siteRoot, file));
   const templates = new Set(["/", "/work/", "/work/atour/", "/backend/techmart/", "/work/mariam-fathy-shop/", "/contact/", "/lab/", "/lab/plugins/access-trail/", "/lab/plugins/custom-currency-icon/", "/backend/edusmart-system/", "/about/"]);
   let cursor = 0, audited = 0;
   async function worker() {

@@ -10,6 +10,12 @@ Runtime/image maintenance update: [standalone runtime and responsive delivery](d
 This update supersedes the historical framework-exception allowance and generic
 thumbnail ImageMagick requirement in this baseline guide.
 
+Publishing update: [Pages artifact runbook](docs/operations/pages-artifact.md)
+defines the curated output, additional validation gates, and source-mode rollback.
+The repository's Pages source setting selects the verified artifact in `workflow`
+mode or `main:/` in `legacy` mode. Follow that runbook for the selected mode and for
+explicitly authorized source changes.
+
 Production: <https://engmuhammednasser.github.io/>
 Companion history: `PORTFOLIO_ENGINEERING_HANDOFF.md`
 
@@ -19,9 +25,10 @@ Next.js application can be rebuilt.
 
 ## 1. Current Portfolio Architecture
 
-GitHub Pages deploys the repository root of `main`. Production pages are therefore
-tracked artifacts, not an output directory that can be deleted and recreated from a
-framework command.
+GitHub Pages publishes the verified curated artifact in `workflow` mode or the
+repository root of `main` in `legacy` mode. The Pages source setting determines
+which mode is active. Source pages remain tracked artifacts and cannot be deleted
+and recreated from a framework command.
 
 ```text
 checked-in generated/static site output
@@ -39,7 +46,7 @@ static checks + browser tests + idempotency
         ↓
 pull request quality gate
         ↓
-GitHub Pages from main:/
+GitHub Pages: verified artifact (workflow) or main:/ (legacy)
 ```
 
 The complete original Next.js source and build configuration are not present.
@@ -510,9 +517,11 @@ should state:
 - explicit confirmation that no unrelated routes or vendor chunks changed.
 
 Before merge, confirm the PR head SHA and `Portfolio quality` status. After merge,
-wait for `pages-build-deployment`, confirm its deployed SHA equals current `main`,
-then perform cold production checks on the new EN/AR routes, Work archive, one
-existing case study, CSS requests, media requests, mobile navigation, and RTL.
+wait for the deployment selected by the Pages source: `Portfolio quality` in
+`workflow` mode or `pages-build-deployment` in `legacy` mode. Confirm its deployed
+SHA equals current `main`, then perform cold production checks on the new EN/AR
+routes, Work archive, one existing case study, CSS requests, media requests,
+mobile navigation, and RTL.
 
 ## 8. Mariam Fathy media model
 
@@ -658,7 +667,8 @@ Do not hide the diff in a bulk commit.
 
 - Do not attempt `next build`; the source/build configuration is absent.
 - Do not delete `_next`, `.nojekyll`, root route files, or payload files as “build
-  artifacts.” They are part of the deployed export.
+  artifacts.” They belong to the maintained export even when excluded from the
+  curated publishing copy.
 - Do not edit minified `_next` vendor chunks to fix product behavior.
 - Do not run legacy extraction/migration scripts because their names look relevant;
   verify current ownership first.

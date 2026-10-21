@@ -36,7 +36,11 @@
     "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs && node scripts/optimize-heavy-previews.mjs",
     "images:heavy": "node scripts/optimize-heavy-previews.mjs",
     "test:static:browser": "node scripts/test-static-runtime.mjs",
-    "test:deep": "node scripts/test-deep-browser.mjs"
+    "test:deep": "node scripts/test-deep-browser.mjs",
+    "build:site": "node scripts/site-package.mjs",
+    "check:site": "node scripts/site-package.mjs --check",
+    "test:site-package": "node --test scripts/test-site-package.mjs",
+    "verify:site": "node scripts/verify-site.mjs"
   },
   "engines": {
     "node": ">=20.9.0"
@@ -44,6 +48,6 @@
   "devDependencies": {
     "axe-core": "4.13.0",
     "playwright-core": "1.58.2",
-    "sharp": "0.35.4"
+    "sharp": "0.35.5"
   }
 }
