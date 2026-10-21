@@ -7,10 +7,10 @@ supersedes the historical hydration-exception allowance below. Native controller
 now own browser interactions and browser verification rejects all runtime errors.
 
 Publishing update: [Pages artifact runbook](docs/operations/pages-artifact.md)
-defines the prepared output and guarded CI deployment. The workflow now checks PRs,
-`main` pushes, and manual runs; production remains `main:/` until the separately
-authorized switch to GitHub Actions. Refer to that runbook for current release gates
-and publishing-source rollback rather than the historical branch-only flow below.
+defines the curated output and guarded CI deployment. The workflow checks PRs,
+`main` pushes, and manual runs. The Pages source setting selects the verified
+artifact in `workflow` mode or `main:/` in `legacy` mode. Refer to that runbook for
+current release gates, authorized source changes, and publishing-source rollback.
 
 Authoritative production baseline: `main` at `5b4560cacf1d7965058ec7a93fa610f04362f38d`
 
@@ -26,8 +26,9 @@ start with `NEW_PROJECT_INTAKE_TEMPLATE.md`.
 
 ## Executive handoff
 
-The repository is a checked-in static export deployed by GitHub Pages from the
-root of `main`. It still contains compiled Next.js output, but it does **not**
+The repository is a checked-in static export maintained for GitHub Pages.
+Its publishing source follows the deployment mode described below.
+It still contains compiled Next.js output, but it does **not**
 contain the original Next.js application source, `next.config.*`, or a reproducible
 framework build. Consequently, the tracked HTML, route payloads, assets, canonical
 data, and repository-owned generators together form the maintainable production
@@ -72,16 +73,17 @@ all static index.html routes
 
 scripts/portfolio-effects.{js,css} --> shared guarded decorative runtime
 scripts/mobile-navigation.js       --> native mobile-menu fallback
-GitHub Pages                       --> serves repository root from main
+GitHub Pages                       --> verified artifact or main:/, per source setting
 ```
 
 ### Deployment model
 
-GitHub Pages is configured as a legacy branch deployment from `main` at `/` with
-HTTPS enforced. The `.nojekyll` file allows the `_next` directory to be served.
-The `Portfolio quality` workflow runs on pull requests; it also has narrow historic
-push triggers for the original refactor branches. A normal direct push to `main`
-must not be treated as equivalent to PR validation.
+The repository's Pages source setting determines the active mode. In `workflow`
+mode, `Portfolio quality` deploys the verified curated artifact from `main`; in
+`legacy` mode, branch publishing serves `main` at `/` and the workflow skips its
+artifact upload/deployment steps. Preserve HTTPS and `.nojekyll` in either mode.
+The workflow validates pull requests, `main` pushes, and manual runs. Successful
+checks do not replace review or authorize merging or changing the Pages source.
 
 ### Source-of-truth boundaries
 

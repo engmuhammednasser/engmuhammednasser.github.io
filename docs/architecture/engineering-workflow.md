@@ -10,13 +10,15 @@ the short architecture-level entry point.
 The [Pages artifact runbook](../operations/pages-artifact.md) owns the current
 publishing policy and extra package gates. The source export remains maintained;
 the separate publishing copy excludes tooling and archived runtime payloads.
-Legacy `main:/` publishing stays active until an explicitly authorized switch to
-GitHub Actions. Use that runbook for activation and source-mode rollback.
+The Pages source setting selects the verified artifact in `workflow` mode or
+`main:/` in `legacy` mode. Use that runbook for authorized source changes and
+source-mode rollback.
 
 ## Model
 
-The repository is a committed static export deployed by GitHub Pages from the root
-of `main`. The original Next.js application source/build configuration is absent.
+The repository is a committed static export maintained for GitHub Pages. Its active
+publishing mode is determined by the Pages source setting as described above.
+The original Next.js application source/build configuration is absent.
 Tracked HTML, payloads, compiled assets, canonical data, and repository-owned
 generators are production artifacts and must not be deleted as disposable build
 output.

@@ -3,9 +3,10 @@
 Static portfolio hosted by GitHub Pages:
 <https://engmuhammednasser.github.io/>.
 
-Publishing currently uses the root of `main` (`legacy` mode). A curated Pages
-artifact and guarded Actions deployment are prepared; they become the production
-path only after an explicitly authorized publishing-source switch. See the
+The repository's Pages source setting determines the active publishing mode.
+GitHub Actions (`workflow` mode) publishes the verified curated artifact; Deploy
+from a branch (`legacy` mode) publishes the root of `main`. Changing the source
+requires explicit authorization. See the
 [Pages artifact runbook](docs/operations/pages-artifact.md).
 
 The repository contains the deployed static export. The original Next.js
