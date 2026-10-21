@@ -6828,22 +6828,22 @@
       "enEquivalent": "/work/torathyat/",
       "arEquivalent": "/ar/work/torathyat/",
       "title": {
-        "value": "متجر تراثيات الإلكتروني | محمد ناصر",
+        "value": "بن هلال — تطوير متجر تراثيات | محمد ناصر",
         "source": "static-html"
       },
       "description": {
-        "value": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
+        "value": "رحلة تطوير متجر تراثيات من WordPress وWooCommerce إلى بن هلال باستخدام Laravel، مع تحديث الاسم والشعار وتسليم النسخة الجديدة.",
         "source": "static-html"
       },
       "ogImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
       "metadata": {
-        "ogTitle": "متجر تراثيات الإلكتروني | محمد ناصر",
-        "ogDescription": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
+        "ogTitle": "بن هلال — تطوير متجر تراثيات | محمد ناصر",
+        "ogDescription": "رحلة تطوير متجر تراثيات من WordPress وWooCommerce إلى بن هلال باستخدام Laravel، مع تحديث الاسم والشعار وتسليم النسخة الجديدة.",
         "ogUrl": "https://engmuhammednasser.github.io/ar/work/torathyat/",
         "ogType": "website",
         "twitterCard": "summary_large_image",
-        "twitterTitle": "متجر تراثيات الإلكتروني | محمد ناصر",
-        "twitterDescription": "متجر WooCommerce مخصص لعلامة تراثيات يعرض الفئات التراثية والمنتجات المميزة من خلال تجربة عربية واضحة وغنية بصريًا.",
+        "twitterTitle": "بن هلال — تطوير متجر تراثيات | محمد ناصر",
+        "twitterDescription": "رحلة تطوير متجر تراثيات من WordPress وWooCommerce إلى بن هلال باستخدام Laravel، مع تحديث الاسم والشعار وتسليم النسخة الجديدة.",
         "twitterImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
@@ -6852,7 +6852,7 @@
       "accessibility": {
         "landmarks": {
           "header": 2,
-          "nav": 2,
+          "nav": 3,
           "main": 1,
           "footer": 1,
           "section": 4
@@ -6860,21 +6860,28 @@
         "headings": [
           1,
           2,
+          3,
+          3,
           2,
           2,
+          3,
+          3,
+          2,
+          3,
+          3,
           3,
           3,
           2
         ],
         "images": {
-          "total": 9,
-          "meaningfulAlt": 9,
+          "total": 13,
+          "meaningfulAlt": 13,
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 19,
-        "buttons": 9,
-        "labeledButtons": 9,
+        "links": 21,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,
@@ -13502,22 +13509,22 @@
       "enEquivalent": "/work/torathyat/",
       "arEquivalent": "/ar/work/torathyat/",
       "title": {
-        "value": "Torathyat Heritage Storefront | Muhammed Nasser",
+        "value": "Bin Hilal — Torathyat Store Upgrade | Muhammed Nasser",
         "source": "static-html"
       },
       "description": {
-        "value": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
+        "value": "From Torathyat on WordPress and WooCommerce to Bin Hilal on Laravel: a completed store rebuild with a new name and logo, documented in one project.",
         "source": "static-html"
       },
       "ogImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
       "metadata": {
-        "ogTitle": "Torathyat Heritage Storefront | Muhammed Nasser",
-        "ogDescription": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
+        "ogTitle": "Bin Hilal — Torathyat Store Upgrade | Muhammed Nasser",
+        "ogDescription": "From Torathyat on WordPress and WooCommerce to Bin Hilal on Laravel: a completed store rebuild with a new name and logo, documented in one project.",
         "ogUrl": "https://engmuhammednasser.github.io/work/torathyat/",
         "ogType": "website",
         "twitterCard": "summary_large_image",
-        "twitterTitle": "Torathyat Heritage Storefront | Muhammed Nasser",
-        "twitterDescription": "A heritage-focused WooCommerce store for Torathyat, showcasing handcrafted decor categories, featured products, and a polished Arabic storefront experience.",
+        "twitterTitle": "Bin Hilal — Torathyat Store Upgrade | Muhammed Nasser",
+        "twitterDescription": "From Torathyat on WordPress and WooCommerce to Bin Hilal on Laravel: a completed store rebuild with a new name and logo, documented in one project.",
         "twitterImage": "https://engmuhammednasser.github.io/projects/torathyat/optimized/thumb-800.webp",
         "robots": null,
         "hreflangCount": 3,
@@ -13526,7 +13533,7 @@
       "accessibility": {
         "landmarks": {
           "header": 2,
-          "nav": 2,
+          "nav": 3,
           "main": 1,
           "footer": 1,
           "section": 4
@@ -13534,21 +13541,28 @@
         "headings": [
           1,
           2,
+          3,
+          3,
           2,
           2,
+          3,
+          3,
+          2,
+          3,
+          3,
           3,
           3,
           2
         ],
         "images": {
-          "total": 9,
-          "meaningfulAlt": 9,
+          "total": 13,
+          "meaningfulAlt": 13,
           "emptyAlt": 0,
           "missingAlt": 0
         },
-        "links": 19,
-        "buttons": 9,
-        "labeledButtons": 9,
+        "links": 21,
+        "buttons": 13,
+        "labeledButtons": 13,
         "forms": 0,
         "labels": 0,
         "skipLink": true,

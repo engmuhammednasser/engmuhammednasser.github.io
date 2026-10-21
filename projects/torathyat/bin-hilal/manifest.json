@@ -1,0 +1,107 @@
+{
+  "source": "https://torathyat.com/",
+  "captureDate": "2026-09-24",
+  "capture": "Public storefront viewport screenshots; full-page captures rejected due to stitching artifacts.",
+  "privacy": "Public pages, empty cart, no account or customer information.",
+  "compression": {
+    "tool": "Sharp",
+    "format": "webp",
+    "quality": 82,
+    "effort": 6,
+    "originalsPreserved": true
+  },
+  "images": {
+    "cover.jpg": {
+      "original": "/projects/torathyat/bin-hilal/cover.jpg",
+      "sourceBytes": 67077,
+      "width": 1265,
+      "height": 712,
+      "variants": [
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/cover-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 10316
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/cover-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 25678
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/cover-1265.webp",
+          "width": 1265,
+          "height": 712,
+          "bytes": 36074
+        }
+      ]
+    },
+    "02-category-plates.jpg": {
+      "original": "/projects/torathyat/bin-hilal/02-category-plates.jpg",
+      "sourceBytes": 75241,
+      "width": 1265,
+      "height": 712,
+      "variants": [
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/02-category-plates-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 11156
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/02-category-plates-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 26428
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/02-category-plates-1265.webp",
+          "width": 1265,
+          "height": 712,
+          "bytes": 37634
+        }
+      ]
+    },
+    "03-product-bowl.jpg": {
+      "original": "/projects/torathyat/bin-hilal/03-product-bowl.jpg",
+      "sourceBytes": 56002,
+      "width": 1265,
+      "height": 712,
+      "variants": [
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/03-product-bowl-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 7728
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/03-product-bowl-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 18474
+        },
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/03-product-bowl-1265.webp",
+          "width": 1265,
+          "height": 712,
+          "bytes": 26248
+        }
+      ]
+    },
+    "04-product-mobile.jpg": {
+      "original": "/projects/torathyat/bin-hilal/04-product-mobile.jpg",
+      "sourceBytes": 25616,
+      "width": 375,
+      "height": 812,
+      "variants": [
+        {
+          "url": "/projects/torathyat/bin-hilal/previews/04-product-mobile-375.webp",
+          "width": 375,
+          "height": 812,
+          "bytes": 13236
+        }
+      ]
+    }
+  }
+}
