@@ -6,6 +6,12 @@ Current maintenance update: [static runtime and responsive images](docs/operatio
 supersedes the historical hydration-exception allowance below. Native controllers
 now own browser interactions and browser verification rejects all runtime errors.
 
+Publishing update: [Pages artifact runbook](docs/operations/pages-artifact.md)
+defines the prepared output and guarded CI deployment. The workflow now checks PRs,
+`main` pushes, and manual runs; production remains `main:/` until the separately
+authorized switch to GitHub Actions. Refer to that runbook for current release gates
+and publishing-source rollback rather than the historical branch-only flow below.
+
 Authoritative production baseline: `main` at `5b4560cacf1d7965058ec7a93fa610f04362f38d`
 
 Production: <https://engmuhammednasser.github.io/>

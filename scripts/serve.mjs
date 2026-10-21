@@ -2,7 +2,7 @@ import { createReadStream, existsSync, statSync, realpathSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize, resolve, sep } from "node:path";
 
-const root = resolve(process.cwd());
+const root = realpathSync(resolve(process.env.SITE_ROOT ?? process.cwd()));
 const port = Number.parseInt(process.env.PORT ?? "3000", 10);
 const host = process.env.HOST ?? "127.0.0.1";
 

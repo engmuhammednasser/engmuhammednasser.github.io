@@ -10,6 +10,11 @@ Runtime/image maintenance update: [standalone runtime and responsive delivery](d
 This update supersedes the historical framework-exception allowance and generic
 thumbnail ImageMagick requirement in this baseline guide.
 
+Publishing update: [Pages artifact runbook](docs/operations/pages-artifact.md)
+defines the curated output, additional validation gates, and source-mode rollback.
+Its deployment procedure supersedes the branch-only steps below once the explicitly
+authorized transition is activated. Until then, Pages still publishes `main:/`.
+
 Production: <https://engmuhammednasser.github.io/>
 Companion history: `PORTFOLIO_ENGINEERING_HANDOFF.md`
 

@@ -7,6 +7,12 @@ The complete procedure is maintained in
 [`PORTFOLIO_OPERATIONS_GUIDE.md`](../../PORTFOLIO_OPERATIONS_GUIDE.md). This file is
 the short architecture-level entry point.
 
+The [Pages artifact runbook](../operations/pages-artifact.md) owns the current
+publishing policy and extra package gates. The source export remains maintained;
+the separate publishing copy excludes tooling and archived runtime payloads.
+Legacy `main:/` publishing stays active until an explicitly authorized switch to
+GitHub Actions. Use that runbook for activation and source-mode rollback.
+
 ## Model
 
 The repository is a committed static export deployed by GitHub Pages from the root
@@ -65,6 +71,10 @@ adding a project.
 
 ```bash
 npm run verify
+npm run test:site-package
+npm run build:site
+npm run verify:site
+npm run check:site
 git diff --check
 ```
 

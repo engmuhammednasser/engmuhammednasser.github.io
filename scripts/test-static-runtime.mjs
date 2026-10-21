@@ -6,6 +6,7 @@ import { chromium } from "playwright-core";
 import { htmlFiles, routeFor } from "./static-site-utils.mjs";
 
 const root = resolve(".");
+const siteRoot = resolve(process.env.SITE_ROOT ?? root);
 const direct = [process.env.CHROME_PATH, "C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe", "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"].filter(Boolean);
 const executablePath = direct.find(existsSync);
 assert(executablePath, "Chrome/Chromium/Edge is required for browser regression checks.");
@@ -26,7 +27,7 @@ try {
     server.stdout.once("data", () => { clearTimeout(timer); done(); });
   });
   browser = await chromium.launch({ executablePath, headless: true, args: ["--no-sandbox", "--disable-gpu"] });
-  const routes = htmlFiles(root).map((file) => routeFor(root, file));
+  const routes = htmlFiles(siteRoot).map((file) => routeFor(siteRoot, file));
   let next = 0, verified = 0;
   // Fresh contexts expose missing CSS and prevent cached assets hiding failures.
   async function worker() {
