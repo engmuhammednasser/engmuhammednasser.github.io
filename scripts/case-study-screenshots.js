@@ -4,15 +4,45 @@
   var fullView = null;
   var movementThreshold = 8;
 
+  function displaySource(preview) {
+    if (!preview) return "";
+    var current = preview.currentSrc || preview.src;
+    var picture = preview.closest("picture");
+    var avif = picture && /\.avif(?:[?#]|$)/i.test(current) && picture.querySelector('source[type="image/avif"]');
+    var candidates = ((avif || preview).getAttribute("srcset") || "").split(",");
+    var width = 0;
+    candidates.forEach(function (candidate) {
+      var match = candidate.trim().match(/^(.+)\s+(\d+)w$/);
+      if (match && Number(match[2]) > width) {
+        current = match[1];
+        width = Number(match[2]);
+      }
+    });
+    return current;
+  }
+
   function getFullView() {
     if (fullView) return fullView;
 
     var modal = document.createElement("div");
     var closeButton = document.createElement("button");
-    var image = document.createElement("img");
+    var toolbar = document.createElement("div");
+    var status = document.createElement("p");
+    var retry = document.createElement("button");
+    var originalLink = document.createElement("a");
+    var media = document.createElement("div");
+    var image = null;
+    var placeholder = null;
+    var timer = null;
+    var attempt = 0;
+    var source = "";
+    var alt = "";
     var previousFocus = null;
     var previousOverflow = "";
     var background = [];
+    var copy = document.documentElement.lang === "ar"
+      ? { loading: "جاري تحميل الصورة…", error: "تعذر تحميل الصورة. يمكنك إعادة المحاولة أو فتح الصورة الأصلية.", retry: "إعادة المحاولة", original: "فتح الصورة الأصلية" }
+      : { loading: "Loading image…", error: "The image could not load. Retry or open the original image.", retry: "Retry", original: "Open original image" };
 
     modal.hidden = true;
     modal.setAttribute("role", "dialog");
@@ -23,15 +53,104 @@
     closeButton.setAttribute("aria-label", document.documentElement.lang === "ar" ? "إغلاق الصورة" : "Close full screenshot");
     closeButton.textContent = "×";
     closeButton.style.cssText = "position:fixed;top:18px;right:18px;z-index:101;width:44px;height:44px;border-radius:999px;background:#111827;color:white;border:1px solid rgba(255,255,255,.2);font-size:25px;cursor:pointer";
-    image.alt = "";
-    image.style.cssText = "display:block;max-width:1400px;width:100%;height:auto;margin:50px auto 20px;border-radius:16px";
+    toolbar.style.cssText = "max-width:1400px;margin:50px auto 16px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;color:white";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    status.style.cssText = "margin:0;flex:1 1 240px";
+    retry.type = "button";
+    retry.textContent = copy.retry;
+    retry.setAttribute("data-full-view-retry", "");
+    retry.hidden = true;
+    originalLink.textContent = copy.original;
+    originalLink.target = "_blank";
+    originalLink.rel = "noopener noreferrer";
+    originalLink.setAttribute("data-full-view-original", "");
+    [retry, originalLink].forEach(function (control) {
+      control.style.cssText = "padding:10px 16px;min-height:44px;border-radius:10px;border:1px solid #64748b;background:#111827;color:#e2e8f0;cursor:pointer;text-decoration:underline";
+    });
+    retry.style.display = "none";
+    media.style.cssText = "max-width:1400px;margin:0 auto 20px";
     modal.appendChild(closeButton);
-    modal.appendChild(image);
+    toolbar.appendChild(status);
+    toolbar.appendChild(retry);
+    toolbar.appendChild(originalLink);
+    modal.appendChild(toolbar);
+    modal.appendChild(media);
     document.body.appendChild(modal);
 
+    function cancel() {
+      attempt += 1;
+      clearTimeout(timer);
+      if (image) {
+        image.onload = image.onerror = null;
+        image.removeAttribute("src");
+        image.style.display = "none";
+      }
+    }
+
+    function load() {
+      cancel();
+      var token = attempt;
+      var settled = false;
+      var decoding = false;
+      if (image) image.remove();
+      // A fresh element isolates a retry/reopen from an earlier request's events.
+      var pending = document.createElement("img");
+      image = pending;
+      pending.setAttribute("data-full-view-image", "");
+      pending.alt = alt;
+      pending.loading = "eager";
+      pending.decoding = "async";
+      pending.style.cssText = "display:none;width:100%;height:auto;border-radius:16px";
+      media.appendChild(pending);
+      status.textContent = copy.loading;
+      media.setAttribute("aria-busy", "true");
+      if (document.activeElement === retry) closeButton.focus({ preventScroll: true });
+      retry.hidden = true;
+      retry.style.display = "none";
+      function finish(success) {
+        if (settled || token !== attempt || modal.hidden) return;
+        settled = true;
+        clearTimeout(timer);
+        pending.onload = pending.onerror = null;
+        media.setAttribute("aria-busy", "false");
+        status.textContent = success ? "" : copy.error;
+        retry.hidden = success;
+        retry.style.display = success ? "none" : "block";
+        if (success) {
+          pending.style.display = "block";
+          if (placeholder) { placeholder.removeAttribute("src"); placeholder.remove(); placeholder = null; }
+        } else {
+          // Release a stalled request; the next attempt uses a fresh image.
+          pending.removeAttribute("src");
+        }
+      }
+      function loaded() {
+        if (decoding || settled || token !== attempt || modal.hidden) return;
+        if (!pending.naturalWidth) { finish(false); return; }
+        decoding = true;
+        // Network completion does not guarantee an asynchronously decoded image
+        // is ready to paint. Keep the cached preview until decoding succeeds.
+        if (typeof pending.decode !== "function") { finish(true); return; }
+        try {
+          pending.decode().then(function () { finish(true); }, function () { finish(false); });
+        } catch (_error) { finish(false); }
+      }
+      pending.onload = loaded;
+      pending.onerror = function () { finish(false); };
+      timer = setTimeout(function () { finish(false); }, 15000);
+      pending.src = source;
+      if (pending.complete && pending.naturalWidth > 0) loaded();
+    }
+
     function close() {
+      if (modal.hidden) return;
       modal.hidden = true;
-      image.removeAttribute("src");
+      cancel();
+      if (placeholder) { placeholder.removeAttribute("src"); placeholder.remove(); placeholder = null; }
+      originalLink.removeAttribute("href");
+      status.textContent = "";
+      media.setAttribute("aria-busy", "false");
       document.body.style.overflow = previousOverflow;
       background.forEach(function (entry) { entry.element.inert = entry.inert; });
       background = [];
@@ -39,10 +158,17 @@
     }
 
     closeButton.addEventListener("click", close);
+    retry.addEventListener("click", load);
     modal.addEventListener("keydown", function (event) {
       if (event.key === "Tab") {
-        event.preventDefault();
-        closeButton.focus();
+        var controls = Array.prototype.filter.call(modal.querySelectorAll("button, a[href]"), function (control) {
+          return !control.hidden && !control.disabled && control.getClientRects().length;
+        });
+        var index = controls.indexOf(document.activeElement);
+        if (event.shiftKey ? index <= 0 : index < 0 || index === controls.length - 1) {
+          event.preventDefault();
+          controls[event.shiftKey ? controls.length - 1 : 0].focus();
+        }
       }
     });
     modal.addEventListener("click", function (event) {
@@ -52,8 +178,9 @@
       if (event.key === "Escape" && !modal.hidden) close();
     });
 
-    fullView = { modal: modal, image: image, closeButton: closeButton, setPreviousFocus: function (element) {
-      previousFocus = element;
+    fullView = { open: function (card, preview, original) {
+      if (!modal.hidden) close();
+      previousFocus = document.activeElement === document.body ? card : document.activeElement;
       previousOverflow = document.body.style.overflow;
       background = Array.prototype.filter.call(document.body.children, function (child) {
         return child !== modal && !/^(SCRIPT|STYLE|LINK)$/.test(child.tagName);
@@ -62,6 +189,23 @@
         child.inert = true;
         return entry;
       });
+      source = displaySource(preview) || original;
+      alt = preview ? preview.alt : "";
+      originalLink.href = original;
+      if (preview && preview.complete && preview.naturalWidth > 0) {
+        placeholder = document.createElement("img");
+        placeholder.alt = "";
+        placeholder.setAttribute("aria-hidden", "true");
+        placeholder.setAttribute("data-full-view-placeholder", "");
+        placeholder.style.cssText = "display:block;width:100%;height:auto;border-radius:16px";
+        placeholder.src = preview.currentSrc || preview.src;
+        media.appendChild(placeholder);
+      }
+      modal.hidden = false;
+      modal.scrollTop = 0;
+      document.body.style.overflow = "hidden";
+      load();
+      closeButton.focus();
     } };
     return fullView;
   }
@@ -71,16 +215,7 @@
     var source = card.getAttribute("data-full-src") || card.getAttribute("data-src") || (preview ? preview.currentSrc || preview.src : "");
     if (!source) return;
 
-    var view = getFullView();
-    view.setPreviousFocus(document.activeElement === document.body ? card : document.activeElement);
-    view.image.src = source;
-    view.image.alt = preview ? preview.alt : "Full screenshot";
-    view.image.loading = "eager";
-    view.image.decoding = "async";
-    view.modal.hidden = false;
-    view.modal.scrollTop = 0;
-    document.body.style.overflow = "hidden";
-    view.closeButton.focus();
+    getFullView().open(card, preview, source);
   }
 
   function canonicalHintText() {

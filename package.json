@@ -10,7 +10,7 @@
     "fix:paths": "node scripts/fix-export-paths.mjs",
     "filter:work": "node scripts/render-work-archive.mjs",
     "work:data": "node scripts/validate-project-data.mjs",
-    "test:work": "node scripts/test-work-archive.mjs",
+    "test:work": "node scripts/test-work-archive.mjs && node --test scripts/test-work-loading.mjs",
     "seo:inventory": "node scripts/inventory-seo-accessibility.mjs",
     "seo:apply": "node scripts/apply-seo-accessibility.mjs && node scripts/inventory-seo-accessibility.mjs && node scripts/generate-seo-assets.mjs",
     "seo:assets": "node scripts/generate-seo-assets.mjs",
@@ -30,7 +30,7 @@
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs",
+    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node --test scripts/test-work-loading.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs && npm run test:loading:browser",
     "verify": "npm run check && npm run test:idempotency && git diff --check",
     "runtime:static": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/apply-static-runtime.mjs",
     "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs && node scripts/optimize-heavy-previews.mjs",
@@ -40,7 +40,8 @@
     "build:site": "node scripts/site-package.mjs",
     "check:site": "node scripts/site-package.mjs --check",
     "test:site-package": "node --test scripts/test-site-package.mjs",
-    "verify:site": "node scripts/verify-site.mjs"
+    "verify:site": "node scripts/verify-site.mjs",
+    "test:loading:browser": "node scripts/test-work-loading-browser.mjs && node scripts/test-screenshot-recovery.mjs"
   },
   "engines": {
     "node": ">=20.9.0"

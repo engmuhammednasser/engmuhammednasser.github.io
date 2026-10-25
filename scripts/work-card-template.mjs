@@ -6,6 +6,7 @@ export const localeCopy = {
     filterLabel: "Filter projects",
     showing: (visible, total) => `Showing ${visible} of ${total} projects`,
     loadMore: "Load more projects",
+    loading: "Loading projects…",
     allLoaded: "All matching projects are visible",
     empty: "No projects match this category.",
     live: "Live Site",
@@ -17,6 +18,7 @@ export const localeCopy = {
     filterLabel: "تصفية المشاريع",
     showing: (visible, total) => `عرض ${visible} من أصل ${total} مشروعًا`,
     loadMore: "تحميل المزيد من المشاريع",
+    loading: "جارٍ تحميل المشاريع…",
     allLoaded: "تم عرض جميع المشاريع المطابقة",
     empty: "لا توجد مشاريع مطابقة لهذا التصنيف.",
     live: "الموقع المباشر",
@@ -109,7 +111,7 @@ export function renderFilterShell(document, locale) {
     category.id,
     document.projects.filter((project) => project.category === category.id).length
   ]));
-  const buttons = document.categories.map((category, index) => `<button type="button" class="min-h-11 rounded-full border border-white/10 bg-[#0F172A]/80 px-4 py-3 text-sm font-bold text-[#94A3B8] transition-colors hover:border-[#38BDF8]/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#38BDF8]" data-work-filter="${escapeHtml(category.id)}" aria-pressed="${index === 0 ? "true" : "false"}">${escapeHtml(category.id === "all" ? copy.allProjects : category.label[locale])}<span aria-hidden="true" class="rounded-full bg-white/10 px-2 py-0.5 text-xs">${category.id === "all" ? document.projects.length : counts[category.id]}</span></button>`).join("");
+  const buttons = document.categories.map((category, index) => `<button type="button" disabled class="min-h-11 rounded-full border border-white/10 bg-[#0F172A]/80 px-4 py-3 text-sm font-bold text-[#94A3B8] transition-colors hover:border-[#38BDF8]/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#38BDF8]" data-work-filter="${escapeHtml(category.id)}" aria-pressed="${index === 0 ? "true" : "false"}">${escapeHtml(category.id === "all" ? copy.allProjects : category.label[locale])}<span aria-hidden="true" class="rounded-full bg-white/10 px-2 py-0.5 text-xs">${category.id === "all" ? document.projects.length : counts[category.id]}</span></button>`).join("");
 
   return `<!-- work-filter:start --><div class="work-filter-shell mb-8 w-full" data-work-filter-controller data-work-locale="${escapeHtml(locale)}">
   <div class="mb-3 text-center"><p class="text-sm font-bold uppercase tracking-widest text-[#94A3B8]" id="work-filter-label">${escapeHtml(copy.filterLabel)}</p></div>
@@ -127,5 +129,5 @@ export function renderNoScriptList(document, locale) {
 export function renderLoadMore(document, locale) {
   const copy = localeCopy[locale];
   const initial = Math.min(12, document.projects.length);
-  return `<div class="mt-10 text-center" data-work-load-more-shell><button type="button" class="min-h-11 rounded-full border border-[#38BDF8]/40 bg-[#38BDF8]/10 px-6 py-3 text-sm font-bold text-[#38BDF8] transition-colors hover:bg-[#38BDF8]/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#38BDF8]" data-work-load-more aria-controls="work-project-grid"${initial >= document.projects.length ? " hidden" : ""}>${escapeHtml(copy.loadMore)}</button></div><p class="sr-only" data-work-empty role="status" hidden>${escapeHtml(copy.empty)}</p>`;
+  return `<div class="mt-10 text-center" data-work-load-more-shell><button type="button" disabled aria-busy="true" class="min-h-11 rounded-full border border-[#38BDF8]/40 bg-[#38BDF8]/10 px-6 py-3 text-sm font-bold text-[#38BDF8] transition-colors hover:bg-[#38BDF8]/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#38BDF8]" data-work-load-more aria-controls="work-project-grid"${initial >= document.projects.length ? " hidden" : ""}>${escapeHtml(copy.loading)}</button></div><p class="sr-only" data-work-empty role="status" hidden>${escapeHtml(copy.empty)}</p>`;
 }

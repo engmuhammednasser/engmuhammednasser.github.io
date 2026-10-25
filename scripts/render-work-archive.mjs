@@ -98,7 +98,7 @@ function payloadCard(project, locale, isPrimaryLcp = false) {
 function payloadFilter(document, locale) {
   const counts = Object.fromEntries(document.categories.map((category) => [category.id, document.projects.filter((project) => project.category === category.id).length]));
   const buttons = document.categories.map((category, index) => element("button", category.id, {
-    type: "button",
+    type: "button", disabled: true,
     className: "min-h-11 rounded-full border border-white/10 bg-[#0F172A]/80 px-4 py-3 text-sm font-bold text-[#94A3B8] transition-colors hover:border-[#38BDF8]/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#38BDF8]",
     "data-work-filter": category.id,
     "aria-pressed": index === 0 ? "true" : "false",
@@ -137,7 +137,7 @@ function updatePayload(relativeFile, locale) {
     element("div", null, {
       className: "mt-10 text-center",
       "data-work-load-more-shell": "true",
-      children: element("button", null, { type: "button", className: "min-h-11 rounded-full border border-[#38BDF8]/40 bg-[#38BDF8]/10 px-6 py-3 text-sm font-bold text-[#38BDF8]", "data-work-load-more": "true", "aria-controls": "work-project-grid", children: copy[locale].loadMore })
+      children: element("button", null, { type: "button", disabled: true, "aria-busy": "true", className: "min-h-11 rounded-full border border-[#38BDF8]/40 bg-[#38BDF8]/10 px-6 py-3 text-sm font-bold text-[#38BDF8]", "data-work-load-more": "true", "aria-controls": "work-project-grid", children: locale === "ar" ? "جارٍ تحميل المشاريع…" : "Loading projects…" })
     })
   ];
   lines[lineIndex] = `5:${JSON.stringify(tree)}`;

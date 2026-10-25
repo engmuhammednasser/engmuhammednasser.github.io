@@ -19,7 +19,12 @@ browser exceptions, including the previously accepted hydration errors.
 Screenshot buttons use the shared native scroll/full-view controller. Legacy
 project-specific hover controllers must not be included alongside it. Backend
 `View full image:` buttons are normalized to the same contract. The modal traps
-keyboard focus and restores focus/scroll state on dismissal.
+keyboard focus and restores focus/scroll state on dismissal. Full view displays
+the existing optimized screenshot variants, retains an immediately available
+preview until the larger image has decoded, and exposes localized loading, error
+and retry controls.
+The original image remains available through an explicit link; opening the modal
+does not automatically download the original.
 
 The surface styles preserve sticky positioning on desktop case-study sidebars.
 At mobile widths, sidebars stay in normal flow with no top offset, so they cannot
@@ -33,8 +38,9 @@ without responsive variants. It creates WebP derivatives at up to
 480, 960 and 1600 pixels wide, preserving aspect ratio and avoiding enlargement.
 The 16,380-pixel height limit accommodates long screenshots within WebP limits.
 Metadata and byte counts are stored in `data/image-delivery.json`. Original files
-and `data-full-src` targets remain intact; originals are requested only when the
-visitor opens full view. Existing specialized responsive pictures are retained.
+and `data-full-src` targets remain intact; the full-view original-image link uses
+that target when the visitor explicitly requests it. Existing specialized
+responsive pictures are retained.
 
 The script updates image `srcset`, sizes and matching image preloads together to
 avoid downloading both the original and the preview. Its manifest lets subsequent
@@ -57,14 +63,22 @@ consistent. The manifest records both formats, dimensions and actual byte counts
 Lazy previews use `sizes="auto, ..."` so supported browsers select a derivative
 from the actual rendered width, with the existing sizes list as a fallback.
 Preloads of images used only by lazy previews are removed. Explicit width/height
-attributes remain present. Lab screenshots share the original-resolution full-view
-controller used by project galleries. Original bytes and SHA-256 hashes are checked.
+attributes remain present. Lab screenshots share the optimized full-view
+controller and explicit original-image link used by project galleries. Original
+bytes and SHA-256 hashes are checked.
 
 Body/hero presentation classes are rendered into HTML rather than waiting for idle
 JavaScript. The tablet header uses the mobile navigation until 1024px. Resizing or
 leaving a page closes the menu and restores scrolling. Load More appends new cards,
-preserves existing image nodes and focuses the first new result. Full view makes
-the background inert, resets its scroll position and releases the original on close.
+preserves existing image nodes and focuses the first new result. Archive controls
+show a localized loading state until the catalog is ready. A request deadline
+covers both response headers and JSON; failure preserves the initial cards and
+offers a retry instead of removing access to the controls. Late results from a
+previous attempt cannot overwrite the active attempt.
+
+Full view makes the background inert, resets its scroll position and releases
+pending image requests, handlers and timers on close. Retry and reopening isolate
+image attempts so a late result cannot change the current image or dialog state.
 
 Generic Work thumbnails use the locked Sharp dependency and the canonical project
 catalog, including projects outside the initial 12 cards. Select explicitly:
@@ -93,3 +107,10 @@ Eight EN/AR image-format cases at mobile 2x and desktop 1x validate AVIF selecti
 simulated unsupported-format WebP fallback, no duplicate-format downloads and
 deferred originals. The heavy-preview generator is also checked for idempotency.
 Production real-user performance must still be measured separately.
+
+`npm run test:work` also covers delayed, failed, malformed and timed-out catalog
+requests, retry, stale responses and duplicate-click safety in both languages.
+`npm run test:loading:browser` checks the actual browser controls under interrupted
+requests, and screenshot loading, error, retry, keyboard focus and close/reopen
+recovery. These checks run in `npm run verify`; the browser cases also run against
+the publishing copy in `npm run verify:site`.

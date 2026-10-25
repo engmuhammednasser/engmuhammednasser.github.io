@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { spawn } from "node:child_process";
 import { resolve } from "node:path";
 import { chromium } from "playwright-core";
@@ -7,6 +7,8 @@ import { htmlFiles, routeFor } from "./static-site-utils.mjs";
 
 const root = resolve(".");
 const siteRoot = resolve(process.env.SITE_ROOT ?? root);
+const screenshotRoot = process.env.BROWSER_SCREENSHOT_DIR && resolve(process.env.BROWSER_SCREENSHOT_DIR);
+if (screenshotRoot) mkdirSync(screenshotRoot, { recursive: true });
 const direct = [process.env.CHROME_PATH, "C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe", "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"].filter(Boolean);
 const executablePath = direct.find(existsSync);
 assert(executablePath, "Chrome/Chromium/Edge is required for browser regression checks.");
@@ -96,9 +98,15 @@ try {
           await shot.click();
           const modal = page.getByRole("dialog", { name: locale === "ar" ? "عرض الصورة كاملة" : "Full screenshot", exact: true });
           await modal.waitFor({ state: "visible" });
-          assert.equal(await modal.locator("img").getAttribute("src"), original);
+          assert.equal(await modal.locator("[data-full-view-original]").getAttribute("href"), original);
+          await modal.locator("[data-full-view-image]").waitFor({ state: "visible" });
+          await modal.locator("[data-full-view-image]").evaluate((image) => image.decode());
+          assert(await modal.locator("[data-full-view-image]").evaluate((image) => image.complete && image.naturalWidth > 0), "Optimized full-view image did not load");
+          if (screenshotRoot && route === "/work/atour/") await page.screenshot({ path: resolve(screenshotRoot, `${locale}-${width}-gallery.png`) });
           await page.keyboard.press("Tab");
-          assert(await modal.locator("button").evaluate((button) => button === document.activeElement), "Full-view focus escaped");
+          assert(await modal.locator("[data-full-view-original]").evaluate((link) => link === document.activeElement), "Original image link is not keyboard accessible");
+          await page.keyboard.press("Tab");
+          assert(await modal.getByRole("button", { name: locale === "ar" ? "إغلاق الصورة" : "Close full screenshot", exact: true }).evaluate((button) => button === document.activeElement), "Full-view focus escaped");
           await page.keyboard.press("Escape");
           await modal.waitFor({ state: "hidden" });
           assert(await shot.evaluate((button) => button === document.activeElement), "Full-view did not restore focus");
