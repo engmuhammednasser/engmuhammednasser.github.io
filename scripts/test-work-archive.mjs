@@ -40,6 +40,9 @@ const script = { getAttribute(name) { return name === "data-project-data" ? "/da
 const sandbox = {
   console,
   URL,
+  AbortController,
+  setTimeout,
+  clearTimeout,
   document: {
     querySelector(selector) {
       return {

@@ -52,7 +52,7 @@ try {
   server.kill();
 }
 
-for (const script of ["test-seo-browser.mjs", "test-mobile-navigation.mjs", "test-static-runtime.mjs", "test-deep-browser.mjs"]) {
+for (const script of ["test-seo-browser.mjs", "test-mobile-navigation.mjs", "test-static-runtime.mjs", "test-deep-browser.mjs", "test-work-loading-browser.mjs", "test-screenshot-recovery.mjs"]) {
   console.log(`Checking the Pages artifact with ${script}...`);
   const result = spawnSync(process.execPath, [join("scripts", script)], { cwd: root, env, stdio: "inherit", windowsHide: true });
   if (result.error) throw result.error;

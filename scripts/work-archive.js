@@ -15,8 +15,10 @@
     ? {
         showing: function (visible, total) { return "عرض " + visible + " من أصل " + total + " مشروعًا"; },
         loadMore: "تحميل المزيد من المشاريع",
+        loading: "جارٍ تحميل المشاريع…",
+        retry: "إعادة محاولة تحميل المشاريع",
         empty: "لا توجد مشاريع مطابقة لهذا التصنيف.",
-        unavailable: "تعذر تحميل أدوات التصفية؛ ما زالت المشاريع الأساسية متاحة.",
+        unavailable: "تعذر تحميل باقي المشاريع. المشاريع المعروضة ما زالت متاحة؛ يمكنك إعادة المحاولة.",
         live: "الموقع المباشر",
         caseStudy: "عرض دراسة الحالة",
         technologies: "التقنيات"
@@ -24,8 +26,10 @@
     : {
         showing: function (visible, total) { return "Showing " + visible + " of " + total + " projects"; },
         loadMore: "Load more projects",
+        loading: "Loading projects…",
+        retry: "Retry loading projects",
         empty: "No projects match this category.",
-        unavailable: "Project filters are unavailable; the initial projects remain available.",
+        unavailable: "Could not load the remaining projects. The displayed projects are still available; please retry.",
         live: "Live Site",
         caseStudy: "View Case Study",
         technologies: "Technologies"
@@ -96,7 +100,6 @@
     controller.querySelectorAll("[data-work-filter]").forEach(function (button) { button.disabled = !enabled; });
     if (loadMore) {
       loadMore.disabled = !enabled;
-      if (!enabled) loadMore.hidden = true;
     }
   }
 
@@ -125,36 +128,66 @@
     }
   }
 
-  fetch(script.getAttribute("data-project-data") || "/data/projects.json", { credentials: "same-origin" })
-    .then(function (response) {
-      if (!response.ok) throw new Error("Project data request failed: " + response.status);
-      return response.json();
-    })
-    .then(function (document) {
-      var projects = Array.isArray(document.projects) ? document.projects : [];
-      var category = "all";
-      var visibleCount = initialBatch;
-      controller.querySelectorAll("[data-work-filter]").forEach(function (button) {
-        button.addEventListener("click", function () {
-          category = button.getAttribute("data-work-filter") || "all";
-          visibleCount = initialBatch;
-          controller.querySelectorAll("[data-work-filter]").forEach(function (item) {
-            item.setAttribute("aria-pressed", item === button ? "true" : "false");
-          });
-          update(projects, category, visibleCount, false);
-        });
+  var projects = null, category = "all", visibleCount = initialBatch, loading = false;
+  controller.querySelectorAll("[data-work-filter]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (!projects || loading) return;
+      category = button.getAttribute("data-work-filter") || "all";
+      visibleCount = initialBatch;
+      controller.querySelectorAll("[data-work-filter]").forEach(function (item) {
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
       });
-      if (loadMore) {
-        loadMore.addEventListener("click", function () {
-          visibleCount += initialBatch;
-          update(projects, category, visibleCount, false, true);
-        });
-      }
+      update(projects, category, visibleCount, false);
+    });
+  });
+  if (loadMore) loadMore.addEventListener("click", function () {
+    if (loading) return;
+    if (!projects) return loadProjects();
+    visibleCount += initialBatch;
+    update(projects, category, visibleCount, false, true);
+  });
+
+  function loadProjects() {
+    if (loading) return;
+    loading = true;
+    setControlsEnabled(false);
+    if (status) status.textContent = copy.loading;
+    if (loadMore) {
+      loadMore.hidden = false;
+      loadMore.textContent = copy.loading;
+      loadMore.setAttribute("aria-busy", "true");
+    }
+    var abort = new AbortController(), timer;
+    // Race the complete response, including JSON, so a stalled body also permits retry.
+    Promise.race([
+      fetch(script.getAttribute("data-project-data") || "/data/projects.json", { credentials: "same-origin", cache: "no-cache", signal: abort.signal })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Project data request failed: " + response.status);
+          return response.json();
+        }),
+      new Promise(function (_resolve, reject) {
+        timer = setTimeout(function () { abort.abort(); reject(new Error("Project data request timed out")); }, 10000);
+      })
+    ]).then(function (document) {
+      if (!document || !Array.isArray(document.projects) || !document.projects.length) throw new Error("Invalid project data");
+      projects = document.projects;
+      setControlsEnabled(true);
       update(projects, category, visibleCount, true);
-    })
-    .catch(function (error) {
+    }).catch(function (error) {
+      projects = null;
       setControlsEnabled(false);
       if (status) status.textContent = copy.unavailable;
+      if (loadMore) {
+        loadMore.hidden = false;
+        loadMore.disabled = false;
+        loadMore.textContent = copy.retry;
+      }
       console.warn("[work-archive] " + error.message);
+    }).finally(function () {
+      clearTimeout(timer);
+      loading = false;
+      if (loadMore) loadMore.setAttribute("aria-busy", "false");
     });
+  }
+  loadProjects();
 }());

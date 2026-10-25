@@ -82,11 +82,12 @@ try {
     await shot.click();
     const modal = page.getByRole("dialog", { name: prefix ? "عرض الصورة كاملة" : "Full screenshot", exact: true, includeHidden: true });
     expect(await page.locator("main").evaluate(main => main.inert), `${prefix}: full view leaves the background interactive`);
-    await modal.locator("img").evaluate(image => image.decode());
+    await modal.locator("[data-full-view-image]").waitFor({ state: "visible" });
+    await modal.locator("[data-full-view-image]").evaluate(image => image.decode());
     await modal.evaluate(dialog => { dialog.scrollTop = 200; });
     await page.keyboard.press("Escape");
     expect(await page.locator("main").evaluate(main => !main.inert), `${prefix}: full view did not restore the background`);
-    expect(await modal.locator("img").getAttribute("src") === null, `${prefix}: full view retained its decoded original after closing`);
+    expect(await modal.locator("img[src]").count() === 0, `${prefix}: full view retained image sources after closing`);
     await shot.click();
     expect(await modal.evaluate(dialog => dialog.scrollTop === 0), `${prefix}: reopening full view retained the old scroll position`);
     await page.keyboard.press("Escape");
