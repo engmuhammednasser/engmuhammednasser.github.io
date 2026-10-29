@@ -147,6 +147,7 @@ The root `.nojekyll` file is required for GitHub Pages to serve `_next` assets.
 | Project images | Original files under `projects/<slug>/`, thumbnail generator, and per-project manifest | 480/800 AVIF/WebP Work derivatives | Generate selected slugs, inspect visually, retain originals, and then update project data. |
 | Case-study screenshots | Approved/sanitized originals plus the route's explicit mapping or generator | Lazy previews and interaction-deferred full-view targets | Keep captions, locale, ordering, privacy classification, and preview/original roles explicit. |
 | SEO | Route HTML/visible copy, project data, route inventory, and SEO scripts | Titles, descriptions, canonical, hreflang, social tags, JSON-LD, and semantics in HTML | Inventory new routes first; fix inputs/generator rather than patching repeated tags. |
+| Social previews | Existing public-safe project images and `scripts/social-preview-sources.mjs` | 1200 × 627 JPEGs for homepage, Work, and case-study sharing | Generate only affected slugs; inspect the visible crop and privacy before publication. |
 | Sitemap | Indexable records in `data/routes.json` and `generate-seo-assets.mjs` | `sitemap.xml` | Generate; do not add nonexistent, utility, query, or fabricated-date URLs manually. |
 | Robots | `generate-seo-assets.mjs` policy | `robots.txt` | Preserve public allow, utility exclusions, and production sitemap URL. |
 | Mobile navigation | Stable HTML hooks, `apply-mobile-navigation.mjs`, and `mobile-navigation.js` | Native fallback hooks/runtime on eligible pages | Preserve LTR/RTL, focus, inert, overlay, and keyboard behavior; never fix it in minified vendor chunks. |
@@ -425,6 +426,19 @@ is visible. Inspect desktop, mobile, and AR crops; `object-fit` can hide the rel
 part without stretching the file.
 
 ### Step 7 — Inventory routes, apply SEO, and add mobile hooks
+
+When adding or changing a project, generate its social preview before applying SEO:
+
+```bash
+npm run images:social -- --projects <slug>
+```
+
+Inspect the resulting `projects/<slug>/social-preview.jpg`; use an approved,
+public-safe source in `scripts/social-preview-sources.mjs` where the catalog image
+contains operational or personal data. The `portfolio` slug generates the homepage
+and Work index cover. `--all` is reserved for a deliberate full social-preview refresh.
+The source specs also record any required top crop, such as removing a historical
+WordPress admin toolbar, without modifying the original capture.
 
 The new HTML files must exist before route inventory. Run in this order:
 

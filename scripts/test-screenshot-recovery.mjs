@@ -61,6 +61,8 @@ try {
       const delayed = await takeRequest();
       assert.equal(delayed.url, "/preview-one-1600.webp");
       assert.equal(await status.textContent(), locale === "ar" ? "جاري تحميل الصورة…" : "Loading image…");
+      // The cached placeholder may finish decoding on the next browser turn.
+      await modal.locator("[data-full-view-placeholder]").evaluate(image => image.decode());
       assert(await modal.locator("[data-full-view-placeholder]").evaluate(image => image.complete && image.naturalWidth > 0));
       assert.equal(await page.locator("main").evaluate(node => node.inert), true);
       assert.equal(await page.evaluate(() => document.body.style.overflow), "hidden");

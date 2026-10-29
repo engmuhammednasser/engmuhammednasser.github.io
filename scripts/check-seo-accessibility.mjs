@@ -1,11 +1,14 @@
 import { readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
+import sharp from "sharp";
+import { socialPreviewForRoute } from "./social-preview-sources.mjs";
 
 const root = resolve(process.cwd());
 const origin = "https://engmuhammednasser.github.io";
 const routesDocument = JSON.parse(readFileSync(resolve(root, "data/routes.json"), "utf8"));
 const routeMap = new Map(routesDocument.routes.map((route) => [route.route, route]));
 const failures = [];
+const checkedPreviews = new Set();
 
 function fail(message) {
   failures.push(message);
@@ -73,6 +76,28 @@ for (const record of routesDocument.routes) {
     }
     const ogUrl = attr(metaTags(html, "property", "og:url")[0] ?? "", "content");
     if (ogUrl !== `${origin}${record.route}`) fail(`${record.route}: og:url is not route-specific`);
+    const preview = socialPreviewForRoute(record.route);
+    if (["case-study", "backend-case-study"].includes(record.pageType) && !preview) {
+      fail(`${record.route}: case study needs a mapped project social preview`);
+    }
+    if (preview) {
+      const expectedImage = `${origin}${preview}`;
+      const ogImage = attr(metaTags(html, "property", "og:image")[0] ?? "", "content");
+      const twitterImage = attr(metaTags(html, "name", "twitter:image")[0] ?? "", "content");
+      if (ogImage !== expectedImage || twitterImage !== expectedImage) fail(`${record.route}: social image does not match the project preview`);
+      if (!checkedPreviews.has(preview)) {
+        checkedPreviews.add(preview);
+        const imageFile = resolve(root, preview.slice(1));
+        try {
+          const image = await sharp(imageFile).metadata();
+          if (image.format !== "jpeg" || image.width !== 1200 || image.height !== 627 || statSync(imageFile).size > 5_000_000) {
+            fail(`${preview}: social preview must be a 1200x627 JPEG under 5 MB`);
+          }
+        } catch (error) {
+          fail(`${preview}: social preview could not be read (${error.message})`);
+        }
+      }
+    }
     const alternates = tags(html, "link").filter((tag) => attr(tag, "rel").toLowerCase().split(/\s+/).includes("alternate") && attr(tag, "hreflang"));
     if (!record.enEquivalent || !record.arEquivalent) {
       if (alternates.length) fail(`${record.route}: hreflang exists for a route without a validated equivalent`);

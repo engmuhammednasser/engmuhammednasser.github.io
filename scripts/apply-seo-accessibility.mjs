@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { socialPreviewForRoute } from "./social-preview-sources.mjs";
 
 const root = resolve(process.cwd());
 const origin = "https://engmuhammednasser.github.io";
@@ -124,9 +125,11 @@ function metadataFor(route, html) {
 
   const indexable = routeRecord(route)?.indexable && type !== "utility-error";
   const canonical = indexable ? `${origin}${route}` : null;
-  const socialImage = project?.thumbnail?.webp800 && existsSync(resolve(root, project.thumbnail.webp800.replace(/^\/+/, "")))
-    ? `${origin}${project.thumbnail.webp800}`
-    : `${origin}/profile.png`;
+  const preview = socialPreviewForRoute(route);
+  if (preview && !existsSync(resolve(root, preview.replace(/^\/+/, "")))) {
+    throw new Error(`${route}: missing social preview ${preview}; run npm run images:social -- --projects <slug>`);
+  }
+  const socialImage = `${origin}${preview ?? "/profile.png"}`;
   const nodes = [];
   const webPageType = type === "work-index" || type === "backend-index" ? "CollectionPage" : "WebPage";
   if (indexable) {
@@ -147,7 +150,7 @@ function metadataFor(route, html) {
         url: canonical,
         inLanguage: locale
       };
-      if (project.thumbnail?.webp800 && existsSync(resolve(root, project.thumbnail.webp800.replace(/^\/+/, "")))) creativeWork.image = `${origin}${project.thumbnail.webp800}`;
+      if (preview) creativeWork.image = socialImage;
       nodes.push(creativeWork);
     }
     if (route === "/" || route === "/ar/") {
