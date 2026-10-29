@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#14283e"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+  </defs>
+  <rect width="1200" height="627" fill="url(#background)"/>
+  <circle cx="1090" cy="15" r="310" fill="#38bdf8" opacity=".06"/>
+  <circle cx="1170" cy="580" r="260" fill="#22d3ee" opacity=".06"/>
+  <rect x="88" y="91" width="7" height="64" rx="3.5" fill="url(#accent)"/>
+  <text x="120" y="122" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="4">SELECTED WORK</text>
+  <text x="88" y="267" fill="#f8fafc" font-family="Arial, sans-serif" font-size="70" font-weight="700">Muhammed Nasser</text>
+  <text x="90" y="333" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="29">Web development &amp; custom systems</text>
+  <line x1="88" y1="399" x2="1110" y2="399" stroke="#94a3b8" stroke-opacity=".25"/>
+  <text x="90" y="465" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="26">WordPress  ·  WooCommerce  ·  PHP</text>
+  <text x="90" y="514" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="26">Laravel  ·  Vue.js</text>
+</svg>
