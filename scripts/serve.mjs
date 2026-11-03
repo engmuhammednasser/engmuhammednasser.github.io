@@ -85,5 +85,5 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Static site running at http://${host}:${port}`);
+  console.log(`Static site running at http://${host}:${server.address().port}`);
 });
