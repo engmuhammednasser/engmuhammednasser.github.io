@@ -6,6 +6,7 @@ const budgets = [
   ["scripts/portfolio-effects.js", 24000, "interactive runtime"],
   ["scripts/portfolio-effects.css", 13000, "interactive runtime styles"],
   ["scripts/blog.css", 10000, "Blog and technical article styles"],
+  ["scripts/blog-copy.js", 4000, "PowerShell code-copy enhancement"],
   ["scripts/work-archive.js", 12000, "Work progressive enhancement"],
   ["data/projects.json", 75000, "canonical project data"],
   ["work/index.html", 90000, "English Work shell"],

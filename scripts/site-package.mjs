@@ -9,7 +9,7 @@ const origin = "https://engmuhammednasser.github.io";
 const runtimeFiles = new Set([
   "scripts/portfolio-effects.js", "scripts/portfolio-effects.css",
   "scripts/mobile-navigation.js", "scripts/case-study-screenshots.js",
-  "scripts/work-archive.js", "scripts/torathyat-case-study.css", "scripts/blog.css"
+  "scripts/work-archive.js", "scripts/torathyat-case-study.css", "scripts/blog.css", "scripts/blog-copy.js"
 ]);
 const rootFiles = new Set([
   ".nojekyll", "robots.txt", "sitemap.xml", "data/projects.json",

@@ -31,6 +31,7 @@ export function readBlog(root) {
 
 export function renderArticle(markdown, locale) {
   const headings = [];
+  let codeIndex = 0;
   const base = new Renderer();
   const parser = new Marked({ gfm: true, async: false });
   parser.use({ renderer: {
@@ -45,7 +46,11 @@ export function renderArticle(markdown, locale) {
     code({ text, lang }) {
       const language = lang?.split(/\s/)[0] || "text";
       if (!/^[a-z0-9+-]+$/i.test(language)) throw new Error("Invalid code language label");
-      return `<div class="blog-code"><span class="blog-code-label" aria-hidden="true">${escapeHtml(language)}</span><pre dir="ltr" tabindex="0" aria-label="${locale === "ar" ? "مقطع برمجي" : "Code sample"}: ${escapeHtml(language)}"><code>${escapeHtml(text)}\n</code></pre></div>\n`;
+      const id = `blog-code-${++codeIndex}`;
+      const copyable = language.toLowerCase() === "powershell";
+      const label = locale === "ar" ? "نسخ" : "Copy";
+      const copy = copyable ? `<button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="${id}" aria-label="${locale === "ar" ? "نسخ أوامر PowerShell" : "Copy PowerShell commands"}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>${label}</span></button>` : "";
+      return `<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">${escapeHtml(language)}</span>${copy}</div><pre id="${id}" dir="ltr" tabindex="0" aria-label="${locale === "ar" ? "مقطع برمجي" : "Code sample"}: ${escapeHtml(language)}"><code>${escapeHtml(text)}\n</code></pre>${copyable ? '<p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p>' : ""}</div>\n`;
     },
     link({ href, title, tokens }) {
       if (!/^(https:\/\/|\/(?!\/)|#[a-z0-9-]+$)/i.test(href) || /[\u0000-\u0020\\]/.test(href)) throw new Error(`Unsupported article link: ${href}`);

@@ -9,14 +9,14 @@
 <h2 id="section-2">2. ثبّت الإضافة وافحص المتطلبات</h2>
 <p>من تطبيق سطح المكتب، افتح Codex ثم <strong>Plugins</strong>، وابحث عن <strong>Qodo</strong> وثبّتها. وفي Codex CLI، يفتح الأمر <code>/plugins</code> متصفح الإضافات. ابدأ محادثة أو جلسة CLI جديدة بعد التثبيت لتحميل المهارات المرفقة. <a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener noreferrer">توثيق إضافات OpenAI</a></p>
 <p>ستحتاج كذلك إلى PowerShell وحساب Qodo ومستودع Git لمرحلة المراجعة. افحص إصدار Node.js:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">powershell</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>node --version
-</code></pre></div>
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">powershell</span><button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="blog-code-1" aria-label="نسخ أوامر PowerShell"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>نسخ</span></button></div><pre id="blog-code-1" dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>node --version
+</code></pre><p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p></div>
 <p>تذكر صفحة تثبيت CLI إصدار Node.js 20 أو أحدث، بينما يحدد مرجع الإعداد المتخصص <strong>20.6.0 أو أحدث</strong>؛ لذا اتبع المتطلب الأدق. وتشترط مهارة الإعداد حاليًا Qodo CLI 2.0.0 أو أحدث قبل المصادقة. هذه متطلبات توافق، وليست ادعاءً بأنها أحدث الإصدارات المتاحة. <a href="https://docs.qodo.ai/agentic-toolbox/cli" target="_blank" rel="noopener noreferrer">تثبيت CLI</a>، <a href="https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md" target="_blank" rel="noopener noreferrer">مرجع بيئة التشغيل</a></p>
 <h2 id="section-3">3. ثبّت نسخة جرى التحقق من مصدرها</h2>
 <p>إذا كنت تفضل إعدادًا موجهًا، فاطلب من Codex استخدام <code>$qodo-setup</code> واتباع الفحوص الحالية في المهارة المثبتة. ويوضح المسار اليدوي التالي كيفية التحقق من برنامج التثبيت.</p>
 <p>تعرض صفحة CLI العامة أمرًا لتنزيل برنامج التثبيت وتشغيله مباشرة عبر PowerShell. أما مهارة الإعداد الحالية فتحدد برنامج تثبيت برابط ثابت، مع التحقق من البصمة وفحص الملف قبل التنفيذ. يتبع المثال التالي هذا المسار في <strong>Qodo Cloud</strong>. وللنشر الخاص بالمؤسسات، استخدم رابط التثبيت والبصمة وعنوان تسجيل الدخول التي توفرها المؤسسة. <a href="https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md" target="_blank" rel="noopener noreferrer">إجراء التثبيت الرسمي</a></p>
 <p>نُشرت البصمة التالية في مرجع الإعداد الرسمي الذي راجعته بتاريخ 3 نوفمبر 2026:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">powershell</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>$qodoHash = &#39;b0386d363d07e62384d099ddf41347f48cc1e80ed842c2916fb181c9356ed96e&#39;
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">powershell</span><button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="blog-code-2" aria-label="نسخ أوامر PowerShell"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>نسخ</span></button></div><pre id="blog-code-2" dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>$qodoHash = &#39;b0386d363d07e62384d099ddf41347f48cc1e80ed842c2916fb181c9356ed96e&#39;
 $qodoUrl = &quot;https://get.qodo.ai/installers/$qodoHash/install.ps1&quot;
 $qodoTemp = Join-Path $env:TEMP (&quot;qodo-setup-&quot; + [guid]::NewGuid().ToString(&#39;N&#39;))
 New-Item -ItemType Directory -Path $qodoTemp -ErrorAction Stop | Out-Null
@@ -29,30 +29,30 @@ if ($qodoActualHash -ne $qodoHash) {
 }
 
 notepad.exe $qodoInstaller
-</code></pre></div>
+</code></pre><p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p></div>
 <p>بعد مراجعة محتوى الملف، شغّل الملف المحفوظ نفسه وفق سياسة التنفيذ المعتمدة على جهازك:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">powershell</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>powershell.exe -NoProfile -File $qodoInstaller
-</code></pre></div>
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">powershell</span><button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="blog-code-3" aria-label="نسخ أوامر PowerShell"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>نسخ</span></button></div><pre id="blog-code-3" dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>powershell.exe -NoProfile -File $qodoInstaller
+</code></pre><p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p></div>
 <p>إذا منعت السياسة التنفيذ، عالج ذلك عبر الإجراء المعتمد في مؤسستك. لا تستبدل الملف بتنزيل مختلف ولا تتجاوز فشل التحقق من البصمة. هذه خطوات مستندة إلى التوثيق؛ ولا يعني عرضها أنني أعدت تنفيذ هذا المسار المعدّل أثناء تحديث المقال.</p>
 <h2 id="section-4">4. شخّص خطأ «qodo is not recognized»</h2>
 <p>خلال الإعداد الأصلي، لم يتمكن PowerShell من التعرف على الأمر <code>qodo</code> بعد التثبيت. ترث العملية متغيرات البيئة من العملية التي شغّلتها؛ لذلك قد تحتفظ نافذة الطرفية أو تطبيق سطح المكتب المفتوح بقيمة قديمة لمتغير <code>PATH</code>. يمكن أن تساعد إعادة فتح الطرفية، والتطبيق الذي شغّلها عند الحاجة، في تحميل البيئة المحدّثة. <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5" target="_blank" rel="noopener noreferrer">Microsoft: متغيرات البيئة</a></p>
 <p>للتثبيت الافتراضي الذي يتضمن ملفًا تنفيذيًا أصليًا، افحص المسار ثم جرّب التشغيل المباشر:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">powershell</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>$qodoExe = Join-Path $env:USERPROFILE &#39;.qodo\bin\qodo.exe&#39;
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">powershell</span><button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="blog-code-4" aria-label="نسخ أوامر PowerShell"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>نسخ</span></button></div><pre id="blog-code-4" dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>$qodoExe = Join-Path $env:USERPROFILE &#39;.qodo\bin\qodo.exe&#39;
 Test-Path -LiteralPath $qodoExe
 &amp; $qodoExe --version
-</code></pre></div>
+</code></pre><p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p></div>
 <p>استخدم هذا المثال بعد التأكد من أن الملف يتبع التثبيت المتوقع. وإذا ضُبط <code>QODO_HOME</code> صراحة، فافحص ذلك المسار بدلًا منه. وعند غياب الملف التنفيذي الأصلي، ارجع إلى مرجع الإعداد لمعرفة نقطة التشغيل المدعومة عبر Node.</p>
 <p>نجاح الاستدعاء المباشر مع فشل <code>qodo --version</code> يشير إلى مشكلة اكتشاف الأمر. لكنه لا يثبت نجاح المصادقة أو صلاحية المراجعة. يمكنك متابعة الفحوص بالملف التنفيذي الذي تحققت منه دون الحاجة إلى تعديل دائم لمتغير <code>PATH</code>.</p>
 <h2 id="section-5">5. تحقّق من الحساب ثم اكتشاف الأدوات</h2>
 <p>بعد التحقق من الملف التنفيذي في المثال السابق، نفّذ الفحوص بالترتيب:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">powershell</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>&amp; $qodoExe --version
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">powershell</span><button type="button" class="blog-copy-button" data-blog-copy hidden aria-controls="blog-code-5" aria-label="نسخ أوامر PowerShell"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span data-blog-copy-label>نسخ</span></button></div><pre id="blog-code-5" dir="ltr" tabindex="0" aria-label="مقطع برمجي: powershell"><code>&amp; $qodoExe --version
 &amp; $qodoExe read whoami --json
 &amp; $qodoExe tools --refresh --json
-</code></pre></div>
+</code></pre><p class="blog-copy-status" data-blog-copy-status role="status" aria-live="polite"></p></div>
 <p>نفّذ أمر جلب قائمة الأدوات بعد نجاح فحص الهوية فقط، ثم تأكد من وجود الإمكانية المطلوبة للمهمة. قد تضيف المهارة المثبتة معاملات تتعلق بإصدارها وتوزيعها والتطبيق المضيف؛ ويجب أخذ هذه القيم منها. إذا نجحت المصادقة وفشل تحديث القائمة، فسجّل خطأ الوصول إلى الأدوات؛ لا تفترض تلقائيًا ضرورة تسجيل الدخول من جديد. <a href="https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/SKILL.md" target="_blank" rel="noopener noreferrer">فحوص الإعداد الرسمية</a></p>
 <p>إذا أفاد فحص الهوية صراحة بأنك غير مسجل الدخول إلى Qodo Cloud، استخدم <code>&amp; $qodoExe login</code>، وأكمل الإجراء في المتصفح، ثم أعد فحص الهوية. حافظ على عنوان تسجيل الدخول المعتمد في بيئات المؤسسات الأخرى.</p>
 <p>يمكن توجيه Codex بهذا الطلب:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">text</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Use $qodo-setup to check the Qodo runtime, account identity,
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">text</span></div><pre id="blog-code-6" dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Use $qodo-setup to check the Qodo runtime, account identity,
 and relevant tool availability.
 Do not change project files.
 Report each verified stage and preserve any exact error.
@@ -62,7 +62,7 @@ Do not describe tool discovery as a completed review.
 <p>ترسل أداة Reviewer فروق شجرة العمل والملفات الجديدة غير المتتبعة والسياق الذي تقدمه إلى خدمة المراجعة. يمكن أن تظل تعديلاتك المحلية دون commit أو push، لكن يجب أن يكون commit المرجعي متاحًا عبر مزود Git، مع صلاحية الوصول إلى المستودع. تحقق من السماح بمشاركة الكود والسياق قبل إرسال أعمال تخص عميلًا أو مؤسسة. <a href="https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill" target="_blank" rel="noopener noreferrer">توثيق Reviewer</a></p>
 <p>حدّد الفرع المستهدف، واستخدم نقطة الأصل المشتركة بينه وبين <code>HEAD</code>، أي merge-base، أساسًا للمقارنة. أرفق غرض التغيير وقيوده المعروفة، وافحص المعاملات المتاحة في نسختك عبر <code>qodo review --help</code>. <a href="https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md" target="_blank" rel="noopener noreferrer">مسار المراجعة الرسمي</a></p>
 <p>عندما تكون المراجعة مأذونًا بها، يمكن استخدام الطلب التالي:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">text</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Use $qodo-review to review the current local changes.
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">text</span></div><pre id="blog-code-7" dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Use $qodo-review to review the current local changes.
 Resolve the correct remote comparison base and include the
 change&#39;s purpose, decisions, and completed checks as context.
 Focus on correctness, security, regressions, and edge cases.
@@ -71,7 +71,7 @@ If access fails, report the exact error and stop.
 </code></pre></div>
 <h2 id="section-7">7. سجّل النتيجة الفعلية بوضوح</h2>
 <p>لم تكتمل محاولة المراجعة المحلية في هذه التجربة. وأعادت الرسالة التالية:</p>
-<div class="blog-code"><span class="blog-code-label" aria-hidden="true">text</span><pre dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Qodo could not obtain repository credentials for the current workspace. Check the active workspace and repository connection; if those are correct, contact support before starting another review. Do not automatically start another attempt.
+<div class="blog-code"><div class="blog-code-toolbar"><span class="blog-code-label" aria-hidden="true">text</span></div><pre id="blog-code-8" dir="ltr" tabindex="0" aria-label="مقطع برمجي: text"><code>Qodo could not obtain repository credentials for the current workspace. Check the active workspace and repository connection; if those are correct, contact support before starting another review. Do not automatically start another attempt.
 </code></pre></div>
 <p>تحدد الرسالة المرحلة التي فشلت، لكنها لا تثبت السبب الجذري. الخطوة التالية هي فحص مساحة عمل Qodo المختارة واتصال المستودع، ثم التواصل مع الدعم إذا كانا صحيحين. هذه النتيجة لا تبرر تكرار تسجيل الدخول أو إعادة المراجعة تلقائيًا.</p>
 <div class="blog-table" tabindex="0" role="region" aria-label="جدول قابل للتمرير"><table>
@@ -149,4 +149,4 @@ If access fails, report the exact error and stop.
 <li><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener noreferrer">OpenAI: الإضافات في ChatGPT وCodex</a></li>
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5" target="_blank" rel="noopener noreferrer">Microsoft: متغيرات البيئة في PowerShell</a></li>
 </ul>
-<div class="blog-end"><a class="blog-read-more" data-blog-back href="/ar/blog/">→ جميع المقالات</a></div></div></div></article></div></main><footer class="border-t border-white/10 bg-[#0B1020] py-8 mt-12"><div class="container mx-auto px-4 text-center text-[#94A3B8]"><p>© 2026 محمد ناصر. جميع الحقوق محفوظة.</p></div></footer><script src="/scripts/portfolio-effects.js" defer data-portfolio-effects="script"></script><script src="/scripts/mobile-navigation.js" defer data-mobile-navigation="script"></script></body></html>
+<div class="blog-end"><a class="blog-read-more" data-blog-back href="/ar/blog/">→ جميع المقالات</a></div></div></div></article></div></main><footer class="border-t border-white/10 bg-[#0B1020] py-8 mt-12"><div class="container mx-auto px-4 text-center text-[#94A3B8]"><p>© 2026 محمد ناصر. جميع الحقوق محفوظة.</p></div></footer><script src="/scripts/portfolio-effects.js" defer data-portfolio-effects="script"></script><script src="/scripts/blog-copy.js" defer data-blog-copy-script></script><script src="/scripts/mobile-navigation.js" defer data-mobile-navigation="script"></script></body></html>

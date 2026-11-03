@@ -14,7 +14,7 @@ and the separately authorized Pages source transition.
   payloads, or retired framework JavaScript from the Pages artifact does not
   authorize deleting them from the repository.
 - Keep the publishing allowlist in `scripts/site-package.mjs` explicit. Preserve
-  the seven native runtime assets, real EN/AR routes, catalog/SEO, required CSS/fonts,
+  the eight native runtime assets, real EN/AR routes, catalog/SEO, required CSS/fonts,
   and all tracked media in the supported media roots during this phase.
 - Build only after dependency installation and source generation. The disposable
   artifact is `node_modules/.cache/pages/site`; its sibling manifest is not public.

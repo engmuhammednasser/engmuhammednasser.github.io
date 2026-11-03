@@ -19,6 +19,10 @@ const port = 38133;
 const origin = `http://127.0.0.1:${port}`;
 const publicOrigin = "https://engmuhammednasser.github.io";
 const slug = "qodo-codex-windows";
+const copyLabels = {
+  en: { idle: "Copy", copied: "Copied!", success: "Commands copied.", failure: "Automatic copying failed. The code is selected; use your device’s Copy command." },
+  ar: { idle: "نسخ", copied: "تم النسخ", success: "تم نسخ الأوامر.", failure: "تعذّر النسخ التلقائي. النص محدد الآن؛ استخدم خيار «نسخ» في جهازك." }
+};
 const paths = (locale) => {
   const prefix = locale === "ar" ? "/ar" : "";
   return { index: `${prefix}/blog/`, article: `${prefix}/blog/${slug}/` };
@@ -141,6 +145,90 @@ async function checkCover(image, label) {
   assert(loaded, `${label}: cover image must load`);
 }
 
+async function checkCopyButtons(page, locale) {
+  const labels = copyLabels[locale];
+  const blocks = page.locator(".blog-code:has([data-blog-copy])");
+  assert.equal(await blocks.count(), 5, "Only the five PowerShell examples should expose Copy");
+  await page.bringToFront();
+  await page.evaluate(() => {
+    const writeText = navigator.clipboard.writeText.bind(navigator.clipboard);
+    window.__blogClipboardWrites = [];
+    Object.defineProperty(navigator.clipboard, "writeText", { configurable: true, value: (text) => {
+      window.__blogClipboardWrites.push(text);
+      return writeText(text);
+    } });
+  });
+  for (let index = 0; index < await blocks.count(); index++) {
+    const block = blocks.nth(index);
+    const button = block.locator("button[data-blog-copy]");
+    const status = block.locator("[data-blog-copy-status]");
+    const label = button.locator("[data-blog-copy-label]");
+    const expected = await block.locator("pre > code").textContent();
+    assert.equal(await button.getAttribute("type"), "button");
+    assert(await button.isVisible());
+    assert.equal(await label.innerText(), labels.idle);
+    assert((await button.getAttribute("aria-label"))?.includes(labels.idle), "The accessible name must contain the visible Copy label");
+    assert.equal(await status.getAttribute("role"), "status");
+    assert.equal(await status.getAttribute("aria-live"), "polite");
+    await button.scrollIntoViewIfNeeded();
+    if (index < 2) {
+      await button.focus();
+      await button.press(index === 0 ? "Enter" : "Space");
+      assert(await button.evaluate((element) => element === document.activeElement), "Successful keyboard copying must retain focus");
+    } else await button.click();
+    await status.filter({ hasText: labels.success }).waitFor({ state: "visible" });
+    assert.equal(await status.innerText(), labels.success);
+    assert.equal(await label.innerText(), labels.copied);
+    assert((await button.getAttribute("aria-label"))?.includes(labels.copied), "The success-state accessible name must contain the visible confirmation");
+    assert.equal(await page.evaluate(() => window.__blogClipboardWrites.at(-1)), expected, `${locale}: writeText must receive the displayed text exactly`);
+    // Windows' native clipboard normalizes LF to CRLF; the API input above must remain exact.
+    const copied = await page.evaluate(async () => (await navigator.clipboard.readText()).replace(/\r\n/g, "\n"));
+    assert.equal(copied, expected, `${locale}: clipboard must contain the complete displayed example`);
+  }
+
+  // Exercise text fidelity through the real control without changing article sources.
+  const block = blocks.first();
+  const code = block.locator("pre > code");
+  const original = await code.textContent();
+  const exactText = [
+    "$message = \"Keep $dollars and 'quotes'\"",
+    "$literal = 'A `backtick` and <tag> & text'",
+    "",
+    'Write-Output "$message`nSecond line"',
+    ""
+  ].join("\n");
+  try {
+    await code.evaluate((element, text) => { element.textContent = text; }, exactText);
+    await block.locator("[data-blog-copy]").click();
+    await block.locator("[data-blog-copy-status]").filter({ hasText: labels.success }).waitFor({ state: "visible" });
+    await page.waitForFunction(async (expected) => (await navigator.clipboard.readText()).replace(/\r\n/g, "\n") === expected, exactText);
+    assert.equal(await page.evaluate(() => window.__blogClipboardWrites.at(-1)), exactText, "Copy must preserve quotes, dollars, backticks, blank lines and the final newline");
+    await block.locator("[data-blog-copy-label]").filter({ hasText: new RegExp(`^${labels.idle}$`) }).waitFor({ state: "visible" });
+    assert((await block.locator("[data-blog-copy]").getAttribute("aria-label"))?.includes(labels.idle), "The accessible name must reset with the visible Copy label");
+  } finally {
+    await code.evaluate((element, text) => { element.textContent = text; }, original);
+  }
+}
+
+async function checkCopyFailure(page, locale) {
+  const labels = copyLabels[locale];
+  const block = page.locator(".blog-code:has([data-blog-copy])").first();
+  const button = block.locator("[data-blog-copy]");
+  const status = block.locator("[data-blog-copy-status]");
+  const expected = await block.locator("pre > code").textContent();
+  assert(await button.isVisible(), "Manual-copy assistance must remain available without Clipboard API access");
+  await button.click();
+  await status.filter({ hasText: labels.failure }).waitFor({ state: "visible" });
+  assert.equal(await status.innerText(), labels.failure);
+  assert.equal(await button.locator("[data-blog-copy-label]").innerText(), labels.idle, "Failed copying must not claim success");
+  const selection = await page.evaluate(() => {
+    const range = getSelection()?.rangeCount ? getSelection().getRangeAt(0) : null;
+    return { text: range?.cloneContents().textContent, focusedCode: document.activeElement?.matches(".blog-code pre") };
+  });
+  assert.equal(selection.text, expected, "The manual fallback must select the complete visible code");
+  assert(selection.focusedCode, "The selected code must receive keyboard focus for manual copying");
+}
+
 async function checkHeaderFit(page, label) {
   const problems = await page.evaluate(() => {
     const controls = [...document.querySelectorAll("header a[href], header button")].filter((element) => {
@@ -180,12 +268,15 @@ try {
 
   for (const locale of ["en", "ar"]) for (const width of [390, 1280]) {
     const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });
+    await context.grantPermissions(["clipboard-read", "clipboard-write"], { origin });
     const page = await context.newPage();
     watch(page, `${locale}/${width}`);
     try {
       await open(page, paths(locale).index);
       assert(await page.locator(".blog-grid").isVisible());
       assert(await page.locator("article.blog-card").count() > 0);
+      assert.equal(await page.locator("[data-blog-copy]").count(), 0);
+      assert.equal(await page.locator('script[src="/scripts/blog-copy.js"]').count(), 0, "Copy runtime must remain article-only");
       await checkNavigation(page, locale, false);
       await checkCover(page.locator("article.blog-card img").first(), `${locale}/${width}/index`);
       if (width === 1280) await checkAccessibility(page, `${locale}/index`);
@@ -194,6 +285,7 @@ try {
       await checkArticle(page, locale);
       await checkCover(page.locator(".blog-hero-image img"), `${locale}/${width}/article`);
       if (width === 1280) await checkAccessibility(page, `${locale}/article`);
+      await checkCopyButtons(page, locale);
       await checkOverflow(page, `${locale}/${width}/article`);
       const switched = await switchLanguage(page, locale);
       await checkArticle(page, switched);
@@ -221,6 +313,20 @@ try {
     } finally { await context.close(); }
   }
 
+  for (const locale of ["en", "ar"]) for (const failure of ["rejected", "unavailable"]) {
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
+    await context.addInitScript((mode) => {
+      if (mode === "unavailable") Object.defineProperty(navigator, "clipboard", { configurable: true, value: undefined });
+      else Object.defineProperty(navigator.clipboard, "writeText", { configurable: true, value: () => Promise.reject(new DOMException("Clipboard permission denied", "NotAllowedError")) });
+    }, failure);
+    const page = await context.newPage();
+    watch(page, `${locale}/clipboard-${failure}`);
+    try {
+      await open(page, paths(locale).article);
+      await checkCopyFailure(page, locale);
+    } finally { await context.close(); }
+  }
+
   // Read-more and return links must remain usable when JavaScript is disabled.
   for (const locale of ["en", "ar"]) {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
@@ -230,11 +336,17 @@ try {
       await follow(page, page.locator(`a[data-blog-read-more][href="${paths(locale).article}"]`), paths(locale).article);
       assert(await page.locator(".blog-prose").isVisible());
       assert((await page.locator(".blog-prose").innerText()).trim().length > 0);
+      const copyButtons = page.locator("[data-blog-copy]");
+      assert.equal(await copyButtons.count(), 5);
+      for (const button of await copyButtons.all()) {
+        assert(await button.evaluate((element) => element.hidden));
+        assert.equal(await button.isVisible(), false, "No-JavaScript readers must not encounter inactive Copy controls");
+      }
       await follow(page, page.locator(`main a[href="${paths(locale).index}"]`).first(), paths(locale).index);
     } finally { await context.close(); }
   }
   assert.deepEqual(errors, [], errors.join("\n"));
-  console.log("Blog browser checks passed: EN/AR reading and language navigation, article metadata and covers, four WCAG scans, code/TOC accessibility, responsive grids/header fit, and no-JavaScript reading.");
+  console.log("Blog browser checks passed: EN/AR reading and language navigation, article metadata and covers, four WCAG scans, exact clipboard copying and manual fallback, code/TOC accessibility, responsive grids/header fit, and no-JavaScript reading.");
 } finally {
   await browser?.close();
   server.kill();
