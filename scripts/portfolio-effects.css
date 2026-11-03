@@ -194,13 +194,17 @@
 }
 
 /* The complete desktop navigation needs more room than the old 768px cutoff. */
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .portfolio-polished > header nav[class~="md:flex"] {
     display: none;
   }
   .portfolio-polished > header [class~="md:hidden"] {
     display: flex;
   }
+}
+
+.portfolio-polished > header a[data-blog-navigation][aria-current] {
+  color: #7dd3fc;
 }
 
 /* Keep case-study sidebars in normal flow on the single-column layout. */

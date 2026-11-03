@@ -82,6 +82,8 @@ function pageTypeFor(route) {
   if (route === "/" || route === "/ar/") return "homepage";
   if (route === "/work/" || route === "/ar/work/") return "work-index";
   if (route.startsWith("/work/") || route.startsWith("/ar/work/")) return "case-study";
+  if (route === "/blog/" || route === "/ar/blog/") return "blog-index";
+  if (route.startsWith("/blog/") || route.startsWith("/ar/blog/")) return "blog-article";
   if (route === "/backend/" || route === "/ar/backend/") return "backend-index";
   if (route.startsWith("/backend/") || route.startsWith("/ar/backend/")) return "backend-case-study";
   if (route === "/lab/" || route === "/ar/lab/") return "developer-lab";

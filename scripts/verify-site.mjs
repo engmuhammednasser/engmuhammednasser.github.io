@@ -34,6 +34,7 @@ try {
     "/package.json", "/package-lock.json", "/README.md", "/AGENTS.md",
     "/PORTFOLIO_OPERATIONS_GUIDE.md", "/docs/operations/release-checklist.md",
     "/scripts/serve.mjs", "/scripts/site-package.mjs", "/scripts/test-deep-browser.mjs",
+    "/scripts/render-blog.mjs", "/data/blog.json", "/content/blog/qodo-codex-windows.en.md",
     "/scripts/torathyat-screenshots.js", "/data/routes.json", "/data/image-delivery.json",
     "/work/index.txt", "/work/__next._full.txt", "/_next/static/chunks/01599w_myoj4b.js"
   ]) {
@@ -52,7 +53,7 @@ try {
   server.kill();
 }
 
-for (const script of ["test-seo-browser.mjs", "test-mobile-navigation.mjs", "test-static-runtime.mjs", "test-deep-browser.mjs", "test-work-loading-browser.mjs", "test-screenshot-recovery.mjs"]) {
+for (const script of ["test-seo-browser.mjs", "test-mobile-navigation.mjs", "test-static-runtime.mjs", "test-deep-browser.mjs", "test-work-loading-browser.mjs", "test-screenshot-recovery.mjs", "test-blog-browser.mjs"]) {
   console.log(`Checking the Pages artifact with ${script}...`);
   const result = spawnSync(process.execPath, [join("scripts", script)], { cwd: root, env, stdio: "inherit", windowsHide: true });
   if (result.error) throw result.error;

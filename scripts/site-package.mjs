@@ -9,7 +9,7 @@ const origin = "https://engmuhammednasser.github.io";
 const runtimeFiles = new Set([
   "scripts/portfolio-effects.js", "scripts/portfolio-effects.css",
   "scripts/mobile-navigation.js", "scripts/case-study-screenshots.js",
-  "scripts/work-archive.js", "scripts/torathyat-case-study.css"
+  "scripts/work-archive.js", "scripts/torathyat-case-study.css", "scripts/blog.css"
 ]);
 const rootFiles = new Set([
   ".nojekyll", "robots.txt", "sitemap.xml", "data/projects.json",
@@ -32,6 +32,7 @@ export function isPublicFile(file) {
   if (rootFiles.has(file) || runtimeFiles.has(file)) return true;
   if (["index.html", "ar/index.html", "404.html", "404/index.html", "_not-found/index.html"].includes(file)) return true;
   if (/^(?:ar\/)?(?:about|backend|contact|lab|services|work)(?:\/[^/.][^/]*)*\/index\.html$/.test(file)) return true;
+  if (/^(?:ar\/)?blog(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)?\/index\.html$/.test(file)) return true;
   if (/^_next\/static\/chunks\/[^/]+\.css$/.test(file)) return true;
   if (/^_next\/static\/media\/[^/]+\.woff2$/.test(file)) return true;
   // Retain all tracked media in this first phase, including originals and older captures.

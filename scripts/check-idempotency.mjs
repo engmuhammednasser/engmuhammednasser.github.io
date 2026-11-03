@@ -38,6 +38,8 @@ function run(script) {
 
 const before = snapshot();
 run("render-work-archive.mjs");
+run("render-blog.mjs");
+run("apply-blog-navigation.mjs");
 run("apply-seo-accessibility.mjs");
 run("inventory-seo-accessibility.mjs");
 run("generate-seo-assets.mjs");
@@ -59,4 +61,4 @@ if (changed.length) {
   process.exit(1);
 }
 
-console.log("Supported Work, SEO, route-inventory, and sitemap generators are deterministic and idempotent.");
+console.log("Supported Work, Blog, navigation, SEO, route-inventory, and sitemap generators are deterministic and idempotent.");

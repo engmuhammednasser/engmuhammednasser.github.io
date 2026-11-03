@@ -7,6 +7,8 @@ const origin = "https://engmuhammednasser.github.io";
 const routesDocument = JSON.parse(readFileSync(resolve(root, "data/routes.json"), "utf8"));
 const projectsDocument = JSON.parse(readFileSync(resolve(root, "data/projects.json"), "utf8"));
 const projects = new Map(projectsDocument.projects.map((project) => [project.slug, project]));
+const blogDocument = JSON.parse(readFileSync(resolve(root, "data/blog.json"), "utf8"));
+const articles = new Map(blogDocument.articles.map((article) => [article.slug, article]));
 
 const siteName = { en: "Muhammed Nasser", ar: "محمد ناصر" };
 const defaultTitle = {
@@ -18,8 +20,12 @@ const defaultDescription = {
   ar: "مطوّر وردبريس وووكومرس ببني مواقع، متاجر، إضافات، ثيمز، وأنظمة Backend مخصصة."
 };
 const pageLabels = {
-  en: { work: "Work", backend: "Backend Systems", lab: "Developer Lab" },
-  ar: { work: "الأعمال", backend: "أنظمة Backend", lab: "مختبر المطور" }
+  en: { work: "Work", backend: "Backend Systems", lab: "Developer Lab", blog: "Blog" },
+  ar: { work: "الأعمال", backend: "أنظمة Backend", lab: "مختبر المطور", blog: "مدونات" }
+};
+const blogDescription = {
+  en: "Practical notes on WordPress, WooCommerce, Laravel, and AI-assisted development by Muhammed Nasser.",
+  ar: "ملاحظات عملية من محمد ناصر عن WordPress وWooCommerce وLaravel والتطوير بمساعدة الذكاء الاصطناعي."
 };
 
 function decode(value = "") {
@@ -59,6 +65,11 @@ function projectFor(route) {
   return match ? projects.get(match[2]) ?? null : null;
 }
 
+function articleFor(route) {
+  const match = route.match(/^\/(?:ar\/)?blog\/([^/]+)\/$/);
+  return match ? articles.get(match[1]) ?? null : null;
+}
+
 function localeFor(route) {
   return route === "/ar/" || route.startsWith("/ar/") ? "ar" : "en";
 }
@@ -87,6 +98,8 @@ function metadataFor(route, html) {
   const locale = localeFor(route);
   const type = pageType(route);
   const project = projectFor(route);
+  const article = articleFor(route);
+  if (type === "blog-article" && !article) throw new Error(`${route}: blog article is missing from data/blog.json`);
   const heading = firstHeading(html);
   const paragraph = firstUsefulParagraph(html);
   const currentDescription = decode(html.match(/<meta\b[^>]*name="description"[^>]*content="([^"]*)"/i)?.[1] ?? "");
@@ -100,6 +113,12 @@ function metadataFor(route, html) {
   } else if (type === "work-index") {
     title = `${pageLabels[locale].work} | ${siteName[locale]}`;
     description = paragraph || (locale === "en" ? "Explore selected WordPress, WooCommerce, corporate, services, and platform projects by Muhammed Nasser." : "تصفح مجموعة من مشاريع ووردبريس ووكومرس والمواقع corporate والخدمات والمنصات التي نفذها محمد ناصر.");
+  } else if (type === "blog-index") {
+    title = `${pageLabels[locale].blog} | ${siteName[locale]}`;
+    description = blogDescription[locale];
+  } else if (type === "blog-article") {
+    title = `${article.title[locale]} | ${siteName[locale]}`;
+    description = article.description[locale];
   } else if (type === "backend-index") {
     title = `${pageLabels[locale].backend} | ${siteName[locale]}`;
     description = paragraph || (locale === "en" ? "Explore backend systems, integrations, and application work by Muhammed Nasser." : "تصفح أنظمة Backend والتكاملات وأعمال التطبيقات التي نفذها محمد ناصر.");
@@ -125,13 +144,14 @@ function metadataFor(route, html) {
 
   const indexable = routeRecord(route)?.indexable && type !== "utility-error";
   const canonical = indexable ? `${origin}${route}` : null;
-  const preview = socialPreviewForRoute(route);
+  const preview = article?.socialImage ?? socialPreviewForRoute(type === "blog-index" ? "/" : route);
   if (preview && !existsSync(resolve(root, preview.replace(/^\/+/, "")))) {
+    if (article) throw new Error(`${route}: missing blog social preview ${preview}`);
     throw new Error(`${route}: missing social preview ${preview}; run npm run images:social -- --projects <slug>`);
   }
   const socialImage = `${origin}${preview ?? "/profile.png"}`;
   const nodes = [];
-  const webPageType = type === "work-index" || type === "backend-index" ? "CollectionPage" : "WebPage";
+  const webPageType = type === "blog-index" ? "Blog" : (type === "work-index" || type === "backend-index" ? "CollectionPage" : "WebPage");
   if (indexable) {
     nodes.push({
       "@context": "https://schema.org",
@@ -141,6 +161,21 @@ function metadataFor(route, html) {
       url: canonical,
       inLanguage: locale
     });
+    if (article) {
+      nodes.push({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: article.title[locale],
+        description,
+        url: canonical,
+        mainEntityOfPage: canonical,
+        inLanguage: locale,
+        image: socialImage,
+        datePublished: article.datePublished,
+        dateModified: article.dateModified,
+        author: { "@type": "Person", name: siteName[locale], url: `${origin}${locale === "ar" ? "/ar" : ""}/about/` }
+      });
+    }
     if (project && (type === "case-study" || type === "backend-case-study")) {
       const creativeWork = {
         "@context": "https://schema.org",
@@ -166,12 +201,12 @@ function metadataFor(route, html) {
     }
   }
 
-  return { locale, title, description, canonical, socialImage, nodes, indexable };
+  return { locale, title, description, canonical, socialImage, nodes, indexable, article };
 }
 
 function removeMetadata(html) {
   return html
-    .replace(/<meta\b[^>]*(?:name="description"|name="robots"|property="og:[^"]+"|name="twitter:[^"]+")[^>]*>\s*/gi, "")
+    .replace(/<meta\b[^>]*(?:name="description"|name="robots"|property="og:[^"]+"|property="article:[^"]+"|name="twitter:[^"]+")[^>]*>\s*/gi, "")
     .replace(/<link\b[^>]*rel="canonical"[^>]*>\s*/gi, "")
     .replace(/<link\b[^>]*rel="alternate"[^>]*hreflang="[^"]+"[^>]*>\s*/gi, "")
     .replace(/<script\b[^>]*type="application\/ld\+json"[^>]*data-seo-structured-data[^>]*>[\s\S]*?<\/script>\s*/gi, "");
@@ -185,12 +220,16 @@ function renderHead(metadata, route) {
     `<meta property="og:description" content="${escapeHtml(metadata.description)}"/>`,
     `<meta property="og:image" content="${escapeHtml(metadata.socialImage)}"/>`,
     `<meta property="og:url" content="${escapeHtml(metadata.canonical || `${origin}${route}`)}"/>`,
-    `<meta property="og:type" content="website"/>`,
+    `<meta property="og:type" content="${metadata.article ? "article" : "website"}"/>`,
     `<meta name="twitter:card" content="summary_large_image"/>`,
     `<meta name="twitter:title" content="${escapeHtml(metadata.title)}"/>`,
     `<meta name="twitter:description" content="${escapeHtml(metadata.description)}"/>`,
     `<meta name="twitter:image" content="${escapeHtml(metadata.socialImage)}"/>`
   ];
+  if (metadata.article) {
+    tags.push(`<meta property="article:published_time" content="${escapeHtml(metadata.article.datePublished)}"/>`);
+    tags.push(`<meta property="article:modified_time" content="${escapeHtml(metadata.article.dateModified)}"/>`);
+  }
   const record = routeRecord(route);
   if (metadata.indexable && record?.enEquivalent && record?.arEquivalent) {
     const enRoute = record.locale === "en" ? route : record.enEquivalent;
