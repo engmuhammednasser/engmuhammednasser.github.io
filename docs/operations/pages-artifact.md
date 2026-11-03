@@ -40,9 +40,9 @@ before committing; packaging does not commit or stage anything.
 | Required `_next/static/chunks/*.css` and `_next/static/media/*.woff2` | Existing compiled styles and fonts |
 | Approved root profile, favicon, and icon files | Existing page and browser assets |
 | Tracked images under `projects/`, `plugins/`, `backend/`, `images/`, `logos/`, and `_next/static/media/` | Originals, previews, variants, and historical captures are retained in this phase |
-| The seven runtime assets listed below | Native interactions and their styles |
+| The eight runtime assets listed below | Native interactions and their styles |
 
-The seven runtime assets are four JavaScript files and three stylesheets:
+The eight runtime assets are five JavaScript files and three stylesheets:
 
 - `scripts/portfolio-effects.js`
 - `scripts/portfolio-effects.css`
@@ -51,6 +51,7 @@ The seven runtime assets are four JavaScript files and three stylesheets:
 - `scripts/work-archive.js`
 - `scripts/torathyat-case-study.css`
 - `scripts/blog.css`
+- `scripts/blog-copy.js` (article pages only)
 
 The Blog route family explicitly permits `/blog/`, `/blog/<slug>/`, and their
 Arabic equivalents. Its source catalog `data/blog.json`, Markdown in `content/blog/`,

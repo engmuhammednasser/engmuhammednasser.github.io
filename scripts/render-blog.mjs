@@ -43,6 +43,7 @@ for (const locale of ["en", "ar"]) {
     let html = template.replace(/<main\b[^>]*>[\s\S]*?<\/main>/i, `<main class="flex-1 blog-main" id="main-content">${article ? articleBody(locale, article) : indexBody(locale)}</main>`);
     html = html.replace(/<header\b[\s\S]*?<\/header>/i, (header) => header.replaceAll(`href="${other === "ar" ? "/ar/about/" : "/about/"}"`, `href="${routeFor(other, article?.slug)}"`));
     html = html.replace("</head>", '<link rel="stylesheet" href="/scripts/blog.css" data-blog-style/></head>');
+    if (article) html = html.replace("</body>", '<script src="/scripts/blog-copy.js" defer data-blog-copy-script></script></body>');
     html = applyBlogNavigation(html, route);
     const file = resolve(root, route.slice(1), "index.html");
     mkdirSync(dirname(file), { recursive: true });

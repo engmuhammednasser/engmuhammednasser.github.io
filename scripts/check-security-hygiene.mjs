@@ -9,6 +9,7 @@ const textExtensions = new Set([".css", ".html", ".js", ".json", ".mjs", ".txt",
 const productionRuntimeAssets = [
   "scripts/armadillo-studio-screenshots.js",
   "scripts/blog.css",
+  "scripts/blog-copy.js",
   "scripts/case-study-screenshots.js",
   "scripts/kuwait-arc-screenshots.js",
   "scripts/mobile-navigation.js",

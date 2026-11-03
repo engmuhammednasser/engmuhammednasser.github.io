@@ -37,6 +37,13 @@ Use fenced code blocks with a simple language label such as `powershell` or
 can receive keyboard focus for horizontal scrolling. Tables have their own
 scrollable container. Reading time is an estimate derived from the article text.
 
+PowerShell blocks have a localized Copy button, enabled by the article-only
+`scripts/blog-copy.js` enhancement. It copies the exact visible code, including
+line breaks, and announces success only when the Clipboard API completes. If
+clipboard access fails or is unavailable, it selects the code for manual copying
+and explains the fallback. It never executes commands. Buttons stay hidden when
+JavaScript is unavailable; the code remains selectable and readable.
+
 Raw HTML and inline Markdown images are intentionally rejected. Use the catalog
 cover; additional image placements need an explicit rendering and delivery change.
 Article links accept HTTPS URLs, root-relative local paths, and heading fragments.

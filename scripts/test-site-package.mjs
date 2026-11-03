@@ -118,7 +118,7 @@ test("publication policy separates runtime assets from tooling and archived outp
   for (const path of [
     "index.html", "404.html", "ar/work/example/index.html", ".nojekyll", "robots.txt", "sitemap.xml",
     "data/projects.json", "scripts/work-archive.js", "scripts/case-study-screenshots.js",
-    "scripts/portfolio-effects.css", "scripts/torathyat-case-study.css", "scripts/blog.css", stylesheet, font,
+    "scripts/portfolio-effects.css", "scripts/torathyat-case-study.css", "scripts/blog.css", "scripts/blog-copy.js", stylesheet, font,
     "blog/index.html", "ar/blog/index.html", "blog/qodo-codex-windows/index.html", "ar/blog/another-article-2/index.html",
     "projects/example/original.png", "backend/example/preview.webp", "plugins/example/screenshot.avif", "favicon.ico"
   ]) assert.equal(isPublicFile(path), true, `${path} should be publishable`);
