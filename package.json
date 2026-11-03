@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "blog": "node scripts/render-blog.mjs && node scripts/apply-blog-navigation.mjs && node scripts/inventory-seo-accessibility.mjs && node scripts/apply-seo-accessibility.mjs && node scripts/inventory-seo-accessibility.mjs && node scripts/generate-seo-assets.mjs && node scripts/apply-mobile-navigation.mjs && node scripts/apply-static-runtime.mjs",
+    "images:blog": "node scripts/generate-blog-images.mjs",
+    "test:blog": "node --test scripts/test-blog.mjs && node scripts/test-blog-browser.mjs",
     "capture:arabic-window": "node scripts/capture-arabic-window-pages.mjs",
     "capture:kuwait-arc": "node scripts/capture-kuwait-arc-pages.mjs",
     "effects:portfolio": "node scripts/add-portfolio-effects.mjs",
@@ -31,7 +34,7 @@
     "images:pilot": "node scripts/apply-pilot-thumbnails.mjs",
     "audit:assets": "node scripts/audit-project-assets.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node --test scripts/test-work-loading.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs && npm run test:loading:browser",
+    "check": "node scripts/validate-project-data.mjs && node scripts/check-static.mjs && node scripts/check-image-delivery.mjs && node scripts/check-runtime-invariants.mjs && node scripts/check-case-study-screenshot-scroll.mjs && node scripts/check-work-archive.mjs && node scripts/test-work-archive.mjs && node --test scripts/test-work-loading.mjs scripts/test-blog.mjs && node scripts/check-seo-accessibility.mjs && node scripts/check-security-hygiene.mjs && node scripts/check-performance-budgets.mjs && node scripts/test-seo-browser.mjs && node scripts/test-mobile-navigation.mjs && node scripts/check-static-runtime.mjs && node scripts/test-static-runtime.mjs && node scripts/test-deep-browser.mjs && npm run test:loading:browser && node scripts/test-blog-browser.mjs",
     "verify": "npm run check && npm run test:idempotency && git diff --check",
     "runtime:static": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/apply-static-runtime.mjs",
     "images:display": "node scripts/apply-case-study-screenshot-scroll.mjs && node scripts/optimize-display-images.mjs && node scripts/optimize-heavy-previews.mjs",
@@ -49,6 +52,7 @@
   },
   "devDependencies": {
     "axe-core": "4.13.0",
+    "marked": "18.1.3",
     "playwright-core": "1.58.2",
     "sharp": "0.35.5"
   }

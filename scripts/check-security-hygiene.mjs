@@ -8,6 +8,7 @@ const ignoredDirectories = new Set([".git", "node_modules", "docs", "scripts", "
 const textExtensions = new Set([".css", ".html", ".js", ".json", ".mjs", ".txt", ".xml"]);
 const productionRuntimeAssets = [
   "scripts/armadillo-studio-screenshots.js",
+  "scripts/blog.css",
   "scripts/case-study-screenshots.js",
   "scripts/kuwait-arc-screenshots.js",
   "scripts/mobile-navigation.js",

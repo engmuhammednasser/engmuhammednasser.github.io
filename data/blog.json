@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "articles": [
+    {
+      "slug": "qodo-codex-windows",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "title": {
+        "en": "Setting Up Qodo with Codex on Windows: Installation, Verification, and Troubleshooting",
+        "ar": "إعداد Qodo مع Codex على Windows: التثبيت والتحقق وتشخيص الأخطاء"
+      },
+      "description": {
+        "en": "A practical guide to plugin installation, CLI authentication, tool discovery, and Windows troubleshooting, with the actual review result explained.",
+        "ar": "دليل عملي يميّز بين تثبيت الإضافة وتسجيل الدخول واكتشاف الأدوات، مع تشخيص مشكلات PATH وتوضيح نتيجة تجربة المراجعة الفعلية."
+      },
+      "tags": ["Qodo", "Codex", "Windows", "AI Code Review"],
+      "image": "/images/blog/qodo-codex-windows/cover-1200.webp",
+      "socialImage": "/images/blog/qodo-codex-windows/social.jpg",
+      "imageAlt": {
+        "en": "Codex and Qodo: Windows setup and verification workflow",
+        "ar": "Codex وQodo: خطوات الإعداد والتحقق على Windows"
+      },
+      "content": {
+        "en": "content/blog/qodo-codex-windows.en.md",
+        "ar": "content/blog/qodo-codex-windows.ar.md"
+      }
+    }
+  ]
+}

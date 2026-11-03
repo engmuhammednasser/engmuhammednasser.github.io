@@ -7,6 +7,7 @@ const root = resolve(process.cwd());
 const origin = "https://engmuhammednasser.github.io";
 const routesDocument = JSON.parse(readFileSync(resolve(root, "data/routes.json"), "utf8"));
 const routeMap = new Map(routesDocument.routes.map((route) => [route.route, route]));
+const articles = new Map(JSON.parse(readFileSync(resolve(root, "data/blog.json"), "utf8")).articles.map(article => [article.slug, article]));
 const failures = [];
 const checkedPreviews = new Set();
 
@@ -50,6 +51,7 @@ function parseJsonLd(content, route) {
       if (!node["@type"]) fail(`${route}: JSON-LD node is missing @type`);
       if (node.url && routeFromUrl(node.url) !== route) fail(`${route}: JSON-LD URL is not route-specific`);
     }
+    return nodes;
   } catch (error) {
     fail(`${route}: JSON-LD is not valid JSON (${error.message})`);
   }
@@ -76,7 +78,10 @@ for (const record of routesDocument.routes) {
     }
     const ogUrl = attr(metaTags(html, "property", "og:url")[0] ?? "", "content");
     if (ogUrl !== `${origin}${record.route}`) fail(`${record.route}: og:url is not route-specific`);
-    const preview = socialPreviewForRoute(record.route);
+    const articleSlug = record.route.match(/^\/(?:ar\/)?blog\/([^/]+)\/$/)?.[1];
+    const article = articleSlug ? articles.get(articleSlug) : null;
+    if (record.pageType === "blog-article" && !article) fail(`${record.route}: blog article is missing from canonical data`);
+    const preview = article?.socialImage ?? socialPreviewForRoute(record.pageType === "blog-index" ? "/" : record.route);
     if (["case-study", "backend-case-study"].includes(record.pageType) && !preview) {
       fail(`${record.route}: case study needs a mapped project social preview`);
     }
@@ -84,7 +89,7 @@ for (const record of routesDocument.routes) {
       const expectedImage = `${origin}${preview}`;
       const ogImage = attr(metaTags(html, "property", "og:image")[0] ?? "", "content");
       const twitterImage = attr(metaTags(html, "name", "twitter:image")[0] ?? "", "content");
-      if (ogImage !== expectedImage || twitterImage !== expectedImage) fail(`${record.route}: social image does not match the project preview`);
+      if (ogImage !== expectedImage || twitterImage !== expectedImage) fail(`${record.route}: social image does not match the configured preview`);
       if (!checkedPreviews.has(preview)) {
         checkedPreviews.add(preview);
         const imageFile = resolve(root, preview.slice(1));
@@ -117,6 +122,13 @@ for (const record of routesDocument.routes) {
     if (!new RegExp(`<a\\b[^>]*href="#main-content"[^>]*data-skip-link`, "i").test(html)) fail(`${record.route}: skip link is missing`);
     const navs = tags(html, "nav");
     if (!navs.length || !navs.some((nav) => attr(nav, "aria-label").trim())) fail(`${record.route}: navigation landmark lacks an accessible label`);
+    const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/i)?.[0] ?? "";
+    const blogLinks = tags(header, "a").filter(link => attr(link, "data-blog-navigation") === "link");
+    const blogRoute = record.locale === "ar" ? "/ar/blog/" : "/blog/";
+    const currentBlog = record.route.startsWith(blogRoute) ? (record.route === blogRoute ? "page" : "location") : "";
+    if (blogLinks.length !== 2 || blogLinks.some(link => attr(link, "href") !== blogRoute || attr(link, "aria-current") !== currentBlog)) {
+      fail(`${record.route}: desktop/mobile Blog navigation must preserve locale and current section`);
+    }
     const menuButtons = tags(html, "button").filter((button) => /aria-expanded=/.test(button));
     if (menuButtons.length !== 1 || attr(menuButtons[0], "aria-controls") !== "mobile-navigation") fail(`${record.route}: mobile menu button relationship is incomplete`);
     if (!/<div\b[^>]*id="mobile-navigation"[^>]*role="dialog"/i.test(html)) fail(`${record.route}: mobile navigation dialog relationship is incomplete`);
@@ -128,7 +140,25 @@ for (const record of routesDocument.routes) {
     }
     const images = tags(html, "img");
     if (images.some((image) => !/\balt="/i.test(image))) fail(`${record.route}: an image is missing alt`);
-    parseJsonLd(html, record.route);
+    const nodes = parseJsonLd(html, record.route) ?? [];
+    if (record.pageType === "blog-index" && nodes.filter(node => node["@type"] === "Blog").length !== 1) {
+      fail(`${record.route}: blog index needs one Blog structured-data node`);
+    }
+    if (article) {
+      const postings = nodes.filter(node => node["@type"] === "BlogPosting");
+      const posting = postings[0];
+      if (postings.length !== 1 || posting.headline !== article.title[record.locale] || posting.description !== article.description[record.locale] ||
+          posting.inLanguage !== record.locale || posting.datePublished !== article.datePublished || posting.dateModified !== article.dateModified ||
+          posting.image !== `${origin}${article.socialImage}` || posting.mainEntityOfPage !== `${origin}${record.route}` ||
+          posting.author?.["@type"] !== "Person" || posting.author?.name !== (record.locale === "ar" ? "محمد ناصر" : "Muhammed Nasser")) {
+        fail(`${record.route}: BlogPosting metadata must match canonical article data and author`);
+      }
+      if (attr(metaTags(html, "property", "og:type")[0] ?? "", "content") !== "article") fail(`${record.route}: blog article needs og:type article`);
+      for (const [property, expected] of [["article:published_time", article.datePublished], ["article:modified_time", article.dateModified]]) {
+        const values = metaTags(html, "property", property);
+        if (values.length !== 1 || attr(values[0], "content") !== expected) fail(`${record.route}: ${property} must match canonical article data`);
+      }
+    }
   } else {
     const robots = metaTags(html, "name", "robots");
     if (robots.length !== 1 || !/noindex/i.test(attr(robots[0], "content"))) fail(`${record.route}: utility route must remain noindex`);

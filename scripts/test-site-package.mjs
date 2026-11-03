@@ -118,7 +118,8 @@ test("publication policy separates runtime assets from tooling and archived outp
   for (const path of [
     "index.html", "404.html", "ar/work/example/index.html", ".nojekyll", "robots.txt", "sitemap.xml",
     "data/projects.json", "scripts/work-archive.js", "scripts/case-study-screenshots.js",
-    "scripts/portfolio-effects.css", "scripts/torathyat-case-study.css", stylesheet, font,
+    "scripts/portfolio-effects.css", "scripts/torathyat-case-study.css", "scripts/blog.css", stylesheet, font,
+    "blog/index.html", "ar/blog/index.html", "blog/qodo-codex-windows/index.html", "ar/blog/another-article-2/index.html",
     "projects/example/original.png", "backend/example/preview.webp", "plugins/example/screenshot.avif", "favicon.ico"
   ]) assert.equal(isPublicFile(path), true, `${path} should be publishable`);
 
@@ -127,7 +128,9 @@ test("publication policy separates runtime assets from tooling and archived outp
     ".github/workflows/quality.yml", "scripts/test-work-archive.mjs", "scripts/check-card.js",
     "scripts/torathyat-screenshots.js", "data/routes.json", "data/image-delivery.json",
     "projects/example/manifest.json", "work/index.txt", "__next._full.txt", "fix_js_txt_links.cjs",
-    "_next/static/chunks/retired.js", "node_modules/anything/index.html", "../index.html", "/index.html"
+    "_next/static/chunks/retired.js", "node_modules/anything/index.html", "../index.html", "/index.html",
+    "data/blog.json", "content/blog/example.en.md", "scripts/render-blog.mjs", "blog/draft.md",
+    "blog/.draft/index.html", "blog/one/two/index.html", "ar/blog/article.js"
   ]) assert.equal(isPublicFile(path), false, `${path} must stay out of publication`);
 });
 

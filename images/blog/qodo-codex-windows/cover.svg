@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101d34"/><stop offset="1" stop-color="#050b16"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#1679a0" stop-opacity=".25"/><stop offset="1" stop-color="#1679a0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="627" fill="url(#bg)"/>
+  <ellipse cx="990" cy="100" rx="500" ry="450" fill="url(#glow)"/>
+  <g fill="none" stroke="#294158" stroke-width="1" opacity=".5"><path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M120 0v627M240 0v627M360 0v627M480 0v627M600 0v627M720 0v627M840 0v627M960 0v627M1080 0v627"/></g>
+  <rect x="64" y="62" width="54" height="5" rx="2.5" fill="url(#accent)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="64" y="102" fill="#7dd3fc" font-size="16" font-weight="700" letter-spacing="3">DEVELOPMENT NOTES</text>
+    <text x="60" y="216" fill="#f8fafc" font-size="76" font-weight="750" letter-spacing="-3">Codex + Qodo</text>
+    <text x="64" y="271" fill="#b8cbe2" font-size="30">Windows setup &amp; verification</text>
+    <text x="66" y="336" fill="#7dd3fc" font-size="17" font-weight="600">INSTALL</text>
+    <path d="M156 330h34m-7-6 7 6-7 6" fill="none" stroke="#667e98" stroke-width="2"/>
+    <text x="210" y="336" fill="#7dd3fc" font-size="17" font-weight="600">VERIFY</text>
+    <path d="M300 330h34m-7-6 7 6-7 6" fill="none" stroke="#667e98" stroke-width="2"/>
+    <text x="354" y="336" fill="#c4b5fd" font-size="17" font-weight="600">REVIEW</text>
+    <text x="64" y="565" fill="#8da4bd" font-size="18">MUHAMMED NASSER</text>
+  </g>
+  <g transform="translate(680 304)">
+    <rect width="450" height="247" rx="16" fill="#080e19" stroke="#37516c"/>
+    <path d="M16 0h418a16 16 0 0 1 16 16v29H0V16A16 16 0 0 1 16 0Z" fill="#14243a"/>
+    <circle cx="22" cy="23" r="5" fill="#38bdf8"/><circle cx="40" cy="23" r="5" fill="#677d98"/><circle cx="58" cy="23" r="5" fill="#677d98"/>
+    <text x="295" y="29" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#a8bfd8">PowerShell</text>
+    <g font-family="Consolas,monospace" font-size="17">
+      <text x="24" y="88" fill="#7dd3fc">&gt; <tspan fill="#dce9f7">qodo --version</tspan></text>
+      <text x="24" y="132" fill="#7dd3fc">&gt; <tspan fill="#dce9f7">qodo read whoami --json</tspan></text>
+      <text x="24" y="176" fill="#7dd3fc">&gt; <tspan fill="#dce9f7">qodo tools --refresh</tspan></text>
+      <text x="24" y="220" fill="#c4b5fd">&gt; <tspan fill="#a8bfd8">check each stage</tspan></text>
+    </g>
+  </g>
+  <path d="M1200 0v627H0" fill="none" stroke="url(#accent)" stroke-width="6"/>
+</svg>
