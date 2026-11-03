@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { spawn, spawnSync } from "node:child_process";
+import { once } from "node:events";
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { verifySitePackage } from "./site-package.mjs";
@@ -7,10 +8,10 @@ import { verifySitePackage } from "./site-package.mjs";
 const root = resolve(".");
 const { siteRoot, files } = verifySitePackage(root);
 const env = { ...process.env, SITE_ROOT: siteRoot };
-const origin = "http://127.0.0.1:38128";
+let origin;
 const server = spawn(process.execPath, ["scripts/serve.mjs"], {
   cwd: root,
-  env: { ...env, PORT: "38128", HOST: "127.0.0.1" },
+  env: { ...env, PORT: "0", HOST: "127.0.0.1" },
   stdio: ["ignore", "pipe", "inherit"],
   windowsHide: true
 });
@@ -22,12 +23,23 @@ try {
       clearTimeout(timer);
       server.removeListener("error", finish);
       server.removeListener("exit", exited);
+      server.stdout.removeListener("data", ready);
       error ? reject(error) : done();
     }
     function exited(code) { finish(new Error(`Artifact server exited before startup: ${code}`)); }
+    let output = "";
+    function ready(chunk) {
+      output += chunk.toString();
+      const match = output.match(/Static site running at (http:\/\/127\.0\.0\.1:(\d+))\r?\n/);
+      if (!match) return;
+      const port = Number(match[2]);
+      if (port < 1 || port > 65535) return finish(new Error("Invalid artifact server port"));
+      origin = match[1];
+      finish();
+    }
     server.once("error", finish);
     server.once("exit", exited);
-    server.stdout.once("data", () => finish());
+    server.stdout.on("data", ready);
   });
   // These are ordinary source URLs: a dot-file block alone would not prove separation.
   for (const path of [
@@ -50,7 +62,11 @@ try {
   assert(files.includes(".nojekyll"), "The Pages artifact must retain .nojekyll");
   console.log("Artifact HTTP checks passed: public bytes match and development/retired URLs return 404.");
 } finally {
-  server.kill();
+  if (server.pid && server.exitCode === null && server.signalCode === null) {
+    const stopped = once(server, "exit");
+    server.kill();
+    await stopped;
+  }
 }
 
 for (const script of ["test-seo-browser.mjs", "test-mobile-navigation.mjs", "test-static-runtime.mjs", "test-deep-browser.mjs", "test-work-loading-browser.mjs", "test-screenshot-recovery.mjs", "test-blog-browser.mjs"]) {
