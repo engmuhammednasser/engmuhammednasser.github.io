@@ -3,6 +3,14 @@
   background-color: #05070d !important;
 }
 
+/* Keep the portrait centered with headroom in square and 4:5 profile frames. */
+.portfolio-portrait {
+  object-fit: cover;
+  object-position: 50% 12%;
+  transform: scale(1.12);
+  transform-origin: 50% 12%;
+}
+
 .portfolio-polished > main,
 .portfolio-polished > footer {
   position: relative;
