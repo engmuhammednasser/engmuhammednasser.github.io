@@ -1,6 +1,10 @@
 Installing a coding tool is one step. Proving that it can review a real repository is another.
 
-That distinction became clear while setting up Qodo with Codex on Windows. Qodo CLI 2.1.0 was available, authentication succeeded, and the tools were discoverable. A subsequent local review failed because Qodo could not obtain repository credentials. The setup was therefore partially verified; there was no completed review to evaluate.
+Qodo is an AI code review and code quality platform; Codex is OpenAI’s coding agent. The Qodo plugin lets Codex call Qodo’s setup, codebase, and review workflows.
+
+The gap between installing and proving became clear while setting up Qodo with Codex on Windows. Qodo CLI 2.1.0 was available, authentication succeeded, and the tools were discoverable. A subsequent local review failed because Qodo could not obtain repository credentials. The setup was therefore partially verified; there was no completed review to evaluate.
+
+**Test context:** Windows 11, Codex with Qodo plugin 2.1.6, and Qodo CLI 2.1.0, on November 3, 2026.
 
 This guide combines that observed result with the official setup procedure. It explains what each check establishes, how to investigate command discovery on Windows, and where to stop when a repository access error prevents a review.
 
@@ -16,7 +20,7 @@ This article follows the Windows CLI path. Qodo also supports an MCP connection,
 
 ## 2. Install the plugin and check prerequisites
 
-In the desktop app, open Codex, select **Plugins**, search for **Qodo**, and install it. In Codex CLI, `/plugins` opens the plugin browser. Start a new chat or CLI session afterward so the bundled skills can load. [OpenAI plugin documentation](https://learn.chatgpt.com/docs/plugins)
+In the desktop app, open Codex, select **Plugins**, search for **Qodo**, and install it. In Codex CLI, `/plugins` opens the plugin browser. Start a new chat or CLI session afterward so the bundled skills can load. Plugins are not available in the Codex IDE extension; install them from the desktop app or Codex CLI. [OpenAI plugin documentation](https://learn.chatgpt.com/docs/plugins)
 
 You will also need PowerShell, a Qodo account, and a Git repository for the review stage. Check Node.js:
 
@@ -32,7 +36,7 @@ If you prefer guided setup, ask Codex to use `$qodo-setup` and follow the instal
 
 The public CLI page provides a PowerShell download-and-execute command. The current setup skill instead specifies a pinned installer, checksum verification, and inspection before execution. The example below follows that procedure for **Qodo Cloud**. Organization-hosted deployments must use their own supplied installer URL, checksum, and login endpoint. [Official runtime installation procedure](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md)
 
-The following pin was published in the official setup reference checked on November 3, 2026:
+The following pin was published in the official setup reference checked on November 3, 2026. If the reference lists a different pin when you install, use its current value instead of copying this one:
 
 ```powershell
 $qodoHash = 'b0386d363d07e62384d099ddf41347f48cc1e80ed842c2916fb181c9356ed96e'
@@ -50,13 +54,21 @@ if ($qodoActualHash -ne $qodoHash) {
 notepad.exe $qodoInstaller
 ```
 
-After reviewing that file, run the same saved script in accordance with your device’s execution policy:
+After reviewing that file, check the effective execution policy:
+
+```powershell
+Get-ExecutionPolicy -List
+```
+
+When every scope is `Undefined`, Windows PowerShell applies `Restricted` on Windows client editions, which does not run script files. Qodo’s public one-line command passes `-ExecutionPolicy Bypass` to that single process; the setup skill instead says to honor execution-policy restrictions and stop if execution is denied. [Microsoft: execution policies](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1)
+
+When the policy permits it, run the same saved script:
 
 ```powershell
 powershell.exe -NoProfile -File $qodoInstaller
 ```
 
-If policy blocks execution, resolve that through your organization’s approved process. Do not substitute a different download or skip a failed checksum check. This is documented installation guidance; it does not imply that this revised recipe was rerun during the article update.
+If policy blocks execution, change it only through an approved process, such as your organization’s process on a managed device. Do not substitute a different download or skip a failed checksum check. This is documented installation guidance, not a record of rerunning this exact recipe.
 
 ## 4. Diagnose “qodo is not recognized”
 
@@ -98,11 +110,24 @@ Report each verified stage and preserve any exact error.
 Do not describe tool discovery as a completed review.
 ```
 
+To remove the integration later, `& $qodoExe uninstall` removes the CLI, global Qodo skills, stored credentials, and configuration, according to the CLI’s own help.
+
 ## 6. Prepare a real review
 
-Qodo’s Reviewer sends the working-tree diff, new untracked files, and supplied session context to its review service. Local edits can remain uncommitted and unpushed, but the comparison base must be available through the Git provider. Review requires access to that repository. Check which code and context may be shared before submitting customer or company work. [Reviewer documentation](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
+Qodo’s Reviewer sends the working-tree diff, new untracked files, and supplied session context to its review service. Local edits can remain uncommitted and unpushed, but the comparison base must be pushed: the review engine clones it from your Git provider. Review therefore requires Qodo to have access to that repository. Check which code and context may be shared before submitting customer or company work. Reviewer is in Beta at the time of writing. [Reviewer documentation](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
 
-Use the intended target branch and its merge-base with `HEAD` as the comparison baseline, and include the change’s purpose and known constraints. Exact command flags should be checked against `qodo review --help`. [Official review workflow](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
+Use the intended target branch and its merge-base with `HEAD` as the comparison baseline, and include the change’s purpose and known constraints. In PowerShell, with `origin/main` as the target:
+
+```powershell
+git fetch origin
+$reviewBase = git merge-base HEAD origin/main
+if ($LASTEXITCODE -ne 0 -or -not $reviewBase) {
+    throw 'Cannot resolve the merge base. Fetch the missing history or choose the correct target branch.'
+}
+& $qodoExe review --base $reviewBase
+```
+
+Replace `origin/main` when the change targets another branch. Check the available options with `& $qodoExe review --help`; the review skill also attaches session context through `--context-file`. [Official review workflow](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
 
 For an authorized review, a focused Codex prompt is:
 
@@ -123,7 +148,7 @@ The observed local review did **not** complete. It returned:
 Qodo could not obtain repository credentials for the current workspace. Check the active workspace and repository connection; if those are correct, contact support before starting another review. Do not automatically start another attempt.
 ```
 
-That message identifies the failed stage, but does not establish the underlying cause. The next step is to check the selected Qodo workspace and repository connection, then contact support if those are correct. This result does not justify repeated login attempts or an automatic review retry.
+That message identifies the failed stage, but does not establish the underlying cause. Because the review engine clones the comparison base from the Git provider, start with the repository connection: confirm that the active Qodo workspace is the intended one and that Qodo is installed in the Git provider with access to this repository. If those are correct, contact support. This result does not justify repeated login attempts or an automatic review retry. [Install Qodo in your Git provider](https://docs.qodo.ai/install-qodo/install)
 
 | Check | Observed result | What it establishes |
 |---|---|---|
@@ -141,14 +166,14 @@ There is consequently no evidence here for a clean review, the number of issues 
 | Command not recognized | Verify the installation path and direct executable invocation |
 | Plugin installed, skills missing | Start a new Codex chat/session and confirm the plugin is enabled |
 | Identity succeeds, catalog fails | Preserve the catalog error and check capability/access |
-| Repository credentials unavailable | Check the active workspace and repository connection; follow the returned stop instruction |
+| Repository credentials unavailable | Check the active workspace and that Qodo is installed in the Git provider with access to the repository; follow the returned stop instruction |
 | `closed_preview` or another explicit access gate | Follow the reported access requirement; do not retry an unchanged entitlement failure |
 
 The last row describes a possible error handled by the review skill; it was **not** the observed failure in this setup. [Review error handling](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
 
 For me, the practical lesson is to attach evidence to each stage. A successful login is useful, but it cannot stand in for a completed repository review. AI review can add another perspective to development; I still treat tests, integration checks, and human judgment as separate responsibilities.
 
-*This is an independent technical guide based on official documentation and the setup evidence described above.*
+*This is an independent technical guide based on official documentation and the setup evidence described above. It is not documentation issued by Qodo.*
 
 ## Official references
 
@@ -158,5 +183,7 @@ For me, the practical lesson is to attach evidence to each stage. A successful l
 - [Qodo: runtime and verified installer procedure](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md)
 - [Qodo: Reviewer documentation](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
 - [Qodo: review skill source](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
+- [Qodo: install Qodo in your Git provider](https://docs.qodo.ai/install-qodo/install)
 - [OpenAI: plugins in ChatGPT and Codex](https://learn.chatgpt.com/docs/plugins)
 - [Microsoft: PowerShell environment variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5)
+- [Microsoft: PowerShell execution policies](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1)

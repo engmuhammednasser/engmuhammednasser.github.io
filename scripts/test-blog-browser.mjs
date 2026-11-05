@@ -148,7 +148,7 @@ async function checkCover(image, label) {
 async function checkCopyButtons(page, locale) {
   const labels = copyLabels[locale];
   const blocks = page.locator(".blog-code:has([data-blog-copy])");
-  assert.equal(await blocks.count(), 5, "Only the five PowerShell examples should expose Copy");
+  assert.equal(await blocks.count(), 7, "Only the seven PowerShell examples should expose Copy");
   await page.bringToFront();
   await page.evaluate(() => {
     const writeText = navigator.clipboard.writeText.bind(navigator.clipboard);
@@ -337,7 +337,7 @@ try {
       assert(await page.locator(".blog-prose").isVisible());
       assert((await page.locator(".blog-prose").innerText()).trim().length > 0);
       const copyButtons = page.locator("[data-blog-copy]");
-      assert.equal(await copyButtons.count(), 5);
+      assert.equal(await copyButtons.count(), 7);
       for (const button of await copyButtons.all()) {
         assert(await button.evaluate((element) => element.hidden));
         assert.equal(await button.isVisible(), false, "No-JavaScript readers must not encounter inactive Copy controls");

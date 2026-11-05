@@ -1,6 +1,10 @@
 تثبيت أداة تساعد في مراجعة الكود خطوة، وإثبات قدرتها على مراجعة مستودع فعلي خطوة أخرى.
 
-ظهر هذا الفرق بوضوح أثناء إعداد Qodo مع Codex على Windows. أصبح Qodo CLI بالإصدار 2.1.0 متاحًا، ونجح التحقق من الحساب واكتشاف الأدوات. لكن محاولة المراجعة المحلية اللاحقة فشلت لأن Qodo لم يتمكن من الحصول على بيانات اعتماد المستودع. لذلك تحققت بعض مراحل الإعداد، ولم تتوفر نتيجة مراجعة مكتملة يمكن تقييمها.
+Qodo منصة لمراجعة الكود وجودته بالذكاء الاصطناعي، وCodex هو وكيل البرمجة من OpenAI. وتتيح إضافة Qodo لـCodex استخدام مسارات Qodo للإعداد وفهم المشروع والمراجعة.
+
+ظهر الفرق بين التثبيت والإثبات بوضوح أثناء إعداد Qodo مع Codex على Windows. أصبح Qodo CLI بالإصدار 2.1.0 متاحًا، ونجح التحقق من الحساب واكتشاف الأدوات. لكن محاولة المراجعة المحلية اللاحقة فشلت لأن Qodo لم يتمكن من الحصول على بيانات اعتماد المستودع. لذلك تحققت بعض مراحل الإعداد، ولم تتوفر نتيجة مراجعة مكتملة يمكن تقييمها.
+
+**بيئة التجربة:** Windows 11، وCodex مع إضافة Qodo بالإصدار 2.1.6، وQodo CLI بالإصدار 2.1.0، بتاريخ 3 نوفمبر 2026.
 
 يجمع هذا الدليل بين النتيجة الفعلية وإجراءات الإعداد الموثقة رسميًا، ويوضح ما يثبته كل فحص، وكيفية تشخيص مشكلة اكتشاف الأمر في Windows، ومتى يجب التوقف عند تعذر الوصول إلى المستودع.
 
@@ -16,7 +20,7 @@
 
 ## 2. ثبّت الإضافة وافحص المتطلبات
 
-من تطبيق سطح المكتب، افتح Codex ثم **Plugins**، وابحث عن **Qodo** وثبّتها. وفي Codex CLI، يفتح الأمر `/plugins` متصفح الإضافات. ابدأ محادثة أو جلسة CLI جديدة بعد التثبيت لتحميل المهارات المرفقة. [توثيق إضافات OpenAI](https://learn.chatgpt.com/docs/plugins)
+من تطبيق سطح المكتب، افتح Codex ثم **Plugins**، وابحث عن **Qodo** وثبّتها. وفي Codex CLI، يفتح الأمر `/plugins` متصفح الإضافات. ابدأ محادثة أو جلسة CLI جديدة بعد التثبيت لتحميل المهارات المرفقة. الإضافات غير متاحة في إضافة Codex لبيئات التطوير (IDE)؛ ثبّتها من تطبيق سطح المكتب أو من Codex CLI. [توثيق إضافات OpenAI](https://learn.chatgpt.com/docs/plugins)
 
 ستحتاج كذلك إلى PowerShell وحساب Qodo ومستودع Git لمرحلة المراجعة. افحص إصدار Node.js:
 
@@ -32,7 +36,7 @@ node --version
 
 تعرض صفحة CLI العامة أمرًا لتنزيل برنامج التثبيت وتشغيله مباشرة عبر PowerShell. أما مهارة الإعداد الحالية فتحدد برنامج تثبيت برابط ثابت، مع التحقق من البصمة وفحص الملف قبل التنفيذ. يتبع المثال التالي هذا المسار في **Qodo Cloud**. وللنشر الخاص بالمؤسسات، استخدم رابط التثبيت والبصمة وعنوان تسجيل الدخول التي توفرها المؤسسة. [إجراء التثبيت الرسمي](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md)
 
-نُشرت البصمة التالية في مرجع الإعداد الرسمي الذي راجعته بتاريخ 3 نوفمبر 2026:
+نُشرت البصمة التالية في مرجع الإعداد الرسمي الذي راجعته بتاريخ 3 نوفمبر 2026. إذا وجدت بصمة مختلفة في المرجع وقت التثبيت، فاستخدم القيمة الحالية منه بدلًا من نسخ هذه القيمة:
 
 ```powershell
 $qodoHash = 'b0386d363d07e62384d099ddf41347f48cc1e80ed842c2916fb181c9356ed96e'
@@ -50,13 +54,21 @@ if ($qodoActualHash -ne $qodoHash) {
 notepad.exe $qodoInstaller
 ```
 
-بعد مراجعة محتوى الملف، شغّل الملف المحفوظ نفسه وفق سياسة التنفيذ المعتمدة على جهازك:
+بعد مراجعة محتوى الملف، افحص سياسة التنفيذ الفعلية:
+
+```powershell
+Get-ExecutionPolicy -List
+```
+
+عندما تكون كل النطاقات `Undefined`، يطبّق Windows PowerShell السياسة `Restricted` على إصدارات Windows المخصصة للمستخدمين، وهي لا تسمح بتشغيل ملفات السكربت. يمرر الأمر المختصر المنشور في صفحة Qodo العامة الخيار `-ExecutionPolicy Bypass` لتلك العملية وحدها، بينما تنص مهارة الإعداد على احترام قيود سياسة التنفيذ والتوقف إذا رُفض التشغيل. [Microsoft: سياسات التنفيذ](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1)
+
+عندما تسمح السياسة بذلك، شغّل الملف المحفوظ نفسه:
 
 ```powershell
 powershell.exe -NoProfile -File $qodoInstaller
 ```
 
-إذا منعت السياسة التنفيذ، عالج ذلك عبر الإجراء المعتمد في مؤسستك. لا تستبدل الملف بتنزيل مختلف ولا تتجاوز فشل التحقق من البصمة. هذه خطوات مستندة إلى التوثيق؛ ولا يعني عرضها أنني أعدت تنفيذ هذا المسار المعدّل أثناء تحديث المقال.
+إذا منعت السياسة التنفيذ، فلا تغيّرها إلا عبر إجراء معتمد، مثل إجراء مؤسستك على الأجهزة المُدارة. لا تستبدل الملف بتنزيل مختلف ولا تتجاوز فشل التحقق من البصمة. هذه خطوات مستندة إلى التوثيق الرسمي، وليست سجلًا لإعادة تنفيذ هذا المسار بعينه.
 
 ## 4. شخّص خطأ «qodo is not recognized»
 
@@ -98,11 +110,24 @@ Report each verified stage and preserve any exact error.
 Do not describe tool discovery as a completed review.
 ```
 
+لإزالة التكامل لاحقًا، يحذف الأمر `& $qodoExe uninstall` واجهة CLI ومهارات Qodo العامة وبيانات الاعتماد المحفوظة والإعدادات، وفق التعليمات المضمنة في CLI نفسه.
+
 ## 6. جهّز مراجعة فعلية
 
-ترسل أداة Reviewer فروق شجرة العمل والملفات الجديدة غير المتتبعة والسياق الذي تقدمه إلى خدمة المراجعة. يمكن أن تظل تعديلاتك المحلية دون commit أو push، لكن يجب أن يكون commit المرجعي متاحًا عبر مزود Git، مع صلاحية الوصول إلى المستودع. تحقق من السماح بمشاركة الكود والسياق قبل إرسال أعمال تخص عميلًا أو مؤسسة. [توثيق Reviewer](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
+ترسل أداة Reviewer فروق شجرة العمل والملفات الجديدة غير المتتبعة والسياق الذي تقدمه إلى خدمة المراجعة. يمكن أن تظل تعديلاتك المحلية دون commit أو push، لكن يجب أن يكون commit المرجعي مرفوعًا، لأن محرك المراجعة ينسخه من مزود Git. لذلك تتطلب المراجعة أن يملك Qodo صلاحية الوصول إلى ذلك المستودع. تحقق من السماح بمشاركة الكود والسياق قبل إرسال أعمال تخص عميلًا أو مؤسسة. ما زالت Reviewer في مرحلة Beta وقت كتابة المقال. [توثيق Reviewer](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
 
-حدّد الفرع المستهدف، واستخدم نقطة الأصل المشتركة بينه وبين `HEAD`، أي merge-base، أساسًا للمقارنة. أرفق غرض التغيير وقيوده المعروفة، وافحص المعاملات المتاحة في نسختك عبر `qodo review --help`. [مسار المراجعة الرسمي](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
+حدّد الفرع المستهدف، واستخدم نقطة الأصل المشتركة بينه وبين `HEAD`، أي merge-base، أساسًا للمقارنة. وأرفق غرض التغيير وقيوده المعروفة. في PowerShell، إذا كان الفرع المستهدف هو `origin/main`:
+
+```powershell
+git fetch origin
+$reviewBase = git merge-base HEAD origin/main
+if ($LASTEXITCODE -ne 0 -or -not $reviewBase) {
+    throw 'Cannot resolve the merge base. Fetch the missing history or choose the correct target branch.'
+}
+& $qodoExe review --base $reviewBase
+```
+
+استبدل `origin/main` إذا كان التغيير موجهًا إلى فرع آخر. وافحص المعاملات المتاحة في نسختك عبر `& $qodoExe review --help`؛ وتضيف مهارة المراجعة سياق الجلسة عبر `--context-file`. [مسار المراجعة الرسمي](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
 
 عندما تكون المراجعة مأذونًا بها، يمكن استخدام الطلب التالي:
 
@@ -123,7 +148,7 @@ If access fails, report the exact error and stop.
 Qodo could not obtain repository credentials for the current workspace. Check the active workspace and repository connection; if those are correct, contact support before starting another review. Do not automatically start another attempt.
 ```
 
-تحدد الرسالة المرحلة التي فشلت، لكنها لا تثبت السبب الجذري. الخطوة التالية هي فحص مساحة عمل Qodo المختارة واتصال المستودع، ثم التواصل مع الدعم إذا كانا صحيحين. هذه النتيجة لا تبرر تكرار تسجيل الدخول أو إعادة المراجعة تلقائيًا.
+تحدد الرسالة المرحلة التي فشلت، لكنها لا تثبت السبب الجذري. ولأن محرك المراجعة ينسخ commit المرجعي من مزود Git، ابدأ باتصال المستودع: تأكد أن مساحة عمل Qodo النشطة هي المقصودة، وأن Qodo مثبت لدى مزود Git ويملك صلاحية الوصول إلى هذا المستودع. وإذا كان ذلك صحيحًا، فتواصل مع الدعم. هذه النتيجة لا تبرر تكرار تسجيل الدخول أو إعادة المراجعة تلقائيًا. [تثبيت Qodo لدى مزود Git](https://docs.qodo.ai/install-qodo/install)
 
 | الفحص | النتيجة المرصودة | ما تثبته |
 |---|---|---|
@@ -141,12 +166,12 @@ Qodo could not obtain repository credentials for the current workspace. Check th
 | عدم التعرف على الأمر | التحقق من مسار التثبيت وتجربة الملف التنفيذي مباشرة |
 | الإضافة مثبتة والمهارات لا تظهر | بدء محادثة أو جلسة Codex جديدة والتحقق من تفعيل الإضافة |
 | نجاح الهوية وفشل قائمة الأدوات | الاحتفاظ برسالة الخطأ وفحص الإمكانات والصلاحيات |
-| تعذر الحصول على بيانات اعتماد المستودع | فحص مساحة العمل واتصال المستودع والالتزام بطلب التوقف الوارد في الرسالة |
+| تعذر الحصول على بيانات اعتماد المستودع | فحص مساحة العمل، والتأكد من تثبيت Qodo لدى مزود Git مع صلاحية الوصول إلى المستودع، والالتزام بطلب التوقف الوارد في الرسالة |
 | ظهور `closed_preview` أو قيد وصول صريح | اتباع شرط الوصول المذكور؛ تكرار الطلب لن يغيّر صلاحية غير متاحة |
 
 الصف الأخير يصف خطأ محتملًا تتعامل معه مهارة المراجعة؛ وهو **ليس** الخطأ الذي ظهر في هذه التجربة. [معالجة أخطاء المراجعة](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
 
-الدرس العملي بالنسبة لي هو ربط كل مرحلة بدليلها. نجاح تسجيل الدخول خطوة مفيدة، لكنه لا يحل محل نتيجة مراجعة مكتملة للمستودع. وقد تضيف مراجعة الذكاء الاصطناعي منظورًا آخر إلى العمل، مع بقاء الاختبارات وفحص التكامل والحكم الهندسي مسؤوليات مستقلة.
+الدرس العملي بالنسبة لي هو ربط كل مرحلة بدليلها. نجاح تسجيل الدخول خطوة مفيدة، لكنه لا يحل محل نتيجة مراجعة مكتملة للمستودع. وقد تضيف مراجعة الذكاء الاصطناعي منظورًا آخر إلى العمل، مع بقاء الاختبارات وفحص التكامل والتقدير البشري مسؤوليات مستقلة.
 
 *هذا دليل تقني مستقل يستند إلى المصادر الرسمية وأدلة الإعداد الموضحة، ولا يمثل توثيقًا صادرًا عن Qodo.*
 
@@ -158,5 +183,7 @@ Qodo could not obtain repository credentials for the current workspace. Check th
 - [Qodo: بيئة التشغيل والتحقق من برنامج التثبيت](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-setup/references/runtime.md)
 - [Qodo: توثيق Reviewer](https://docs.qodo.ai/agentic-toolbox/agentic-toolbox-codebase-review-skill)
 - [Qodo: مصدر مهارة المراجعة](https://github.com/qodo-ai/qodo-skills/blob/main/codex-packages/qodo/skills/qodo-review/SKILL.md)
+- [Qodo: تثبيت Qodo لدى مزود Git](https://docs.qodo.ai/install-qodo/install)
 - [OpenAI: الإضافات في ChatGPT وCodex](https://learn.chatgpt.com/docs/plugins)
 - [Microsoft: متغيرات البيئة في PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5)
+- [Microsoft: سياسات التنفيذ في PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1)
